@@ -1,0 +1,214 @@
+---
+title: All Combined Data
+format:
+  html:
+    code-fold: true
+    page-layout: full
+    grid:
+      body-width: 1200px
+  pdf:
+    toc: true
+    number-sections: true
+    color-links: true
+    documentclass: scrartcl
+    papersize: letter
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  enabled: true
+  cache: true
+echo: false
+warning: false
+
+---
+
+## Introduction
+
+[Mittheilugen Data](mittheilungen_data.qmd) is the primary source of sunspot data. There are 122 observers in Mittheilungen data (Brunner has multiple FK_OBSERVERS IDs). Some of the observers data has been recounted with availablity of new data sources (From [Source Book Data](source_book_data.qmd) as well from other sources by different authors (refere table 1 from shreya2023 paper)), also new data of sunspot observations have been discovered. To make combined data of sunspot observations, new data sets are added and some modifications are done, based on the source book data to the Mittheilugen data.
+
+## Modifications in Mittheilungen Data
+
+0. Merged dataset with SNV1 data (before grouping).
+1. Filter observer 36(Carrington) by FK_RUBRICS =43 (Explore).
+2. Process observer 30 (Airy) and create observer 310 (Main from Airy): The code creates a new observer (ID 310, alias "Main") from a subset of Airy's (ID 30) observations between 1850 and 1853. It then modifies the original Airy data to retain only observations between 1858 and 1861 and updates the alias to "Airy (various observers)".  This process effectively splits the original Airy data into two separate observer entries in the `observer_groups` dictionary, reflecting different periods and potentially different contributors to the observations.
+3. Truncate observer 177 data (before="1925-01-01", after="1946-01-01")
+4. Handle Williston Observatory (ID 150) merger into ID 142
+5. Remove mixed Wolf data (observer ID 2) from Mittheilugen data and the same from Source Book Data.
+6. Filter out unrealistic group counts (15 is maximum group count)
+7. Data of observers that are already in Mittheilungen data, that are replaced from new sources or recounting are listed in @tbl-supplemental-data
+
+
+
+
+FK_OBSERVERS ID  | ALIAS
+:---------------- | :----------
+139              | "stempell"
+114              | "woinoff"
+78               | "schwab"
+77               | "quimby"
+57               | "ventosa"
+
+: Supplementary Data {#tbl-supplemental-data} 
+
+8. Some data sets that are not originally in Mittheilugen data are that are included in the combined data are Misawa, Arlt, Tevel, Spoerer, and Teague data. New data sets are listed in @tbl-specialized-data.
+
+
+
+
+FK_OBSERVERS ID  | ALIAS       
+:---------------- | :---------- 
+1004             | "Misawa"    
+1000             | "Schwabe_Arlt"      
+1001             | "Tevel(Carassco)"     
+1002             | "Spoerer (recounted)"   
+1003             | "Carrington Teague"    
+
+: Specialized Data {#tbl-specialized-data}
+
+```{python}
+# |output: false
+# --- Data Loading and Initial Preprocessing ---
+from scripts import *
+BASE_DATA_PATH = "./data/"
+observer_groups, combined_data_main = load_and_preprocess_main_data(BASE_DATA_PATH)
+supplementary_data = load_supplementary_datasets(BASE_DATA_PATH)
+specialized_data = load_specialized_datasets(BASE_DATA_PATH)
+wolf_source_book_data = load_wolf_source_book_data(BASE_DATA_PATH)
+
+# --- Data Quality Control and Merging ---
+filtered_observer_groups = apply_quality_filters(observer_groups)
+all_combined_data = merge_supplementary_data(
+    filtered_observer_groups, supplementary_data, specialized_data
+)
+
+# Merge all observer DataFrames into one
+df_all_combined = pd.concat(all_combined_data.values(), ignore_index=True)
+
+# Optional: sort by Date
+df_all_combined = df_all_combined.sort_values("Date").reset_index(drop=True)
+
+```
+
+## All Combined Data
+
+```{python}
+
+```
+
+```{python}
+# Create summary statistics
+print("\n" + "=" * 50)
+print("OBSERVER STATISTICS")
+print("=" * 50)
+
+
+observer_stats_all_combined = (
+    df_all_combined.groupby(["FK_OBSERVERS", "ALIAS"])
+    .agg(
+        {
+            "Date": ["min", "max", "count"],
+            "WOLF": ["count", "mean", "std"],
+            "GROUPS": ["count", "mean"],
+            "SUNSPOTS": ["count", "mean"],
+        }
+    )
+    .round(2)
+)
+
+observer_stats_all_combined.columns = [
+    "_".join(col).strip() for col in observer_stats_all_combined.columns
+]
+observer_stats_all_combined = observer_stats_all_combined.reset_index()
+
+# Then rename columns and calculate duration
+observer_stats_all_combined = observer_stats_all_combined.rename(
+    columns={
+        "Date_min": "start_date",
+        "Date_max": "end_date",
+        "Date_count": "total_observations",
+        "WOLF_count": "wolf_observations",
+        "WOLF_mean": "avg_wolf_number",
+        "WOLF_std": "wolf_std",
+        "GROUPS_count": "group_observations",
+        "GROUPS_mean": "avg_groups",
+        "SUNSPOTS_count": "sunspot_observations",
+        "SUNSPOTS_mean": "avg_sunspots",
+    }
+)
+
+observer_stats_all_combined["observation_years"] = (
+    (
+        observer_stats_all_combined["end_date"]
+        - observer_stats_all_combined["start_date"]
+    ).dt.days
+    / 365.25
+).round(2)
+
+# print(observer_stats_all_combined.nlargest(10, 'observation_years')[
+#    ['ALIAS', 'start_date', 'end_date', 'observation_years', 'total_observations']
+#    #['FK_OBSERVERS', 'ALIAS', 'start_date', 'end_date', 'observation_years', 'total_observations']
+# ])
+
+print(f"\nTotal unique observers: {len(observer_stats_all_combined)}")
+print(
+    f"Observation period: {df_all_combined['Date'].min()} to {df_all_combined['Date'].max()}"
+)
+print(
+    f"Total observation span: {((df_all_combined['Date'].max() - df_all_combined['Date'].min()).days / 365.25):.1f} years"
+)
+```
+
+```{python}
+print(
+    f"Number of Observers by FK_OBSERVERS: {len(df_all_combined['FK_OBSERVERS'].unique())}"
+)
+print(f"Number of observers by ALIAS: {len(df_all_combined['ALIAS'].unique())}")
+
+```
+
+## Timeline of the observers
+
+@fig-plot_observer_timeline_all_combined is a timeline showing the start and
+end date of observations of the observers in the combined data. X-axis is time in
+years, and in Y-axis we have observers sorted by start date, and number of
+observations for each observer is shown in the parantheses.
+
+
+```{python}
+#| label: fig-plot_observer_timeline_all_combined
+#| fig-cap: Plot showing actual observation days for all observers in the cobined data
+
+plot_observer_timeline(df_all_combined, observer_stats_all_combined)
+
+```
+
+## Bubble plot of the observers 
+
+@fig-plot_observer_bubble_all_combined is a bubble plot showing all observers in
+the combined data. X-axis is start date, Y-axis is end date, size of the
+bubble is the number of observations, color is the number of observation years,
+hover name is the alias, and text is the alias.
+
+```{python}
+#| label: fig-plot_observer_bubble_all_combined
+#| fig-cap: Bubble plot showing all observers in all combined data
+
+observer_bubble_plots(observer_stats_all_combined)
+
+```
+
+## Animated bubble plot of the observers
+
+@fig-plot_observer_bubble_all_combined_animated is similar to
+@fig-plot_observer_bubble_all_combined but with animation over the start year.
+
+
+```{python}
+#| label: fig-plot_observer_bubble_all_combined_animated
+#| fig-cap: Animated bubble plot showing all observers in all combined data.
+
+observer_bubble_plot_animated(observer_stats_all_combined)
+
+```

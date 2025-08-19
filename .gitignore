@@ -1,0 +1,10 @@
+__pycache__/
+*.quarto_ipynb
+.mamba/
+.micromamba/
+.ipynb_checkpoints/
+.DS_Store
+.jupyter_cache/
+_freeze/
+
+/.quarto/

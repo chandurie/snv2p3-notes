@@ -1,0 +1,310 @@
+---
+title: Source Book Data
+format:
+  html:
+    code-fold: true
+    page-layout: full
+    grid:
+      body-width: 1200px
+  pdf:
+    toc: true
+    number-sections: true
+    color-links: true
+    documentclass: scrartcl
+    papersize: letter
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  enabled: true
+  cache: true
+echo: false
+warning: false
+
+---
+
+ **Source book** : Along with [Mittheilungen](mittheilungen_data.qmd), the source books of Wolf were found in loose, unbound form in 2015. Before his discoveries were printed in the Mittheilungen, Wolf first documentd them in these source tables. Source books offer a lot of supplemetary material.
+
+1. Observers on particular days, their k-factors and sunspot_observations
+2. Details of observers data used to fill out gaps on Wolf's data.
+3. Contain additional observers before 1849, which are not published in Mittheilungen.
+4. Contain only 2 instances of Wolfer's observations
+5. Source books revealed that Wolf interpolated the records to fill in gaps in
+   the observations hed could not make.
+
+```{python}
+from scripts import *
+BASE_DATA_PATH = "./data/"
+wolf_source_book_path = os.path.join(BASE_DATA_PATH, "wolf_source_book.csv")
+
+df = pd.read_csv(wolf_source_book_path, sep=",")
+df.rename(columns={"Date": "Date","wolf_norm": "WOLF", "groups": "GROUPS", "sunspots": "SUNSPOTS"},
+        inplace=True,)
+
+df["Date"] = pd.to_datetime(df["Date"])
+observer_stats_source_book = df.groupby(['obsID', 'obsname']).agg({
+    'Date': ['min', 'max', 'count'],
+    'WOLF': ['count', 'mean', 'std'],
+    'GROUPS': ['count', 'mean'],
+    'SUNSPOTS': ['count', 'mean'],
+}).round(2)
+
+observer_stats_source_book.columns = ['_'.join(col).strip() for col in observer_stats_source_book.columns]
+observer_stats_source_book = observer_stats_source_book.reset_index()
+
+# Then rename columns and calculate duration
+observer_stats_source_book = observer_stats_source_book.rename(columns={
+    'Date_min': 'start_date',
+    'Date_max': 'end_date',
+    'Date_count': 'total_observations',
+    'WOLF_count': 'wolf_observations',
+    'WOLF_mean': 'avg_wolf_number',
+    'WOLF_std': 'wolf_std',
+    'GROUPS_count': 'group_observations',
+    'GROUPS_mean': 'avg_groups',
+    'SUNSPOTS_count': 'sunspot_observations',
+    'SUNSPOTS_mean': 'avg_sunspots'
+})
+
+observer_stats_source_book['observation_years'] = (
+    (observer_stats_source_book['end_date'] - observer_stats_source_book['start_date']).dt.days / 365.25
+).round(2)
+
+# print(observer_stats_source_book.nlargest(10, 'observation_years')[
+#    ['obsname', 'start_date', 'end_date', 'observation_years', #'total_observations']
+    #['obsID', 'obsname', 'start_date', 'end_date', 'observation_years', 'total_observations']
+# ])
+
+```
+```{python}
+# Create summary statistics
+print("\n" + "="*50)
+print("OBSERVER STATISTICS (WOLF SOURCE BOOK) SUMMARY")
+print("="*50)
+
+print(f"Total unique observers: {len(observer_stats_source_book)}")
+print(f"Observation period: {df['Date'].min()} to {df['Date'].max()}")
+print(f"Total observation span: {((df['Date'].max() - df['Date'].min()).days / 365.25):.1f} years")
+
+
+```
+
+## Timeline of the observers
+
+@fig-plot_observer_timeline_wolf_source_book is a timeline showing the start and
+end date of observations of the observers in the source book. X-axis is time in
+years, and in Y-axis we have observers sorted by start date, and number of
+observations for each observer is shown in the parantheses.
+
+```{python}
+#| fig-cap: Observer timeline of the observers (Source Book)
+#| label: fig-plot_observer_timeline_wolf_source_book
+
+plot_observer_timeline_wolf_source_book(df, observer_stats_source_book)
+
+```
+
+## Bubble plot of the observers 
+
+@fig-plot_observer_bubble_wolf_source_book is a bubble plot showing all
+observers in the source book. X-axis is start date, Y-axis is end date, size of
+the bubble is the number of observations, color is the number of observation
+years, hover name is the alias, and text is the alias.
+
+```{python}
+#| fig-cap: Bubble plot of the observers (Source Book)
+#| label: fig-plot_observer_bubble_wolf_source_book
+fig = px.scatter(
+    observer_stats_source_book,
+    x="start_date",
+    y="end_date",
+    size="total_observations",
+    color="observation_years",
+    hover_name="obsname",
+    text="obsname",  # Add observer name as text
+    size_max=60,
+    labels={
+        "start_date": "Start Date",
+        "end_date": "End Date",
+        "total_observations": "Total Observations",
+        "observation_years": "Observation Years"
+    },
+    title="Observer Activity Bubble Plot"
+)
+
+# Set text position (try 'middle right', 'top center', etc.)
+fig.update_traces(
+    marker=dict(line=dict(width=2, color='DarkSlateGrey')),
+    textposition='middle right',
+    textfont=dict(size=12)
+)
+
+fig.show()
+
+```
+
+## Animated bubble plot of the observers
+
+@fig-plot_observer_bubble_wolf_source_book_animated is similar to
+@fig-plot_observer_bubble_wolf_source_book but with animation over the start
+year.
+
+```{python}
+#| label: fig-plot_observer_bubble_wolf_source_book_animated
+#| fig-cap: Animated bubble plot showing all observers in the source book. 
+
+# Add a new column for scaled marker size
+# Adjust the scaling factor as needed for your data
+scaling_factor = 1  # You can tweak this
+observer_stats_source_book['marker_size'] = np.sqrt(observer_stats_source_book['total_observations']) * scaling_factor
+
+# Assume observer_stats_source_book is already prepared as in your previous code
+observer_stats_source_book['start_year'] = observer_stats_source_book['start_date'].dt.year
+
+# Get all years from the earliest to the latest start year
+years = np.arange(observer_stats_source_book['start_year'].min(), observer_stats_source_book['start_year'].max() + 1)
+
+# For each year, include all observers who started up to that year
+frames = []
+for year in years:
+    frame_data = observer_stats_source_book[observer_stats_source_book['start_year'] <= year]
+    frames.append(frame_data)
+
+
+# Initial data (first frame)
+init_data = frames[0]
+
+fig = go.Figure(
+    data=[
+        go.Scatter(
+            x=init_data['start_date'],
+            y=init_data['end_date'],
+            mode='markers+text',
+            marker=dict(
+                size=init_data['total_observations'],
+                color=init_data['observation_years'],
+                colorscale='Viridis',
+                showscale=True,
+                line=dict(width=2, color='DarkSlateGrey')
+            ),
+            text=init_data['obsname'],
+            textposition='middle right',
+            customdata=init_data['obsID'].values,
+            hovertemplate=(
+                'Observer: %{text}<br>'
+                'obsID: %{customdata}<br>' 
+                'Start: %{x|%Y-%m-%d}<br>'
+                'End: %{y|%Y-%m-%d}<br>'
+                'Total Observations: %{marker.size}<br>'
+                'Observation Years: %{marker.color:.2f}<extra></extra>'
+                
+            ),
+        )
+    ],
+    layout=go.Layout(
+        title="Animated Observer Activity Bubble Plot",
+        xaxis=dict(title='Start Date', range=[init_data['start_date'].min(), init_data['start_date'].max()]),
+        yaxis=dict(title='End Date', range=[init_data['end_date'].min(), init_data['end_date'].max()]),
+        updatemenus=[{
+            "type": "buttons",
+            "buttons": [
+                {
+                    "label": "Play",
+                    "method": "animate",
+                    "args": [None, {"frame": {"duration": 500, "redraw": True}, "fromcurrent": True}]
+                },
+                {
+                    "label": "Pause",
+                    "method": "animate",
+                    "args": [[None], {"frame": {"duration": 0, "redraw": False}, "mode": "immediate"}]
+                }
+            ]
+        }]
+    )
+)
+
+
+# Prepare frames for animation
+from pandas.tseries.offsets import DateOffset
+
+buffer_days = 365.25 * 6  # About 2 months buffer
+
+animation_frames = []
+for i, year in enumerate(years):
+    frame_data = frames[i]
+    x_min = frame_data['start_date'].min() - pd.Timedelta(days=buffer_days)
+    x_max = frame_data['start_date'].max() + pd.Timedelta(days=buffer_days)
+    y_min = frame_data['end_date'].min() - pd.Timedelta(days=buffer_days)
+    y_max = frame_data['end_date'].max() + pd.Timedelta(days=buffer_days)
+    if i == len(years) - 1:
+        # Use full range for last frame
+        x_min = observer_stats_source_book['start_date'].min() - pd.Timedelta(days=buffer_days)
+        x_max = observer_stats_source_book['start_date'].max() + pd.Timedelta(days=buffer_days)
+        y_min = observer_stats_source_book['end_date'].min() - pd.Timedelta(days=buffer_days)
+        y_max = observer_stats_source_book['end_date'].max() + pd.Timedelta(days=buffer_days)
+    animation_frames.append(
+        go.Frame(
+            data=[
+                go.Scatter(
+                    x=frame_data['start_date'],
+                    y=frame_data['end_date'],
+                    mode='markers+text',
+                    marker=dict(
+                        size=frame_data['marker_size'],
+                        color=frame_data['observation_years'],
+                        colorscale='Viridis',
+                        showscale=True,
+                        line=dict(width=2, color='DarkSlateGrey')
+                    ),
+                    text=frame_data['obsname'],
+                    textposition='middle right',
+                    customdata=init_data['obsID'].values,
+
+                    hovertemplate=(
+                        'Observer: %{text}<br>'
+                        'obsID: %{customdata[0]}<br>' 
+                        'Start: %{x|%Y-%m-%d}<br>'
+                        'End: %{y|%Y-%m-%d}<br>'
+                        'Total Observations: %{marker.size}<br>'
+                        'Observation Years: %{marker.color:.2f}<extra></extra>'
+                    ),
+                )
+            ],
+            name=str(year),
+            layout=go.Layout(
+                xaxis=dict(title='Start Date', range=[x_min, x_max]),
+                yaxis=dict(title='End Date', range=[y_min, y_max]),
+                title=f"Animated Observer Activity Bubble Plot - Year {year}"
+            )
+        )
+    )
+
+
+fig.frames = animation_frames
+
+# Add slider for years
+sliders = [{
+    "steps": [
+        {
+            "args": [
+                [str(year)],
+                {"frame": {"duration": 500, "redraw": True}, "mode": "immediate"}
+            ],
+            "label": str(year),
+            "method": "animate"
+        }
+        for year in years
+    ],
+    "transition": {"duration": 0},
+    "x": 0.1,
+    "y": 0,
+    "currentvalue": {"font": {"size": 16}, "prefix": "Year: ", "visible": True, "xanchor": "center"},
+    "len": 0.9
+}]
+
+fig.update_layout(sliders=sliders)
+
+fig.show()
+```
+

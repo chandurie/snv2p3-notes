@@ -1,0 +1,7 @@
+
+
+  Here we try to reproduce the analysis of SNV2.2 and SNV2.3 as done by Shreya from her codes and data. Learn about [Mittheilungen Data](./mittheilungen_data.qmd) and [Source Book Data](./source_book_data.qmd). And additinal data added by Shreya are explored. Note that unless sepcified, the data used here are from Shreya's data. 
+
+We try to apply the same modifications to Mittheilungen data as done in Shreya's codes, and add the data from source mentioned in the article \[@city-key]. And try to make a [All Combined Data](./all_combined_data.qmd) set that includes all data sources and changes to Mittheilungen.
+
+

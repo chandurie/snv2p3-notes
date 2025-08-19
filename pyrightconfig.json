@@ -1,0 +1,8 @@
+{
+  "include": ["."],
+  "exclude": ["venv", "node_modules"],
+  "extraPaths": [
+    "~/miniforge3/envs/astro/lib/python3.13/site-packages/"
+  ],
+  "reportMissingImports": true
+}

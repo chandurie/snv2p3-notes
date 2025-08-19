@@ -1,0 +1,19 @@
+name: astro
+channels:
+  - conda-forge
+dependencies:
+  - astropy
+  - ipython
+  - jupyter-cache
+  - jupyterlab
+  - jupytext
+  - matplotlib
+  - numpy
+  - openpyxl
+  - plotly
+  - pynvim
+  - python=3.13
+  - scipy
+  - sunpy
+
+prefix: "/Users/kalugoduc/miniforge3/envs/astro"

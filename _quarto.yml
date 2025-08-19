@@ -1,0 +1,87 @@
+project:
+  type: website
+
+website:
+  # favicon: "./logos/kg-logo.svg"
+  title: "SNV3 Reconstruction"
+  navbar:
+    title: False
+    # logo: "./logos/quarto.png"
+    left:
+      - href: index.qmd
+        text: Home
+      # - text: YouTube Tutorials
+      #   menu: 
+      #     - text: "Quarto Crash Course"
+      #       href: "https://youtu.be/_VKxTPWDhA4?si=plDlvlMh0bRuQZPG"
+      #       target: _blank
+      #     - text: "Generate 100s of Custom Reports in Minutes"
+      #       href: "https://youtu.be/_kjs_u3Ctt4?si=i6IgBavZeJfuHyvR"
+      #     - text: "Fastest Way to Convert Jupyter Notebooks into Analytics Reports"
+      #       href: "https://youtu.be/TS0w-tSH3Jc?si=3t5PvqLpS003yyjB"
+      #     - text: "Real-world Python Dashboard Project"
+      #       href: "https://youtu.be/gCLCn4TVlWo?si=i8_FDCKwf9s6Nj2m"
+      #     - text: "Create Slideshows with Markdown & Python Code!"
+      #       href: "https://youtu.be/kWnMc0GwX-U?si=oG6atMGifPJgnM8h"
+    # tools:
+    #   - icon: "github"
+    #     href: "https://github.com/KeithGalli/quarto-portfolio"
+    #   - icon: "youtube"
+    #     href: "https://www.youtube.com/@PositPBC"
+    #   - icon: "linkedin"
+    #     href: "https://www.linkedin.com/in/keithgalli/"
+  sidebar:
+    style: "docked"
+    search: true
+    # border: false
+    collapse-level: 1
+    contents: 
+      - section: "Other pages"
+        contents: "*"
+    #
+    # contents:
+    #   - text: "Posit Quarto Series (Python)"
+    #     align: "right"
+    #     alignment: "right"
+    #     href: index.qmd
+    #   - '---'
+    #   - section: "Quarto Crash Course"
+    #     href: quarto-crash-course/about.md
+    #     contents: quarto-crash-course/*.qmd
+    #   - section: "Parameterized Reports"
+    #     href: parameterized-reporting/about.md
+    #     contents: parameterized-reporting/*.qmd
+    #   - section: "Analytics Reports"
+    #     href: analytics-reports/about.md
+    #     contents: analytics-reports/*.qmd
+    #   - section: "Dashboards"
+    #     href: dashboards/about.md
+    #     contents: dashboards/*.qmd
+    #   - section: "Slideshows"
+    #     href: slideshows/about.md
+    #     contents: slideshows/*.qmd
+
+#   page-footer:
+#     left: "© 2025, Keith Galli"
+#     right:
+#       - icon: "github"
+#         href: "https://github.com/KeithGalli/quarto-portfolio"
+#       - icon: "youtube"
+#         href: "https://www.youtube.com/@PositPBC"
+#       - icon: "linkedin"
+#         href: "https://www.linkedin.com/in/keithgalli/"
+#
+# brand: _brand.yml
+
+format:
+  html:
+    toc: true
+    theme: cosmo
+  pdf:
+    toc: true
+    documentclass: article
+    margin-left: 30mm
+    mafin-right: 30mm
+
+execute:
+  freeze: auto   # speeds up CI: only re-exec when inputs change
