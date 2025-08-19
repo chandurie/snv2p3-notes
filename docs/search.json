@@ -1,0 +1,189 @@
+[
+  {
+    "objectID": "mittheilungen_data.html",
+    "href": "mittheilungen_data.html",
+    "title": "Mittheilungen Data",
+    "section": "",
+    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 122\nNumber of observers by ALIAS: 121\nNumber of observes by ALIAS(121) is different from \n number of observers by FK_OBSERVERS(122). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBrunner has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Brunner are [177 168]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 122\nObservation period: 1859-01-01 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 86.0 years",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data.html#timeline-of-the-observers",
+    "href": "mittheilungen_data.html#timeline-of-the-observers",
+    "title": "Mittheilungen Data",
+    "section": "Timeline of the observers",
+    "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungendata",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data.html#bubble-plot-of-the-observers",
+    "href": "mittheilungen_data.html#bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data",
+    "section": "Bubble plot of the observers",
+    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungendata\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data.html#animated-bubble-plot-of-the-observers",
+    "href": "mittheilungen_data.html#animated-bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data",
+    "section": "Animated bubble plot of the observers",
+    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in Mittheilungen data.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SNV3 Reconstruction",
+    "section": "",
+    "text": "Here we try to reproduce the analysis of SNV2.2 and SNV2.3 as done by Shreya from her codes and data. Learn about Mittheilungen Data and Source Book Data. And additinal data added by Shreya are explored. Note that unless sepcified, the data used here are from Shreya’s data.\nWe try to apply the same modifications to Mittheilungen data as done in Shreya’s codes, and add the data from source mentioned in the article [@city-key]. And try to make a All Combined Data set that includes all data sources and changes to Mittheilungen."
+  },
+  {
+    "objectID": "source_book_data.html",
+    "href": "source_book_data.html",
+    "title": "Source Book Data",
+    "section": "",
+    "text": "Source book : Along with Mittheilungen, the source books of Wolf were found in loose, unbound form in 2015. Before his discoveries were printed in the Mittheilungen, Wolf first documentd them in these source tables. Source books offer a lot of supplemetary material.\n==================================================\nOBSERVER STATISTICS (WOLF SOURCE BOOK) SUMMARY\n==================================================\nTotal unique observers: 35\nObservation period: 1849-09-30 00:00:00 to 1877-08-31 00:00:00\nTotal observation span: 27.9 years",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Source Book Data"
+    ]
+  },
+  {
+    "objectID": "source_book_data.html#timeline-of-the-observers",
+    "href": "source_book_data.html#timeline-of-the-observers",
+    "title": "Source Book Data",
+    "section": "Timeline of the observers",
+    "text": "Timeline of the observers\nFigure 1 is a timeline showing the start and end date of observations of the observers in the source book. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Observer timeline of the observers (Source Book)",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Source Book Data"
+    ]
+  },
+  {
+    "objectID": "source_book_data.html#bubble-plot-of-the-observers",
+    "href": "source_book_data.html#bubble-plot-of-the-observers",
+    "title": "Source Book Data",
+    "section": "Bubble plot of the observers",
+    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in the source book. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot of the observers (Source Book)\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Source Book Data"
+    ]
+  },
+  {
+    "objectID": "source_book_data.html#animated-bubble-plot-of-the-observers",
+    "href": "source_book_data.html#animated-bubble-plot-of-the-observers",
+    "title": "Source Book Data",
+    "section": "Animated bubble plot of the observers",
+    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in the source book.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Source Book Data"
+    ]
+  },
+  {
+    "objectID": "all_combined_data.html",
+    "href": "all_combined_data.html",
+    "title": "All Combined Data",
+    "section": "",
+    "text": "Mittheilugen Data is the primary source of sunspot data. There are 122 observers in Mittheilungen data (Brunner has multiple FK_OBSERVERS IDs). Some of the observers data has been recounted with availablity of new data sources (From Source Book Data as well from other sources by different authors (refere table 1 from shreya2023 paper)), also new data of sunspot observations have been discovered. To make combined data of sunspot observations, new data sets are added and some modifications are done, based on the source book data to the Mittheilugen data.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "All Combined Data"
+    ]
+  },
+  {
+    "objectID": "all_combined_data.html#introduction",
+    "href": "all_combined_data.html#introduction",
+    "title": "All Combined Data",
+    "section": "",
+    "text": "Mittheilugen Data is the primary source of sunspot data. There are 122 observers in Mittheilungen data (Brunner has multiple FK_OBSERVERS IDs). Some of the observers data has been recounted with availablity of new data sources (From Source Book Data as well from other sources by different authors (refere table 1 from shreya2023 paper)), also new data of sunspot observations have been discovered. To make combined data of sunspot observations, new data sets are added and some modifications are done, based on the source book data to the Mittheilugen data.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "All Combined Data"
+    ]
+  },
+  {
+    "objectID": "all_combined_data.html#modifications-in-mittheilungen-data",
+    "href": "all_combined_data.html#modifications-in-mittheilungen-data",
+    "title": "All Combined Data",
+    "section": "Modifications in Mittheilungen Data",
+    "text": "Modifications in Mittheilungen Data\n\nMerged dataset with SNV1 data (before grouping).\nFilter observer 36(Carrington) by FK_RUBRICS =43 (Explore).\nProcess observer 30 (Airy) and create observer 310 (Main from Airy): The code creates a new observer (ID 310, alias “Main”) from a subset of Airy’s (ID 30) observations between 1850 and 1853. It then modifies the original Airy data to retain only observations between 1858 and 1861 and updates the alias to “Airy (various observers)”. This process effectively splits the original Airy data into two separate observer entries in the observer_groups dictionary, reflecting different periods and potentially different contributors to the observations.\nTruncate observer 177 data (before=“1925-01-01”, after=“1946-01-01”)\nHandle Williston Observatory (ID 150) merger into ID 142\nRemove mixed Wolf data (observer ID 2) from Mittheilugen data and the same from Source Book Data.\nFilter out unrealistic group counts (15 is maximum group count)\nData of observers that are already in Mittheilungen data, that are replaced from new sources or recounting are listed in Table 1\n\n\n\n\nTable 1: Supplementary Data\n\n\n\n\n\nFK_OBSERVERS ID\nALIAS\n\n\n\n\n139\n“stempell”\n\n\n114\n“woinoff”\n\n\n78\n“schwab”\n\n\n77\n“quimby”\n\n\n57\n“ventosa”\n\n\n\n\n\n\n\nSome data sets that are not originally in Mittheilugen data are that are included in the combined data are Misawa, Arlt, Tevel, Spoerer, and Teague data. New data sets are listed in Table 2.\n\n\n\n\nTable 2: Specialized Data\n\n\n\n\n\nFK_OBSERVERS ID\nALIAS\n\n\n\n\n1004\n“Misawa”\n\n\n1000\n“Schwabe_Arlt”\n\n\n1001\n“Tevel(Carassco)”\n\n\n1002\n“Spoerer (recounted)”\n\n\n1003\n“Carrington Teague”",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "All Combined Data"
+    ]
+  },
+  {
+    "objectID": "all_combined_data.html#all-combined-data",
+    "href": "all_combined_data.html#all-combined-data",
+    "title": "All Combined Data",
+    "section": "All Combined Data",
+    "text": "All Combined Data\n\n\n\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 125\nObservation period: 1816-04-05 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 128.7 years\n\n\n\n\nNumber of Observers by FK_OBSERVERS: 125\nNumber of observers by ALIAS: 125",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "All Combined Data"
+    ]
+  },
+  {
+    "objectID": "all_combined_data.html#timeline-of-the-observers",
+    "href": "all_combined_data.html#timeline-of-the-observers",
+    "title": "All Combined Data",
+    "section": "Timeline of the observers",
+    "text": "Timeline of the observers\nFigure 1 is a timeline showing the start and end date of observations of the observers in the combined data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in the cobined data",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "All Combined Data"
+    ]
+  },
+  {
+    "objectID": "all_combined_data.html#bubble-plot-of-the-observers",
+    "href": "all_combined_data.html#bubble-plot-of-the-observers",
+    "title": "All Combined Data",
+    "section": "Bubble plot of the observers",
+    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in the combined data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in all combined data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "All Combined Data"
+    ]
+  },
+  {
+    "objectID": "all_combined_data.html#animated-bubble-plot-of-the-observers",
+    "href": "all_combined_data.html#animated-bubble-plot-of-the-observers",
+    "title": "All Combined Data",
+    "section": "Animated bubble plot of the observers",
+    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in all combined data.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "All Combined Data"
+    ]
+  }
+]
