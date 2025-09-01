@@ -269,6 +269,147 @@ def observer_bubble_plots(observer_dict):
     fig.show()
 
 
+def plot_observer_timeline_force_start_year2(
+    df, observer_stats, max_observers=None, start_year=1800
+):
+    """
+    Create a timeline plot showing actual observation days for all observers.
+
+    Args:
+        df (pd.DataFrame): Full observation data (must contain 'FK_OBSERVERS', 'Date', 'WOLF', 'ALIAS').
+        observer_stats (pd.DataFrame): Stats table with 'FK_OBSERVERS', 'start_date', 'end_date',
+                                       'observation_years', 'total_observations'.
+        max_observers (int or None): Limit the number of observers. If None, plots all.
+        start_year (int): Force x-axis to start from this year.
+    """
+    # Determine number of observers to plot
+    if max_observers is None:
+        top_observers = observer_stats.sort_values("start_date")
+    else:
+        top_observers = observer_stats.nlargest(max_observers, "observation_years")
+        top_observers = top_observers.sort_values("start_date")
+
+    n_obs = len(top_observers)
+
+    # Create dynamic color map
+    cmap = plt.cm.get_cmap("tab20", n_obs)
+
+    fig, ax = plt.subplots(figsize=(15, max(8, n_obs * 0.3)))
+
+    for i, (_, obs) in enumerate(top_observers.iterrows()):
+        obs_data = df[df["FK_OBSERVERS"] == obs["FK_OBSERVERS"]].dropna(subset=["WOLF"])
+
+        if not obs_data.empty:
+            ax.scatter(
+                obs_data["Date"],
+                [i] * len(obs_data),
+                color=cmap(i),
+                alpha=0.7,
+                s=80,
+                marker="|",
+            )
+
+    # Set Y-axis labels
+    ax.set_yticks(range(n_obs))
+    ax.set_yticklabels(
+        [
+            f"{obs['ALIAS']} ({obs['total_observations']} obs)"
+            for _, obs in top_observers.iterrows()
+        ],
+        fontsize=8,
+    )
+
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Observers")
+    ax.set_title("Observation Timeline by Observer")
+    ax.grid(True, axis="x", alpha=0.3)
+
+    # Force x-axis start at given year
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    max_date = df["Date"].max() + pd.Timedelta(days=365)  # padding
+    ax.set_xlim(min_date, max_date)
+
+    # --- Highlight empty period before first actual data ---
+    first_data_date = df["Date"].min()
+    if first_data_date > min_date:
+        ax.axvspan(
+            min_date, first_data_date, color="lightgrey", alpha=0.5, label="No data"
+        )
+
+    # Legend for shading
+    handles, labels = ax.get_legend_handles_labels()
+    if "No data" not in labels:
+        ax.legend(loc="upper left")
+
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+
+
+def plot_observer_timeline_force_start_year(
+    df, observer_stats, max_observers=None, start_year=1800
+):
+    """
+    Create a timeline plot showing actual observation days for all observers.
+
+    Args:
+        df (pd.DataFrame): Full observation data (must contain 'FK_OBSERVERS', 'Date', 'WOLF', 'ALIAS').
+        observer_stats (pd.DataFrame): Stats table with 'FK_OBSERVERS', 'start_date', 'end_date', 'observation_years', 'total_observations'.
+        max_observers (int or None): Limit the number of observers. If None, plots all.
+        start_year (int): Force x-axis to start from this year.
+    """
+    # Determine number of observers to plot
+    if max_observers is None:
+        top_observers = observer_stats.sort_values("start_date")
+    else:
+        top_observers = observer_stats.nlargest(max_observers, "observation_years")
+        top_observers = top_observers.sort_values("start_date")
+
+    n_obs = len(top_observers)
+
+    # Create dynamic color map
+    cmap = plt.cm.get_cmap("tab20", n_obs)
+
+    fig, ax = plt.subplots(figsize=(15, max(8, n_obs * 0.3)))
+
+    for i, (_, obs) in enumerate(top_observers.iterrows()):
+        obs_data = df[df["FK_OBSERVERS"] == obs["FK_OBSERVERS"]].dropna(subset=["WOLF"])
+
+        if not obs_data.empty:
+            ax.scatter(
+                obs_data["Date"],
+                [i] * len(obs_data),
+                color=cmap(i),
+                alpha=0.7,
+                s=80,
+                marker="|",
+            )
+
+    # Set Y-axis labels
+    ax.set_yticks(range(n_obs))
+    ax.set_yticklabels(
+        [
+            f"{obs['ALIAS']} ({obs['total_observations']} obs)"
+            for _, obs in top_observers.iterrows()
+        ],
+        fontsize=8,
+    )
+
+    ax.set_xlabel("Year")
+    ax.set_ylabel("Observers")
+    ax.set_title("Observation Timeline by Observer")
+    ax.grid(True, axis="x", alpha=0.3)
+
+    # Force x-axis start at given year
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    max_date = df["Date"].max() + pd.Timedelta(days=365)  # little padding
+    ax.set_xlim(min_date, max_date)
+
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+
+
 def plot_observer_timeline(df, observer_stats, max_observers=None):
     """
     Create a timeline plot showing actual observation days for all observers.

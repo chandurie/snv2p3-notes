@@ -133,7 +133,7 @@ observations for each observer is shown in the parantheses.
 
 # plot_observer_timeline_mitt_all(df, observer_stats_mitt_all)
 
-plot_observer_timeline(df, observer_stats_mitt_all)
+plot_observer_timeline_force_start_year(df, observer_stats_mitt_all)
 
 ```
 

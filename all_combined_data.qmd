@@ -180,7 +180,7 @@ observations for each observer is shown in the parantheses.
 #| label: fig-plot_observer_timeline_all_combined
 #| fig-cap: Plot showing actual observation days for all observers in the cobined data
 
-plot_observer_timeline(df_all_combined, observer_stats_all_combined)
+plot_observer_timeline_force_start_year(df_all_combined, observer_stats_all_combined)
 
 ```
 
