@@ -235,6 +235,52 @@ def observer_bubble_plot_animated(observer_dict):
     fig.show()
 
 
+def observer_bubble_plots_force_start_year(observer_stats, start_year=1800):
+    """
+    Interactive bubble plot of observers.
+
+    Args:
+        observer_stats (pd.DataFrame): Must contain 'start_date', 'end_date',
+                                       'total_observations', 'observation_years', 'ALIAS'.
+        start_year (int): Force axes to start from this year (default=1800).
+    """
+    fig = px.scatter(
+        observer_stats,
+        x="start_date",
+        y="end_date",
+        size="total_observations",
+        color="observation_years",
+        hover_name="ALIAS",
+        text="ALIAS",
+        size_max=60,
+        labels={
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "total_observations": "Total Observations",
+            "observation_years": "Observation Years",
+            "FK_OBSERVERS": "Observer ID",
+        },
+        title="Observer Bubble Plot",
+    )
+
+    # Improve marker appearance and labels
+    fig.update_traces(
+        marker=dict(line=dict(width=2, color="DarkSlateGrey")),
+        textposition="middle right",
+        textfont=dict(size=12),
+    )
+
+    # Force both axes to start at the chosen year
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    max_x = observer_stats["start_date"].max() + pd.Timedelta(days=20 * 365)
+    max_y = observer_stats["end_date"].max() + pd.Timedelta(days=20 * 365)
+
+    fig.update_xaxes(range=[min_date, max_x])
+    fig.update_yaxes(range=[min_date, max_y])
+
+    fig.show()
+
+
 def observer_bubble_plots(observer_dict):
     fig = px.scatter(
         observer_dict,

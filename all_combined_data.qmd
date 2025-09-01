@@ -195,7 +195,7 @@ hover name is the alias, and text is the alias.
 #| label: fig-plot_observer_bubble_all_combined
 #| fig-cap: Bubble plot showing all observers in all combined data
 
-observer_bubble_plots(observer_stats_all_combined)
+observer_bubble_plots_force_start_year(observer_stats_all_combined)
 
 ```
 

@@ -16,7 +16,7 @@
     "href": "mittheilungen_data.html#timeline-of-the-observers",
     "title": "Mittheilungen Data",
     "section": "Timeline of the observers",
-    "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungendata",
+    "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungen data",
     "crumbs": [
       "Home",
       "Other pages",
@@ -28,7 +28,7 @@
     "href": "mittheilungen_data.html#bubble-plot-of-the-observers",
     "title": "Mittheilungen Data",
     "section": "Bubble plot of the observers",
-    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungendata\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungen data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
     "crumbs": [
       "Home",
       "Other pages",

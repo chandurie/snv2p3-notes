@@ -129,7 +129,7 @@ observations for each observer is shown in the parantheses.
 
 ```{python}
 #| label: fig-plot_observer_timeline_mitt_all
-#| fig-cap: Plot showing actual observation days for all observers in Mittheilungendata
+#| fig-cap: Plot showing actual observation days for all observers in Mittheilungen data
 
 # plot_observer_timeline_mitt_all(df, observer_stats_mitt_all)
 
@@ -146,9 +146,9 @@ hover name is the alias, and text is the alias.
 
 ```{python}
 #| label: fig-plot_observer_bubble_mitt_all
-#| fig-cap: Bubble plot showing all observers in Mittheilungendata
+#| fig-cap: Bubble plot showing all observers in Mittheilungen data
 
-observer_bubble_plots(observer_stats_mitt_all)
+observer_bubble_plots_force_start_year(observer_stats_mitt_all)
 
 ```
 
