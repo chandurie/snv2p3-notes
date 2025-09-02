@@ -55,6 +55,54 @@
     "text": "Here we try to reproduce the analysis of SNV2.2 and SNV2.3 as done by Shreya from her codes and data. Learn about Mittheilungen Data and Source Book Data. And additinal data added by Shreya are explored. Note that unless sepcified, the data used here are from Shreya’s data.\nWe try to apply the same modifications to Mittheilungen data as done in Shreya’s codes, and add the data from source mentioned in the article [@city-key]. And try to make a All Combined Data set that includes all data sources and changes to Mittheilungen."
   },
   {
+    "objectID": "mittheilungen_data-new.html",
+    "href": "mittheilungen_data-new.html",
+    "title": "Mittheilungen Data New",
+    "section": "",
+    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 148\nNumber of observers by ALIAS: 144\nNumber of observes by ALIAS(144) is different from \n number of observers by FK_OBSERVERS(148). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBroger has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Broger are [104 117]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 148\nObservation period: 1849-01-01 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 96.0 years",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data New"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data-new.html#timeline-of-the-observers",
+    "href": "mittheilungen_data-new.html#timeline-of-the-observers",
+    "title": "Mittheilungen Data New",
+    "section": "Timeline of the observers",
+    "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungen data",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data New"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data-new.html#bubble-plot-of-the-observers",
+    "href": "mittheilungen_data-new.html#bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data New",
+    "section": "Bubble plot of the observers",
+    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungen data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data New"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data-new.html#animated-bubble-plot-of-the-observers",
+    "href": "mittheilungen_data-new.html#animated-bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data New",
+    "section": "Animated bubble plot of the observers",
+    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in Mittheilungen data.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data New"
+    ]
+  },
+  {
     "objectID": "source_book_data.html",
     "href": "source_book_data.html",
     "title": "Source Book Data",
@@ -103,51 +151,51 @@
     ]
   },
   {
-    "objectID": "mittheilungen_data-new.html",
-    "href": "mittheilungen_data-new.html",
-    "title": "Mittheilungen Data New",
+    "objectID": "mittheilungen_data-1800.html",
+    "href": "mittheilungen_data-1800.html",
+    "title": "Mittheilungen Data starting at 1800",
     "section": "",
-    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 148\nNumber of observers by ALIAS: 144\nNumber of observes by ALIAS(144) is different from \n number of observers by FK_OBSERVERS(148). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBroger has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Broger are [104 117]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 148\nObservation period: 1849-01-01 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 96.0 years",
+    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 161\nNumber of observers by ALIAS: 157\nNumber of observes by ALIAS(157) is different from \n number of observers by FK_OBSERVERS(161). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBroger has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Broger are [104 117]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 161\nObservation period: 1800-01-09 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 145.0 years",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data New"
+      "Mittheilungen Data starting at 1800"
     ]
   },
   {
-    "objectID": "mittheilungen_data-new.html#timeline-of-the-observers",
-    "href": "mittheilungen_data-new.html#timeline-of-the-observers",
-    "title": "Mittheilungen Data New",
+    "objectID": "mittheilungen_data-1800.html#timeline-of-the-observers",
+    "href": "mittheilungen_data-1800.html#timeline-of-the-observers",
+    "title": "Mittheilungen Data starting at 1800",
     "section": "Timeline of the observers",
     "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungen data",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data New"
+      "Mittheilungen Data starting at 1800"
     ]
   },
   {
-    "objectID": "mittheilungen_data-new.html#bubble-plot-of-the-observers",
-    "href": "mittheilungen_data-new.html#bubble-plot-of-the-observers",
-    "title": "Mittheilungen Data New",
+    "objectID": "mittheilungen_data-1800.html#bubble-plot-of-the-observers",
+    "href": "mittheilungen_data-1800.html#bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data starting at 1800",
     "section": "Bubble plot of the observers",
     "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungen data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data New"
+      "Mittheilungen Data starting at 1800"
     ]
   },
   {
-    "objectID": "mittheilungen_data-new.html#animated-bubble-plot-of-the-observers",
-    "href": "mittheilungen_data-new.html#animated-bubble-plot-of-the-observers",
-    "title": "Mittheilungen Data New",
+    "objectID": "mittheilungen_data-1800.html#animated-bubble-plot-of-the-observers",
+    "href": "mittheilungen_data-1800.html#animated-bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data starting at 1800",
     "section": "Animated bubble plot of the observers",
     "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in Mittheilungen data.",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data New"
+      "Mittheilungen Data starting at 1800"
     ]
   },
   {
