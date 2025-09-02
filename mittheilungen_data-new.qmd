@@ -1,0 +1,167 @@
+---
+title: Mittheilungen Data New
+format:
+  html:
+    code-fold: true
+    page-layout: full
+    grid:
+      body-width: 1200px
+  pdf:
+    toc: true
+    number-sections: true
+    color-links: true
+    documentclass: scrartcl
+    papersize: letter
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  enabled: true
+  cache: true
+echo: false
+warning: false
+
+---
+
+
+**Mittheilungen Data** : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It's the primary source of sunspot data. 
+
+Importing functions from scripts file. All the data used is in the folder `data`
+
+```{python}
+from scripts import *
+BASE_DATA_PATH = "./data/"
+main_data_path = os.path.join(BASE_DATA_PATH, "mitt_data_all-kcs.csv")
+main_data = pd.read_csv(main_data_path)
+df = pd.DataFrame(main_data)
+df.rename(columns={"DATE": "Date"}, inplace=True)
+df = df.sort_values("Date")
+df["Date"] = pd.to_datetime(df["Date"])
+```
+
+
+Observers are grouped by FK_OBSERVERS. 
+
+```{python}
+# How many observations are in the data?
+# print(f"Number of Observations: {len(df_main)}")
+# How many observers are in the data?
+print(f"Number of Observers by FK_OBSERVERS: {len(df['FK_OBSERVERS'].unique())}")
+print(f"Number of observers by ALIAS: {len(df['ALIAS'].unique())}")
+print(
+    f"Number of observes by ALIAS({len(df['ALIAS'].unique())}) is different from \n number of observers by FK_OBSERVERS({len(df['FK_OBSERVERS'].unique())}). \n"
+)
+print(f"One of the ALIAS has multiple FK_OBSERVERS IDs.")
+print(f"Checking ALIAS'es with multiple FK_OBSERVERS IDs.")
+fk_observers_counts = df.groupby("ALIAS")["FK_OBSERVERS"].nunique()
+multiple_fk_observers = fk_observers_counts[fk_observers_counts > 1]
+alias_with_multiple_fk_observers = multiple_fk_observers.index[0]
+fk_observer_ids_with_alias_with_multiple_observers = df[df["ALIAS"] == alias_with_multiple_fk_observers]["FK_OBSERVERS"].unique()
+print(f"{alias_with_multiple_fk_observers} has multiple FK_OBSERVERS IDs.")
+print(f"FK_OBSERVERS IDs associated with {alias_with_multiple_fk_observers} are {fk_observer_ids_with_alias_with_multiple_observers} \n")
+```
+
+```{python}
+
+# Create summary statistics
+print("\n" + "="*50)
+print("OBSERVER STATISTICS")
+print("="*50)
+
+main_data_path = os.path.join(BASE_DATA_PATH, "mitt_data_all-kcs.csv")
+main_data = pd.read_csv(main_data_path)
+df = pd.DataFrame(main_data)
+df.rename(columns={"DATE": "Date"}, inplace=True)
+df = df.sort_values("Date")
+df["Date"] = pd.to_datetime(df["Date"])
+
+observer_stats_mitt_all = df.groupby(['FK_OBSERVERS', 'ALIAS']).agg({
+    'Date': ['min', 'max', 'count'],
+    'WOLF': ['count', 'mean', 'std'],
+    'GROUPS': ['count', 'mean'],
+    'SUNSPOTS': ['count', 'mean'],
+}).round(2)
+
+observer_stats_mitt_all.columns = ['_'.join(col).strip() for col in observer_stats_mitt_all.columns]
+observer_stats_mitt_all = observer_stats_mitt_all.reset_index()
+
+# Then rename columns and calculate duration
+observer_stats_mitt_all = observer_stats_mitt_all.rename(columns={
+    'Date_min': 'start_date',
+    'Date_max': 'end_date',
+    'Date_count': 'total_observations',
+    'WOLF_count': 'wolf_observations',
+    'WOLF_mean': 'avg_wolf_number',
+    'WOLF_std': 'wolf_std',
+    'GROUPS_count': 'group_observations',
+    'GROUPS_mean': 'avg_groups',
+    'SUNSPOTS_count': 'sunspot_observations',
+    'SUNSPOTS_mean': 'avg_sunspots'
+})
+
+observer_stats_mitt_all['observation_years'] = (
+    (observer_stats_mitt_all['end_date'] - observer_stats_mitt_all['start_date']).dt.days / 365.25
+).round(2)
+
+# print(observer_stats_mitt_all.nlargest(10, 'observation_years')[
+#    ['ALIAS', 'start_date', 'end_date', 'observation_years', 'total_observations']
+#    #['FK_OBSERVERS', 'ALIAS', 'start_date', 'end_date', 'observation_years', 'total_observations']
+#])
+
+print(f"\nTotal unique observers: {len(observer_stats_mitt_all)}")
+print(f"Observation period: {df['Date'].min()} to {df['Date'].max()}")
+print(f"Total observation span: {((df['Date'].max() - df['Date'].min()).days / 365.25):.1f} years")
+
+```
+
+
+## Timeline of the observers
+
+**TODO: Plot only top 10 to 20 observers**
+
+@fig-plot_observer_timeline_mitt_all is a timeline plot showing actual
+observation days for all observers in Mittheilungen data. X-axis is time in
+years, and in Y-axis we have observers sorted by start date, and number of
+observations for each observer is shown in the parantheses.
+
+
+
+```{python}
+#| label: fig-plot_observer_timeline_mitt_all
+#| fig-cap: Plot showing actual observation days for all observers in Mittheilungen data
+
+# plot_observer_timeline_mitt_all(df, observer_stats_mitt_all)
+
+plot_observer_timeline_force_start_year(df, observer_stats_mitt_all)
+
+```
+
+## Bubble plot of the observers 
+
+@fig-plot_observer_bubble_mitt_all is a bubble plot showing all observers in
+Mittheilungen data. X-axis is start date, Y-axis is end date, size of the
+bubble is the number of observations, color is the number of observation years,
+hover name is the alias, and text is the alias.
+
+```{python}
+#| label: fig-plot_observer_bubble_mitt_all
+#| fig-cap: Bubble plot showing all observers in Mittheilungen data
+
+observer_bubble_plots_force_start_year(observer_stats_mitt_all)
+
+```
+
+## Animated bubble plot of the observers
+
+@fig-plot_observer_bubble_mitt_all_animated is similar to
+@fig-plot_observer_bubble_mitt_all but with animation over the start year.
+
+```{python}
+#| label: fig-plot_observer_bubble_mitt_all_animated
+#| fig-cap: Animated bubble plot showing all observers in Mittheilungen data.
+
+observer_bubble_plot_animated(observer_stats_mitt_all)
+
+```
+
