@@ -1,0 +1,75 @@
+---
+title: Gruithuisen Data
+format:
+  html:
+    code-fold: true
+    page-layout: full
+    grid:
+      body-width: 1200px
+  pdf:
+    toc: true
+    number-sections: true
+    color-links: true
+    documentclass: scrartcl
+    papersize: letter
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  enabled: true
+  cache: true
+echo: false
+warning: false
+
+---
+
+
+
+The **Gruithuisen data** is historical sunspot observations made by _Franz von Paula Gruithuisen_. This data is particularly valuable for reconstructing the international sunspot number (ISN) due to its detailed records from the early 19th century.
+
+### Overview of Gruithuisen Data
+
+1. **Content and Format:**
+
+   - The Gruithuisen data consists of manuscripts that primarily document weather conditions alongside sunspot observations. The entries often include barometric and hygrometric readings, with specific dates and times noted.
+
+   - The observations are written in **Kurrent** or **Kurrentschrift**, an old German script that poses challenges for modern transcription and interpretation. This script is characterized by its cursive style, making it difficult to read without specialized knowledge.
+
+   - The data includes descriptions of sunspots, often referred to as "flecken" (spots) or "öffnungen" (openings), and their evolution over time.
+
+
+2. **Historical Context:**
+
+   - Gruithuisen's observations span several years (**1817-1849**), with significant entries from **1824, 1825, and 1826** (? Check this). The data is crucial for understanding solar activity during this period, particularly in relation to weather patterns.
+
+### Current Status of Gruithuisen Data
+
+1. **Data Extraction and Processing:**
+
+   - The FARSuN team has made substantial progress in extracting and processing the Gruithuisen data. Key tasks include:
+
+     - **File Renaming Algorithm:** Kalugoduc and Christian Ritter are developing an algorithm to standardize the naming of extracted image files from the format `1834_June_XX.jpg` to `183406XX.jpg`.
+
+     - **Quality Control:** The extracted information in CSV or XLSX formats needs to be corrected for formatting issues, particularly for odd years.
+
+     - **Counting Drawings:** The team is tasked with counting the number of sunspot groups and individual spots from the drawings, with a flag indicating whether each drawing is a large or small schema. This counting must be verified by at least two different individuals.
+
+
+2. **Data Verification and Quality Control:**
+
+   - Quality control is essential for ensuring the accuracy of the extracted data. The presence or absence of sun symbols must be checked against the extracted information.
+
+3. **Collaboration and Tools:**
+
+   - The team is utilizing tools like **Transkribus** for text extraction and is considering citizen science initiatives to engage the public in the transcription process.
+
+   - Specialized help is being sought for the extraction of complex texts, particularly from students familiar with the Kurrent script.
+
+4. **Recent Meetings and Discussions:**
+
+   - In the latest meetings, the team discussed the progress on the Gruithuisen data, including the need for a structured approach to data extraction and the identification of key keywords for further analysis.
+
+
+
+In conclusion, the Gruithuisen data is a vital part of the FARSuN project, with ongoing efforts focused on extraction, verification, and analysis. The team is actively working to overcome challenges related to the historical format and language of the data, ensuring its integration into the broader context of solar activity research.

@@ -24,8 +24,76 @@ warning: false
 
 ---
 
+## Introduction
 
-**Mittheilungen Data** : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It's the primary source of sunspot data. 
+ The *Mittheilungen* data are historical sunspot observations compiled and published by Rudolf Wolf and successors at the Zürich Observatory in the journal *Mitteilungen der Eidgenössischen Sternwarte Zürich* (“Wolf Journal”). They aggregate daily counts of sunspot **groups** and **spots** from many observers, alongside metadata about **observers** and **source rubrics** (journal issue/page), forming a foundational, multi‑observer corpus for reconstructing long‑term solar activity. 
+
+FARSuN explicitly relies on *Mittheilungen* to rebuild a reliable International Sunspot Number (ISN); *Mittheilungen* is a primary legacy dataset on which the reconstruction and FAIR distribution of raw sunspot numbers depends. 
+
+Wolf’s *Mittheilungen* volumes began in the mid‑19th century, with content reaching back to earliest telescopic observations (e.g., Harriot 1610) compiled retrospectively. Successors continued the *Mittheilungen* record until 1979; however, in **1919** non‑Zürich external observers stopped being published, and from **1945** Waldmeier ceased publication and preserved originals in archives. Consequently, the subset FARSuN encoded from *Mittheilungen* effectively **stops in 1945**, while later coverage (**1945–1979**) is handled via the separate Zürich Tables dataset. 
+
+*Mittheilungen* is critical because (i) it consolidates multi‑observer daily records across decades/centuries, (ii) it anchors calibration chains (Wolf → Wolfer → Waldmeier) used in ISN construction, and (iii) it provides cross‑links to observer practices and instruments needed for quality assessment and cross‑calibration — central to FARSuN’s goal of a transparent, FAIR reconstruction. 
+
+
+## FARSuN Project’s Progress and Future plans with Mittheilungen data
+
+- **Digitization completed at ROB (2017–2019).** The *Mittheilungen* tables were digitized and annotated at the Royal Observatory of Belgium between **2017 and 2019**.
+- **Integration status.** *Mittheilungen* is integrated into the **new historical sunspot observations database** (“current DB”).
+- **Automated & manual tests.** A dedicated tool performs baseline tests; ongoing checks by observers and supposed years/observatories (cross‑correlations) are documented. 
+- **Issue remediation examples.** Ambiguous “?” counts and plans to analyze discrepancies by comparing **Adams** counts from *Mittheilungen* vs. newly extracted counts.
+- **Observer identity consistency.** Internal analysis flagged alias/ID collisions (e.g., “Brunner” mapped to two `FK_OBSERVERS`) — typical of legacy merges and being corrected. 
+- **Mapping anomalies.** During merging, a *Mittheilungen* observer ID (**310**) was referenced in a mapping table but absent from the Shreya DB; a specific discrepancy (“**Main**” vs. “**Airy**” in Mitteilung 15) is noted for follow‑up. 
+- **Relational metadata implemented.** Each observation row in `data` links to `observers` (who/where) and `rubrics` (which *Mittheilungen* volume/section), enabling provenance tracking and later FAIR exposure. 
+- **Consolidation plan.** Database‑consolidation notes enumerate the legacy sources being unified (initial *Mittheilungen*, Shreya Mitteilungen, Stephen Mitteilungen, Wolf Institute, and Shreya FARSuN subsets), with quality improvements tracked in a dedicated QC wiki. 
+- **FAIR pathway (planned/underway).** Metadata will follow the **VESPA/IVOA EPNCore** model; tables will be published through an **EPN‑TAP** service (Observatoire de Paris), queryable via TAP/ADQL, with **VOTable** outputs for interoperability. 
+- **Project‑level commitment.** FARSuN’s core objective is to make the raw historical sunspot collections (incl. *Mittheilungen*) **Findable** and **Accessible** via VO tools for broad reuse beyond the sunspot community. 
+- Curated *Mittheilungen* will be a pillar in building a new, consolidated **ISN V3** (and extended hemispheric numbers when possible), with formalized ingestion, stitching/calibration approaches, and versioning (major/minor) established via Sunspot workshops and project docs. 
+- **Scientific valorisation.** Outcomes include a revised ISN and exploitation in **solar‑cycle prediction** and **Earth‑radiation budget** studies; historical positional info will also be used to assess models. 
+
+## Introduction
+
+The **Mittheilungen** data refers to a collection of historical sunspot observations recorded in the **Mittheilungen** (or "Communications") logbooks maintained by **Rudolf Wolf** and other astronomers at the **Zürich Observatory**. This dataset spans from **1610 to 1918** and includes systematic observations of sunspots, which are crucial for understanding solar activity and its variability over time. The Mittheilungen data is significant as it provides one of the longest continuous records of sunspot observations, making it a foundational dataset for solar physics and climate studies.
+
+### Time Period Covered
+The Mittheilungen data covers a substantial time period from **1610 to 1918**. This extensive timeframe includes several solar cycles and allows researchers to analyze long-term trends in solar activity, which are essential for understanding the relationship between solar variability and climate change.
+
+### Progress in Retrieving Data from Mittheilungen Data
+The FARSuN project has made significant strides in retrieving and processing the Mittheilungen data:
+
+- **Digitization**: The Mittheilungen records have been digitized, with efforts focused on converting handwritten observations into machine-readable formats. This process has involved the use of optical character recognition (OCR) tools and manual transcription.
+
+- **Quality Control**: A rigorous quality control process has been implemented to ensure the accuracy and reliability of the digitized data. This includes cross-referencing entries with other historical datasets and correcting any discrepancies.
+
+- **Data Accessibility**: The digitized Mittheilungen data has been made accessible through the FARSuN project, allowing researchers to query and analyze the data more easily. This accessibility is crucial for enhancing the usability of historical sunspot records.
+
+### Importance of Mittheilungen Data
+The Mittheilungen data is important for several reasons:
+
+1. **Historical Significance**: It provides a comprehensive historical record of sunspot activity, which is essential for understanding long-term solar variability and its impact on Earth's climate.
+
+2. **Data Quality**: The systematic nature of the observations allows for high-quality data that can be used in conjunction with other historical records to enhance the overall sunspot number series.
+
+3. **Research Foundation**: The data serves as a foundational resource for solar physicists and climate researchers, enabling them to study the relationship between solar activity and climate patterns.
+
+### Future Plans for Mittheilungen Data
+The FARSuN project has outlined several future plans regarding the Mittheilungen data:
+
+- **Continued Data Validation**: Ongoing efforts will focus on validating the digitized data through cross-referencing with other historical datasets and conducting quality control checks.
+  
+- **Integration into Historical Database**: The Mittheilungen data will be integrated into the broader historical sunspot observations database, ensuring it is accessible and usable for researchers.
+
+- **Public Engagement**: There are plans to utilize citizen science initiatives to engage the public in data transcription and recovery efforts, potentially expanding the dataset and enhancing its accuracy.
+
+- **Scientific Publications**: The project aims to publish findings based on the Mittheilungen data, contributing to the scientific literature on solar activity and its implications for climate science.
+
+
+### Primary Observers in Mittheilungen Data
+The primary observer associated with the Mittheilungen data is **Rudolf Wolf**, who was a key figure in the systematic recording of sunspot observations at the Zürich Observatory. His meticulous records and methodologies laid the groundwork for the long-term study of solar activity. Other contributors may include various astronomers and observers who collaborated with Wolf and the Zürich Observatory during the time period covered by the Mittheilungen. 
+
+
+The Mittheilungen data represents a vital component of the historical sunspot record, providing detailed observations that enhance our understanding of solar variability. The ongoing efforts to retrieve, validate, and integrate this data into the FARSuN project will significantly benefit the solar physics community and contribute to more accurate climate models.
+
+## Analysis of Observers in Mittheilungen Data
 
 Importing functions from scripts file. All the data used is in the folder `data`
 
@@ -116,7 +184,7 @@ print(f"Total observation span: {((df['Date'].max() - df['Date'].min()).days / 3
 ```
 
 
-## Timeline of the observers
+### Timeline of the observers
 
 **TODO: Plot only top 10 to 20 observers**
 
@@ -137,7 +205,7 @@ plot_observer_timeline_force_start_year(df, observer_stats_mitt_all)
 
 ```
 
-## Bubble plot of the observers 
+### Bubble plot of the observers 
 
 @fig-plot_observer_bubble_mitt_all is a bubble plot showing all observers in
 Mittheilungen data. X-axis is start date, Y-axis is end date, size of the
@@ -152,7 +220,7 @@ observer_bubble_plots_force_start_year(observer_stats_mitt_all)
 
 ```
 
-## Animated bubble plot of the observers
+### Animated bubble plot of the observers
 
 @fig-plot_observer_bubble_mitt_all_animated is similar to
 @fig-plot_observer_bubble_mitt_all but with animation over the start year.

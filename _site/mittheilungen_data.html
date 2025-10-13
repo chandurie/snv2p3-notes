@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./all_combined_data.html">Other pages</a></li><li class="breadcrumb-item"><a href="./mittheilungen_data.html">Mittheilungen Data</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./adams.html">Other pages</a></li><li class="breadcrumb-item"><a href="./mittheilungen_data.html">Mittheilungen Data</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -132,8 +132,26 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./adams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">C. H. Adams Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./all_combined_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">All Combined Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./farsun.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FARSuN Project Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gruithuisen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Gruithuisen Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -160,6 +178,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Source Book Data</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./stark.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Augstin Stark</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./zurich_tables.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Zürich Tables</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -172,16 +202,27 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#timeline-of-the-observers" id="toc-timeline-of-the-observers" class="nav-link active" data-scroll-target="#timeline-of-the-observers">Timeline of the observers</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#time-period-covered" id="toc-time-period-covered" class="nav-link" data-scroll-target="#time-period-covered">Time Period Covered</a></li>
+  <li><a href="#progress-in-retrieving-data-from-mittheilungen-data" id="toc-progress-in-retrieving-data-from-mittheilungen-data" class="nav-link" data-scroll-target="#progress-in-retrieving-data-from-mittheilungen-data">Progress in Retrieving Data from Mittheilungen Data</a></li>
+  <li><a href="#importance-of-mittheilungen-data" id="toc-importance-of-mittheilungen-data" class="nav-link" data-scroll-target="#importance-of-mittheilungen-data">Importance of Mittheilungen Data</a></li>
+  <li><a href="#future-plans-for-mittheilungen-data" id="toc-future-plans-for-mittheilungen-data" class="nav-link" data-scroll-target="#future-plans-for-mittheilungen-data">Future Plans for Mittheilungen Data</a></li>
+  <li><a href="#primary-observers-in-mittheilungen-data" id="toc-primary-observers-in-mittheilungen-data" class="nav-link" data-scroll-target="#primary-observers-in-mittheilungen-data">Primary Observers in Mittheilungen Data</a></li>
+  </ul></li>
+  <li><a href="#analysis-of-observers-in-mittheilungen-data" id="toc-analysis-of-observers-in-mittheilungen-data" class="nav-link" data-scroll-target="#analysis-of-observers-in-mittheilungen-data">Analysis of Observers in Mittheilungen Data</a>
+  <ul class="collapse">
+  <li><a href="#timeline-of-the-observers" id="toc-timeline-of-the-observers" class="nav-link" data-scroll-target="#timeline-of-the-observers">Timeline of the observers</a></li>
   <li><a href="#bubble-plot-of-the-observers" id="toc-bubble-plot-of-the-observers" class="nav-link" data-scroll-target="#bubble-plot-of-the-observers">Bubble plot of the observers</a></li>
   <li><a href="#animated-bubble-plot-of-the-observers" id="toc-animated-bubble-plot-of-the-observers" class="nav-link" data-scroll-target="#animated-bubble-plot-of-the-observers">Animated bubble plot of the observers</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="mittheilungen_data.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="mittheilungen_data.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./all_combined_data.html">Other pages</a></li><li class="breadcrumb-item"><a href="./mittheilungen_data.html">Mittheilungen Data</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./adams.html">Other pages</a></li><li class="breadcrumb-item"><a href="./mittheilungen_data.html">Mittheilungen Data</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Mittheilungen Data</h1>
 </div>
@@ -200,10 +241,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Mittheilungen Data</strong> : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The <strong>Mittheilungen</strong> data refers to a collection of historical sunspot observations recorded in the <strong>Mittheilungen</strong> (or “Communications”) logbooks maintained by <strong>Rudolf Wolf</strong> and other astronomers at the <strong>Zürich Observatory</strong>. This dataset spans from <strong>1610 to 1918</strong> and includes systematic observations of sunspots, which are crucial for understanding solar activity and its variability over time. The Mittheilungen data is significant as it provides one of the longest continuous records of sunspot observations, making it a foundational dataset for solar physics and climate studies.</p>
+<section id="time-period-covered" class="level3">
+<h3 class="anchored" data-anchor-id="time-period-covered">Time Period Covered</h3>
+<p>The Mittheilungen data covers a substantial time period from <strong>1610 to 1918</strong>. This extensive timeframe includes several solar cycles and allows researchers to analyze long-term trends in solar activity, which are essential for understanding the relationship between solar variability and climate change.</p>
+</section>
+<section id="progress-in-retrieving-data-from-mittheilungen-data" class="level3">
+<h3 class="anchored" data-anchor-id="progress-in-retrieving-data-from-mittheilungen-data">Progress in Retrieving Data from Mittheilungen Data</h3>
+<p>The FARSuN project has made significant strides in retrieving and processing the Mittheilungen data:</p>
+<ul>
+<li><p><strong>Digitization</strong>: The Mittheilungen records have been digitized, with efforts focused on converting handwritten observations into machine-readable formats. This process has involved the use of optical character recognition (OCR) tools and manual transcription.</p></li>
+<li><p><strong>Quality Control</strong>: A rigorous quality control process has been implemented to ensure the accuracy and reliability of the digitized data. This includes cross-referencing entries with other historical datasets and correcting any discrepancies.</p></li>
+<li><p><strong>Data Accessibility</strong>: The digitized Mittheilungen data has been made accessible through the FARSuN project, allowing researchers to query and analyze the data more easily. This accessibility is crucial for enhancing the usability of historical sunspot records.</p></li>
+</ul>
+</section>
+<section id="importance-of-mittheilungen-data" class="level3">
+<h3 class="anchored" data-anchor-id="importance-of-mittheilungen-data">Importance of Mittheilungen Data</h3>
+<p>The Mittheilungen data is important for several reasons:</p>
+<ol type="1">
+<li><p><strong>Historical Significance</strong>: It provides a comprehensive historical record of sunspot activity, which is essential for understanding long-term solar variability and its impact on Earth’s climate.</p></li>
+<li><p><strong>Data Quality</strong>: The systematic nature of the observations allows for high-quality data that can be used in conjunction with other historical records to enhance the overall sunspot number series.</p></li>
+<li><p><strong>Research Foundation</strong>: The data serves as a foundational resource for solar physicists and climate researchers, enabling them to study the relationship between solar activity and climate patterns.</p></li>
+</ol>
+</section>
+<section id="future-plans-for-mittheilungen-data" class="level3">
+<h3 class="anchored" data-anchor-id="future-plans-for-mittheilungen-data">Future Plans for Mittheilungen Data</h3>
+<p>The FARSuN project has outlined several future plans regarding the Mittheilungen data:</p>
+<ul>
+<li><p><strong>Continued Data Validation</strong>: Ongoing efforts will focus on validating the digitized data through cross-referencing with other historical datasets and conducting quality control checks.</p></li>
+<li><p><strong>Integration into Historical Database</strong>: The Mittheilungen data will be integrated into the broader historical sunspot observations database, ensuring it is accessible and usable for researchers.</p></li>
+<li><p><strong>Public Engagement</strong>: There are plans to utilize citizen science initiatives to engage the public in data transcription and recovery efforts, potentially expanding the dataset and enhancing its accuracy.</p></li>
+<li><p><strong>Scientific Publications</strong>: The project aims to publish findings based on the Mittheilungen data, contributing to the scientific literature on solar activity and its implications for climate science.</p></li>
+</ul>
+</section>
+<section id="primary-observers-in-mittheilungen-data" class="level3">
+<h3 class="anchored" data-anchor-id="primary-observers-in-mittheilungen-data">Primary Observers in Mittheilungen Data</h3>
+<p>The primary observer associated with the Mittheilungen data is <strong>Rudolf Wolf</strong>, who was a key figure in the systematic recording of sunspot observations at the Zürich Observatory. His meticulous records and methodologies laid the groundwork for the long-term study of solar activity. Other contributors may include various astronomers and observers who collaborated with Wolf and the Zürich Observatory during the time period covered by the Mittheilungen.</p>
+<p>The Mittheilungen data represents a vital component of the historical sunspot record, providing detailed observations that enhance our understanding of solar variability. The ongoing efforts to retrieve, validate, and integrate this data into the FARSuN project will significantly benefit the solar physics community and contribute to more accurate climate models.</p>
+</section>
+</section>
+<section id="analysis-of-observers-in-mittheilungen-data" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-of-observers-in-mittheilungen-data">Analysis of Observers in Mittheilungen Data</h2>
 <p>Importing functions from scripts file. All the data used is in the folder <code>data</code></p>
 <p>Observers are grouped by FK_OBSERVERS.</p>
-<div id="37e87a83" class="cell" data-execution_count="2">
+<div id="37e87a83" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>Number of Observers by FK_OBSERVERS: 122
 Number of observers by ALIAS: 121
@@ -217,7 +300,7 @@ FK_OBSERVERS IDs associated with Brunner are [177 168]
 </code></pre>
 </div>
 </div>
-<div id="a918bc44" class="cell" data-execution_count="3">
+<div id="a918bc44" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-stdout">
 <pre><code>
 ==================================================
@@ -229,11 +312,11 @@ Observation period: 1859-01-01 00:00:00 to 1944-12-31 00:00:00
 Total observation span: 86.0 years</code></pre>
 </div>
 </div>
-<section id="timeline-of-the-observers" class="level2">
-<h2 class="anchored" data-anchor-id="timeline-of-the-observers">Timeline of the observers</h2>
+<section id="timeline-of-the-observers" class="level3">
+<h3 class="anchored" data-anchor-id="timeline-of-the-observers">Timeline of the observers</h3>
 <p><strong>TODO: Plot only top 10 to 20 observers</strong></p>
 <p><a href="#fig-plot_observer_timeline_mitt_all" class="quarto-xref">Figure&nbsp;1</a> is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.</p>
-<div id="cell-fig-plot_observer_timeline_mitt_all" class="cell" data-execution_count="4">
+<div id="cell-fig-plot_observer_timeline_mitt_all" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div id="fig-plot_observer_timeline_mitt_all" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -248,11 +331,11 @@ Figure&nbsp;1: Plot showing actual observation days for all observers in Mitthei
 </div>
 </div>
 </section>
-<section id="bubble-plot-of-the-observers" class="level2">
-<h2 class="anchored" data-anchor-id="bubble-plot-of-the-observers">Bubble plot of the observers</h2>
+<section id="bubble-plot-of-the-observers" class="level3">
+<h3 class="anchored" data-anchor-id="bubble-plot-of-the-observers">Bubble plot of the observers</h3>
 <p><a href="#fig-plot_observer_bubble_mitt_all" class="quarto-xref">Figure&nbsp;2</a> is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.</p>
-<div class="cell" data-execution_count="5">
-<div id="fig-plot_observer_bubble_mitt_all" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="5">
+<div class="cell" data-execution_count="6">
+<div id="fig-plot_observer_bubble_mitt_all" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="6">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot_observer_bubble_mitt_all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div id="fig-plot_observer_bubble_mitt_all-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
@@ -313,10 +396,10 @@ Figure&nbsp;2
 </div>
 </div>
 </section>
-<section id="animated-bubble-plot-of-the-observers" class="level2">
-<h2 class="anchored" data-anchor-id="animated-bubble-plot-of-the-observers">Animated bubble plot of the observers</h2>
+<section id="animated-bubble-plot-of-the-observers" class="level3">
+<h3 class="anchored" data-anchor-id="animated-bubble-plot-of-the-observers">Animated bubble plot of the observers</h3>
 <p><a href="#fig-plot_observer_bubble_mitt_all_animated" class="quarto-xref">Figure&nbsp;3</a> is similar to <a href="#fig-plot_observer_bubble_mitt_all" class="quarto-xref">Figure&nbsp;2</a> but with animation over the start year.</p>
-<div id="cell-fig-plot_observer_bubble_mitt_all_animated" class="cell" data-execution_count="6">
+<div id="cell-fig-plot_observer_bubble_mitt_all_animated" class="cell" data-execution_count="7">
 <div id="fig-plot_observer_bubble_mitt_all_animated" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-plot_observer_bubble_mitt_all_animated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -357,6 +440,7 @@ Figure&nbsp;3: Animated bubble plot showing all observers in Mittheilungen data.
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

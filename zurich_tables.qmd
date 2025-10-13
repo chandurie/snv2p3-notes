@@ -1,0 +1,56 @@
+---
+title:   Zürich Tables
+format:
+  html:
+    code-fold: true
+    page-layout: full
+    grid:
+      body-width: 1200px
+  pdf:
+    toc: true
+    number-sections: false
+    color-links: true
+    documentclass: scrartcl
+    papersize: letter
+  docx:
+    toc: true
+    number-sections: false
+    highlight-style: github
+execute:
+  enabled: true
+  cache: true
+echo: false
+warning: false
+
+---
+
+
+The Zürich Tables are a collection of historical sunspot observation records maintained at the ETH Library in Zürich, Switzerland. These tables document sunspot observations made by various observatories and astronomers, particularly during the 20th century. They are crucial for understanding solar activity and variability, as they provide systematic and standardized records of sunspot counts and related phenomena.
+
+### Time Period Covered
+
+The Zürich Tables primarily cover the period from **1945 to 1979**. This timeframe is significant as it includes a range of solar cycles, allowing researchers to analyze trends and patterns in solar activity over several decades.
+
+### Progress in Retrieving Data from the Zürich Tables
+
+The FARSuN project has made substantial progress in digitizing and processing the Zürich Tables:
+
+- As of early 2025, the digitization of over **2000 tables** is approximately **95% complete**. The remaining work involves encoding metadata associated with these observations.
+
+- The project has utilized the **Transkribus tool**, which is designed for optical character recognition (OCR) and has been adapted to work with tabular data. This tool allows for the extraction of data directly into machine-readable formats, such as CSV files.
+
+- Initial efforts in 2023 revealed challenges in production speed and learning curves for students involved in the digitization process. However, a structured plan for 2024 has been developed, where some students will perform manual extraction, while others will use Transkribus or a custom interface designed for citizen science applications.
+
+### Importance of the Zürich Tables
+
+The Zürich Tables are vital for several reasons:
+
+1. **Historical Record**: They provide a comprehensive historical record of sunspot activity, which is essential for understanding long-term solar variability and its impact on Earth's climate.
+
+2. **Data Standardization**: The tables offer standardized observations that can be compared across different time periods and locations, facilitating more accurate scientific analyses.
+
+3. **Foundation for Future Research**: The data extracted from the Zürich Tables will contribute to the reconstruction of the International Sunspot Number (ISN) series, enhancing the accuracy of solar activity records and improving models of solar behavior.
+
+
+The Zürich Tables represent a critical resource for solar research, and the ongoing efforts to digitize and standardize this data through the FARSuN project will significantly enhance the accessibility and usability of historical sunspot observations. This work is essential for advancing our understanding of solar dynamics and their implications for space climate studies.
+

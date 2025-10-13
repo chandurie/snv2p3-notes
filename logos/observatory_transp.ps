@@ -1,0 +1,22 @@
+30 30 scale
+10 20 translate
+
+/Ster {gsave translate newpath
+0 1 moveto
+144 144 730 {dup sin exch cos lineto} for
+closepath
+fill grestore} def
+
+/Lijn {gsave translate newpath
+-5.8 0.12 moveto  5.8 0.12 lineto  5.8 -0.12 lineto -5.8 -0.12 lineto
+closepath
+fill grestore} def
+
+/LogoSterrenwacht {
+  0 2.5  Ster
+  -5 2.5 5.5 {0 Ster} for
+  -3.75 2.5 5 {-2.5 Ster} for
+  0 -5 Lijn
+  } def
+LogoSterrenwacht
+showpage

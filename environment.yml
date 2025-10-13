@@ -8,6 +8,7 @@ dependencies:
   - jupyterlab
   - jupytext
   - matplotlib
+  - conda-forge::mysql-connector-python
   - numpy
   - openpyxl
   - plotly
@@ -15,5 +16,8 @@ dependencies:
   - python=3.13
   - scipy
   - sunpy
+  - pip:
+    - PyMySQL==1.1.2
+    - kaleido==1.0.0
 
 prefix: "/Users/kalugoduc/miniforge3/envs/astro"

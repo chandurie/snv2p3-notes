@@ -1,0 +1,320 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme[numbering=fraction,progressbar=frametitle]{metropolis}
+\usecolortheme{spruce}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,calc}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=royal,
+  urlcolor=accent,
+  citecolor=royal
+}
+
+\definecolor{royal}{HTML}{1D2A44}
+\definecolor{accent}{HTML}{F18F01}
+\definecolor{mint}{HTML}{2AA7A1}
+\definecolor{violet}{HTML}{6C63FF}
+\definecolor{softbg}{HTML}{F4F1EB}
+\definecolor{danger}{HTML}{D1495B}
+
+\metroset{
+  background=light,
+  block=fill,
+  titleformat=smallcaps,
+  colors={normal text.fg=royal}
+}
+
+\setbeamercolor{palette primary}{bg=royal,fg=white}
+\setbeamercolor{frametitle}{bg=royal,fg=white}
+\setbeamercolor{progress bar}{fg=accent,bg=accent!35!white}
+\setbeamercolor{block title}{bg=royal,fg=white}
+\setbeamercolor{block body}{bg=softbg,fg=royal}
+\setbeamercolor{alerted text}{fg=danger}
+
+\setbeamertemplate{background}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \path[fill=softbg] (current page.south west) rectangle (current page.north east);
+    \path[fill=accent!12!white] ($(current page.north west)+(0,-0.3)$)
+      .. controls +(10,-1) and +(-8,6) .. ($(current page.north)+(0,-2.5)$)
+      .. controls +(8,-6) and +(-6,1) .. ($(current page.north west)+(0,-4.2)$);
+    \path[fill=mint!12!white] ($(current page.south east)+(0,2.4)$)
+      .. controls +(-10,1.5) and +(6,-5) .. ($(current page.center)+(0,-4)$)
+      .. controls +(-4,5) and +(6,-1.5) .. ($(current page.south east)+(0,2.4)$);
+  \end{tikzpicture}%
+}
+
+\newcommand{\metric}[3][]{%
+  \begin{minipage}[t]{#2}\raggedright
+    {\Large\bfseries\textcolor{accent}{#3}}\\[-0.2em]
+    {\scriptsize #1}
+  \end{minipage}}
+\newcommand{\callout}[2]{\textbf{\textcolor{accent}{#1}}\,\,\textcolor{royal}{#2}}
+
+\newcommand{\leftlogo}{./logos/observatory_400x332.jpg}
+\newcommand{\rightlogo}{./logos/BELSPO_1867x1563.jpg}
+
+\setbeamertemplate{section page}{%
+  \begin{centering}
+    \vfill
+    {\color{royal}\Large\bfseries \insertsection}\par
+    \rule{0.3\linewidth}{1pt}\par
+    \vspace{0.4em}
+    {\color{accent}\small FARSuN Project}
+    \vfill
+  \end{centering}}
+
+\AtBeginSection{
+  \sectionpage
+}
+
+\title{Refining the Sunspot Number Series to ISN~V3}
+\subtitle{Challenges and Benefits for the Space Climate Community}
+\author[FarSuN Team]{Kalugodu Chandrashekhar$^{1}$ \and Laure Lef\`evre$^{1}$ \and Benjamin Mampaey$^{1}$ \\
+Senthamizh Pavai Valliappan$^{1}$ \and Hisashi Hayakawa$^{2}$ \and Christian Ritter$^{3}$}
+\institute[ROB / SILSO]{\scriptsize $^{1}$ Royal Observatory of Belgium (ROB) / SILSO\quad $^{2}$ Nagoya University\quad $^{3}$ Universit\'e Catholique de Louvain, ISBA, LIDAM}
+\date{ESWW 2025}
+\titlegraphic{\includegraphics[height=1.1cm]{\leftlogo}\hfill\includegraphics[height=1.1cm]{\rightlogo}}
+
+\begin{document}
+
+% --- Title ---
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section[Mission]{Mission Brief}
+
+\begin{frame}[t]{Why FARSuN?}
+\small
+The International Sunspot Number (ISN) underpins space climate diagnostics, yet two major recalibrations still leave observer-dependent jumps (e.g. the 1947 "Waldmeier break").\linebreak[1]
+
+\medskip
+FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebuilding the index from primary sources (1607--1980) with traceable metadata, uncertainties, and open delivery.
+
+\vspace{0.6em}
+\begin{columns}[T,onlytextwidth]
+\column{0.5\linewidth}
+\callout{Mission}{Recover and standardise dispersed sunspot archives (drawings, tables, weather notes).}
+
+\column{0.5\linewidth}
+\callout{Outcome}{Deliver ISN~V3 with hemispheric indices, provenance, and FAIR-compliant access.}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Project Pulse (Early 2025)}
+\vspace{-0.2em}
+\begin{columns}[T,onlytextwidth]
+\column{0.33\linewidth}
+\metric[Temporal coverage of curated sources]{\linewidth}{1607--1980}
+\par\vspace{0.8em}
+\metric[Zürich observation tables digitised (Transkribus + manual QC)]{\linewidth}{95\% of 2\,000+}
+
+\column{0.33\linewidth}
+\metric[Entries from C. H. Adams notebooks with spotless-day tagging]{\linewidth}{1\,056}
+\par\vspace{0.8em}
+\metric[Mittheilungen volumes integrated into database]{\linewidth}{100\%}
+
+\column{0.33\linewidth}
+\metric[Unique historical observers linked to standard IDs]{\linewidth}{400+}
+\par\vspace{0.8em}
+\metric[Citizen-science portal blueprint and QA workflow]{\linewidth}{Ready for pilot}
+\end{columns}
+
+\vspace{0.6em}
+\scriptsize Source: FARSuN interactive report (`_site/webpage_1.html`) and dataset QMD dossiers.
+\end{frame}
+
+\section[Motivation]{Why Reconstruction}
+
+\begin{frame}[t]{Limitations of Legacy Recalibration}
+\begin{block}{Symptoms}
+\begin{itemize}
+  \item Residual scale jumps ("Waldmeier jump", late-19th c. transitions) in SN~V2 derived records.
+  \item Missing metadata: observer aliases, instrument notes, weather context drop out of composite series.
+  \item Uncertainties opaque; difficult to quantify spotless-day reliability or observer drift.
+\end{itemize}
+\end{block}
+
+\begin{block}{Why Tweaking Coefficients Is Not Enough}
+\begin{itemize}
+  \item Linear rescaling keeps biases embedded in the stitched index.
+  \item Downstream models inherit hidden assumptions, limiting predictive skill.
+  \item Science questions (hemispheric asymmetry, climate forcing) demand provenance-rich data.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[t]{Reconstruction Advantages}
+\begin{columns}[T,onlytextwidth]
+\column{0.48\linewidth}
+\textbf{Legacy recalibration (SN~V2)}
+\begin{itemize}
+  \item Adjusts existing composite, no new metadata.
+  \item Biases from observer transitions persist.
+  \item Limited uncertainty audit trail.
+\end{itemize}
+
+\column{0.48\linewidth}
+\textbf{FARSuN reconstruction (ISN~V3)}
+\begin{itemize}
+  \item Revisits original artefacts (drawings, logbooks, weather notes).
+  \item Builds calibration curves per observer using raw counts.
+  \item Publishes machine-readable products with explicit uncertainties and provenance.
+\end{itemize}
+\end{columns}
+
+\vspace{1em}
+\scriptsize Narrative adapted from the "Problem" and "Solution" sections in `_site/webpage_1.html`.
+\end{frame}
+
+\section[Workflow]{Methodology}
+
+\begin{frame}[t]{Four-Axis Workflow}
+\begin{enumerate}
+  \item \callout{Gather}{Locate and digitise dispersed historical sources (Wolf's \emph{Mittheilungen}, Zürich tables, Gruithuisen ledgers, Adams drawings).}
+  \item \callout{Process}{Blend handwriting/OCR engines (Transkribus) with manual keying for fragile tables and drawings.}
+  \item \callout{Validate}{Reconcile observer IDs, calendars, and counting conventions; propagate spotless-day confidence levels.}
+  \item \callout{Disseminate}{Release FAIR-ready datasets, APIs, and VO-compliant services with versioned uncertainties.}
+\end{enumerate}
+
+\begin{center}
+  \includegraphics[width=0.5\linewidth]{./figures/fair_radar.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[t]{Quality Gates and Tooling}
+\begin{columns}[T,onlytextwidth]
+\column{0.5\linewidth}
+\textbf{Verification}
+\begin{itemize}
+  \item Dual review of Adams and Gruithuisen counts before ingest.
+  \item Cross-matching against Wolf and SILSO indices to flag drifts.
+  \item Automated scripts check metadata completeness and naming standards.
+\end{itemize}
+
+\column{0.5\linewidth}
+\textbf{Toolchain}
+\begin{itemize}
+  \item Transkribus handwriting models + manual correction interface.
+  \item Python pipelines (Git-tracked) orchestrating OCR, QC, and format exports.
+  \item Planned citizen science portal with training sets for Kurrent transcription.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Data Pipeline to ISN~V3}
+\begin{enumerate}
+  \item Curate daily group/spot counts with provenance-rich metadata.
+  \item Solve observer response curves to harmonise scales over centuries.
+  \item Aggregate to monthly, yearly, and hemispheric indices with propagated uncertainties.
+  \item Benchmark against SN~V2, satellite-era proxies, and reconstructions to validate corrections.
+\end{enumerate}
+
+\begin{center}
+  \includegraphics[width=0.7\linewidth]{./figures/comparison_panel.png}
+\end{center}
+\end{frame}
+
+\section[Data]{Historical Assets}
+
+\begin{frame}[t]{Key Historical Collections}
+\small
+\begin{columns}[T,onlytextwidth]
+\column{0.55\linewidth}
+\begin{itemize}
+  \item \textbf{Zürich Tables (1945--1979):} 95\% digitised; metadata for late-1970s observers underway.
+  \item \textbf{Wolf's \emph{Mittheilungen} (1610--1918):} fully integrated with observer statistics over 400+ years.
+  \item \textbf{Gruithuisen Manuscripts (1817--1849):} 25\% transcribed; bespoke renaming + QC scripts for Kurrent entries.
+  \item \textbf{C. H. Adams Drawings (1819--1823):} 338 sketches extracted, 1\,056 entries including spotless-day tags.
+\end{itemize}
+
+\column{0.45\linewidth}
+\begin{itemize}
+  \item \textbf{Augustin Stark Ledgers (1813--1835):} harmonising tables + weather annotations.
+  \item \textbf{Rost Journals (18th--19th c.):} metadata vocabulary build prior to digitisation ingest.
+  \item \textbf{Supporting collections:} Gruithuisen weather logs, Adams correspondence, Zürich observer notes.
+\end{itemize}
+
+\vspace{0.4em}
+\centering
+\includegraphics[width=0.7\linewidth]{./figures/dataset_progress.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Observer Coverage}
+\centering
+\includegraphics[width=0.85\linewidth]{./figures/observers_bubble.png}
+
+\scriptsize Bubble size = total observations; colour encodes observing years (source: `_site/webpage_1.html`).
+\end{frame}
+
+\section[Impact]{Science Impact}
+
+\begin{frame}[t]{Addressing Core Challenges}
+\begin{columns}[T,onlytextwidth]
+\column{0.5\linewidth}
+\textbf{Data hurdles}
+\begin{itemize}
+  \item Deciphering 19th-century \emph{Kurrent} handwriting and marginalia.
+  \item Normalising heterogeneous formats (drawings, tables, narrative notes).
+  \item Tracking provenance from scanned folio to released dataset.
+\end{itemize}
+
+\column{0.5\linewidth}
+\textbf{Mitigations}
+\begin{itemize}
+  \item Specialist training, handwriting models, and dual QC.
+  \item Schema mapping + metadata vocabularies across archives.
+  \item Git-backed pipelines with audit trails and uncertainty flags.
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Benefits for the Community}
+\begin{columns}[T,onlytextwidth]
+\column{0.48\linewidth}
+\callout{Forecasting}{Bias-reduced ISN~V3 improves solar cycle prediction skill and operational space weather baselines.}
+\vspace{1em}
+\callout{Climate}{Validated long-term forcing records refine Earth system and climate models.}
+
+\column{0.48\linewidth}
+\callout{Citizen science}{Public transcription portal accelerates data recovery and outreach.}
+\vspace{1em}
+\callout{Open science}{FAIR datasets, APIs, and reproducible notebooks catalyse external research.}
+\end{columns}
+\end{frame}
+
+\section[Outlook]{Path Ahead}
+
+\begin{frame}[t]{2025 Roadmap}
+\begin{itemize}
+  \item Launch citizen-science transcription pilot with curated training sets.
+  \item Finalise Zürich metadata encoding and close remaining digitisation gaps.
+  \item Publish ISN~V3 release notes with full uncertainty budget and API endpoints.
+  \item Expand collaborations (ROB, Nagoya, UCLouvain) for cross-validation and joint publications.
+\end{itemize}
+\begin{center}
+  \includegraphics[width=0.45\linewidth]{./figures/ack_.png}
+\end{center}
+\end{frame}
+
+\section*{Q\&A}
+
+\begin{frame}
+\centering
+\Huge\color{royal}{Questions?}
+
+\vspace{1em}
+\small \href{mailto:silso.info@observatory.be}{silso.info@observatory.be} \quad | \quad \url{https://www.sidc.be/silso/}
+\end{frame}
+
+\end{document}

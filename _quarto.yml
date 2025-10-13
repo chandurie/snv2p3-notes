@@ -1,5 +1,8 @@
 project:
   type: website
+  render:
+  - "*.qmd"
+  - "!./mittheilungen_data-1700.qmd"
 
 website:
   # favicon: "./logos/kg-logo.svg"
@@ -77,11 +80,22 @@ format:
   html:
     toc: true
     theme: cosmo
+    # number-sections: true
+    bibliography: articles.bib
+    # csl: apa.csl
   pdf:
     toc: true
     documentclass: article
+    bibliography: articles.bib
     margin-left: 30mm
     mafin-right: 30mm
+    fig-format: png
+  docx:
+    toc: true
+    # number-sections: true
+    bibliography: articles.bib
+    highlight-style: github
+    fig-format: png
 
 execute:
   freeze: auto   # speeds up CI: only re-exec when inputs change

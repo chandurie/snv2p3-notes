@@ -1,105 +1,14 @@
 [
   {
-    "objectID": "mittheilungen_data.html",
-    "href": "mittheilungen_data.html",
-    "title": "Mittheilungen Data",
+    "objectID": "zurich_tables.html",
+    "href": "zurich_tables.html",
+    "title": "Zürich Tables",
     "section": "",
-    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 122\nNumber of observers by ALIAS: 121\nNumber of observes by ALIAS(121) is different from \n number of observers by FK_OBSERVERS(122). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBrunner has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Brunner are [177 168]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 122\nObservation period: 1859-01-01 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 86.0 years",
+    "text": "The Zürich Tables are a collection of historical sunspot observation records maintained at the ETH Library in Zürich, Switzerland. These tables document sunspot observations made by various observatories and astronomers, particularly during the 20th century. They are crucial for understanding solar activity and variability, as they provide systematic and standardized records of sunspot counts and related phenomena.\n\nTime Period Covered\nThe Zürich Tables primarily cover the period from 1945 to 1979. This timeframe is significant as it includes a range of solar cycles, allowing researchers to analyze trends and patterns in solar activity over several decades.\n\n\nProgress in Retrieving Data from the Zürich Tables\nThe FARSuN project has made substantial progress in digitizing and processing the Zürich Tables:\n\nAs of early 2025, the digitization of over 2000 tables is approximately 95% complete. The remaining work involves encoding metadata associated with these observations.\nThe project has utilized the Transkribus tool, which is designed for optical character recognition (OCR) and has been adapted to work with tabular data. This tool allows for the extraction of data directly into machine-readable formats, such as CSV files.\nInitial efforts in 2023 revealed challenges in production speed and learning curves for students involved in the digitization process. However, a structured plan for 2024 has been developed, where some students will perform manual extraction, while others will use Transkribus or a custom interface designed for citizen science applications.\n\n\n\nImportance of the Zürich Tables\nThe Zürich Tables are vital for several reasons:\n\nHistorical Record: They provide a comprehensive historical record of sunspot activity, which is essential for understanding long-term solar variability and its impact on Earth’s climate.\nData Standardization: The tables offer standardized observations that can be compared across different time periods and locations, facilitating more accurate scientific analyses.\nFoundation for Future Research: The data extracted from the Zürich Tables will contribute to the reconstruction of the International Sunspot Number (ISN) series, enhancing the accuracy of solar activity records and improving models of solar behavior.\n\nThe Zürich Tables represent a critical resource for solar research, and the ongoing efforts to digitize and standardize this data through the FARSuN project will significantly enhance the accessibility and usability of historical sunspot observations. This work is essential for advancing our understanding of solar dynamics and their implications for space climate studies.",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data"
-    ]
-  },
-  {
-    "objectID": "mittheilungen_data.html#timeline-of-the-observers",
-    "href": "mittheilungen_data.html#timeline-of-the-observers",
-    "title": "Mittheilungen Data",
-    "section": "Timeline of the observers",
-    "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungen data",
-    "crumbs": [
-      "Home",
-      "Other pages",
-      "Mittheilungen Data"
-    ]
-  },
-  {
-    "objectID": "mittheilungen_data.html#bubble-plot-of-the-observers",
-    "href": "mittheilungen_data.html#bubble-plot-of-the-observers",
-    "title": "Mittheilungen Data",
-    "section": "Bubble plot of the observers",
-    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungen data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
-    "crumbs": [
-      "Home",
-      "Other pages",
-      "Mittheilungen Data"
-    ]
-  },
-  {
-    "objectID": "mittheilungen_data.html#animated-bubble-plot-of-the-observers",
-    "href": "mittheilungen_data.html#animated-bubble-plot-of-the-observers",
-    "title": "Mittheilungen Data",
-    "section": "Animated bubble plot of the observers",
-    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in Mittheilungen data.",
-    "crumbs": [
-      "Home",
-      "Other pages",
-      "Mittheilungen Data"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "SNV3 Reconstruction",
-    "section": "",
-    "text": "Here we try to reproduce the analysis of SNV2.2 and SNV2.3 as done by Shreya from her codes and data. Learn about Mittheilungen Data and Source Book Data. And additinal data added by Shreya are explored. Note that unless sepcified, the data used here are from Shreya’s data.\nWe try to apply the same modifications to Mittheilungen data as done in Shreya’s codes, and add the data from source mentioned in the article [@city-key]. And try to make a All Combined Data set that includes all data sources and changes to Mittheilungen."
-  },
-  {
-    "objectID": "mittheilungen_data-new.html",
-    "href": "mittheilungen_data-new.html",
-    "title": "Mittheilungen Data New",
-    "section": "",
-    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 148\nNumber of observers by ALIAS: 144\nNumber of observes by ALIAS(144) is different from \n number of observers by FK_OBSERVERS(148). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBroger has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Broger are [104 117]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 148\nObservation period: 1849-01-01 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 96.0 years",
-    "crumbs": [
-      "Home",
-      "Other pages",
-      "Mittheilungen Data New"
-    ]
-  },
-  {
-    "objectID": "mittheilungen_data-new.html#timeline-of-the-observers",
-    "href": "mittheilungen_data-new.html#timeline-of-the-observers",
-    "title": "Mittheilungen Data New",
-    "section": "Timeline of the observers",
-    "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungen data",
-    "crumbs": [
-      "Home",
-      "Other pages",
-      "Mittheilungen Data New"
-    ]
-  },
-  {
-    "objectID": "mittheilungen_data-new.html#bubble-plot-of-the-observers",
-    "href": "mittheilungen_data-new.html#bubble-plot-of-the-observers",
-    "title": "Mittheilungen Data New",
-    "section": "Bubble plot of the observers",
-    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungen data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
-    "crumbs": [
-      "Home",
-      "Other pages",
-      "Mittheilungen Data New"
-    ]
-  },
-  {
-    "objectID": "mittheilungen_data-new.html#animated-bubble-plot-of-the-observers",
-    "href": "mittheilungen_data-new.html#animated-bubble-plot-of-the-observers",
-    "title": "Mittheilungen Data New",
-    "section": "Animated bubble plot of the observers",
-    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in Mittheilungen data.",
-    "crumbs": [
-      "Home",
-      "Other pages",
-      "Mittheilungen Data New"
+      "Zürich Tables"
     ]
   },
   {
@@ -151,51 +60,89 @@
     ]
   },
   {
-    "objectID": "mittheilungen_data-1800.html",
-    "href": "mittheilungen_data-1800.html",
-    "title": "Mittheilungen Data starting at 1800",
+    "objectID": "mittheilungen_data-new.html",
+    "href": "mittheilungen_data-new.html",
+    "title": "Mittheilungen Data New",
     "section": "",
-    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 161\nNumber of observers by ALIAS: 157\nNumber of observes by ALIAS(157) is different from \n number of observers by FK_OBSERVERS(161). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBroger has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Broger are [104 117]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 161\nObservation period: 1800-01-09 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 145.0 years",
+    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 148\nNumber of observers by ALIAS: 144\nNumber of observes by ALIAS(144) is different from \n number of observers by FK_OBSERVERS(148). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBroger has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Broger are [104 117]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 148\nObservation period: 1849-01-01 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 96.0 years",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data starting at 1800"
+      "Mittheilungen Data New"
     ]
   },
   {
-    "objectID": "mittheilungen_data-1800.html#timeline-of-the-observers",
-    "href": "mittheilungen_data-1800.html#timeline-of-the-observers",
-    "title": "Mittheilungen Data starting at 1800",
+    "objectID": "mittheilungen_data-new.html#timeline-of-the-observers",
+    "href": "mittheilungen_data-new.html#timeline-of-the-observers",
+    "title": "Mittheilungen Data New",
     "section": "Timeline of the observers",
     "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungen data",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data starting at 1800"
+      "Mittheilungen Data New"
     ]
   },
   {
-    "objectID": "mittheilungen_data-1800.html#bubble-plot-of-the-observers",
-    "href": "mittheilungen_data-1800.html#bubble-plot-of-the-observers",
-    "title": "Mittheilungen Data starting at 1800",
+    "objectID": "mittheilungen_data-new.html#bubble-plot-of-the-observers",
+    "href": "mittheilungen_data-new.html#bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data New",
     "section": "Bubble plot of the observers",
     "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungen data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data starting at 1800"
+      "Mittheilungen Data New"
     ]
   },
   {
-    "objectID": "mittheilungen_data-1800.html#animated-bubble-plot-of-the-observers",
-    "href": "mittheilungen_data-1800.html#animated-bubble-plot-of-the-observers",
-    "title": "Mittheilungen Data starting at 1800",
+    "objectID": "mittheilungen_data-new.html#animated-bubble-plot-of-the-observers",
+    "href": "mittheilungen_data-new.html#animated-bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data New",
     "section": "Animated bubble plot of the observers",
     "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in Mittheilungen data.",
     "crumbs": [
       "Home",
       "Other pages",
-      "Mittheilungen Data starting at 1800"
+      "Mittheilungen Data New"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Notes on SNV2.2 and SNV2.3",
+    "section": "",
+    "text": "Here we try to reproduce the analysis of SNV2.2 and SNV2.3 as done by Shreya from her codes and data. Learn about Mittheilungen Data and Source Book Data. And additinal data added by Shreya are explored. Note that unless sepcified, the data used here are from Shreya’s data.\nWe try to apply the same modifications to Mittheilungen data as done in Shreya’s codes, and add the data from source mentioned in Bhattacharya et al. (2024). And try to make a All Combined Data set that includes all data sources and changes to Mittheilungen.\nStarting from September 2025, we started working with Mittheilungen Data from SILSO data base. So there will be additional analysis files like Mittheilungen New and Mittheilungen Data 1800"
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Notes on SNV2.2 and SNV2.3",
+    "section": "",
+    "text": "Here we try to reproduce the analysis of SNV2.2 and SNV2.3 as done by Shreya from her codes and data. Learn about Mittheilungen Data and Source Book Data. And additinal data added by Shreya are explored. Note that unless sepcified, the data used here are from Shreya’s data.\nWe try to apply the same modifications to Mittheilungen data as done in Shreya’s codes, and add the data from source mentioned in Bhattacharya et al. (2024). And try to make a All Combined Data set that includes all data sources and changes to Mittheilungen.\nStarting from September 2025, we started working with Mittheilungen Data from SILSO data base. So there will be additional analysis files like Mittheilungen New and Mittheilungen Data 1800"
+  },
+  {
+    "objectID": "farsun.html",
+    "href": "farsun.html",
+    "title": "FARSuN Project Overview",
+    "section": "",
+    "text": "Findability and Accessibility of historical Raw Sunspot Numbers\nThe International Sunspot Number (ISN) series, a cornerstone for space climate studies, still exhibits scale discrepancies despite recent recalibrations, underscoring the critical need for a comprehensive reconstruction from raw historical observations. The FARSuN project addresses this by systematically gathering, digitizing, and standardizing scattered sunspot data from 1607-1980, aiming to bridge the technical and scientific gap preventing holistic data use. Significant progress includes the digitization of Prof. Wolf’s Mittheilungen (1610-1918) and the near-completion (95%) of more than 2000 Zürich observation tables, transforming them into machine-readable formats. Data extractions for challenging sources like Gruithuisen, Stark, Adams, and Rost are actively underway, supported by advanced tools like Transkribus and rigorous quality control efforts to define homogeneous metadata criteria. Upcoming initiatives include a citizen science web interface to engage the public in data recovery and the ultimate goal of constructing a new, consolidated ISN (V3) and historical hemispheric sunspot numbers. This comprehensive reconstruction will provide the Space Climate Community with an unprecedentedly accurate and accessible record, significantly improving solar cycle predictions, understanding long-term solar variability, space weather discussions, and refining climate models.\n\n\n\n\n\n\n\n\n\n\n\nDataset\nDescription\nTime Period Covered\nImportance\nProgress in Data Retrieval\nFuture Plans\n\n\n\n\nZürich Tables\nA collection of sunspot observations from various astronomers, primarily at the ETH Zurich.\n1945 - 1979\nProvides systematic records of sunspot activity, essential for solar variability studies.\nApproximately 95% of over 2000 tables digitized; quality control processes are ongoing.\nComplete digitization, integration into historical database, and public accessibility improvements.\n\n\nMittheilungen\nHistorical sunspot observations recorded by Rudolf Wolf and others at the Zürich Observatory.\n1610 - 1918\nOne of the longest continuous records of sunspot observations, crucial for understanding long-term solar variability.\nDigitized between 2017 and 2019; ongoing quality control and accessibility improvements.\nFurther validation, integration into broader historical database, and citizen science initiatives.\n\n\nC.H. Adams\nSunspot observations made by C.H. Adams, including counts and descriptions of sunspot groups.\n1819 - 1823\nProvides detailed records of solar activity during a critical period, enhancing understanding of solar variability.\n338 drawings extracted; ongoing quality control and cross-referencing with other datasets.\nContinued validation, integration into historical database, and potential publication of findings.\n\n\nGruithuisen\nHistorical sunspot observations by Franz von Paula Gruithuisen, including weather conditions.\n1817 - 1848\nOffers insights into solar activity and its correlation with weather phenomena, contributing to climate studies.\nData extraction initiated; OCR tools being used for digitization and quality control.\nComplete data extraction, integration into historical database, and public engagement initiatives.\n\n\nAugustin Stark\nSunspot observations made by Augustin Stark, including counts and descriptions.\n1813 - 1835\nImportant for understanding solar variability during the early 19th century.\nOngoing efforts to extract and digitize data; quality control measures being implemented.\nContinued validation, integration into historical database, and potential publication of findings.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "FARSuN Project Overview"
+    ]
+  },
+  {
+    "objectID": "adams.html",
+    "href": "adams.html",
+    "title": "C. H. Adams Data",
+    "section": "",
+    "text": "C.H. Adams data refers to the historical sunspot observations made by C.H. Adams, an astronomer who conducted systematic observations of solar activity during the early 19th century. His records are significant for their detailed drawings and descriptions of sunspots, which provide valuable insights into solar variability and its effects on Earth’s climate. The data includes both qualitative descriptions and quantitative counts of sunspots, making it a critical resource for solar physics research.\n\nTime Period Covered\nThe C.H. Adams data primarily covers the period from August 1819 to May 1823. This timeframe is particularly important as it includes observations during a period of significant solar activity, allowing researchers to analyze trends and patterns in sunspot occurrences.\n\n\nProgress in Retrieving Data from C.H. Adams\nThe FARSuN project has made notable progress in retrieving and processing C.H. Adams data:\n\nData Extraction: The project has successfully extracted 338 drawings from Adams’ records, which include almost daily sunspot observations. The total entries amount to 1056, with 308 entries specifically documenting sunspots and 748 entries indicating spotless days.\nQuality Control: Ongoing efforts are focused on correcting and standardizing the extracted data, including addressing any discrepancies or uncertainties in the counts of sunspots and groups.\nComparison with Other Datasets: The extracted data is being compared with other historical datasets, such as the Mittheilungen records, to assess consistency and accuracy. This comparison is crucial for validating the observations and understanding the reliability of the data.\n\n\n\nImportance of C.H. Adams Data\nThe C.H. Adams data is significant for several reasons:\n\nHistorical Context: It provides a detailed account of solar activity during a critical period in the early 19th century, contributing to the understanding of long-term solar variability.\nData Quality: The meticulous nature of Adams’ observations allows for high-quality data that can be used in conjunction with other historical records to enhance the overall sunspot number series.\nResearch Foundation: The data serves as a foundational resource for solar physicists and climate researchers, enabling them to study the relationship between solar activity and climate patterns.\n\n\n\nFuture Plans for C.H. Adams Data\nThe FARSuN project has outlined several future plans regarding the C.H. Adams data:\n\nFurther Data Validation: Continued efforts will focus on validating the extracted data through cross-referencing with other historical datasets and conducting quality control checks.\nIntegration into Historical Database: The C.H. Adams data will be integrated into the broader historical sunspot observations database, ensuring it is accessible and usable for researchers.\nPublic Engagement: There are plans to utilize citizen science initiatives to engage the public in further data extraction and validation efforts, potentially expanding the dataset and enhancing its accuracy.\nScientific Publications: The project aims to publish findings based on the C.H. Adams data, contributing to the scientific literature on solar activity and its implications for climate science.\n\nThe C.H. Adams data represents a vital component of the historical sunspot record, providing detailed observations that enhance our understanding of solar variability. The ongoing efforts to retrieve, validate, and integrate this data into the FARSuN project will significantly benefit the solar physics community and contribute to more accurate climate models.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "C. H. Adams Data"
     ]
   },
   {
@@ -263,7 +210,7 @@
     "href": "all_combined_data.html#bubble-plot-of-the-observers",
     "title": "All Combined Data",
     "section": "Bubble plot of the observers",
-    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in the combined data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in all combined data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in the combined data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n✅ Saved static snapshot to /Users/kalugoduc/projects/report-farsun-github/report-farsun/figures/observer_bubble.png\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in all combined data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
     "crumbs": [
       "Home",
       "Other pages",
@@ -280,6 +227,114 @@
       "Home",
       "Other pages",
       "All Combined Data"
+    ]
+  },
+  {
+    "objectID": "gruithuisen.html",
+    "href": "gruithuisen.html",
+    "title": "Gruithuisen Data",
+    "section": "",
+    "text": "The Gruithuisen data is historical sunspot observations made by Franz von Paula Gruithuisen. This data is particularly valuable for reconstructing the international sunspot number (ISN) due to its detailed records from the early 19th century.\n\nOverview of Gruithuisen Data\n\nContent and Format:\n\nThe Gruithuisen data consists of manuscripts that primarily document weather conditions alongside sunspot observations. The entries often include barometric and hygrometric readings, with specific dates and times noted.\nThe observations are written in Kurrent or Kurrentschrift, an old German script that poses challenges for modern transcription and interpretation. This script is characterized by its cursive style, making it difficult to read without specialized knowledge.\nThe data includes descriptions of sunspots, often referred to as “flecken” (spots) or “öffnungen” (openings), and their evolution over time.\n\nHistorical Context:\n\nGruithuisen’s observations span several years (1817-1849), with significant entries from 1824, 1825, and 1826 (? Check this). The data is crucial for understanding solar activity during this period, particularly in relation to weather patterns.\n\n\n\n\nCurrent Status of Gruithuisen Data\n\nData Extraction and Processing:\n\nThe FARSuN team has made substantial progress in extracting and processing the Gruithuisen data. Key tasks include:\n\nFile Renaming Algorithm: Kalugoduc and Christian Ritter are developing an algorithm to standardize the naming of extracted image files from the format 1834_June_XX.jpg to 183406XX.jpg.\nQuality Control: The extracted information in CSV or XLSX formats needs to be corrected for formatting issues, particularly for odd years.\nCounting Drawings: The team is tasked with counting the number of sunspot groups and individual spots from the drawings, with a flag indicating whether each drawing is a large or small schema. This counting must be verified by at least two different individuals.\n\n\nData Verification and Quality Control:\n\nQuality control is essential for ensuring the accuracy of the extracted data. The presence or absence of sun symbols must be checked against the extracted information.\n\nCollaboration and Tools:\n\nThe team is utilizing tools like Transkribus for text extraction and is considering citizen science initiatives to engage the public in the transcription process.\nSpecialized help is being sought for the extraction of complex texts, particularly from students familiar with the Kurrent script.\n\nRecent Meetings and Discussions:\n\nIn the latest meetings, the team discussed the progress on the Gruithuisen data, including the need for a structured approach to data extraction and the identification of key keywords for further analysis.\nThe team is also considering hiring additional job students to assist with the extraction and analysis of the Gruithuisen data.\n\n\nIn conclusion, the Gruithuisen data is a vital part of the FARSuN project, with ongoing efforts focused on extraction, verification, and analysis. The team is actively working to overcome challenges related to the historical format and language of the data, ensuring its integration into the broader context of solar activity research.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Gruithuisen Data"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data-1800.html",
+    "href": "mittheilungen_data-1800.html",
+    "title": "Mittheilungen Data starting at 1800",
+    "section": "",
+    "text": "Mittheilungen Data : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It’s the primary source of sunspot data.\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\nNumber of Observers by FK_OBSERVERS: 161\nNumber of observers by ALIAS: 157\nNumber of observes by ALIAS(157) is different from \n number of observers by FK_OBSERVERS(161). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBroger has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Broger are [104 117]\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 161\nObservation period: 1800-01-09 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 145.0 years",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data starting at 1800"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data-1800.html#timeline-of-the-observers",
+    "href": "mittheilungen_data-1800.html#timeline-of-the-observers",
+    "title": "Mittheilungen Data starting at 1800",
+    "section": "Timeline of the observers",
+    "text": "Timeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungen data",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data starting at 1800"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data-1800.html#bubble-plot-of-the-observers",
+    "href": "mittheilungen_data-1800.html#bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data starting at 1800",
+    "section": "Bubble plot of the observers",
+    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungen data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data starting at 1800"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data-1800.html#animated-bubble-plot-of-the-observers",
+    "href": "mittheilungen_data-1800.html#animated-bubble-plot-of-the-observers",
+    "title": "Mittheilungen Data starting at 1800",
+    "section": "Animated bubble plot of the observers",
+    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in Mittheilungen data.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data starting at 1800"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data.html",
+    "href": "mittheilungen_data.html",
+    "title": "Mittheilungen Data",
+    "section": "",
+    "text": "The Mittheilungen data refers to a collection of historical sunspot observations recorded in the Mittheilungen (or “Communications”) logbooks maintained by Rudolf Wolf and other astronomers at the Zürich Observatory. This dataset spans from 1610 to 1918 and includes systematic observations of sunspots, which are crucial for understanding solar activity and its variability over time. The Mittheilungen data is significant as it provides one of the longest continuous records of sunspot observations, making it a foundational dataset for solar physics and climate studies.\n\n\nThe Mittheilungen data covers a substantial time period from 1610 to 1918. This extensive timeframe includes several solar cycles and allows researchers to analyze long-term trends in solar activity, which are essential for understanding the relationship between solar variability and climate change.\n\n\n\nThe FARSuN project has made significant strides in retrieving and processing the Mittheilungen data:\n\nDigitization: The Mittheilungen records have been digitized, with efforts focused on converting handwritten observations into machine-readable formats. This process has involved the use of optical character recognition (OCR) tools and manual transcription.\nQuality Control: A rigorous quality control process has been implemented to ensure the accuracy and reliability of the digitized data. This includes cross-referencing entries with other historical datasets and correcting any discrepancies.\nData Accessibility: The digitized Mittheilungen data has been made accessible through the FARSuN project, allowing researchers to query and analyze the data more easily. This accessibility is crucial for enhancing the usability of historical sunspot records.\n\n\n\n\nThe Mittheilungen data is important for several reasons:\n\nHistorical Significance: It provides a comprehensive historical record of sunspot activity, which is essential for understanding long-term solar variability and its impact on Earth’s climate.\nData Quality: The systematic nature of the observations allows for high-quality data that can be used in conjunction with other historical records to enhance the overall sunspot number series.\nResearch Foundation: The data serves as a foundational resource for solar physicists and climate researchers, enabling them to study the relationship between solar activity and climate patterns.\n\n\n\n\nThe FARSuN project has outlined several future plans regarding the Mittheilungen data:\n\nContinued Data Validation: Ongoing efforts will focus on validating the digitized data through cross-referencing with other historical datasets and conducting quality control checks.\nIntegration into Historical Database: The Mittheilungen data will be integrated into the broader historical sunspot observations database, ensuring it is accessible and usable for researchers.\nPublic Engagement: There are plans to utilize citizen science initiatives to engage the public in data transcription and recovery efforts, potentially expanding the dataset and enhancing its accuracy.\nScientific Publications: The project aims to publish findings based on the Mittheilungen data, contributing to the scientific literature on solar activity and its implications for climate science.\n\n\n\n\nThe primary observer associated with the Mittheilungen data is Rudolf Wolf, who was a key figure in the systematic recording of sunspot observations at the Zürich Observatory. His meticulous records and methodologies laid the groundwork for the long-term study of solar activity. Other contributors may include various astronomers and observers who collaborated with Wolf and the Zürich Observatory during the time period covered by the Mittheilungen.\nThe Mittheilungen data represents a vital component of the historical sunspot record, providing detailed observations that enhance our understanding of solar variability. The ongoing efforts to retrieve, validate, and integrate this data into the FARSuN project will significantly benefit the solar physics community and contribute to more accurate climate models.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data.html#introduction",
+    "href": "mittheilungen_data.html#introduction",
+    "title": "Mittheilungen Data",
+    "section": "",
+    "text": "The Mittheilungen data refers to a collection of historical sunspot observations recorded in the Mittheilungen (or “Communications”) logbooks maintained by Rudolf Wolf and other astronomers at the Zürich Observatory. This dataset spans from 1610 to 1918 and includes systematic observations of sunspots, which are crucial for understanding solar activity and its variability over time. The Mittheilungen data is significant as it provides one of the longest continuous records of sunspot observations, making it a foundational dataset for solar physics and climate studies.\n\n\nThe Mittheilungen data covers a substantial time period from 1610 to 1918. This extensive timeframe includes several solar cycles and allows researchers to analyze long-term trends in solar activity, which are essential for understanding the relationship between solar variability and climate change.\n\n\n\nThe FARSuN project has made significant strides in retrieving and processing the Mittheilungen data:\n\nDigitization: The Mittheilungen records have been digitized, with efforts focused on converting handwritten observations into machine-readable formats. This process has involved the use of optical character recognition (OCR) tools and manual transcription.\nQuality Control: A rigorous quality control process has been implemented to ensure the accuracy and reliability of the digitized data. This includes cross-referencing entries with other historical datasets and correcting any discrepancies.\nData Accessibility: The digitized Mittheilungen data has been made accessible through the FARSuN project, allowing researchers to query and analyze the data more easily. This accessibility is crucial for enhancing the usability of historical sunspot records.\n\n\n\n\nThe Mittheilungen data is important for several reasons:\n\nHistorical Significance: It provides a comprehensive historical record of sunspot activity, which is essential for understanding long-term solar variability and its impact on Earth’s climate.\nData Quality: The systematic nature of the observations allows for high-quality data that can be used in conjunction with other historical records to enhance the overall sunspot number series.\nResearch Foundation: The data serves as a foundational resource for solar physicists and climate researchers, enabling them to study the relationship between solar activity and climate patterns.\n\n\n\n\nThe FARSuN project has outlined several future plans regarding the Mittheilungen data:\n\nContinued Data Validation: Ongoing efforts will focus on validating the digitized data through cross-referencing with other historical datasets and conducting quality control checks.\nIntegration into Historical Database: The Mittheilungen data will be integrated into the broader historical sunspot observations database, ensuring it is accessible and usable for researchers.\nPublic Engagement: There are plans to utilize citizen science initiatives to engage the public in data transcription and recovery efforts, potentially expanding the dataset and enhancing its accuracy.\nScientific Publications: The project aims to publish findings based on the Mittheilungen data, contributing to the scientific literature on solar activity and its implications for climate science.\n\n\n\n\nThe primary observer associated with the Mittheilungen data is Rudolf Wolf, who was a key figure in the systematic recording of sunspot observations at the Zürich Observatory. His meticulous records and methodologies laid the groundwork for the long-term study of solar activity. Other contributors may include various astronomers and observers who collaborated with Wolf and the Zürich Observatory during the time period covered by the Mittheilungen.\nThe Mittheilungen data represents a vital component of the historical sunspot record, providing detailed observations that enhance our understanding of solar variability. The ongoing efforts to retrieve, validate, and integrate this data into the FARSuN project will significantly benefit the solar physics community and contribute to more accurate climate models.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data"
+    ]
+  },
+  {
+    "objectID": "mittheilungen_data.html#analysis-of-observers-in-mittheilungen-data",
+    "href": "mittheilungen_data.html#analysis-of-observers-in-mittheilungen-data",
+    "title": "Mittheilungen Data",
+    "section": "Analysis of Observers in Mittheilungen Data",
+    "text": "Analysis of Observers in Mittheilungen Data\nImporting functions from scripts file. All the data used is in the folder data\nObservers are grouped by FK_OBSERVERS.\n\n\nNumber of Observers by FK_OBSERVERS: 122\nNumber of observers by ALIAS: 121\nNumber of observes by ALIAS(121) is different from \n number of observers by FK_OBSERVERS(122). \n\nOne of the ALIAS has multiple FK_OBSERVERS IDs.\nChecking ALIAS'es with multiple FK_OBSERVERS IDs.\nBrunner has multiple FK_OBSERVERS IDs.\nFK_OBSERVERS IDs associated with Brunner are [177 168] \n\n\n\n\n\n\n==================================================\nOBSERVER STATISTICS\n==================================================\n\nTotal unique observers: 122\nObservation period: 1859-01-01 00:00:00 to 1944-12-31 00:00:00\nTotal observation span: 86.0 years\n\n\n\nTimeline of the observers\nTODO: Plot only top 10 to 20 observers\nFigure 1 is a timeline plot showing actual observation days for all observers in Mittheilungen data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Plot showing actual observation days for all observers in Mittheilungen data\n\n\n\n\n\n\n\nBubble plot of the observers\nFigure 2 is a bubble plot showing all observers in Mittheilungen data. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot showing all observers in Mittheilungen data\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2\n\n\n\n\n\n\nAnimated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in Mittheilungen data.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Mittheilungen Data"
+    ]
+  },
+  {
+    "objectID": "stark.html",
+    "href": "stark.html",
+    "title": "Augstin Stark",
+    "section": "",
+    "text": "The Augustin Stark data refers to a collection of historical sunspot observations made by Augustin Stark, a German astronomer, during the early 19th century. Stark’s observations are significant for their detailed records of sunspot activity, including counts and descriptions of sunspot groups. His work contributes to the understanding of solar variability and its effects on Earth’s climate, providing valuable data for researchers studying long-term solar activity.\n\nTime Period Covered\nThe Augustin Stark data primarily covers the period from 1813 to 1835. This timeframe is crucial as it includes observations during a period of notable solar activity, allowing researchers to analyze trends and patterns in sunspot occurrences.\n\n\nProgress in Retrieving Data from Augustin Stark Data\nThe FARSuN project has made progress in retrieving and processing the Augustin Stark data:\n\nData Extraction: Efforts are underway to extract relevant observations from Stark’s manuscripts, focusing on identifying dates, sunspot counts, and descriptions of solar activity. This process involves recognizing entries related to sunspots and their characteristics.\nQuality Control: Ongoing quality control measures are being implemented to ensure the accuracy and reliability of the extracted data. This includes cross-referencing entries with other historical datasets and correcting any discrepancies.\nUse of Optical Character Recognition (OCR): The project is utilizing OCR tools to convert Stark’s handwritten records into machine-readable formats, facilitating easier access and analysis of the data.\n\n\n\nImportance of Augustin Stark Data\nThe Augustin Stark data is important for several reasons:\n\nHistorical Context: It provides a detailed account of solar activity during a critical period in the early 19th century, contributing to the understanding of long-term solar variability.\nData Quality: Stark’s meticulous observations allow for high-quality data that can be used in conjunction with other historical records to enhance the overall sunspot number series.\nResearch Foundation: The data serves as a foundational resource for solar physicists and climate researchers, enabling them to study the relationship between solar activity and climate patterns.\n\n\n\nFuture Plans for Augustin Stark Data\nThe FARSuN project has outlined several future plans regarding the Augustin Stark data:\n\nContinued Data Validation: Ongoing efforts will focus on validating the extracted data through cross-referencing with other historical datasets and conducting quality control checks.\nIntegration into Historical Database: The Augustin Stark data will be integrated into the broader historical sunspot observations database, ensuring it is accessible and usable for researchers.\nPublic Engagement: There are plans to utilize citizen science initiatives to engage the public in data transcription and recovery efforts, potentially expanding the dataset and enhancing its accuracy.\nScientific Publications: The project aims to publish findings based on the Augustin Stark data, contributing to the scientific literature on solar activity and its implications for climate science.\n\nThe Augustin Stark data represents a vital component of the historical sunspot record, providing detailed observations that enhance our understanding of solar variability. The ongoing efforts to retrieve, validate, and integrate this data into the FARSuN project will significantly benefit the solar physics community and contribute to more accurate climate models.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Augstin Stark"
     ]
   }
 ]

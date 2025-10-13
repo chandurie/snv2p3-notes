@@ -235,6 +235,250 @@ def observer_bubble_plot_animated(observer_dict):
     fig.show()
 
 
+def observer_bubble_plots_force_start_year_new3(
+    observer_stats, start_year=1800, outdir="figures", name="observer_bubble"
+):
+    # Ensure datetime columns
+    observer_stats["start_date"] = pd.to_datetime(observer_stats["start_date"])
+    observer_stats["end_date"] = pd.to_datetime(observer_stats["end_date"])
+
+    # Rename for pretty labels
+    df = observer_stats.rename(
+        columns={
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "total_observations": "Total Observations",
+            "observation_years": "Observation Years",
+        }
+    )
+
+    # Ensure numeric bubble sizes
+    df["Total Observations"] = pd.to_numeric(
+        df["Total Observations"], errors="coerce"
+    ).fillna(1)
+    df["Observation Years"] = pd.to_numeric(
+        df["Observation Years"], errors="coerce"
+    ).fillna(1)
+
+    fig = px.scatter(
+        df,
+        x="Start Date",
+        y="End Date",
+        size="Total Observations",
+        color="Observation Years",
+        hover_name="ALIAS",
+        text="ALIAS",
+        size_max=60,
+        title="Observer Bubble Plot",
+    )
+
+    fig.update_traces(
+        marker=dict(
+            line=dict(width=2, color="DarkSlateGrey"),
+            sizemode="area",  # ✅ ensures bubble sizing works in static export
+        ),
+        textposition="middle right",
+        textfont=dict(size=12),
+    )
+
+    # Force both axes to start at the chosen year
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    max_x = df["Start Date"].max() + pd.Timedelta(days=20 * 365)
+    max_y = df["End Date"].max() + pd.Timedelta(days=20 * 365)
+
+    fig.update_xaxes(
+        type="date", range=[min_date, max_x], tickformat="%Y", dtick="M120"
+    )
+    fig.update_yaxes(
+        type="date", range=[min_date, max_y], tickformat="%Y", dtick="M120"
+    )
+
+    # --- Static PNG export ---
+    outdir = os.path.join(os.getcwd(), outdir)
+    os.makedirs(outdir, exist_ok=True)
+    png_path = os.path.join(outdir, f"{name}.png")
+
+    try:
+        fig.write_image(png_path, format="png", scale=3, width=1600, height=1200)
+        print(f"✅ Saved static snapshot to {png_path}")
+    except Exception as e:
+        print(f"⚠️ Could not save static snapshot: {e}")
+
+    return fig
+
+
+def observer_bubble_plots_force_start_year_new2(
+    observer_stats, start_year=1800, outdir="figures", name="observer_bubble"
+):
+    # Ensure datetime columns
+    observer_stats["start_date"] = pd.to_datetime(observer_stats["start_date"])
+    observer_stats["end_date"] = pd.to_datetime(observer_stats["end_date"])
+
+    # Rename for prettier axis labels
+    df = observer_stats.rename(
+        columns={
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "total_observations": "Total Observations",
+            "observation_years": "Observation Years",
+        }
+    )
+
+    fig = px.scatter(
+        df,
+        x="Start Date",
+        y="End Date",
+        size="Total Observations",
+        color="Observation Years",
+        hover_name="ALIAS",
+        text="ALIAS",
+        size_max=60,
+        title="Observer Bubble Plot",
+    )
+
+    fig.update_traces(
+        marker=dict(line=dict(width=2, color="DarkSlateGrey")),
+        textposition="middle right",
+        textfont=dict(size=12),
+    )
+
+    # Force both axes to start at the chosen year
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    max_x = df["Start Date"].max() + pd.Timedelta(days=20 * 365)
+    max_y = df["End Date"].max() + pd.Timedelta(days=20 * 365)
+
+    # ✅ Date axis with readable ticks
+    fig.update_xaxes(
+        type="date", range=[min_date, max_x], tickformat="%Y", dtick="M120"
+    )
+    fig.update_yaxes(
+        type="date", range=[min_date, max_y], tickformat="%Y", dtick="M120"
+    )
+
+    # --- Static PNG export ---
+    outdir = os.path.join(os.getcwd(), outdir)
+    os.makedirs(outdir, exist_ok=True)
+    png_path = os.path.join(outdir, f"{name}.png")
+
+    try:
+        fig.write_image(png_path, format="png", scale=3, width=1600, height=1200)
+        print(f"✅ Saved static snapshot to {png_path}")
+    except Exception as e:
+        print(f"⚠️ Could not save static snapshot: {e}")
+
+    return fig
+
+
+def observer_bubble_plots_force_start_year_new1(
+    observer_stats, start_year=1800, outdir="figures", name="observer_bubble"
+):
+    observer_stats = observer_stats.rename(
+        columns={
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "total_observations": "Total Observations",
+            "observation_years": "Observation Years",
+        }
+    )
+
+    fig = px.scatter(
+        observer_stats,
+        x="Start Date",
+        y="End Date",
+        size="Total Observations",
+        color="Observation Years",
+        hover_name="ALIAS",
+        text="ALIAS",
+        size_max=60,
+        title="Observer Bubble Plot",
+    )
+
+    fig.update_traces(
+        marker=dict(line=dict(width=2, color="DarkSlateGrey")),
+        textposition="middle right",
+        textfont=dict(size=12),
+    )
+
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    max_x = observer_stats["start_date"].max() + pd.Timedelta(days=20 * 365)
+    max_y = observer_stats["end_date"].max() + pd.Timedelta(days=20 * 365)
+    fig.update_xaxes(type="date", range=[min_date, max_x])
+    fig.update_yaxes(type="date", range=[min_date, max_y])
+
+    # --- Static PNG export ---
+    outdir = os.path.join(os.getcwd(), outdir)  # ensure relative to project root
+    os.makedirs(outdir, exist_ok=True)
+    png_path = os.path.join(outdir, f"{name}.png")
+
+    try:
+        fig.write_image(png_path, format="png", scale=3, width=1600, height=1200)
+        print(f"✅ Saved static snapshot to {png_path}")
+    except Exception as e:
+        print(f"⚠️ Could not save static snapshot: {e}")
+
+    return fig
+
+
+def observer_bubble_plots_force_start_year_new(
+    observer_stats, start_year=1800, outdir="figures", name="observer_bubble"
+):
+    """
+    Interactive bubble plot of observers, with static PNG export for Quarto/PDF/DOCX.
+
+    Args:
+        observer_stats (pd.DataFrame): Must contain 'start_date', 'end_date',
+                                       'total_observations', 'observation_years', 'ALIAS'.
+        start_year (int): Force axes to start from this year (default=1800).
+        outdir (str): Directory to save static PNG snapshot.
+        name (str): Base filename for the output figure (without extension).
+
+    Returns:
+        fig (plotly.graph_objects.Figure): Interactive Plotly figure.
+    """
+    fig = px.scatter(
+        observer_stats,
+        x="start_date",
+        y="end_date",
+        size="total_observations",
+        color="observation_years",
+        hover_name="ALIAS",
+        text="ALIAS",
+        size_max=60,
+        labels={
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "total_observations": "Total Observations",
+            "observation_years": "Observation Years",
+            "FK_OBSERVERS": "Observer ID",
+        },
+        title="Observer Bubble Plot",
+    )
+
+    # Improve marker appearance and labels
+    fig.update_traces(
+        marker=dict(line=dict(width=2, color="DarkSlateGrey")),
+        textposition="middle right",
+        textfont=dict(size=12),
+    )
+
+    # Force both axes to start at the chosen year
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    max_x = observer_stats["start_date"].max() + pd.Timedelta(days=20 * 365)
+    max_y = observer_stats["end_date"].max() + pd.Timedelta(days=20 * 365)
+
+    fig.update_xaxes(range=[min_date, max_x])
+    fig.update_yaxes(range=[min_date, max_y])
+
+    # --- Static PNG export ---
+    os.makedirs(outdir, exist_ok=True)
+    png_path = os.path.join(outdir, f"{name}.png")
+    fig.write_image(
+        png_path, format="png", scale=3, width=1600, height=1200
+    )  # high-quality
+
+    return fig
+
+
 def observer_bubble_plots_force_start_year(observer_stats, start_year=1800):
     """
     Interactive bubble plot of observers.
