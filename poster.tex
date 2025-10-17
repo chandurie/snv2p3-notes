@@ -160,13 +160,14 @@
 
 \begin{document}
 \begin{frame}[t]
-\begin{columns}[t,totalwidth=\paperwidth]
+\begin{columns}[t,totalwidth=0.98\paperwidth]
 
 % -------- COLUMN 1 --------
-\begin{column}{0.32\paperwidth}
+\begin{column}{0.27\paperwidth}
 \begin{tightblock}{Abstract}
 \justifying
-The International Sunspot Number (ISN) remains affected by historical scale jumps such as the \emph{Waldmeier break}, even after two major recalibrations. FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) tackles this by rebuilding the record from the ground up: collecting handwritten logs and tables from 1607--1980, digitizing them, and applying consistent metadata and validation. Early 2025 milestones include integrating the full 1610--1918 \emph{Mittheilungen} corpus, digitizing more than 95\% of the 2\,000+ Zürich observation tables, extracting 338 drawings (1\,056 entries) from the C.\,H. Adams notebooks, and launching quality-control pipelines for the Gruithuisen manuscripts. The reconstructed ISN~V3 will deliver traceable uncertainties, hemispheric indices, and open FAIR-compliant access, strengthening space climate studies, solar cycle prediction, and coupled Sun--Earth research.
+The International Sunspot Number (ISN) remains affected by historical scale jumps such as the \emph{Waldmeier break}, even after two major recalibrations. FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) tackles this by rebuilding the record from the ground up: collecting handwritten logs and tables from 1607--1980, digitizing them, and applying consistent metadata and validation. 
+  % Early 2025 milestones include integrating the full 1610--1918 \emph{Mittheilungen} corpus, digitizing more than 95\% of the 2\,000+ Zürich observation tables, extracting 338 drawings (1\,056 entries) from the C.\,H. Adams notebooks, and launching quality-control pipelines for the Gruithuisen manuscripts. The reconstructed ISN~V3 will deliver traceable uncertainties, hemispheric indices, and open FAIR-compliant access, strengthening space climate studies, solar cycle prediction, and coupled Sun--Earth research.
 \end{tightblock}
 
 \begin{tightblock}{Project Pulse}
@@ -193,21 +194,21 @@ The International Sunspot Number (ISN) remains affected by historical scale jump
 \end{itemize}
 \end{tightblock}
 
-\begin{tightblock}{Recalibration vs Reconstruction}
-\begin{minipage}[t]{0.48\linewidth}
-  \callout{Legacy recalibration}{Linear scaling of composite series; no new metadata; residual biases (e.g. "Waldmeier jump") remain hidden.}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\linewidth}
-  \callout{FARSuN reconstruction}{Primary sources re-digitised with observer context, transparent uncertainty budgets, and reproducible release tooling.}
-\end{minipage}
-\vspace{0.3cm}
-{\scriptsize Based on FARSuN interactive report section "The Problem" \& "The Solution".}
-\end{tightblock}
+% \begin{tightblock}{Recalibration vs Reconstruction}
+% \begin{minipage}[t]{0.48\linewidth}
+%   \callout{Legacy recalibration}{Linear scaling of composite series; no new metadata; residual biases (e.g. "Waldmeier jump") remain hidden.}
+% \end{minipage}\hfill
+% \begin{minipage}[t]{0.48\linewidth}
+%   \callout{FARSuN reconstruction}{Primary sources re-digitised with observer context, transparent uncertainty budgets, and reproducible release tooling.}
+% \end{minipage}
+% \vspace{0.3cm}
+% {\scriptsize Based on FARSuN interactive report section "The Problem" \& "The Solution".}
+% \end{tightblock}
 
-\begin{tightblock}{Four-Axis Methodology}
+\begin{tightblock}{How Reconstruction Works: Four-Axis Methodology}
 \begin{enumerate}
   \item \key{Gather Sources}: track down dispersed observing logs (Wolf's \emph{Mittheilungen}, Zürich tables, Gruithuisen manuscripts, Adams drawings) and capture provenance metadata at ingest.
-  \item \key{Process Data}: combine handwriting/OCR engines (Transkribus models, custom scripts) with manual double-keying for fragile entries.
+  \item \key{Process Data}: use handwriting/OCR engines (Transkribus models, custom scripts) alongside manual double-keying for fragile entries.
   \item \key{Validate \& Standardize}: reconcile aliases, observer IDs, and calendars; model group/spot counting behaviour to derive calibration curves.
   \item \key{Disseminate}: publish machine-readable products, APIs, and VO-ready services with versioned uncertainty bundles for each release.
 \end{enumerate}
@@ -222,26 +223,98 @@ The International Sunspot Number (ISN) remains affected by historical scale jump
   \item \textbf{Interoperable} – shared vocabularies, observer IDs, and VOEvent-ready semantics.
   \item \textbf{Reusable} – versioned releases with uncertainty models, provenance trails, and detailed caveats.
 \end{itemize}
-\includegraphics[width=\linewidth]{./figures/fair_radar.png}
+% \includegraphics[width=\linewidth]{./figures/fair_radar.png}
+\end{tightblock}
+\begin{tightblock}{FARSuN Historical Sunspot Database — Status \& Outlook}
+  \textbf{Present Status}
+  \begin{itemize}
+    \item Legacy sources (Mitteilungen, Wolf Institute, Shreya, Stephen, etc.) have been integrated into the current schema for cross-validation and QC.
+    \item Automated quality checks detect inconsistencies (e.g., NG $>$ NS, duplicates, missing metadata).
+    \item Metadata harmonization for observers, instruments, and observatories is underway, aligned with the EPN-TAP/VO standard for public access.
+    \item A TAP server at ROB is operational, enabling ADQL queries and VOTable outputs.
+  \end{itemize}
+
+  \textbf{Next Steps}
+  \begin{itemize}
+    \item Finalize canonical schema and close remaining legacy mappings.
+    \item Expand automated QC dashboards and uncertainty modeling.
+    \item Scale up digitization and extraction (Adams, Gruithuisen, Herschel, etc.) using HTR and citizen-science workflows.
+    \item Expose the full dataset through the EPN-TAP service, ensuring FAIR data availability.
+    \item Use this harmonized database as the foundation for ISN V3 calibration and long-term solar activity studies.
+  \end{itemize}
+
+  \textbf{Goal}\\
+  A sustainable, interoperable reference database ensuring that four centuries of solar observations remain accessible and scientifically reliable for the next generation of Sun-climate research.
 \end{tightblock}
 \end{column}
 
+
 % -------- COLUMN 2 --------
-\begin{column}{0.32\paperwidth}
+\begin{column}{0.42\paperwidth}
 \begin{tightblock}{Key Datasets}
-\begin{tabular}{@{}p{0.33\linewidth}p{0.23\linewidth}p{0.38\linewidth}@{}}
-\toprule
-\textbf{Source} & \textbf{Period} & \textbf{Current Focus} \\ \midrule
-Zürich Tables & 1945--1979 & 95\% of 2\,000+ tables digitized; metadata encoding for late-1970s observers underway. \\
-\emph{Mittheilungen} & 1610--1918 & Fully integrated; observer statistics produced from 400+ years of entries. \\
-Gruithuisen Manuscripts & 1817--1849 & 25\% transcription via Transkribus; file renaming algorithm + dual QC for group/spot counts. \\
-C. H. Adams Drawings & 1819--1823 & 338 sketches extracted (1\,056 entries); spotless days cross-checked against Wolf series. \\
-Augustin Stark Ledgers & 1813--1835 & Normalizing tabular layouts; linking weather annotations to group counts. \\
-Rost Journals & 18th--19th c. & Building metadata vocabularies prior to digitization ingest. \\
-\bottomrule
-\end{tabular}
-\includegraphics[width=0.5\linewidth]{./figures/gruithuisen/sample1.jpg}
-\includegraphics[width=\linewidth]{./figures/dataset_progress.png}
+\textbf{Mittheilungen Dataset — Present Status and Future}\\
+The Mittheilungen journals, compiled by Rudolf Wolf and successors at the Zürich Observatory, form the backbone of historical sunspot observations, recording daily group and spot counts from 1848 to 1945 and extending back to 1610 through Wolf's compilations; within the FARSuN project, the complete series was digitized and structured (2017--2019) at the Royal Observatory of Belgium, integrated into the historical sunspot database, and is undergoing continuing quality checks, metadata harmonization, and cross-comparisons with new extractions.
+
+\textbf{Current focus}
+\begin{itemize}
+  \item Refining data consistency and observer calibration (Wolf--Wolfer overlap).
+  \item Finalizing metadata alignment for FAIR publication (EPN-TAP/VO-TAP).
+  \item Resolving remaining ID and provenance issues across merged databases.
+\end{itemize}
+
+\textbf{Next steps}
+\begin{itemize}
+  \item Full public release via Virtual Observatory access.
+  \item Inclusion of Mittheilungen as the core calibration reference for ISN Version 3.
+  \item Development of interactive QC dashboards and documentation to support open, traceable historical solar research.
+\end{itemize}
+\begin{figure}[t]
+  \centering
+  \begin{minipage}[t]{0.4\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/mittheilungen_sample.png}
+    {\small (a) Facsimile of a typical yearly table, as published in the \textit{Mitteilungen}}
+    % {(first page going up to early June). The table lists all daily observations from A.~Wolfer for 1890 with group and spot totals separated by a dot; stars mark days observed with a 40\,mm ``Parisian'' telescope.}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.52\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/observer_bubbles_poster_v2.png}
+    {\small (b) Observer coverage bubbles showing multi-century participation and overlaps}% that anchor cross-calibration.}
+  \end{minipage}
+  % \caption{\small Mittheilungen facsimile (a) and observer coverage overview (b) illustrating the documentation pipeline that links historical records to calibrated metadata.}
+\end{figure}
+\textbf{Z\"urich Tables (1945--1979)}\\
+The Z\"urich Tables form the foundational record of daily sunspot number production at the Z\"urich Observatory between 1945 and 1979, detailing group and spot counts, the adopted Wolf number, and observing context.
+
+\textbf{Current status}
+\begin{itemize}
+  \item Fully digitized for 1945--1979 with detailed metadata completed for 1945--1950.
+  \item Ongoing quality control and observer metadata harmonisation to maintain traceability to the original ETH Z\"urich sources.
+  \item Integrated within the consolidated FARSuN database, with citizen-science and VO/EPN-TAP access pathways in preparation.
+\end{itemize}
+
+\textbf{Next steps}
+\begin{itemize}
+  \item Complete metadata for later years, confirm 1980 holdings, and refine observer scaling (k-factors).
+  \item Analyse the 1947 scale discontinuity and publish cleaned, validated releases linked with USET drawings.
+  \item Deliver public access to the curated Z\"urich dataset to support reconstruction of ISN~V3.
+\end{itemize}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\linewidth]{./figures/zurich_tables.png}
+  \caption{\small Facsimile of a typical handwritten yearly table from the complete 1945--1980 collection recovered in 2018--2019. Shown are H.~M\"uller's 1960 observations with group totals, spot counts, personal $k$ relative to Waldmeier, sky quality, monthly aggregates, and yearly averages, highlighting assistant-to-primary dispersion (here $k=0.52$ versus the 0.6 target).}
+\end{figure}
+\textbf{C.~H. Adams Sunspot Data — Present Status \& Future Work}\\
+FARSuN has recovered 338 full-disk drawings and 1,056 daily entries (308 spot days, 748 spotless) from C.~H.~Adams (1819--1823), providing dense coverage with explicit spotless days that sharpen low-activity baselines for ISN~V3.
+
+\textbf{Current work}
+\begin{itemize}
+  \item Quality-control passes to reconcile direct versus reflection methods and ensure consistent calibration.
+  \item Cross-validation against \emph{Mittheilungen} and contemporaneous observers for contextual agreement.
+  \item Orientation, dewarping, and standardisation of drawings to enable future positional and area extractions.
+\end{itemize}
+\includegraphics[width=\linewidth]{./figures/adams_example.png}
 \end{tightblock}
 
 \begin{tightblock}{Progress Highlights (Early 2025)}
@@ -278,7 +351,21 @@ Rost Journals & 18th--19th c. & Building metadata vocabularies prior to digitiza
 \end{column}
 
 % -------- COLUMN 3 --------
-\begin{column}{0.32\paperwidth}
+\begin{column}{0.27\paperwidth}
+\begin{tightblock}{Key Datasets}
+\begin{tabular}{@{}p{0.33\linewidth}p{0.23\linewidth}p{0.38\linewidth}@{}}
+\toprule
+\textbf{Source} & \textbf{Period} & \textbf{Current Focus} \\ \midrule
+\emph{Mittheilungen} & 1610--1945 & Fully digitized and integrated; observer statistics produced from 400+ years of entries. \\
+Zürich Tables & 1945--1979 & 95\% of 2\,000+ tables digitized; metadata encoding for late-1970s observers underway. \\
+Gruithuisen Manuscripts & 1817--1849 & 100\% digitized; Extraction using transkribus like models + dual QC for group/spot counts underway. \\
+C. H. Adams Drawings & 1819--1823 & 338 sketches extracted (1\,056 entries); spotless days cross-checked against Wolf series. \\
+Augustin Stark Ledgers & 1813--1835 & Normalizing tabular layouts; linking weather annotations to group counts. \\
+Rost Journals & 18th--19th c. &  \\
+\bottomrule
+\end{tabular}
+\end{tightblock}
+
 \begin{tightblock}{From Raw to ISN V3}
 \begin{enumerate}
   \item Curate daily counts with provenance-rich metadata (observer, instrument, weather context).
