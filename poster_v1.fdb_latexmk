@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1760956724.36903 "/Users/kalugoduc/projects/report-farsun/poster_v1.tex" "poster_v1.pdf" "poster_v1" 1760956729.52807 2
-  "/Users/kalugoduc/projects/report-farsun/poster_v1.tex" 1760956718.87482 27650 a66a250bdb5c5c5842bfb5d3e3ab9779 ""
+["pdflatex"] 1760965549.2543 "/Users/kalugoduc/projects/report-farsun/poster_v1.tex" "poster_v1.pdf" "poster_v1" 1760965554.54051 2
+  "/Users/kalugoduc/projects/report-farsun/poster_v1.tex" 1760965543.58788 26545 fa466d24bf9c4154e2268cf12ced3efc ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -287,19 +287,19 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1754983844 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1754983758 3345740 a2fb414cea95cef414897043f147512e ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
+  "docs/figures/qrcode_farsun-poster.png" 1760964791.88837 5985 a8c45ac55def29f6a3f96d4f0b14a9dd ""
   "figures/Gruithuisen_Sample1.png" 1760696117.51642 13415671 140aa8157839fbb847bb0a35c94bda68 ""
   "figures/Gruithuisen_Sample2.jpg" 1757588019.72791 1728829 b82d7462846ef23aa25c95825c9e1213 ""
   "figures/adams_example.png" 1760671883.4423 5559318 5b569050b90ebf04739a19e86c69b1bb ""
   "figures/mittheilungen_sample.png" 1760598921.59407 637964 2979757d5988404d15b197081ef05465 ""
   "figures/observer_bubbles_poster_v2.png" 1760613768.64161 1709954 e117747bac8796a218e92ebd9cf99805 ""
-  "figures/qrcode-farsun-sidc.png" 1760955348.06547 6278 ff483eb38e596bf02e4eba8595278271 ""
   "figures/zurich_tables.png" 1760617588.57654 441499 d989ad999872ee2a33347216f58044d3 ""
   "logos/observatory_400x332.jpg" 1704467458 10415 f767dc46d5d58b3ea78c30d67acd0d2c ""
   "logos/silso-logo.png" 1760774513.02039 9863 97e5bd5e7b90e6c83911a1245b70019f ""
-  "poster_v1.aux" 1760956729.44632 724 85eff481670d92ddd323adcac24495fa "pdflatex"
-  "poster_v1.nav" 1760956729.44682 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
-  "poster_v1.out" 1760956725.09373 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "poster_v1.tex" 1760956718.87482 27650 a66a250bdb5c5c5842bfb5d3e3ab9779 ""
+  "poster_v1.aux" 1760965554.45909 724 85eff481670d92ddd323adcac24495fa "pdflatex"
+  "poster_v1.nav" 1760965554.45961 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
+  "poster_v1.out" 1760965549.98428 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "poster_v1.tex" 1760965543.58788 26545 fa466d24bf9c4154e2268cf12ced3efc ""
   (generated)
   "poster_v1.aux"
   "poster_v1.log"

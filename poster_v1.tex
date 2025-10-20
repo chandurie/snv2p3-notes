@@ -163,20 +163,9 @@
 
 \setbeamertemplate{background}{%
   \begin{tikzpicture}[remember picture,overlay]
-    \shade[left color=softbg,right color=white!90!mint] (current page.south west) rectangle (current page.north east);
-    \shade[bottom color=accent!8!white,top color=white,opacity=0.9] (current page.south west) rectangle ($(current page.south east)+(0,24cm)$);
-    \path[fill=white,opacity=0.83] ($(current page.north west)+(1.6cm,-10.5cm)$) rectangle ($(current page.south west)+(0.31\paperwidth,-5cm)$);
-    \path[fill=white,opacity=0.86] ($(current page.north west)+(0.34\paperwidth,-10.5cm)$) rectangle ($(current page.south west)+(0.66\paperwidth,-5cm)$);
-    \path[fill=white,opacity=0.83] ($(current page.north east)+(-0.31\paperwidth,-10.5cm)$) rectangle ($(current page.south east)+(-1.6cm,-5cm)$);
-    \path[fill=mint!25!white,opacity=0.92] (current page.north west)
-      .. controls +(14,2) and +(-6,-16) .. ($(current page.center)+(0,32)$)
-      .. controls +(10,-14) and +(-14,-8) .. ($(current page.north west)+(5cm,-60cm)$);
-    \path[fill=accent!18!white,opacity=0.85] ($(current page.north east)+(-6cm,-3cm)$)
-      .. controls +(-12,-6) and +(10,12) .. ($(current page.center)+(0,10)$)
-      .. controls +(-8,-6) and +(12,6) .. ($(current page.north east)+(-1cm,-56cm)$);
-    \path[fill=violet!18!white,opacity=0.55] ($(current page.center)+(0,-28)$) circle (34cm);
-    \path[fill=highlight!35!white,opacity=0.4] ($(current page.center)+(-22cm,12cm)$) circle (12cm);
-    \path[fill=mint!28!white,opacity=0.35] ($(current page.center)+(22cm,-6cm)$) circle (14cm);
+    \path[fill=white] (current page.south west) rectangle (current page.north east);
+    \shade[top color=softbg!95!white,bottom color=white] (current page.north west) rectangle (current page.south east);
+    \path[fill=white,opacity=0.92] ($(current page.south west)+(2cm,2cm)$) rectangle ($(current page.north east)+(-2cm,-6cm)$);
   \end{tikzpicture}%
 }
 
@@ -569,8 +558,8 @@ Augustin Stark & 1813--1835 & Trial extraction are underway. \\
 
 \begin{tightblock}{Poster QR Code}
 \centering
-\includegraphics[width=0.72\linewidth]{./figures/qrcode-farsun-sidc.png}\\[0.6em]
-% \small Scan for live datasets, documentation, and outreach material.
+\includegraphics[width=0.65\linewidth]{./docs/figures/qrcode_farsun-poster.png}\\[0.3em]
+\small For more information on FARSuN project, Different datasets, softcopy of the poster, scan this QR code.
 \end{tightblock}
 \end{column}
 

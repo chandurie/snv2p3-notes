@@ -605,11 +605,11 @@ INPUT ./figures/Gruithuisen_Sample2.jpg
 INPUT ./figures/Gruithuisen_Sample2.jpg
 INPUT ./figures/Gruithuisen_Sample2.jpg
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmsso17.tfm
-INPUT ./figures/qrcode-farsun-sidc.png
-INPUT ./figures/qrcode-farsun-sidc.png
-INPUT ./figures/qrcode-farsun-sidc.png
-INPUT ./figures/qrcode-farsun-sidc.png
-INPUT ./figures/qrcode-farsun-sidc.png
+INPUT ./docs/figures/qrcode_farsun-poster.png
+INPUT ./docs/figures/qrcode_farsun-poster.png
+INPUT ./docs/figures/qrcode_farsun-poster.png
+INPUT ./docs/figures/qrcode_farsun-poster.png
+INPUT ./docs/figures/qrcode_farsun-poster.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss8.tfm
 INPUT ./logos/observatory_400x332.jpg
 INPUT ./logos/observatory_400x332.jpg

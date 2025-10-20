@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.12)  20 OCT 2025 12:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.12)  20 OCT 2025 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -971,77 +971,77 @@ File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/beamer/beamerfontthemeprofessionalfonts.sty)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 185.
+(hyperref)                removing `superscript' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 185.
+(hyperref)                removing `superscript' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 185.
+(hyperref)                removing `superscript' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 185.
+(hyperref)                removing `superscript' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 185.
+(hyperref)                removing `superscript' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 185.
+(hyperref)                removing `superscript' on input line 174.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 185.
+(hyperref)                removing `math shift' on input line 174.
 
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 279.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 268.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -1052,24 +1052,24 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 No file poster_v1.aux.
 \openout1 = `poster_v1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 279.
-LaTeX Font Info:    ... okay on input line 279.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 268.
+LaTeX Font Info:    ... okay on input line 268.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1123,7 +1123,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 279.
+Package hyperref Info: Link coloring OFF on input line 268.
 \@outlinefile=\write5
 \openout5 = `poster_v1.out'.
 
@@ -1140,20 +1140,20 @@ Dictionary: translator-numbers-dictionary, Language: English
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \microtypecontext on input line 279.
-Package microtype Info: Applying patch `item' on input line 279.
-Package microtype Info: Applying patch `toc' on input line 279.
-Package microtype Info: Applying patch `eqnum' on input line 279.
-Package microtype Info: Applying patch `footnote' on input line 279.
-Package microtype Info: Applying patch `verbatim' on input line 279.
-LaTeX Info: Redefining \microtypesetup on input line 279.
+LaTeX Info: Redefining \microtypecontext on input line 268.
+Package microtype Info: Applying patch `item' on input line 268.
+Package microtype Info: Applying patch `toc' on input line 268.
+Package microtype Info: Applying patch `eqnum' on input line 268.
+Package microtype Info: Applying patch `footnote' on input line 268.
+Package microtype Info: Applying patch `verbatim' on input line 268.
+LaTeX Info: Redefining \microtypesetup on input line 268.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 279.
+LaTeX Info: Redefining \showhyphens on input line 268.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1163,7 +1163,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 \c@lstlisting=\count410
  (./poster_v1.nav)
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 279.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 268.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1171,31 +1171,31 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Calculating math sizes for size <21.78> on input line 279.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 279.
+LaTeX Font Info:    Calculating math sizes for size <21.78> on input line 268.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 268.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 279.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 268.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 279.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 268.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 279.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 268.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <21.78> on input line 279.
+(Font)              <21.78> on input line 268.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <15.24593> on input line 279.
+(Font)              <15.24593> on input line 268.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.89> on input line 279.
+(Font)              <10.89> on input line 268.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1204,46 +1204,46 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 <./logos/observatory_400x332.jpg, id=51, 96.36pt x 79.9788pt>
 File: ./logos/observatory_400x332.jpg Graphic file (type jpg)
 <use ./logos/observatory_400x332.jpg>
-Package pdftex.def Info: ./logos/observatory_400x332.jpg  used on input line 279.
+Package pdftex.def Info: ./logos/observatory_400x332.jpg  used on input line 268.
 (pdftex.def)             Requested size: 167.99435pt x 139.41832pt.
-LaTeX Font Info:    Calculating math sizes for size <12.6> on input line 279.
+LaTeX Font Info:    Calculating math sizes for size <12.6> on input line 268.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12.6> on input line 279.
+(Font)              <12.6> on input line 268.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8.81996> on input line 279.
+(Font)              <8.81996> on input line 268.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6.3> on input line 279.
-LaTeX Font Info:    Calculating math sizes for size <31.35> on input line 279.
+(Font)              <6.3> on input line 268.
+LaTeX Font Info:    Calculating math sizes for size <31.35> on input line 268.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <31.35> on input line 279.
+(Font)              <31.35> on input line 268.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <21.9449> on input line 279.
+(Font)              <21.9449> on input line 268.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <15.675> on input line 279.
+(Font)              <15.675> on input line 268.
 <./logos/silso-logo.png, id=52, 471.47571pt x 258.10715pt>
 File: ./logos/silso-logo.png Graphic file (type png)
 <use ./logos/silso-logo.png>
-Package pdftex.def Info: ./logos/silso-logo.png  used on input line 279.
+Package pdftex.def Info: ./logos/silso-logo.png  used on input line 268.
 (pdftex.def)             Requested size: 254.67941pt x 139.41832pt.
 File: ./logos/observatory_400x332.jpg Graphic file (type jpg)
 <use ./logos/observatory_400x332.jpg>
-Package pdftex.def Info: ./logos/observatory_400x332.jpg  used on input line 578.
+Package pdftex.def Info: ./logos/observatory_400x332.jpg  used on input line 567.
 (pdftex.def)             Requested size: 167.99435pt x 139.41832pt.
 File: ./logos/silso-logo.png Graphic file (type png)
 <use ./logos/silso-logo.png>
-Package pdftex.def Info: ./logos/silso-logo.png  used on input line 578.
+Package pdftex.def Info: ./logos/silso-logo.png  used on input line 567.
 (pdftex.def)             Requested size: 254.67941pt x 139.41832pt.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <26.12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 578.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 567.
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 This error message was generated by an \errmessage
 command, so I can't give any explicit help.
@@ -1251,452 +1251,452 @@ Pretend that you're Hercule Poirot: Examine all clues,
 and deduce the truth by order and method.
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
-LaTeX Font Info:    Calculating math sizes for size <26.12> on input line 578.
+LaTeX Font Info:    Calculating math sizes for size <26.12> on input line 567.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <26.12> on input line 578.
+(Font)              <26.12> on input line 567.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <18.2839> on input line 578.
+(Font)              <18.2839> on input line 567.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <13.06> on input line 578.
+(Font)              <13.06> on input line 567.
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 <./figures/mittheilungen_sample.png, id=56, 842.14626pt x 935.495pt>
 File: ./figures/mittheilungen_sample.png Graphic file (type png)
 <use ./figures/mittheilungen_sample.png>
-Package pdftex.def Info: ./figures/mittheilungen_sample.png  used on input line 578.
+Package pdftex.def Info: ./figures/mittheilungen_sample.png  used on input line 567.
 (pdftex.def)             Requested size: 393.31935pt x 436.91345pt.
 <./figures/observer_bubbles_poster_v2.png, id=57, 1246.11548pt x 1003.1076pt>
 File: ./figures/observer_bubbles_poster_v2.png Graphic file (type png)
 <use ./figures/observer_bubbles_poster_v2.png>
-Package pdftex.def Info: ./figures/observer_bubbles_poster_v2.png  used on input line 578.
+Package pdftex.def Info: ./figures/observer_bubbles_poster_v2.png  used on input line 567.
 (pdftex.def)             Requested size: 511.32716pt x 411.61353pt.
 <./figures/zurich_tables.png, id=58, 1437.37pt x 999.735pt>
 File: ./figures/zurich_tables.png Graphic file (type png)
 <use ./figures/zurich_tables.png>
-Package pdftex.def Info: ./figures/zurich_tables.png  used on input line 578.
+Package pdftex.def Info: ./figures/zurich_tables.png  used on input line 567.
 (pdftex.def)             Requested size: 639.1477pt x 444.5527pt.
 <./figures/adams_example.png, id=59, 1343.0175pt x 897.3525pt>
 File: ./figures/adams_example.png Graphic file (type png)
 <use ./figures/adams_example.png>
-Package pdftex.def Info: ./figures/adams_example.png  used on input line 578.
+Package pdftex.def Info: ./figures/adams_example.png  used on input line 567.
 (pdftex.def)             Requested size: 639.1477pt x 427.05472pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 
  []
 
 <./figures/Gruithuisen_Sample1.png, id=60, 4176.60374pt x 2960.05875pt>
 File: ./figures/Gruithuisen_Sample1.png Graphic file (type png)
 <use ./figures/Gruithuisen_Sample1.png>
-Package pdftex.def Info: ./figures/Gruithuisen_Sample1.png  used on input line 578.
+Package pdftex.def Info: ./figures/Gruithuisen_Sample1.png  used on input line 567.
 (pdftex.def)             Requested size: 491.6567pt x 348.4167pt.
 <./figures/Gruithuisen_Sample2.jpg, id=61, 3280.255pt x 2851.65375pt>
 File: ./figures/Gruithuisen_Sample2.jpg Graphic file (type jpg)
 <use ./figures/Gruithuisen_Sample2.jpg>
-Package pdftex.def Info: ./figures/Gruithuisen_Sample2.jpg  used on input line 578.
+Package pdftex.def Info: ./figures/Gruithuisen_Sample2.jpg  used on input line 567.
 (pdftex.def)             Requested size: 462.1585pt x 401.75255pt.
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 []|\T1/lmss/m/n/26.12 (+20) Fully dig-i-tized and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 \T1/lmss/m/n/26.12 (+20) in-te-grated; ob-server
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
+Underfull \hbox (badness 10000) in paragraph at lines 567--567
 \T1/lmss/m/n/26.12 (+20) statis-tics pro-duced
  []
 
 
-Underfull \hbox (badness 2401) in paragraph at lines 578--578
+Underfull \hbox (badness 2401) in paragraph at lines 567--567
 \T1/lmss/m/n/26.12 (+20) from 400+ years of
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 578--578
+Underfull \hbox (badness 1077) in paragraph at lines 567--567
 \T1/lmss/m/n/26.12 (+20) cod-ing for late-1970s
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 578--578
+Underfull \hbox (badness 1275) in paragraph at lines 567--567
 \T1/lmss/m/n/26.12 (+20) (1056 en-tries); spot-
  []
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package xkeyval Error: `fg' undefined in families `beamercolbox'.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package xkeyval Error: `fg' undefined in families `beamercolbox'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package xkeyval Error: `bg' undefined in families `beamercolbox'.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package xkeyval Error: `bg' undefined in families `beamercolbox'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <21.78> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 578.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 567.
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package xkeyval Error: `fg' undefined in families `beamercolbox'.
-
-See the xkeyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.578 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package xkeyval Error: `bg' undefined in families `beamercolbox'.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package xkeyval Error: `fg' undefined in families `beamercolbox'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package xkeyval Error: `fg' undefined in families `beamercolbox'.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package xkeyval Error: `bg' undefined in families `beamercolbox'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package xkeyval Error: `bg' undefined in families `beamercolbox'.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package xkeyval Error: `fg' undefined in families `beamercolbox'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package xkeyval Error: `fg' undefined in families `beamercolbox'.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package xkeyval Error: `bg' undefined in families `beamercolbox'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package xkeyval Error: `bg' undefined in families `beamercolbox'.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package xkeyval Error: `fg' undefined in families `beamercolbox'.
 
 See the xkeyval package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package xkeyval Error: `bg' undefined in families `beamercolbox'.
+
+See the xkeyval package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.567 \end{frame}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
-<./figures/qrcode-farsun-sidc.png, id=62, 451.6875pt x 451.6875pt>
-File: ./figures/qrcode-farsun-sidc.png Graphic file (type png)
-<use ./figures/qrcode-farsun-sidc.png>
-Package pdftex.def Info: ./figures/qrcode-farsun-sidc.png  used on input line 578.
-(pdftex.def)             Requested size: 449.56621pt x 449.59116pt.
+<./docs/figures/qrcode_farsun-poster.png, id=62, 451.6875pt x 451.6875pt>
+File: ./docs/figures/qrcode_farsun-poster.png Graphic file (type png)
+<use ./docs/figures/qrcode_farsun-poster.png>
+Package pdftex.def Info: ./docs/figures/qrcode_farsun-poster.png  used on input line 567.
+(pdftex.def)             Requested size: 405.85388pt x 405.8809pt.
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow xshift', to which you passed '3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
 
-/Users/kalugoduc/projects/report-farsun/poster_v1.tex:578: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
+/Users/kalugoduc/projects/report-farsun/poster_v1.tex:567: Package pgfkeys Error: I do not know the key '/tikz/shadow yshift', to which you passed '-3mm', and I am going to ignore it. Perhaps you misspelled it.
 
 See the pgfkeys package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.578 \end{frame}
+l.567 \end{frame}
                  
 (That was another \errmessage.)
 
@@ -1704,15 +1704,15 @@ l.578 \end{frame}
 
 File: ./logos/observatory_400x332.jpg Graphic file (type jpg)
 <use ./logos/observatory_400x332.jpg>
-Package pdftex.def Info: ./logos/observatory_400x332.jpg  used on input line 578.
+Package pdftex.def Info: ./logos/observatory_400x332.jpg  used on input line 567.
 (pdftex.def)             Requested size: 167.99435pt x 139.41832pt.
 File: ./logos/silso-logo.png Graphic file (type png)
 <use ./logos/silso-logo.png>
-Package pdftex.def Info: ./logos/silso-logo.png  used on input line 578.
+Package pdftex.def Info: ./logos/silso-logo.png  used on input line 567.
 (pdftex.def)             Requested size: 254.67941pt x 139.41832pt.
 [1{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}
 
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./logos/observatory_400x332.jpg> <./logos/silso-logo.png> <./figures/mittheilungen_sample.png (PNG copy)> <./figures/observer_bubbles_poster_v2.png> <./figures/zurich_tables.png (PNG copy)> <./figures/adams_example.png> <./figures/Gruithuisen_Sample1.png> <./figures/Gruithuisen_Sample2.jpg> <./figures/qrcode-farsun-sidc.png (PNG copy)>]
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc} <./logos/observatory_400x332.jpg> <./logos/silso-logo.png> <./figures/mittheilungen_sample.png (PNG copy)> <./figures/observer_bubbles_poster_v2.png> <./figures/zurich_tables.png (PNG copy)> <./figures/adams_example.png> <./figures/Gruithuisen_Sample1.png> <./figures/Gruithuisen_Sample2.jpg> <./docs/figures/qrcode_farsun-poster.png (PNG copy)>]
 \tf@nav=\write6
 \openout6 = `poster_v1.nav'.
 
@@ -1741,18 +1741,18 @@ Package rerunfilecheck Info: Checksums for `poster_v1.out':
 (rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36371 strings out of 473190
- 751627 string characters out of 5715800
- 1442527 words of memory out of 5000000
- 58779 multiletter control sequences out of 15000+600000
+ 36336 strings out of 473190
+ 750939 string characters out of 5715800
+ 1442459 words of memory out of 5000000
+ 58744 multiletter control sequences out of 15000+600000
  654936 words of font info for 179 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,20n,123p,1046b,1761s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsso17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on poster_v1.pdf (1 page, 26479797 bytes).
+Output written on poster_v1.pdf (1 page, 26478604 bytes).
 PDF statistics:
- 140 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  3 named destinations out of 1000 (max. 500000)
- 51956 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 51950 words of extra memory for PDF output out of 61914 (max. 10000000)
 
