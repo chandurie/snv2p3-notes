@@ -1,0 +1,74 @@
+---
+title: FARSuN Historical Sunspot Database 
+format:
+  html:
+    code-fold: true
+    page-layout: full
+    grid:
+      body-width: 1200px
+  pdf:
+    toc: true
+    number-sections: true
+    color-links: true
+    documentclass: scrartcl
+    papersize: letter
+  docx:
+    toc: true
+    number-sections: true
+    highlight-style: github
+execute:
+  enabled: true
+  cache: true
+echo: false
+warning: false
+
+---
+
+The FARSuN historical sunspot database consolidates raw sunspot observations (1610–1980) from multiple legacy sources into a single, queryable system that follows Virtual Observatory (VO) standards. It harmonizes independent encodings (e.g., Mitteilungen, Wolf Institute tables, Shreya’s FARSuN DB, Stephen Fay’s variant) and augments them with observer/observatory/instrument metadata, provenance, and QC flags to support scientific reuse and the reconstruction of ISN V3. The core content is daily/group/spot counts (NG, NS, Wolf number components) with optional positions/areas where available, mapped to observers, observatories, instruments, and bibliographic rubrics (Mitteilungen IDs, pages/notes). It captures both table-based sources and drawing-derived extractions.
+The database is the central integration layer: it makes disparate historical observations Findable, Accessible, Interoperable, and Reusable (FAIR) via standard VO tooling; enables consistent QC; and provides the authoritative input stream to ISN V3 stitching/calibration workflows. It also supports new products (e.g., GN; higher cadence daily numbers) by ensuring traceable, versioned provenance.
+
+### A consolidated, QC’d, VO-exposed database is essential to:
+- Quantitatively compare observers and epochs to derive robust k-factors and correct systematic biases (e.g., pre‑Wolfer vs. post‑Waldmeier eras).
+- Reconstruct ISN V3 with explicit provenance, uncertainty, and versioning.
+- Enable external tools (heliophysics, climate studies) to query the same canonical, machine-actionable tables. 
+
+## What the data look like (schema snapshot)
+-  **Core table:** `observations` (date, NG, NS, Wolf components/total, optional positions/areas, method/conditions, links to observer/observatory/instrument/source/rubric, provenance, QC flags).
+-  **Entities:** `observers`, `observatories`, `instruments`, `sources`, `rubrics`.
+-  **Control & traceability:** alias and legacy ID mapping, `provenance`, `qc_flags`, `audits`.
+-  **Assets:** links to scans/snippets with OCR/HTR confidence.
+
+## Current status (high level)
+- **Legacy sets staged** in separate schemas for deterministic comparison: initial Mitteilungen, Shreya Mitteilungen, Stephen variant, Wolf Institute dump, Shreya FARSuN.
+- **Web interfaces loaded** for curator review; mapping tables in place.
+- **New extractions underway:** Adams (drawings), Gruithuisen (manuscripts); Zürich tables extracted by students.
+
+## Quality control (QC) highlights
+- Structured **comparison views** across legacy vs. canonical tables.
+- Automated checks: date integrity, **NG ≤ NS**, missing observer names, **interpolated values**, duplicate candidates.
+- Documented corrections: observer misattributions (e.g., Williston↔Young; Main vs. Airy).
+- **Observer–year–observatory** cross‑correlation tests in curator tooling.
+
+## Digitization & metadata
+- Mitteilungen tables digitized and transferred; annotations and corrections applied.
+- Drawing extraction stack evaluated (DIGISUN, NSO tools, Arlt code); API‑based snippet workflow for manuscripts.
+- Metadata build‑out for **EPNcore alignment** (observer, instrument, observatory, source/rubric); Zürich tables metadata encoding ongoing.
+
+## Accessibility
+- Target exposure via **EPN‑TAP** on ROB’s TAP server (already validated with USET tables).
+- Results queryable with **ADQL**; delivery as **VOTable**; documented release and versioning policy.
+
+## Roadmap toward ISN V3
+- **Finalize canonical schema** (conditions vocab, instrument/observatory validity ranges, mandatory provenance/audits).
+- **Complete legacy ID crosswalks** and alias disambiguation; close mapping gaps.
+- **Scale QC automation** (validator suite + dashboards) and uncertainty model (observer variance, method/conditions).
+- **Observer intercalibration & stitching** per historical regime; publish alpha/beta V3 comparisons.
+- **VO exposure** of `epn_core` view + example ADQL notebooks; register service.
+- **Extraction scale‑up** (Adams, Gruithuisen, Bernaerts, Herschel, Pastorff, Soemmering, Rost); integrate HTR confidence into QC.
+
+## Risks & follow‑ups
+- Residual legacy inconsistencies and incomplete aliasing/metadata.
+- Variable availability and accuracy of positions/areas across sources.
+- Need **EPNcore extensions** for sunspot‑specific fields (Wolf components, QC ranks).
+  **Mitigations:** curated mapping closure, authority control, QC validator expansion, documented EPNcore extensions.
+

@@ -23,53 +23,49 @@ echo: false
 warning: false
 
 ---
+### Gruithuisen Data
+- Historical manuscripts by Franz von Paula Gruithuisen (Munich Observatory, early 19th century) containing daily notes on weather, sky conditions, and sunspot observations, written in Kurrent (old German script).
+- The notebooks combine textual remarks (“Flecken”, “Öffnungen”) with drawings — both small in-text sketches and large full-disk solar diagrams.
+- Working data product: daily entries with date, time, presence/absence of spots, NG/NS counts (if visible), drawing type/quality flag, weather/seeing notes, and page references.
 
+#### Importance (for FARSuN & ISN V3)
+- Provides dense coverage during the late Dalton Minimum (~1817 – mid-1840s), filling a critical gap in early-19th-century solar records.
+- Includes both spotless and active days — essential for long-term continuity and low-activity baselines in the International Sunspot Number (V3).
+- Weather and seeing information enrich the FARSuN condition table, supporting observer-bias and visibility studies.
+- Enables cross-calibration with contemporary observers (Adams, Stark, Pastorff) to refine k-factors and reliability estimates.
 
+#### Time Span (working range)
+- Observations extend roughly 1817 – 1849 (core dense years 1824–1826 pending verification).
+- Task under way to finalize start/end years and compile a full volume + page inventory.
 
-The **Gruithuisen data** is historical sunspot observations made by _Franz von Paula Gruithuisen_. This data is particularly valuable for reconstructing the international sunspot number (ISN) due to its detailed records from the early 19th century.
+#### What is being extracted
+- Core daily parameters: date, time, spotless/active flag, NG, NS, comments, and provenance (text vs drawing).
+- Drawing flags: schema / full-disk (indicator of counting fidelity).
+- Contextual data: sky condition, barometer, hygrometer, temperature, method remarks.
+- Metadata links: book / volume / page numbers, normalized image IDs, checksums.
 
-### Overview of Gruithuisen Data
+### Current Status (Oct 2025)
+- Data retrieval: All image scans and text snippets collected; preliminary CSV/XLSX files prepared.
+- Digitization: Page crops and snippet images completed; Transkribus/Cloude App workflow/pipeline is prepared for Kurrent script.
+- Counting: Double-counting verification procedure definition in progress.
+- Quality control: Two-pass QC (survey → counting) in progress; 
+- Metadata: Observer/site/instrument registry being merged with database; VO/EPN-TAP export planned after QC completion.
 
-1. **Content and Format:**
+#### Quality Control & Normalization
+- Enforce standardized filenames, date/time formats, and provenance flags.
+- Maintain audit trail linking every image to its extracted record.
+- Ambiguous or illegible Kurrent passages flagged for expert review; define acceptance thresholds for HTR accuracy.
 
-   - The Gruithuisen data consists of manuscripts that primarily document weather conditions alongside sunspot observations. The entries often include barometric and hygrometric readings, with specific dates and times noted.
+#### Open Items
+• Formalize counting policy for small in-text sketches (presence-only vs countable).
+• Benchmark Transkribus/App HTR results; set minimum human-review rate.
+• Identify overlaps with coeval observers for calibration validation.
 
-   - The observations are written in **Kurrent** or **Kurrentschrift**, an old German script that poses challenges for modern transcription and interpretation. This script is characterized by its cursive style, making it difficult to read without specialized knowledge.
+### Next Steps (toward ISN V3 integration)
+- Complete survey pass → definitive daily presence/absence + drawing availability/type.
+- Generate provisional daily NG/NS with uncertainty and provenance flags.
+- Apply QC (dual counts, normalization, conflict resolution, metadata registry).
+- Perform inter-observer calibration and bias checks.
+- Publish FAIR, VO-ready tables (daily counts + condition data + image catalog) via ROB/SILSO.
 
-   - The data includes descriptions of sunspots, often referred to as "flecken" (spots) or "öffnungen" (openings), and their evolution over time.
-
-
-2. **Historical Context:**
-
-   - Gruithuisen's observations span several years (**1817-1849**), with significant entries from **1824, 1825, and 1826** (? Check this). The data is crucial for understanding solar activity during this period, particularly in relation to weather patterns.
-
-### Current Status of Gruithuisen Data
-
-1. **Data Extraction and Processing:**
-
-   - The FARSuN team has made substantial progress in extracting and processing the Gruithuisen data. Key tasks include:
-
-     - **File Renaming Algorithm:** Kalugoduc and Christian Ritter are developing an algorithm to standardize the naming of extracted image files from the format `1834_June_XX.jpg` to `183406XX.jpg`.
-
-     - **Quality Control:** The extracted information in CSV or XLSX formats needs to be corrected for formatting issues, particularly for odd years.
-
-     - **Counting Drawings:** The team is tasked with counting the number of sunspot groups and individual spots from the drawings, with a flag indicating whether each drawing is a large or small schema. This counting must be verified by at least two different individuals.
-
-
-2. **Data Verification and Quality Control:**
-
-   - Quality control is essential for ensuring the accuracy of the extracted data. The presence or absence of sun symbols must be checked against the extracted information.
-
-3. **Collaboration and Tools:**
-
-   - The team is utilizing tools like **Transkribus** for text extraction and is considering citizen science initiatives to engage the public in the transcription process.
-
-   - Specialized help is being sought for the extraction of complex texts, particularly from students familiar with the Kurrent script.
-
-4. **Recent Meetings and Discussions:**
-
-   - In the latest meetings, the team discussed the progress on the Gruithuisen data, including the need for a structured approach to data extraction and the identification of key keywords for further analysis.
-
-
-
-In conclusion, the Gruithuisen data is a vital part of the FARSuN project, with ongoing efforts focused on extraction, verification, and analysis. The team is actively working to overcome challenges related to the historical format and language of the data, ensuring its integration into the broader context of solar activity research.
+Gruithuisen’s manuscripts offer a long, context-rich, early-19th-century record of solar and meteorological activity. With extraction, QC nearly complete, this dataset is poised to become a cornerstone for ISN V3 calibration and uncertainty modeling within the FARSuN project.

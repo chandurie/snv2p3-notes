@@ -3,6 +3,8 @@ project:
   render:
   - "*.qmd"
   - "!./mittheilungen_data-1700.qmd"
+  - "!./mittheilungen_data-new.qmd"
+  - "!./mittheilungen_data.qmd"
 
 website:
   # favicon: "./logos/kg-logo.svg"

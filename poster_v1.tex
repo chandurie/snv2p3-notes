@@ -22,6 +22,12 @@
 \usepackage{colortbl}
 \usepackage{xcolor}
 \usepackage{etoolbox} % for safe list tweaks
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,calc}
+\tcbuselibrary{skins,listings,breakable}
 
 % Safer list spacing
 \makeatletter
@@ -30,78 +36,272 @@
 \makeatother
 
 % Colors
-\definecolor{royal}{HTML}{2C3E50}
-\definecolor{accent}{HTML}{4A90E2}
-\definecolor{softbg}{HTML}{F8F7F4}
-\definecolor{danger}{HTML}{C0392B}
+\definecolor{royal}{HTML}{0B132B}        % deep midnight blue
+\definecolor{accent}{HTML}{F15152}       % vibrant coral
+\definecolor{softbg}{HTML}{F7FAFC}       % airy background
+\definecolor{mint}{HTML}{06AED5}         % bright aqua
+\definecolor{highlight}{HTML}{FFC857}    % warm highlight
+\definecolor{violet}{HTML}{5B2E90}       % punchy violet
+\definecolor{danger}{HTML}{F46036}       % bold alert orange
+\definecolor{columnblue}{HTML}{E6F6FA}   % column wash
+\definecolor{datasetgreen}{HTML}{2CB978} % dataset tab green
+\definecolor{codegreen}{HTML}{2CB978}
+\definecolor{codeblue}{HTML}{0F8BCE}
+\definecolor{codepurple}{HTML}{6C4AB6}
+\definecolor{codeorange}{HTML}{F9A620}
+\definecolor{codered}{HTML}{F15152}
+\definecolor{codegray}{HTML}{6B7B8A}
+\definecolor{codecomment}{HTML}{2F8F83}
+\definecolor{codestring}{HTML}{E85D75}
 
 \setbeamercolor{normal text}{fg=royal,bg=softbg}
-\setbeamercolor{block title}{fg=white,bg=accent}
-\setbeamercolor{block body}{fg=royal,bg=white}
+\setbeamercolor{structure}{fg=mint}
 \setbeamercolor{alerted text}{fg=danger}
-\setbeamercolor{structure}{fg=accent}
+\setbeamercolor{block title}{fg=white,bg=mint!80!royal}
+\setbeamercolor{block body}{fg=royal,bg=white!96!softbg}
+\setbeamercolor{block title alerted}{fg=white,bg=accent!80!danger}
+\setbeamercolor{block body alerted}{fg=royal,bg=white!90!softbg}
+\setbeamercolor{titlewrap}{fg=white,bg=royal}
+\setbeamercolor{titleaccent}{fg=highlight,bg=royal}
+\setbeamercolor{columnthreebox}{fg=royal,bg=columnblue}
+
+\lstdefinestyle{codestyle}{%
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{codeblue}\bfseries,
+  commentstyle=\color{codecomment}\itshape,
+  stringstyle=\color{codestring},
+  numberstyle=\scriptsize\color{codegray},
+  numbers=left,
+  numbersep=10pt,
+  showstringspaces=false,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2,
+  keepspaces=true,
+  columns=fullflexible
+}
+\lstset{style=codestyle}
+
+\newtcblisting{codeblock}[3][]{
+  listing only,
+  breakable,
+  enhanced,
+  colframe=#3,
+  colback=#3!6!white,
+  coltitle=#3!80!black,
+  fonttitle=\bfseries\footnotesize,
+  title={#2},
+  arc=2mm,
+  boxrule=0.5pt,
+  left=2mm,
+  right=2mm,
+  top=2mm,
+  bottom=2mm,
+  attach boxed title to top left={yshift=-2mm,xshift=4mm},
+  boxed title style={
+    sharp corners,
+    colframe=#3,
+    colback=#3!18!white,
+    boxrule=0.5pt
+  },
+  listing options={style=codestyle,#1}
+}
+
+\newenvironment{greencode}[2][]{
+  \begin{codeblock}[#1]{#2}{codegreen}
+}{\end{codeblock}}
+
+\newenvironment{bluecode}[2][]{
+  \begin{codeblock}[#1]{#2}{codeblue}
+}{\end{codeblock}}
+
+\newenvironment{purplecode}[2][]{
+  \begin{codeblock}[#1]{#2}{codepurple}
+}{\end{codeblock}}
+
+\newenvironment{orangecode}[2][]{
+  \begin{codeblock}[#1]{#2}{codeorange}
+}{\end{codeblock}}
+
+\newenvironment{redcode}[2][]{
+  \begin{codeblock}[#1]{#2}{codered}
+}{\end{codeblock}}
+
+\newcommand{\datasetbox}[2]{%
+  \tcbox[colframe=#2,colback=#2!88!white,boxrule=0pt,sharp corners,arc=0pt,left=6mm,right=6mm,top=2.6mm,bottom=2.6mm,fontupper=\small\bfseries\color{white}]{#1}%
+}
 
 \usefonttheme{professionalfonts}
-\setlength{\parskip}{0.6em}
+\renewcommand{\familydefault}{\sfdefault}
+\setbeamerfont{title}{series=\bfseries,family=\sffamily,shape=\upshape}
+\setbeamerfont{block title}{series=\bfseries,family=\sffamily}
+\setbeamerfont{block body}{family=\sffamily}
+\setbeamerfont{section title}{series=\bfseries,family=\sffamily}
+\setlength{\parskip}{0.65em}
 \setlength{\parindent}{0pt}
+\setlength{\columnsep}{1.8cm}
+\setbeamertemplate{blocks}[rounded][shadow=true]
 \newcommand{\key}[1]{\textbf{\color{accent}#1}}
+\newcommand{\highlight}[1]{\textcolor{accent}{\textbf{#1}}}
+\newcommand{\metriccard}[2]{%
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.8em,center,rounded=true,shadow=false,fg=royal,bg=white!96!mint]{block body}%
+    {\Large\bfseries\color{accent}#1}\\[-0.25em]
+    {\footnotesize #2}%
+  \end{beamercolorbox}%
+}
+\newcommand{\callout}[2]{%
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.6em,rounded=true,shadow=false,fg=royal,bg=white!95!accent]{block body}%
+    {\bfseries\color{royal}#1}\\[-0.3em]
+    {\small #2}%
+  \end{beamercolorbox}%
+}
 
 % Paper size
 % \setlength{\paperwidth}{841mm}
 % \setlength{\paperheight}{1189mm}
 
-\title{\LARGE \textbf{Refining the Sunspot Number Series to ISN~V3:\\ Challenges and Benefits for the Space Climate Community}}
+\setbeamertemplate{background}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \shade[left color=softbg,right color=white!90!mint] (current page.south west) rectangle (current page.north east);
+    \shade[bottom color=accent!8!white,top color=white,opacity=0.9] (current page.south west) rectangle ($(current page.south east)+(0,24cm)$);
+    \path[fill=white,opacity=0.83] ($(current page.north west)+(1.6cm,-10.5cm)$) rectangle ($(current page.south west)+(0.31\paperwidth,-5cm)$);
+    \path[fill=white,opacity=0.86] ($(current page.north west)+(0.34\paperwidth,-10.5cm)$) rectangle ($(current page.south west)+(0.66\paperwidth,-5cm)$);
+    \path[fill=white,opacity=0.83] ($(current page.north east)+(-0.31\paperwidth,-10.5cm)$) rectangle ($(current page.south east)+(-1.6cm,-5cm)$);
+    \path[fill=mint!25!white,opacity=0.92] (current page.north west)
+      .. controls +(14,2) and +(-6,-16) .. ($(current page.center)+(0,32)$)
+      .. controls +(10,-14) and +(-14,-8) .. ($(current page.north west)+(5cm,-60cm)$);
+    \path[fill=accent!18!white,opacity=0.85] ($(current page.north east)+(-6cm,-3cm)$)
+      .. controls +(-12,-6) and +(10,12) .. ($(current page.center)+(0,10)$)
+      .. controls +(-8,-6) and +(12,6) .. ($(current page.north east)+(-1cm,-56cm)$);
+    \path[fill=violet!18!white,opacity=0.55] ($(current page.center)+(0,-28)$) circle (34cm);
+    \path[fill=highlight!35!white,opacity=0.4] ($(current page.center)+(-22cm,12cm)$) circle (12cm);
+    \path[fill=mint!28!white,opacity=0.35] ($(current page.center)+(22cm,-6cm)$) circle (14cm);
+  \end{tikzpicture}%
+}
+
+\title{\textbf{Refining the Sunspot Number Series to ISN~V3}}
+\subtitle{Challenges and Benefits for the Space Climate Community}
 \author{\large Kalugodu Chandrashekhar$^{1}$, Laure Lef\`evre$^{1}$, Benjamin Mampaey$^{1}$, Senthamizh Pavai Valliappan$^{1}$, Hisashi Hayakawa$^{2}$, Christian Ritter$^{3}$}
-\institute{\large $^{1}$ Royal Observatory of Belgium (ROB), $^{2}$ Nagoya University, $^{3}$ Universit\'e Catholique de Louvain, Louvain-la-Neuve, Belgium}
+\institute{\small $^{1}$ Royal Observatory of Belgium (ROB), $^{2}$ Nagoya University, $^{3}$ Universit\'e Catholique de Louvain, Louvain-la-Neuve, Belgium}
 
 % Logos (replace with your own files)
 \newcommand{\leftlogo}{./logos/observatory_400x332.jpg}
-\newcommand{\rightlogo}{./logos/BELSPO_1867x1563.jpg}
+\newcommand{\rightlogo}{./logos/silso-logo.png}
+% \newcommand{\rightlogo}{./logos/BELSPO_1867x1563.jpg}
 
 % Title box
 \setbeamertemplate{headline}{%
-  \leavevmode%
-  \begin{beamercolorbox}[wd=\paperwidth,ht=5.2cm]{block body}
-    \begin{minipage}[c]{0.19\paperwidth}
-      \centering \vspace{0.6cm}
-      \includegraphics[height=3.6cm]{\leftlogo}
+  \leavevmode
+  \begin{tikzpicture}[remember picture,overlay]
+    \path[fill=royal] (current page.north west) rectangle ($(current page.north east)+(0,-6.1cm)$);
+    \path[fill=accent!45!royal] ($(current page.north west)+(0,-0.2cm)$)
+      .. controls +(8,-1) and +(-4,4) .. ($(current page.north)+(0,-3cm)$)
+      .. controls +(4,-3) and +(-6,1) .. ($(current page.north west)+(0,-6.1cm)$);
+    \path[fill=mint!45!royal,opacity=0.65] ($(current page.north east)+(-4cm,-0.5cm)$) circle (4.6cm);
+  \end{tikzpicture}%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=10.8cm,dp=0ex,leftskip=2.2cm,rightskip=2.2cm]{titlewrap}
+    \begin{minipage}[c]{0.17\paperwidth}
+      \centering \vspace{-6.2cm}
+      \includegraphics[height=4.9cm]{\leftlogo}
     \end{minipage}%
-    \begin{minipage}[c]{0.62\paperwidth}
-      \centering \vspace{0.4cm}
-%      {\color{royal}\bfseries\fontsize{73}{76}\selectfont FAR\textcolor{accent}{Su}N}\\[0.4cm]
-      {\color{royal}\bfseries\fontsize{36}{40}\selectfont \inserttitle}\\[0.3cm]
-      {\large \insertauthor}\\[-0.2cm]
-      {\normalsize \insertinstitute}
+    \begin{minipage}[c]{0.51\paperwidth}
+      \raggedright \vspace{-7.5cm}
+%      {\fontsize{60}{62}\selectfont \textbf{FAR\textcolor{accent}{Su}N}}\\[-0.1cm]
+%      {\small \color{accent}\textbf{Findability and Accessibility of historical Raw Sunspot Numbers}}\\[0.25cm]
+      {\color{white}\bfseries\fontsize{40}{42}\selectfont \inserttitle}\\[0.4cm]
+      {\color{accent!15!white}\fontsize{26}{28}\selectfont \insertsubtitle}\\[0.55cm]
+      {\color{white}\normalsize \insertauthor}\\[0.25cm]
+      {\color{softbg!70!white}\small \insertinstitute}
     \end{minipage}%
-    \begin{minipage}[c]{0.19\paperwidth}
-      \centering \vspace{0.6cm}
-      \includegraphics[height=3.6cm]{\rightlogo}
+    \begin{minipage}[c]{0.22\paperwidth}
+      \raggedleft \vspace{-6.2cm}
+      \includegraphics[height=4.9cm]{\rightlogo}\\[0.5cm]
+%      \callout{ISN heritage}{1607--1980 primary sources}\\[0.4cm]
+%      \callout{Release goal}{ISN V3 with open uncertainties}
     \end{minipage}
   \end{beamercolorbox}%
+  \vspace{0.8cm}
 }
 
 % Footer
 \setbeamertemplate{footline}{%
-  \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{block body}
-    \hfill \small \textbf{Contact:} your.email@institution \quad|\quad \textbf{Project:} \url{https://www.sidc.be/silso/} \hfill
+  \begin{tikzpicture}[remember picture,overlay]
+    \path[fill=royal!92!black] (current page.south west) rectangle ($(current page.south east)+(0,1.5cm)$);
+    \path[fill=accent!55!royal] ($(current page.south west)+(0,0.15cm)$)
+      -- ($(current page.south east)+(-5cm,0.15cm)$)
+      .. controls +(-3,0.6) and +(4,-0.6) .. ($(current page.south west)+(6cm,1.5cm)$)
+      -- cycle;
+  \end{tikzpicture}%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.3cm,dp=0ex,leftskip=2.2cm,rightskip=2.2cm]{titlewrap}
+    \vspace{0.2cm}
+    \small
+    \textbf{Contact}\,\,: \href{mailto:sidc-support@oma.be}{sidc-support@oma.be}\hfill
+    \textbf{Data Portal}: \url{https://www.sidc.be/silso/}\hfill
+    \textbf{Version}: Late 2025 snapshot
   \end{beamercolorbox}%
 }
 
 % Helper block env
 \newenvironment{tightblock}[1]{%
-  \begin{block}{#1}\vspace{-0.5em}
-}{\end{block}}
+  \begin{tcolorbox}[
+    enhanced,
+    breakable,
+    width=\linewidth,
+    colback=white,
+    colframe=white,
+    boxrule=0pt,
+    sharp corners,
+    top=10pt,
+    bottom=10pt,
+    left=8pt,
+    right=8pt,
+    before upper={\parindent0pt},
+    borderline={0.8pt}{0pt}{white!60!royal},
+    drop shadow={shadow xshift=3mm, shadow yshift=-3mm, opacity=0.98,fill=royal!90!white},
+    title=#1,
+    fonttitle=\bfseries\large\color{white},
+    attach boxed title to top left={yshift=-6pt,xshift=0pt},
+    boxed title style={
+      colback=royal,
+      colframe=royal,
+      sharp corners=southwest,
+      sharp corners=southeast,
+      top=4pt,
+      bottom=4pt,
+      left=8pt,
+      right=8pt,
+      fontupper=\bfseries\large\color{white}
+    }
+  ]
+}{\end{tcolorbox}}
 
 \begin{document}
 \begin{frame}[t]
-\begin{columns}[t,totalwidth=\paperwidth]
+\begin{columns}[t,totalwidth=0.98\paperwidth]
 
 % -------- COLUMN 1 --------
-\begin{column}{0.32\paperwidth}
+\begin{column}{0.27\paperwidth}
 \begin{tightblock}{Abstract}
 \justifying
-The International Sunspot Number (ISN) remains affected by historical scale jumps such as the \emph{Waldmeier break}, even after two major recalibrations. FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) tackles this by rebuilding the record from the ground up: collecting handwritten logs and tables from 1607--1980, digitizing them, and applying consistent metadata and validation. Early 2025 milestones include integrating the full 1610--1918 \emph{Mittheilungen} corpus, digitizing more than 95\% of the 2\,000+ Zürich observation tables, extracting 338 drawings (1\,056 entries) from the C.\,H. Adams notebooks, and launching quality-control pipelines for the Gruithuisen manuscripts. The reconstructed ISN~V3 will deliver traceable uncertainties, hemispheric indices, and open FAIR-compliant access, strengthening space climate studies, solar cycle prediction, and coupled Sun--Earth research.
+The International Sunspot Number (ISN) remains affected by historical scale jumps such as the \emph{Waldmeier break}, even after two major recalibrations. FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) tackles this by rebuilding the record from the ground up: collecting handwritten logs and tables from 1607--1980, digitizing them, and applying consistent metadata and validation. 
+  % Early 2025 milestones include integrating the full 1610--1918 \emph{Mittheilungen} corpus, digitizing more than 95\% of the 2\,000+ Zürich observation tables, extracting 338 drawings (1\,056 entries) from the C.\,H. Adams notebooks, and launching quality-control pipelines for the Gruithuisen manuscripts. The reconstructed ISN~V3 will deliver traceable uncertainties, hemispheric indices, and open FAIR-compliant access, strengthening space climate studies, solar cycle prediction, and coupled Sun--Earth research.
 \end{tightblock}
+
+% \begin{tightblock}{Project Pulse}
+% \begin{minipage}[t]{0.48\linewidth}
+%   \metriccard{1607--1980}{Temporal coverage of raw records}
+% \end{minipage}\hfill
+% \begin{minipage}[t]{0.48\linewidth}
+%   \metriccard{2\,000+}{Zürich observation tables tracked}
+% \end{minipage}\\[0.6em]
+% \begin{minipage}[t]{0.48\linewidth}
+%   \metriccard{1\,056}{C. H. Adams notebook entries curated}
+% \end{minipage}\hfill
+% \begin{minipage}[t]{0.48\linewidth}
+%   \metriccard{100\%}{Wolf's \emph{Mittheilungen} corpus integrated}
+% \end{minipage}
+% \end{tightblock}
 
 \begin{tightblock}{Why Reconstruction?}
   The ISN inherits observer-dependent scale changes (for example the 1947 "Waldmeier jump") that cannot be removed by tweaking coefficients alone. FARSuN pioneers a full reconstruction that replays the entire observing chain.
@@ -112,58 +312,56 @@ The International Sunspot Number (ISN) remains affected by historical scale jump
 \end{itemize}
 \end{tightblock}
 
+% \begin{tightblock}{Recalibration vs Reconstruction}
+% \begin{minipage}[t]{0.48\linewidth}
+%   \callout{Legacy recalibration}{Linear scaling of composite series; no new metadata; residual biases (e.g. "Waldmeier jump") remain hidden.}
+% \end{minipage}\hfill
+% \begin{minipage}[t]{0.48\linewidth}
+%   \callout{FARSuN reconstruction}{Primary sources re-digitised with observer context, transparent uncertainty budgets, and reproducible release tooling.}
+% \end{minipage}
+% \vspace{0.3cm}
+% {\scriptsize Based on FARSuN interactive report section "The Problem" \& "The Solution".}
+% \end{tightblock}
+
 \begin{tightblock}{Four-Axis Methodology}
 \begin{enumerate}
   \item \key{Gather Sources}: track down dispersed observing logs (Wolf's \emph{Mittheilungen}, Zürich tables, Gruithuisen manuscripts, Adams drawings) and capture provenance metadata at ingest.
-  \item \key{Process Data}: combine handwriting/OCR engines (Transkribus models, custom scripts) with manual double-keying for fragile entries.
+  \item \key{Process Data}: use handwriting/OCR engines (Transkribus models, custom scripts) alongside manual double-keying for fragile entries.
   \item \key{Validate \& Standardize}: reconcile aliases, observer IDs, and calendars; model group/spot counting behaviour to derive calibration curves.
   \item \key{Disseminate}: publish machine-readable products, APIs, and VO-ready services with versioned uncertainty bundles for each release.
 \end{enumerate}
 \end{tightblock}
 
-\begin{tightblock}{FAIR Principles}
-  Every dataset and release roadmap is benchmarked against FAIR targets that we monitor with the dashboard shown below.
+% \begin{tightblock}{FAIR Principles}
+%   Every dataset and release roadmap is benchmarked against FAIR targets that we monitor with the dashboard shown below.
+%
+% \begin{itemize}
+%   \item \textbf{Findable} – persistent DOIs, rich observation-level metadata, and navigable catalogues.
+%   \item \textbf{Accessible} – open formats (CSV, NetCDF, VO tables) served via HTTPS and scripted download recipes.
+%   \item \textbf{Interoperable} – shared vocabularies, observer IDs, and VOEvent-ready semantics.
+%   \item \textbf{Reusable} – versioned releases with uncertainty models, provenance trails, and detailed caveats.
+% \end{itemize}
+% \includegraphics[width=\linewidth]{./figures/fair_radar.png}
+% \end{tightblock}
+\begin{tightblock}{FARSuN Historical Sunspot Database} % — Status \& Outlook}
+  A sustainable, interoperable reference database ensuring that four centuries of solar observations remain accessible and scientifically reliable for the next generation of Sun-climate research. \\
+  % \textbf{Present Status}
+  \begin{itemize}
+    \item Legacy sources (Mitteilungen, Wolf Institute, Shreya, Stephen, etc.) have been integrated into the current schema for cross-validation and QC.
+    \item Automated quality checks detect inconsistencies (e.g., NG $>$ NS, duplicates, missing metadata).
+    \item Metadata harmonization for observers, instruments, and observatories is underway.%, aligned with the EPN-TAP/VO standard for public access.
+    % \item A TAP server at ROB is operational, enabling ADQL queries and VOTable outputs.
+  \end{itemize}
 
-\begin{itemize}
-  \item \textbf{Findable} – persistent DOIs, rich observation-level metadata, and navigable catalogues.
-  \item \textbf{Accessible} – open formats (CSV, NetCDF, VO tables) served via HTTPS and scripted download recipes.
-  \item \textbf{Interoperable} – shared vocabularies, observer IDs, and VOEvent-ready semantics.
-  \item \textbf{Reusable} – versioned releases with uncertainty models, provenance trails, and detailed caveats.
-\end{itemize}
-\includegraphics[width=\linewidth]{./figures/fair_radar.png}
-\end{tightblock}
-\end{column}
+  \textbf{Next Steps}
+  \begin{itemize}
+    \item Finalize canonical schema and close remaining legacy mappings.
+    \item Expand automated QC dashboards and uncertainty modeling.
+    \item Scale up digitization and extraction (Adams, Gruithuisen, Stark, etc.) using HTR and citizen-science workflows.
+    \item Expose the full dataset through the EPN-TAP service, ensuring FAIR data availability.
+    \item Use this harmonized database as the foundation for ISN V3 calibration and long-term solar activity studies.
+  \end{itemize}
 
-% -------- COLUMN 2 --------
-\begin{column}{0.32\paperwidth}
-\begin{tightblock}{Key Datasets}
-\begin{tabular}{@{}p{0.33\linewidth}p{0.23\linewidth}p{0.38\linewidth}@{}}
-\toprule
-\textbf{Source} & \textbf{Period} & \textbf{Current Focus} \\ \midrule
-Zürich Tables & 1945--1979 & 95\% of 2\,000+ tables digitized; metadata encoding for late-1970s observers underway. \\
-\emph{Mittheilungen} & 1610--1918 & Fully integrated; observer statistics produced from 400+ years of entries. \\
-Gruithuisen Manuscripts & 1817--1849 & 25\% transcription via Transkribus; file renaming algorithm + dual QC for group/spot counts. \\
-C. H. Adams Drawings & 1819--1823 & 338 sketches extracted (1\,056 entries); spotless days cross-checked against Wolf series. \\
-Augustin Stark Ledgers & 1813--1835 & Normalizing tabular layouts; linking weather annotations to group counts. \\
-Rost Journals & 18th--19th c. & Building metadata vocabularies prior to digitization ingest. \\
-\bottomrule
-\end{tabular}
-\includegraphics[width=0.5\linewidth]{./figures/gruithuisen/sample1.jpg}
-\includegraphics[width=\linewidth]{./figures/dataset_progress.png}
-\end{tightblock}
-
-\begin{tightblock}{Progress Highlights (Early 2025)}
-\begin{itemize}
-  \item Citizen-science ready interface blueprint finished; aligns with planned public transcription portal.
-  \item Zürich production line blends Transkribus-assisted extraction with manual review to hit 2025 completion.
-  \item Gruithuisen workflow pairs Kurrent script specialists with validation scripts to flag missing sun symbols.
-  \item Adams drawings compared against \emph{Mittheilungen} daily records to benchmark spotless-day agreement.
-\end{itemize}
-\end{tightblock}
-
-\begin{tightblock}{Observer Timeline}
-\includegraphics[width=\linewidth]{./figures/observers_bubble.png}
-\scriptsize (Bubble size = total observations; color = years)
 \end{tightblock}
 
 \begin{tightblock}{Methods}
@@ -174,10 +372,159 @@ Rost Journals & 18th--19th c. & Building metadata vocabularies prior to digitiza
   \item Automation: reproducible Python pipelines with checkpoints for citizen-science ingestion and review.
 \end{itemize}
 \end{tightblock}
+
+\begin{tightblock}{Quality Gates}
+\begin{itemize}
+  \item Two-person verification for Adams and Gruithuisen counts before publishing derived indices.
+  \item Cross-compare FARSuN transcriptions with Wolf's \emph{Mittheilungen} and modern SILSO indices for drift detection.
+  \item Metadata harmonisation ensures unique observer IDs, instrument notes, and weather context survive downstream.
+  \item Git-tracked pipelines and notebooks capture every transformation for audit and reuse.
+\end{itemize}
+\end{tightblock}
+
+\end{column}
+
+
+% -------- COLUMN 2 --------
+\begin{column}{0.42\paperwidth}
+\begin{tightblock}{Key Datasets}
+  \datasetbox{Mittheilungen Dataset}{codegreen}
+% \vspace{0.3em}
+The Mittheilungen journals, compiled by Rudolf Wolf and successors at the Zürich Observatory, form the backbone of historical sunspot observations, recording daily group and spot counts from 1848 to 1945 and extending back to 1610 through Wolf's compilations.%; within the FARSuN project, the complete series was digitized and structured (2017--2019) at the Royal Observatory of Belgium, integrated into the historical sunspot database, and is undergoing continuing quality checks, metadata harmonization, and cross-comparisons with new extractions.
+
+% \textbf{Current focus}
+\begin{itemize}
+  \item Refining data consistency and observer calibration (Wolf--Wolfer overlap).
+  \item Finalizing metadata alignment for FAIR publication. 
+  \item Resolving remaining ID and provenance issues across merged databases.
+\end{itemize}
+
+% \textbf{Next steps}
+% \begin{itemize}
+%   \item Full public release via Virtual Observatory access.
+%   \item Inclusion of Mittheilungen as the core calibration reference for ISN Version 3.
+%   \item Development of interactive QC dashboards and documentation to support open, traceable historical solar research.
+% \end{itemize}
+\begin{figure}[t]
+  \centering
+  \begin{minipage}[t]{0.4\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/mittheilungen_sample.png}
+    {\small (a) Typical yearly table(in the Mittheilungen)}
+    % {(first page going up to early June). The table lists all daily observations from A.~Wolfer for 1890 with group and spot totals separated by a dot; stars mark days observed with a 40\,mm ``Parisian'' telescope.}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.52\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/observer_bubbles_poster_v2.png}
+    {\small (b) Observer coverage and overlaps}% that anchor cross-calibration.}
+  \end{minipage}
+  % \caption{\small Mittheilungen facsimile (a) and observer coverage overview (b) illustrating the documentation pipeline that links historical records to calibrated metadata.}
+\end{figure}
+\vspace{0.7em}
+\datasetbox{Z\"urich Tables (1945--1979)}{codeblue}
+% \vspace{0.3em}
+The Z\"urich Tables form the foundational record of daily sunspot number production at the Z\"urich Observatory between 1945 and 1979, detailing group and spot counts, the adopted Wolf number, and observing context.
+% \vspace{0.3em}
+% \textbf{Current status}
+\begin{itemize}
+  \item Fully digitized for 1945--1979 with detailed metadata completed for 1945--1950.
+  \item Quality control and observer metadata harmonisation underway to maintain traceability.
+  % \item Integration to consolidated FARSuN database is underway.
+\end{itemize}
+
+% \textbf{Next steps}
+% \begin{itemize}
+%   \item Complete metadata for later years, confirm 1980 holdings, and refine observer scaling (k-factors).
+%   \item Analyse the 1947 scale discontinuity and publish cleaned, validated releases linked with USET drawings.
+%   \item Deliver public access to the curated Z\"urich dataset to support reconstruction of ISN~V3.
+% \end{itemize}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.65\linewidth]{./figures/zurich_tables.png}
+  \caption{\small Facsimile of a typical handwritten yearly table}% from the complete 1945--1980 collection recovered in 2018--2019. Shown are H.~M\"uller's 1960 observations with group totals, spot counts, personal $k$ relative to Waldmeier, sky quality, monthly aggregates, and yearly averages, highlighting assistant-to-primary dispersion (here $k=0.52$ versus the 0.6 target).}
+\end{figure}
+
+  \datasetbox{C.~H. Adams Data}{codepurple} % — Present Status \& Future Work
+% \vspace{0.3em}
+FARSuN has recovered 338 full-disk drawings and 1,056 daily entries (308 spot days, 748 spotless) from C.~H.~Adams (1819--1823), providing dense coverage with explicit spotless days.
+
+% \vspace{0.3em}
+% \textbf{Current work}
+\begin{itemize}
+  \item Quality checks to align direct and reflection methods for consistent calibration.  
+  % \item Cross-check with Mittheilungen and other contemporaneous observers.
+  \item Orientation, and standardisation of drawings to enable future positional and area extractions.
+\end{itemize}
+\begin{figure}[t]
+  \centering
+\includegraphics[width=0.65\linewidth]{./figures/adams_example.png}
+\end{figure}
+% \\
+
+\datasetbox{Gruithuisen Data}{codeorange}% — Present Status \& Future
+% \vspace{0.3em}
+The Gruithuisen manuscripts (1817--1849) capture daily sunspot notes, drawings, and weather context in German Kurrent script, supplying early-19th-century coverage vital for ISN~V3 refinement.\\
+
+% \textbf{Present status (Oct 2025)}
+\begin{itemize}
+  \item Image sets and text snippets fully collected with preliminary CSV/XLSX extraction completed.
+  \item Two-pass QC (survey + counting) with verified sunspot counts in progress.
+\end{itemize}
+
+% \textbf{Next steps}
+% \begin{itemize}
+%   \item Finalise daily presence/absence and NG/NS values, and complete dual QC plus metadata registry.
+%   \item Calibrate with coeval observers to stabilise scaling.
+%   \item Publish FAIR, VO-ready daily tables and image catalogues via ROB/SILSO to support ISN~V3 calibration and uncertainty modelling.
+% \end{itemize}
+\begin{figure}[t]
+  \centering
+  \begin{minipage}[t]{0.50\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/Gruithuisen_Sample1.png}
+    % {\small (a) Daily log highlighting spotless spans and sky notes.}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{./figures/Gruithuisen_Sample2.jpg}
+    % {\small (b) Extract with NG/NS tallies and observer annotations.}
+  \end{minipage}
+\end{figure}
+\end{tightblock}
+
 \end{column}
 
 % -------- COLUMN 3 --------
-\begin{column}{0.32\paperwidth}
+\begin{column}{0.27\paperwidth}
+\begin{tightblock}{Key Datasets}
+\datasetbox{Augustin Stark Data}{codered}
+% \vspace{0.3em}
+The Stark dataset (1813–1835), comprising printed German descriptions of sunspot groups and chains, has been partially retrieved. Preliminary OCR and extraction tests show good potential, and ongoing work focuses on refining consistency, QC flags, and metadata integration into the FARSuN database.
+% \vspace{0.9em}
+\datasetbox{Summary}{codegray}
+\begin{tabular}{@{}p{0.33\linewidth}p{0.23\linewidth}p{0.38\linewidth}@{}}
+\toprule
+\textbf{Source} & \textbf{Period} & \textbf{Current Focus} \\ \midrule
+\emph{Mittheilungen} & 1610--1945 & Fully digitized and integrated; observer statistics produced from 400+ years of entries. \\
+Zürich Tables & 1945--1979 & 95\% of 2\,000+ tables digitized; metadata encoding for late-1970s observers underway. \\
+Gruithuisen & 1817--1849 & 100\% digitized; Extraction using transkribus like models + dual QC for group/spot counts underway. \\
+C. H. Adams & 1819--1823 & 338 sketches extracted (1\,056 entries); spotless days cross-checked against Wolf series. \\
+Augustin Stark & 1813--1835 & Trial extraction are underway. \\
+% Rost Journals & 18th--19th c. &  \\
+\bottomrule
+\end{tabular}
+\end{tightblock}
+
+\begin{tightblock}{Progress Highlights }
+% \begin{tightblock}{Progress Highlights (Early 2025)}
+\begin{itemize}
+  \item Citizen-science interface blueprint prepared for the upcoming transcription portal.
+  \item Zürich pipeline combines Transkribus extraction with manual review to reach the 2026 target.
+  \item Gruithuisen workflow couples Kurrent experts with validation scripts to catch missing symbols.
+  \item Adams drawings cross-checked with \emph{Mittheilungen} records to confirm spotless-day agreement.
+\end{itemize}
+\end{tightblock}
 \begin{tightblock}{From Raw to ISN V3}
 \begin{enumerate}
   \item Curate daily counts with provenance-rich metadata (observer, instrument, weather context).
@@ -185,38 +532,45 @@ Rost Journals & 18th--19th c. & Building metadata vocabularies prior to digitiza
   \item Aggregate to monthly, yearly, and hemispheric indices with propagated uncertainties.
   \item Benchmark against ISN~V2 and satellite-era proxies to validate drift corrections.
 \end{enumerate}
-\includegraphics[width=0.9\linewidth]{./figures/comparison_panel.png}
+% \includegraphics[width=0.9\linewidth]{./figures/comparison_panel.png}
 \end{tightblock}
 
 \begin{tightblock}{Challenges}
 \begin{itemize}
-  \item Deciphering \emph{Kurrent} manuscripts and annotating non-solar notes without losing context.
-  \item Harmonising heterogeneous formats (drawings, tabular ledgers, weather marginalia).
-  \item Quantifying observer bias and spotless-day reporting habits over centuries.
-  \item Maintaining end-to-end provenance from scanned folio to released data product.
+  \item Decode \emph{Kurrent} manuscripts while preserving marginal notes.
+  \item Harmonise drawings, ledgers, and weather annotations.
+  \item Quantify observer bias and spotless-day reporting habits.
+  \item Maintain provenance from scanned folio to released product.
 \end{itemize}
 \end{tightblock}
 
-\begin{tightblock}{Impact}
-\begin{itemize}
-  \item Citizen science engagement accelerates transcription and STEM outreach.
-  \item Improved solar cycle prediction skill via unbiased long-term baselines.
-  \item Reference climatology for operational space weather services.
-  \item Higher-fidelity forcing inputs for Earth system and climate models.
-\end{itemize}
+\begin{tightblock}{Space Climate Impact}
+\begin{minipage}[t]{0.48\linewidth}
+  \callout{\color{codestring}Citizen science}{Interactive portal mobilises volunteers to transcribe \emph{Kurrent} manuscripts and sustain STEM outreach.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \callout{\color{codeblue}Forecasting}{Bias-free ISN~V3 improves solar cycle prediction skill and operational space weather baselines.}
+\end{minipage}\\[0.4em]
+\begin{minipage}[t]{0.48\linewidth}
+  \callout{\color{codeorange}Climate links}{Validated historical forcing refines long-term climate models and Earth radiation budget studies.}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  \callout{\color{codegreen}Open science}{FAIR-compliant releases with APIs and uncertainty bundles accelerate community reuse.}
+\end{minipage}
 \end{tightblock}
 
-\begin{tightblock}{Outlook}
-\begin{itemize}
-  \item Launch citizen-science transcription portal with tailored training sets.
-  \item Publish ISN~V3 release notes with uncertainty budget and API endpoints.
-  \item Expand collaborations (Nagoya, UCLouvain, ROB) for cross-validation and joint publications.
-\end{itemize}
-\includegraphics[width=0.8\linewidth]{./figures/ack_.png}
-\end{tightblock}
+% \begin{tightblock}{Outlook}
+% \begin{itemize}
+%   \item Launch the citizen-science transcription portal with targeted training.
+%   \item Publish ISN~V3 release notes covering uncertainties and API endpoints.
+%   \item Broaden partnerships (Nagoya, UCLouvain, ROB) for cross-validation and joint papers.
+% \end{itemize}
+% \end{tightblock}
 
-\begin{tightblock}{References}
-{\footnotesize \bibliography{articles}}
+\begin{tightblock}{Poster QR Code}
+\centering
+\includegraphics[width=0.72\linewidth]{./figures/qrcode-farsun-sidc.png}\\[0.6em]
+% \small Scan for live datasets, documentation, and outreach material.
 \end{tightblock}
 \end{column}
 

@@ -24,7 +24,7 @@ warning: false
 
 ---
 
- **Source book** : Along with [Mittheilungen](mittheilungen_data.qmd), the source books of Wolf were found in loose, unbound form in 2015. Before his discoveries were printed in the Mittheilungen, Wolf first documentd them in these source tables. Source books offer a lot of supplemetary material.
+ **Source book** : Along with [Mittheilungen](mittheilungen_data-1800.qmd), the source books of Wolf were found in loose, unbound form in 2015. Before his discoveries were printed in the Mittheilungen, Wolf first documentd them in these source tables. Source books offer a lot of supplemetary material.
 
 1. Observers on particular days, their k-factors and sunspot_observations
 2. Details of observers data used to fill out gaps on Wolf's data.

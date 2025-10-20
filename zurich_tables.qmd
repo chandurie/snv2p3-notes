@@ -24,33 +24,50 @@ warning: false
 
 ---
 
+The Zürich Tables are the internal source ledgers used at the Eidgenössische Sternwarte Zürich to construct the official daily sunspot number during the post-war era. They record, per observer and per day, the raw groups (G) and spots (S), the adopted Wolf/Zürich number R = k(10G+S), and notes on substitutions, weather/seeing, and instruments. The Waldmeier “primary” tables are especially informative about which value was used and why.
 
-The Zürich Tables are a collection of historical sunspot observation records maintained at the ETH Library in Zürich, Switzerland. These tables document sunspot observations made by various observatories and astronomers, particularly during the 20th century. They are crucial for understanding solar activity and variability, as they provide systematic and standardized records of sunspot counts and related phenomena.
+### Time span
+1945–1979 (scanned sets ~2,000+ tables). Locating/encoding 1980 is a stated goal to bridge to the Brussels era (1981–).
 
-### Time Period Covered
+### Zürich Tables are:
+- Only day-level documentary trail of how Zürich actually derived R (observer selection, k-factors, alternates).
+- Essential evidence for diagnosing and quantifying the 1947 discontinuity.
+- Anchor for observer chaining and scaling in 1945–1979; supports uncertainty models and hemispheric series.
+- Provides links to contemporaneous drawings (e.g., USET) for positional/area cross-checks.
 
-The Zürich Tables primarily cover the period from **1945 to 1979**. This timeframe is significant as it includes a range of solar cycles, allowing researchers to analyze trends and patterns in solar activity over several decades.
+## Current Status (FARSuN)
+### Data retrieval & recovery
+- ETH scans secured; internal working copies curated.
+- The late-2010s recovery of Waldmeier tables closes a critical raw-data gap.
 
-### Progress in Retrieving Data from the Zürich Tables
+### Digitization
+- Core G, S, R encoded for 1945–1979.
+- Rich metadata (observer, instrument, notes) encoded for 1945–1950; remaining years in progress.
+- Layout differences handled with tailored templates.
+- Initial linkage to USET drawings underway.
 
-The FARSuN project has made substantial progress in digitizing and processing the Zürich Tables:
+### Quality control
+- Normalizing observer identities/aliases; separating person / instrument / observatory in the DB.
+- Cross-checking rubric/page vs. scans; anomaly flags (e.g., 1947 low coverage).
+- Comparative audits of daily G, S, R; database views support change tracking.
 
-- As of early 2025, the digitization of over **2000 tables** is approximately **95% complete**. The remaining work involves encoding metadata associated with these observations.
+### Metadata model
+- Dedicated tables for person, instrument, observatory; draft condition/quality fields (method, seeing, projection).
+- Provenance preserved (source IDs, pages, scan references).
 
-- The project has utilized the **Transkribus tool**, which is designed for optical character recognition (OCR) and has been adapted to work with tabular data. This tool allows for the extraction of data directly into machine-readable formats, such as CSV files.
+### Accessibility
+- Hosted in the historical sunspot observations database;
+- Publication target: VO/EPN-TAP with standardized metadata;
+- Citizen-science Streamlit prototype for transcription/validation.
 
-- Initial efforts in 2023 revealed challenges in production speed and learning curves for students involved in the digitization process. However, a structured plan for 2024 has been developed, where some students will perform manual extraction, while others will use Transkribus or a custom interface designed for citizen science applications.
-
-### Importance of the Zürich Tables
-
-The Zürich Tables are vital for several reasons:
-
-1. **Historical Record**: They provide a comprehensive historical record of sunspot activity, which is essential for understanding long-term solar variability and its impact on Earth's climate.
-
-2. **Data Standardization**: The tables offer standardized observations that can be compared across different time periods and locations, facilitating more accurate scientific analyses.
-
-3. **Foundation for Future Research**: The data extracted from the Zürich Tables will contribute to the reconstruction of the International Sunspot Number (ISN) series, enhancing the accuracy of solar activity records and improving models of solar behavior.
-
-
-The Zürich Tables represent a critical resource for solar research, and the ongoing efforts to digitize and standardize this data through the FARSuN project will significantly enhance the accessibility and usability of historical sunspot observations. This work is essential for advancing our understanding of solar dynamics and their implications for space climate studies.
+## Next Steps (Focused, Actionable)
+- Finish metadata pass (1951–1979) using the finalized condition schema.
+- Confirm/ingest 1980 Zürich material (or document gap + statistical bridge).
+- Publish an Observer Authority File (IDs, aliases, instruments, active periods).
+- Automate provenance round-trip (cell-level image snippets, page hashes).
+- Re-estimate k-factors for key observers with robust/Bayesian methods.
+- Deep-dive 1947 using day-level substitutions and coverage diagnostics.
+- Scale up drawing links (USET↔Zürich) to validate counts vs. areas/positions.
+- Stage releases: (a) daily R + flags, (b) per-observer G,S,k + metadata, (c) derived calibration products, all via EPN-TAP/DOI.
+- Citizen-science v2: pairwise validation, observer disambiguation, instrument tagging.
 

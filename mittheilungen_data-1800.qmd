@@ -24,8 +24,60 @@ warning: false
 
 ---
 
+“Mittheilungen” are the printed yearly reports led by Rudolf Wolf at the Zürich Observatory that compiled daily sunspot observations from many European observers. They include dates, observer IDs, number of sunspot groups (GN), spots (S), the Wolf number (W = 10×GN + S), brief notes, and references to volume/page. Mittheilungen is the cornerstone dataset for historical sunspot counts. FARSuN has digitized, cleaned, and structured it; next steps finalize calibration and FAIR publication so it can power a robust ISN V3.
 
-**Mittheilungen Data** : Databases of sunspot counts collected from multiple observers by Professor Rudolf Wolf. It's the primary source of sunspot data. 
+This is the main historical backbone for the International Sunspot Number (ISN). It gives long, overlapping records from many observers, which FARSuN uses to check consistency, compute calibration factors between observers, and build a clean, FAIR, queryable foundation for ISN V3. Core printed tables run ~1848–1945 (Wolf→Wolfer→Brunner/Waldmeier). Earlier observations (back to 1610) are also compiled inside the series as historical reconstructions.
+
+Mittheilungen Data:
+- Provides the densest, most standardized pre-modern daily record.
+- Enables scale transfers (e.g., Wolf↔Wolfer) and uncertainty estimates.
+- Supplies metadata (who/where/how) needed for FAIR publication and reuse.
+
+### Project’s Progress
+#### Data retrieval:
+- Full digitization completed at ROB/SILSO (2017–2019).
+- Loaded into a relational schema linking Data ↔ Observers ↔ Rubrics.
+- Mapping table created to reconcile legacy IDs with the new consolidated database.
+
+#### Quality controls:
+- Automated checks for date/observer mismatches, duplicates, and odd GN/S ratios.
+- Manual clean-up of uncertain values (e.g., entries with “?”).
+- Cross-comparisons versus external extractions (e.g., Adams) to spot discrepancies.
+- Ongoing k-factor/overlap analysis to harmonize observers.
+
+#### Digitization status:
+- OCR + manual verification of printed tables; standardized to ISO dates, GN, S, W, notes.
+- Backfilled or verified using ETH archival materials where pages were missing or unclear.
+
+#### Metadata work:
+- Observer identity, site, instrument/method, time coverage, and source references encoded.
+- Provenance fields and quality flags added for traceability.
+- Aligning fields to EPN-Core/VO-TAP for FAIR access.
+
+#### Accessibility:
+- Data integrated in the ROB historical database and internal web interface.
+- Planned exposure via EPN-TAP/VO so users can query by date, observer, instrument, etc.
+
+### Future Plans
+
+#### Inclusion in ISN V3:
+- Final consistency pass against ETH “source books.”
+- Calibrate overlaps (especially Wolf↔Wolfer) with modern methods; attach uncertainties.
+- Merge into the unified historical store and publish via VO-TAP for community use.
+- Use Mittheilungen as the core anchor (1849–1945) and tie in earlier observers to extend back to 1610.
+
+#### Other to-dos:
+- Resolve remaining ID-mapping gaps; finish filling missing rubric/observer links.
+- Add a “conditions” table (weather, method, telescope) and standard vocabularies.
+- Build dashboards for QC metrics; document a data dictionary and README.
+
+#### Notes & Follow-ups:
+- End-of-series nuance: Printed observational tables effectively end in 1945 (later years are mainly archival handling).
+- Metadata completeness: Instruments/methods vary in detail; continue enrichment from ETH archives.
+- Identifier cleanup: A few observer ID mismatches remain and are being reconciled.
+
+
+## Analysis of Observers in Mittheilungen Data:
 
 Importing functions from scripts file. All the data used is in the folder `data`
 
@@ -148,9 +200,13 @@ hover name is the alias, and text is the alias.
 #| label: fig-plot_observer_bubble_mitt_all
 #| fig-cap: Bubble plot showing all observers in Mittheilungen data
 
-observer_bubble_plots_force_start_year(observer_stats_mitt_all)
+# observer_bubble_plots_force_start_year(observer_stats_mitt_all)
 
+observer_bubble_plots_force_start_year(observer_stats_mitt_all)
+# save_observer_bubble_matplotlib_poster_v2(observer_stats_mitt_all)
 ```
+![Observer bubble plot showing all observers in Mittheilungen data](./figures/observer_bubbles_poster_v2.png)
+
 
 ## Animated bubble plot of the observers
 

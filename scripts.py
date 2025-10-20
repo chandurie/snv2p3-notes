@@ -32,6 +32,9 @@ from scipy.optimize import curve_fit
 from scipy.fftpack import fft, ifft
 from scipy import optimize, fftpack, stats
 
+import os
+from matplotlib.colors import Normalize
+from matplotlib.cm import ScalarMappable, get_cmap
 # import mysql.connector
 import os
 
@@ -235,8 +238,648 @@ def observer_bubble_plot_animated(observer_dict):
     fig.show()
 
 
+
+import os
+import math
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+from matplotlib.colors import Normalize
+from matplotlib.cm import ScalarMappable, get_cmap
+
+def save_observer_bubble_matplotlib_poster_v2(
+    observer_stats: pd.DataFrame,
+    start_year: int = 1800,
+    outdir: str = "figures",
+    name: str = "observer_bubbles_poster_v2",
+    width_in: float = 18.0,
+    height_in: float = 14.0,
+    tick_year_step: int = 20,
+    size_max_pt: float = 100.0,
+    size_min_pt: float = 10.0,
+    label_all: bool = False,
+    label_top_n: int = 30,
+    alpha: float = 0.85,
+    cmap_name: str = "plasma",
+    dpi_png: int = 400,
+):
+    """Poster-ready bubble plot with big axis fonts and labels."""
+
+    df = observer_stats.copy()
+    req = ["start_date", "end_date", "total_observations", "observation_years", "ALIAS"]
+    missing = [c for c in req if c not in df.columns]
+    if missing:
+        raise ValueError(f"Missing required columns: {missing}")
+
+    # --- Data cleanup ---
+    df["start_date"] = pd.to_datetime(df["start_date"], errors="coerce")
+    df["end_date"]   = pd.to_datetime(df["end_date"], errors="coerce")
+    df["start_date"] = df["start_date"].fillna(df["end_date"])
+    df["end_date"]   = df["end_date"].fillna(df["start_date"])
+    df = df.dropna(subset=["start_date", "end_date"]).copy()
+
+    df["total_observations"] = pd.to_numeric(df["total_observations"], errors="coerce").fillna(1)
+    df["observation_years"]  = pd.to_numeric(df["observation_years"], errors="coerce").fillna(0)
+    df.loc[df["total_observations"] <= 0, "total_observations"] = 1.0
+
+    # --- Bubble sizes ---
+    v = df["total_observations"].values
+    vmax, vmin = v.max(), v.min()
+    area_min, area_max = size_min_pt**2, size_max_pt**2
+    s = area_min + (v / vmax) * (area_max - area_min) if vmax > 0 else np.full_like(v, area_min)
+
+    # --- Colors ---
+    cvals = df["observation_years"].values
+    norm = Normalize(vmin=np.nanmin(cvals), vmax=np.nanmax(cvals))
+    cmap = get_cmap(cmap_name)
+
+    # --- Figure ---
+    fig, ax = plt.subplots(figsize=(width_in, height_in))
+    x = mdates.date2num(df["start_date"].values)
+    y = mdates.date2num(df["end_date"].values)
+
+    sc = ax.scatter(
+        x, y, s=s, c=cvals, cmap=cmap, norm=norm,
+        alpha=alpha, edgecolors="black", linewidths=1.5,
+    )
+
+    # --- Labels on bubbles ---
+    if label_all:
+        to_label = df.index
+    else:
+        to_label = df.sort_values("total_observations", ascending=False).head(label_top_n).index
+
+    for idx in to_label:
+        ax.annotate(
+            str(df.loc[idx, "ALIAS"]),
+            (x[df.index.get_loc(idx)], y[df.index.get_loc(idx)]),
+            xytext=(8, 2),
+            textcoords="offset points",
+            fontsize=20, weight="bold", color="black",
+            ha="left", va="center",
+        )
+
+    # --- Axes ---
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    right_year = int(math.ceil(max(df["start_date"].dt.year.max(),
+                                   df["end_date"].dt.year.max()) / 10.0) * 10 + 10)
+    max_date = pd.Timestamp(f"{right_year}-12-31")
+
+    ax.set_xlim(min_date, max_date)
+    ax.set_ylim(min_date, max_date)
+
+    # Year ticks every N years
+    ax.xaxis.set_major_locator(mdates.YearLocator(base=tick_year_step))
+    ax.yaxis.set_major_locator(mdates.YearLocator(base=tick_year_step))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+    ax.yaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+
+    # --- Style (explicit font sizes) ---
+    ax.tick_params(axis="both", labelsize=28, width=2, length=8)
+    for spine in ax.spines.values():
+        spine.set_linewidth(2)
+    ax.set_xlabel("Start Year", fontsize=30, labelpad=25, fontweight="bold")
+    ax.set_ylabel("End Year", fontsize=30, labelpad=25, fontweight="bold")
+    ax.set_title("Observer Bubble Plot", fontsize=36, pad=40, fontweight="bold")
+
+    # --- Grid ---
+    ax.grid(True, linestyle="--", linewidth=1.0, alpha=0.5)
+
+    # --- Colorbar ---
+    cbar = fig.colorbar(ScalarMappable(norm=norm, cmap=cmap), ax=ax, shrink=0.9)
+    cbar.set_label("Observation Years", fontsize=28, labelpad=20, fontweight="bold")
+    cbar.ax.tick_params(labelsize=24, width=2, length=6)
+
+    # --- Save ---
+    fig.tight_layout()
+    os.makedirs(outdir, exist_ok=True)
+    base = os.path.join(outdir, name)
+    fig.savefig(f"{base}.pdf", bbox_inches="tight")
+    fig.savefig(f"{base}.svg", bbox_inches="tight")
+    fig.savefig(f"{base}.png", dpi=dpi_png, bbox_inches="tight")
+    plt.close(fig)
+
+    # print(f"✅ Saved {base}.pdf/.svg/.png (large fonts + thick axes)")
+
+
+def save_observer_bubble_matplotlib_poster(
+    observer_stats: pd.DataFrame,
+    start_year: int = 1800,
+    outdir: str = "figures",
+    name: str = "observer_bubbles_poster",
+    width_in: float = 18.0,
+    height_in: float = 14.0,
+    tick_year_step: int = 20,
+    size_max_pt: float = 100.0,      # max bubble radius in points
+    size_min_pt: float = 10.0,       # min bubble radius in points
+    label_all: bool = False,
+    label_top_n: int = 30,
+    alpha: float = 0.85,
+    cmap_name: str = "plasma",
+    dpi_png: int = 400,
+):
+    """
+    Poster-friendly Matplotlib bubble plot.
+    Large fonts and thick lines for visibility at print scale.
+    """
+
+    # ---- 1) Prepare data ----
+    df = observer_stats.copy()
+    req = ["start_date", "end_date", "total_observations", "observation_years", "ALIAS"]
+    missing = [c for c in req if c not in df.columns]
+    if missing:
+        raise ValueError(f"Missing required columns: {missing}")
+
+    # Parse dates safely
+    df["start_date"] = pd.to_datetime(df["start_date"], errors="coerce")
+    df["end_date"]   = pd.to_datetime(df["end_date"], errors="coerce")
+    df["start_date"] = df["start_date"].fillna(df["end_date"])
+    df["end_date"]   = df["end_date"].fillna(df["start_date"])
+    df = df.dropna(subset=["start_date", "end_date"]).copy()
+
+    df["total_observations"] = pd.to_numeric(df["total_observations"], errors="coerce").fillna(1)
+    df["observation_years"]  = pd.to_numeric(df["observation_years"], errors="coerce").fillna(0)
+    df.loc[df["total_observations"] <= 0, "total_observations"] = 1.0
+
+    # ---- 2) Size scaling ----
+    v = df["total_observations"].astype(float).values
+    vmax = v.max() if np.isfinite(v.max()) else 1
+    vmin = v.min() if np.isfinite(v.min()) else 1
+    area_min = size_min_pt ** 2
+    area_max = size_max_pt ** 2
+    s = area_min + (v / vmax) * (area_max - area_min) if vmax > 0 else np.full_like(v, area_min)
+
+    # ---- 3) Colors ----
+    cvals = df["observation_years"].astype(float).values
+    norm = Normalize(vmin=np.nanmin(cvals), vmax=np.nanmax(cvals))
+    cmap = get_cmap(cmap_name)
+
+    # ---- 4) Figure setup ----
+    fig, ax = plt.subplots(figsize=(width_in, height_in))
+    plt.rcParams.update({
+        "font.size": 22,                # base font size
+        "axes.labelsize": 26,
+        "axes.titlesize": 30,
+        "xtick.labelsize": 22,
+        "ytick.labelsize": 22,
+        "legend.fontsize": 22,
+        "figure.titlesize": 32,
+    })
+
+    x = mdates.date2num(df["start_date"].values)
+    y = mdates.date2num(df["end_date"].values)
+
+    sc = ax.scatter(
+        x, y,
+        s=s,
+        c=cvals,
+        cmap=cmap,
+        norm=norm,
+        alpha=alpha,
+        edgecolors="black",
+        linewidths=1.5,
+    )
+
+    # ---- 5) Labels ----
+    if label_all:
+        to_label = df.index
+    else:
+        to_label = df.sort_values("total_observations", ascending=False).head(label_top_n).index
+
+    for idx in to_label:
+        ax.annotate(
+            str(df.loc[idx, "ALIAS"]),
+            (x[df.index.get_loc(idx)], y[df.index.get_loc(idx)]),
+            xytext=(8, 2),
+            textcoords="offset points",
+            fontsize=18,      # larger label text
+            weight="bold",
+            ha="left", va="center",
+        )
+
+    # ---- 6) Axes ----
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    right_year = max(df["start_date"].dt.year.max(), df["end_date"].dt.year.max())
+    right_year = int(math.ceil(right_year / 10.0) * 10 + 10)
+    max_date = pd.Timestamp(f"{right_year}-12-31")
+
+    ax.set_xlim(min_date, max_date)
+    ax.set_ylim(min_date, max_date)
+
+    ax.xaxis.set_major_locator(mdates.YearLocator(base=tick_year_step))
+    ax.yaxis.set_major_locator(mdates.YearLocator(base=tick_year_step))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+    ax.yaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+
+    ax.grid(True, linestyle="--", linewidth=0.8, alpha=0.6)
+    ax.set_xlabel("Start Year", labelpad=20)
+    ax.set_ylabel("End Year", labelpad=20)
+    ax.set_title("Observer Bubble Plot", pad=30, weight="bold")
+
+    # ---- 7) Colorbar ----
+    cbar = fig.colorbar(ScalarMappable(norm=norm, cmap=cmap), ax=ax, shrink=0.9)
+    cbar.set_label("Observation Years", fontsize=24, labelpad=20)
+    cbar.ax.tick_params(labelsize=22)
+
+    # ---- 8) Save ----
+    fig.tight_layout()
+    os.makedirs(outdir, exist_ok=True)
+    base = os.path.join(outdir, name)
+    fig.savefig(f"{base}.pdf", bbox_inches="tight")
+    fig.savefig(f"{base}.svg", bbox_inches="tight")
+    fig.savefig(f"{base}.png", dpi=dpi_png, bbox_inches="tight")
+    plt.close(fig)
+
+    # print(f"✅ Saved {base}.pdf/.svg/.png (poster scale, large fonts)")
+
+
+
+def save_observer_bubble_matplotlib(
+    observer_stats: pd.DataFrame,
+    start_year: int = 1800,
+    outdir: str = "figures",
+    name: str = "observer_bubbles_matplotlib",
+    width_in: float = 16.0,
+    height_in: float = 12.0,
+    tick_year_step: int = 20,
+    size_max_pt: float = 60.0,    # max bubble radius in points
+    size_min_pt: float = 6.0,     # min bubble radius in points
+    label_all: bool = False,      # label all points (could clutter)
+    label_top_n: int = 30,        # or label top-N by total_observations
+    alpha: float = 0.85,
+    cmap_name: str = "plasma",
+    dpi_png: int = 300,
+):
+    """
+    Matplotlib bubble plot:
+      x = start_date (date), y = end_date (date)
+      bubble area ∝ total_observations, color = observation_years.
+    Exports vector (PDF/SVG) + high-DPI PNG.
+
+    Required columns:
+      start_date, end_date, total_observations, observation_years, ALIAS
+    """
+
+    # ---- 1) Copy & coerce ----
+    df = observer_stats.copy()
+    req = ["start_date", "end_date", "total_observations", "observation_years", "ALIAS"]
+    missing = [c for c in req if c not in df.columns]
+    if missing:
+        raise ValueError(f"Missing required columns: {missing}")
+
+    # Coerce to datetime (don’t drop rows; fill from the other date if missing)
+    df["start_date"] = pd.to_datetime(df["start_date"], errors="coerce")
+    df["end_date"]   = pd.to_datetime(df["end_date"], errors="coerce")
+    df["start_date"] = df["start_date"].fillna(df["end_date"])
+    df["end_date"]   = df["end_date"].fillna(df["start_date"])
+
+    # If any still NaT, drop those rows (we can’t plot them)
+    df = df.dropna(subset=["start_date", "end_date"]).copy()
+
+    # Numeric columns
+    df["total_observations"] = pd.to_numeric(df["total_observations"], errors="coerce").fillna(0)
+    df["observation_years"]  = pd.to_numeric(df["observation_years"], errors="coerce").fillna(0)
+
+    # Floor sizes so they are visible
+    df.loc[df["total_observations"] <= 0, "total_observations"] = 1.0
+
+    if df.empty:
+        raise ValueError("No plottable rows after cleaning.")
+
+    # ---- 2) Size scaling (area ∝ value) ----
+    # Matplotlib expects marker size in *points^2* (area units).
+    # We want area ~ value, with a min/max radius in points.
+    v = df["total_observations"].astype(float).values
+    vmax = float(v.max())
+    vmin = float(v.min())
+
+    # Target areas (points^2)
+    area_min = size_min_pt ** 2
+    area_max = size_max_pt ** 2
+
+    if vmax <= 0:
+        s = np.full_like(v, area_min)
+    else:
+        # Linear in area: area = area_min + (value/vmax) * (area_max - area_min)
+        s = area_min + (v / vmax) * (area_max - area_min)
+
+    # ---- 3) Color mapping ----
+    cvals = df["observation_years"].astype(float).values
+    norm = Normalize(vmin=np.nanmin(cvals), vmax=np.nanmax(cvals))
+    cmap = get_cmap(cmap_name)
+
+    # ---- 4) Figure & axes ----
+    fig, ax = plt.subplots(figsize=(width_in, height_in))
+
+    # Convert to Matplotlib date numbers (not strictly needed; plot_date handles it)
+    x = mdates.date2num(df["start_date"].values)
+    y = mdates.date2num(df["end_date"].values)
+
+    sc = ax.scatter(
+        x, y,
+        s=s,
+        c=cvals,
+        cmap=cmap,
+        norm=norm,
+        alpha=alpha,
+        edgecolors="darkslategrey",
+        linewidths=0.8
+    )
+
+    # ---- 5) Labels (optional) ----
+    if label_all:
+        to_label = df.index
+    else:
+        # label top-N by size
+        to_label = df.sort_values("total_observations", ascending=False).head(label_top_n).index
+
+    for idx in to_label:
+        ax.annotate(
+            str(df.loc[idx, "ALIAS"]),
+            (x[df.index.get_loc(idx)], y[df.index.get_loc(idx)]),
+            xytext=(4, 0),
+            textcoords="offset points",
+            fontsize=9,
+            ha="left", va="center",
+        )
+
+    # ---- 6) Axes formatting ----
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    right_year = max(df["start_date"].dt.year.max(), df["end_date"].dt.year.max())
+    # pad to next decade for a clean right edge
+    right_year = int(math.ceil(right_year / 10.0) * 10 + 10)
+    max_date = pd.Timestamp(f"{right_year}-12-31")
+
+    ax.set_xlim(min_date, max_date)
+    ax.set_ylim(min_date, max_date)
+
+    # Year ticks every tick_year_step
+    ax.xaxis.set_major_locator(mdates.YearLocator(base=tick_year_step))
+    ax.yaxis.set_major_locator(mdates.YearLocator(base=tick_year_step))
+    ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+    ax.yaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+
+    ax.grid(True, which="major", linestyle="--", linewidth=0.5, alpha=0.5)
+    ax.set_xlabel("Start Date")
+    ax.set_ylabel("End Date")
+    ax.set_title("Observer Bubble Plot")
+
+    # Colorbar
+    cbar = fig.colorbar(ScalarMappable(norm=norm, cmap=cmap), ax=ax, shrink=0.9)
+    cbar.set_label("Observation Years")
+
+    fig.tight_layout()
+
+    # ---- 7) Save outputs ----
+    os.makedirs(outdir, exist_ok=True)
+    base = os.path.join(outdir, name)
+    fig.savefig(f"{base}.pdf")           # best for LaTeX posters
+    fig.savefig(f"{base}.svg")           # vector alternative
+    fig.savefig(f"{base}.png", dpi=dpi_png)  # high-DPI raster
+    plt.close(fig)
+
+    # Diagnostics
+    # print(
+    #     f"Saved: {base}.pdf/.svg/.png | points={len(df)} "
+    #     f"| size(min,max)=[{vmin:.1f},{vmax:.1f}] "
+    #     f"| date range x/y=[{min_date.date()} → {max_date.date()}]"
+    # )
+
+
+
+def save_observer_bubble_safe(
+    observer_stats,
+    start_year=1800,
+    outdir="figures",
+    name="observer_bubbles",
+    width=1800,
+    height=1400,
+    tick_year_step=20,
+):
+    df = observer_stats.copy()
+
+    # --- Required columns ---
+    need = ["start_date","end_date","total_observations","observation_years","ALIAS"]
+    missing = [c for c in need if c not in df.columns]
+    if missing:
+        raise ValueError(f"Missing required columns: {missing}")
+
+    # --- Datetime & numeric coercion (NO ROW DROPS) ---
+    df["start_date"] = pd.to_datetime(df["start_date"], errors="coerce")
+    df["end_date"]   = pd.to_datetime(df["end_date"], errors="coerce")
+    # Fill any missing dates with each row’s other date so a point still appears
+    df["start_date"] = df["start_date"].fillna(df["end_date"])
+    df["end_date"]   = df["end_date"].fillna(df["start_date"])
+
+    df["total_observations"] = pd.to_numeric(df["total_observations"], errors="coerce").fillna(0)
+    df["observation_years"]  = pd.to_numeric(df["observation_years"], errors="coerce").fillna(0)
+
+    # --- Floor sizes so nothing is invisible ---
+    df.loc[df["total_observations"] <= 0, "total_observations"] = 1
+
+    # --- Size scaling (robust if all ones) ---
+    size_max = 60
+    max_size = float(df["total_observations"].max())
+    sizeref  = (2.0 * max_size) / (size_max**2) if max_size > 0 else 1.0
+
+    # --- Figure ---
+    fig = px.scatter(
+        df,
+        x="start_date",
+        y="end_date",
+        size="total_observations",
+        color="observation_years",
+        hover_name="ALIAS",
+        text="ALIAS",
+        size_max=size_max,
+        title="Observer Bubble Plot",
+        labels={
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "total_observations": "Total Observations",
+            "observation_years": "Observation Years",
+        },
+        color_continuous_scale="Plasma",
+        render_mode="svg",  # stable for static export
+    )
+
+    fig.update_traces(
+        mode="markers+text",
+        marker=dict(
+            sizemode="area",
+            sizeref=sizeref,
+            sizemin=4,
+            line=dict(width=1.5, color="DarkSlateGrey"),
+            opacity=0.95,
+        ),
+        textposition="middle right",
+        textfont=dict(size=11),
+        cliponaxis=False,
+    )
+
+    # --- Axes ---
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    right_year = max(
+        int(df["start_date"].dropna().max().year),
+        int(df["end_date"].dropna().max().year),
+        start_year + 1
+    )
+    right_year = int(math.ceil(right_year / 10.0) * 10 + 10)
+    x_max = pd.Timestamp(f"{right_year}-12-31")
+
+    dtick_months = tick_year_step * 12
+    fig.update_xaxes(type="date", range=[min_date, x_max], tickformat="%Y", dtick=f"M{dtick_months}")
+    fig.update_yaxes(type="date", range=[min_date, x_max], tickformat="%Y", dtick=f"M{dtick_months}")
+
+    fig.update_layout(
+        width=width, height=height,
+        margin=dict(l=80, r=40, t=60, b=60),
+        coloraxis_colorbar=dict(title="Observation Years"),
+    )
+
+    # --- Export (vector + raster) ---
+    os.makedirs(outdir, exist_ok=True)
+    base = os.path.join(outdir, name)
+    fig.write_image(f"{base}.svg")
+    fig.write_image(f"{base}.pdf")
+    fig.write_image(f"{base}.png", scale=5, width=width, height=height)
+
+    # --- Quick diagnostics (prints to your console) ---
+    print(
+        f"Points: {len(df)} | date NaT rows after fill: "
+        f"{int(df['start_date'].isna().sum()+df['end_date'].isna().sum())} | "
+        f"size range: [{df['total_observations'].min()}, {df['total_observations'].max()}]"
+    )
+
+    return fig
+
+
+def save_observer_bubble(
+    observer_stats,
+    start_year=1800,
+    outdir="figures",
+    name="observer_bubbles",
+    width=1400,
+    height=1200,
+    tick_year_step=20
+):
+    # --- 1) Clean + standardize columns ---
+    df = observer_stats.copy()
+
+    # Ensure required columns exist
+    required = ["start_date", "end_date", "total_observations", "observation_years", "ALIAS"]
+    missing = [c for c in required if c not in df.columns]
+    if missing:
+        raise ValueError(f"Missing required columns: {missing}")
+
+    # Datetimes, drop rows without valid dates
+    df["start_date"] = pd.to_datetime(df["start_date"], errors="coerce")
+    df["end_date"]   = pd.to_datetime(df["end_date"], errors="coerce")
+    df = df.dropna(subset=["start_date", "end_date"])
+
+    # Ensure numeric sizing columns, coerce and sanitize
+    df["total_observations"] = pd.to_numeric(df["total_observations"], errors="coerce").fillna(0)
+    df["observation_years"]  = pd.to_numeric(df["observation_years"], errors="coerce").fillna(0)
+
+    # Remove rows with nonpositive sizes (static export can hide them)
+    df = df[df["total_observations"] > 0]
+
+    if df.empty:
+        raise ValueError("No rows with valid dates and positive total_observations after cleaning.")
+
+    # --- 2) Compute bubble size scaling (official Plotly recipe) ---
+    size_max = 60  # visual max radius in px
+    max_size = df["total_observations"].max()
+    # sizeref formula: https://plotly.com/python/bubble-charts/#sizing-on-the-bubble-chart
+    sizeref = (2.0 * max_size) / (size_max ** 2) if max_size > 0 else 1.0
+
+    # --- 3) Build figure ---
+    fig = px.scatter(
+        df,
+        x="start_date",
+        y="end_date",
+        size="total_observations",
+        color="observation_years",
+        hover_name="ALIAS",
+        text="ALIAS",
+        size_max=size_max,
+        title="Observer Bubble Plot",
+        labels={
+            "start_date": "Start Date",
+            "end_date": "End Date",
+            "total_observations": "Total Observations",
+            "observation_years": "Observation Years",
+        },
+        color_continuous_scale="Plasma",
+    )
+
+    # Make text legible but not overwhelming
+    fig.update_traces(
+        marker=dict(
+            line=dict(width=1.5, color="DarkSlateGrey"),
+            sizemode="area",  # critical for static export
+            sizeref=sizeref,
+            sizemin=4,        # ensure smallest still visible
+        ),
+        textposition="middle right",
+        textfont=dict(size=11),
+    )
+
+    # --- 4) Date axis control ---
+    min_date = pd.Timestamp(f"{start_year}-01-01")
+    # pad to the next decade for a clean right edge
+    right_year = max(df["start_date"].max().year, df["end_date"].max().year)
+    right_year = int(math.ceil(right_year / 10.0) * 10 + 10)
+
+    x_max = pd.Timestamp(f"{right_year}-12-31")
+    y_max = x_max
+
+    # Tick every N years (use dtick in months)
+    dtick_months = tick_year_step * 12  # e.g., 20 years → "M240"
+
+    fig.update_xaxes(
+        type="date",
+        range=[min_date, x_max],
+        tickformat="%Y",
+        dtick=f"M{dtick_months}",
+        showgrid=True,
+        zeroline=False,
+    )
+    fig.update_yaxes(
+        type="date",
+        range=[min_date, y_max],
+        tickformat="%Y",
+        dtick=f"M{dtick_months}",
+        showgrid=True,
+        zeroline=False,
+        scaleanchor=None  # avoid forced 1:1 aspect
+    )
+
+    # Layout polish for print
+    fig.update_layout(
+        width=width,
+        height=height,
+        margin=dict(l=80, r=40, t=60, b=60),
+        coloraxis_colorbar=dict(title="Observation Years"),
+        legend_title_text="",
+    )
+
+    # --- 5) Export: PNG (raster) + SVG/PDF (vector) ---
+    os.makedirs(outdir, exist_ok=True)
+    base = os.path.join(outdir, name)
+
+    # Vector first (best for LaTeX posters)
+    fig.write_image(f"{base}.svg")              # infinite zoom in LaTeX
+    fig.write_image(f"{base}.pdf")              # direct includegraphics
+    # High-DPI PNG for quick review or slides
+    fig.write_image(f"{base}.png", scale=3, width=width, height=height)
+
+    return fig
+
+
 def observer_bubble_plots_force_start_year_new3(
-    observer_stats, start_year=1800, outdir="figures", name="observer_bubble"
+    observer_stats, start_year=1800, outdir="figures", name="observer_bubble_1"
 ):
     # Ensure datetime columns
     observer_stats["start_date"] = pd.to_datetime(observer_stats["start_date"])
@@ -282,16 +925,16 @@ def observer_bubble_plots_force_start_year_new3(
     )
 
     # Force both axes to start at the chosen year
-    min_date = pd.Timestamp(f"{start_year}-01-01")
-    max_x = df["Start Date"].max() + pd.Timedelta(days=20 * 365)
-    max_y = df["End Date"].max() + pd.Timedelta(days=20 * 365)
+    # min_date = pd.Timestamp(f"{start_year}-01-01")
+    # max_x = df["Start Date"].max() + pd.Timedelta(days=20 * 365)
+    # max_y = df["End Date"].max() + pd.Timedelta(days=20 * 365)
 
-    fig.update_xaxes(
-        type="date", range=[min_date, max_x], tickformat="%Y", dtick="M120"
-    )
-    fig.update_yaxes(
-        type="date", range=[min_date, max_y], tickformat="%Y", dtick="M120"
-    )
+    # fig.update_xaxes(
+    #     type="date", range=[min_date, max_x], tickformat="%Y", dtick="M120"
+    # )
+    # fig.update_yaxes(
+    #     type="date", range=[min_date, max_y], tickformat="%Y", dtick="M120"
+    # )
 
     # --- Static PNG export ---
     outdir = os.path.join(os.getcwd(), outdir)
@@ -308,7 +951,7 @@ def observer_bubble_plots_force_start_year_new3(
 
 
 def observer_bubble_plots_force_start_year_new2(
-    observer_stats, start_year=1800, outdir="figures", name="observer_bubble"
+    observer_stats, start_year=1800, outdir="figures", name="observer_bubble_1"
 ):
     # Ensure datetime columns
     observer_stats["start_date"] = pd.to_datetime(observer_stats["start_date"])
