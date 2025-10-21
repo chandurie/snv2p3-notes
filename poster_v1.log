@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.12)  21 OCT 2025 08:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.8.12)  21 OCT 2025 10:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1743,7 +1743,7 @@ Package rerunfilecheck Info: Checksums for `poster_v1.out':
 Here is how much of TeX's memory you used:
  36334 strings out of 473190
  750917 string characters out of 5715800
- 1442375 words of memory out of 5000000
+ 1442376 words of memory out of 5000000
  58744 multiletter control sequences out of 15000+600000
  654816 words of font info for 178 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
