@@ -28,9 +28,9 @@ warning: false
 - The notebooks combine textual remarks (“Flecken”, “Öffnungen”) with drawings — both small in-text sketches and large full-disk solar diagrams.
 - Working data product: daily entries with date, time, presence/absence of spots, NG/NS counts (if visible), drawing type/quality flag, weather/seeing notes, and page references.
 
-#### Importance (for FARSuN & ISN V3)
+#### Importance (for FARSuN & SN V3)
 - Provides dense coverage during the late Dalton Minimum (~1817 – mid-1840s), filling a critical gap in early-19th-century solar records.
-- Includes both spotless and active days — essential for long-term continuity and low-activity baselines in the International Sunspot Number (V3).
+- Includes both spotless and active days — essential for long-term continuity and low-activity baselines in the Sunspot Number (SN V3).
 - Weather and seeing information enrich the FARSuN condition table, supporting observer-bias and visibility studies.
 - Enables cross-calibration with contemporary observers (Adams, Stark, Pastorff) to refine k-factors and reliability estimates.
 
@@ -61,11 +61,11 @@ warning: false
 • Benchmark Transkribus/App HTR results; set minimum human-review rate.
 • Identify overlaps with coeval observers for calibration validation.
 
-### Next Steps (toward ISN V3 integration)
+### Next Steps (toward SN V3 integration)
 - Complete survey pass → definitive daily presence/absence + drawing availability/type.
 - Generate provisional daily NG/NS with uncertainty and provenance flags.
 - Apply QC (dual counts, normalization, conflict resolution, metadata registry).
 - Perform inter-observer calibration and bias checks.
 - Publish FAIR, VO-ready tables (daily counts + condition data + image catalog) via ROB/SILSO.
 
-Gruithuisen’s manuscripts offer a long, context-rich, early-19th-century record of solar and meteorological activity. With extraction, QC nearly complete, this dataset is poised to become a cornerstone for ISN V3 calibration and uncertainty modeling within the FARSuN project.
+Gruithuisen’s manuscripts offer a long, context-rich, early-19th-century record of solar and meteorological activity. With extraction, QC nearly complete, this dataset is poised to become a cornerstone for SN V3 calibration and uncertainty modeling within the FARSuN project.

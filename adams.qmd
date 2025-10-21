@@ -29,7 +29,7 @@ warning: false
 - Period Covered: August 1819 – May 1823.
 - Content: Nearly daily full-disk sunspot drawings with accompanying tabular counts of sunspot groups and individual spots.
 - Observation Method: Used an asterisk notation distinguishing direct view (“*”) from reflection view (no asterisk); observation times frequently noted.
-- Significance: Provides dense daily coverage—including many spotless days—during an under-documented period, improving the calibration and low-activity baseline of ISN V3.
+- Significance: Provides dense daily coverage—including many spotless days—during an under-documented period, improving the calibration and low-activity baseline of SN V3.
 
 ### Structure & Content
 - Tabular layer: Per-day entries of number of groups (NG), number of spots (NS), spotless indicator, observation time, method flag, and comments. Wolf numbers W = 10·NG + NS can be derived.
@@ -54,11 +54,11 @@ warning: false
 - Metadata encoding: Observer, site, method, time, spotless flag, provenance linked to the historical database.
 - Accessibility (planned): Release through EPN-TAP/VO-TAP at ROB with QC flags, versioning, and query fields (method, spotless, provenance).
 
-### Integration into ISN V3 — Near-Term Steps
+### Integration into SN V3 — Near-Term Steps
 - Finalize coverage calendar and authoritative day list.
 - Publish day-level comparison log (Adams vs Mittheilungen/Pavai).
 - Model observational biases and uncertainties by method.
-- Test inclusion of Adams as an independent node in ISN V3 stitching to assess baseline impact.
+- Test inclusion of Adams as an independent node in SN V3 stitching to assess baseline impact.
 - Release v1 (NG/NS + spotless + method/time + provenance); v2 to include positional/areal data.
 
 ## Gaps & Follow-ups
@@ -68,4 +68,4 @@ warning: false
 - Confirm rights, assign DOI, and register in IVOA.
 - Explore citizen-science validation and future scientific publications.
 
-In essence: The C. H. Adams sunspot archive offers an exceptional, method-rich dataset that strengthens the early-19th-century solar record. FARSuN’s ongoing digitization and calibration work will make it a cornerstone reference for the International Sunspot Number V3 and broader studies of solar variability and climate linkage.
+In essence: The C. H. Adams sunspot archive offers an exceptional, method-rich dataset that strengthens the early-19th-century solar record. FARSuN’s ongoing digitization and calibration work will make it a cornerstone reference for the Sunspot Number V3 and broader studies of solar variability and climate linkage.

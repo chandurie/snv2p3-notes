@@ -24,12 +24,12 @@ warning: false
 
 ---
 
-The FARSuN historical sunspot database consolidates raw sunspot observations (1610–1980) from multiple legacy sources into a single, queryable system that follows Virtual Observatory (VO) standards. It harmonizes independent encodings (e.g., Mitteilungen, Wolf Institute tables, Shreya’s FARSuN DB, Stephen Fay’s variant) and augments them with observer/observatory/instrument metadata, provenance, and QC flags to support scientific reuse and the reconstruction of ISN V3. The core content is daily/group/spot counts (NG, NS, Wolf number components) with optional positions/areas where available, mapped to observers, observatories, instruments, and bibliographic rubrics (Mitteilungen IDs, pages/notes). It captures both table-based sources and drawing-derived extractions.
-The database is the central integration layer: it makes disparate historical observations Findable, Accessible, Interoperable, and Reusable (FAIR) via standard VO tooling; enables consistent QC; and provides the authoritative input stream to ISN V3 stitching/calibration workflows. It also supports new products (e.g., GN; higher cadence daily numbers) by ensuring traceable, versioned provenance.
+The FARSuN historical sunspot database consolidates raw sunspot observations (1610–1980) from multiple legacy sources into a single, queryable system that follows Virtual Observatory (VO) standards. It harmonizes independent encodings (e.g., Mitteilungen, Wolf Institute tables, Shreya’s FARSuN DB, Stephen Fay’s variant) and augments them with observer/observatory/instrument metadata, provenance, and QC flags to support scientific reuse and the reconstruction of the Sunspot Number (SN) V3. The core content is daily/group/spot counts (NG, NS, Wolf number components) with optional positions/areas where available, mapped to observers, observatories, instruments, and bibliographic rubrics (Mitteilungen IDs, pages/notes). It captures both table-based sources and drawing-derived extractions.
+The database is the central integration layer: it makes disparate historical observations Findable, Accessible, Interoperable, and Reusable (FAIR) via standard VO tooling; enables consistent QC; and provides the authoritative input stream to SN V3 stitching/calibration workflows. It also supports new products (e.g., GN; higher cadence daily numbers) by ensuring traceable, versioned provenance.
 
 ### A consolidated, QC’d, VO-exposed database is essential to:
 - Quantitatively compare observers and epochs to derive robust k-factors and correct systematic biases (e.g., pre‑Wolfer vs. post‑Waldmeier eras).
-- Reconstruct ISN V3 with explicit provenance, uncertainty, and versioning.
+- Reconstruct SN V3 with explicit provenance, uncertainty, and versioning.
 - Enable external tools (heliophysics, climate studies) to query the same canonical, machine-actionable tables. 
 
 ## What the data look like (schema snapshot)
@@ -58,7 +58,7 @@ The database is the central integration layer: it makes disparate historical obs
 - Target exposure via **EPN‑TAP** on ROB’s TAP server (already validated with USET tables).
 - Results queryable with **ADQL**; delivery as **VOTable**; documented release and versioning policy.
 
-## Roadmap toward ISN V3
+## Roadmap toward SN V3
 - **Finalize canonical schema** (conditions vocab, instrument/observatory validity ranges, mandatory provenance/audits).
 - **Complete legacy ID crosswalks** and alias disambiguation; close mapping gaps.
 - **Scale QC automation** (validator suite + dashboards) and uncertainty model (observer variance, method/conditions).
@@ -71,4 +71,3 @@ The database is the central integration layer: it makes disparate historical obs
 - Variable availability and accuracy of positions/areas across sources.
 - Need **EPNcore extensions** for sunspot‑specific fields (Wolf components, QC ranks).
   **Mitigations:** curated mapping closure, authority control, QC validator expansion, documented EPNcore extensions.
-

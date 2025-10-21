@@ -42,7 +42,7 @@ The Zürich Tables are the internal source ledgers used at the Eidgenössische S
 
 ### Digitization
 - Core G, S, R encoded for 1945–1979.
-- Rich metadata (observer, instrument, notes) encoded for 1945–1950; remaining years in progress.
+- Rich metadata (observer, instrument, notes) encoded for 1945–1959; remaining years in progress.
 - Layout differences handled with tailored templates.
 - Initial linkage to USET drawings underway.
 
@@ -70,4 +70,3 @@ The Zürich Tables are the internal source ledgers used at the Eidgenössische S
 - Scale up drawing links (USET↔Zürich) to validate counts vs. areas/positions.
 - Stage releases: (a) daily R + flags, (b) per-observer G,S,k + metadata, (c) derived calibration products, all via EPN-TAP/DOI.
 - Citizen-science v2: pairwise validation, observer disambiguation, instrument tagging.
-

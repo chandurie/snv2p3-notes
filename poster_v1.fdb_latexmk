@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1760965549.2543 "/Users/kalugoduc/projects/report-farsun/poster_v1.tex" "poster_v1.pdf" "poster_v1" 1760965554.54051 2
-  "/Users/kalugoduc/projects/report-farsun/poster_v1.tex" 1760965543.58788 26545 fa466d24bf9c4154e2268cf12ced3efc ""
+["pdflatex"] 1761027199.82133 "/Users/kalugoduc/projects/report-farsun/poster_v1.tex" "poster_v1.pdf" "poster_v1" 1761027204.97289 2
+  "/Users/kalugoduc/projects/report-farsun/poster_v1.tex" 1761027194.30413 26529 02f1c7c78dd1237d723b8441cac901f7 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc" 1202520719 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -296,10 +296,10 @@
   "figures/zurich_tables.png" 1760617588.57654 441499 d989ad999872ee2a33347216f58044d3 ""
   "logos/observatory_400x332.jpg" 1704467458 10415 f767dc46d5d58b3ea78c30d67acd0d2c ""
   "logos/silso-logo.png" 1760774513.02039 9863 97e5bd5e7b90e6c83911a1245b70019f ""
-  "poster_v1.aux" 1760965554.45909 724 85eff481670d92ddd323adcac24495fa "pdflatex"
-  "poster_v1.nav" 1760965554.45961 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
-  "poster_v1.out" 1760965549.98428 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "poster_v1.tex" 1760965543.58788 26545 fa466d24bf9c4154e2268cf12ced3efc ""
+  "poster_v1.aux" 1761027204.89032 724 85eff481670d92ddd323adcac24495fa "pdflatex"
+  "poster_v1.nav" 1761027204.89092 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
+  "poster_v1.out" 1761027200.5025 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "poster_v1.tex" 1761027194.30413 26529 02f1c7c78dd1237d723b8441cac901f7 ""
   (generated)
   "poster_v1.aux"
   "poster_v1.log"
