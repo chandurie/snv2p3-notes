@@ -11,6 +11,7 @@
 \usepackage{wrapfig}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric,calc}
+\graphicspath{{figures/}}
 
 \hypersetup{
   colorlinks=true,
@@ -19,36 +20,30 @@
   citecolor=royal
 }
 
-\definecolor{royal}{HTML}{1D2A44}
-\definecolor{accent}{HTML}{F18F01}
-\definecolor{mint}{HTML}{2AA7A1}
+\definecolor{royal}{HTML}{0F4C5C}   % deep teal-blue
+\definecolor{accent}{HTML}{F26430}  % modern orange
+\definecolor{mint}{HTML}{5FB7B7}    % soft teal accent
 \definecolor{violet}{HTML}{6C63FF}
-\definecolor{softbg}{HTML}{F4F1EB}
-\definecolor{danger}{HTML}{D1495B}
+\definecolor{softbg}{HTML}{F6F2EA}  % warm neutral background
+\definecolor{danger}{HTML}{DD614A}
 
 \metroset{
   background=light,
   block=fill,
-  titleformat=smallcaps,
-  colors={normal text.fg=royal}
+  titleformat=smallcaps
 }
 
 \setbeamercolor{palette primary}{bg=royal,fg=white}
+\setbeamercolor{normal text}{fg=royal,bg=softbg}
 \setbeamercolor{frametitle}{bg=royal,fg=white}
-\setbeamercolor{progress bar}{fg=accent,bg=accent!35!white}
+\setbeamercolor{progress bar}{fg=accent,bg=accent!25!white}
 \setbeamercolor{block title}{bg=royal,fg=white}
-\setbeamercolor{block body}{bg=softbg,fg=royal}
+\setbeamercolor{block body}{bg=white,fg=royal}
 \setbeamercolor{alerted text}{fg=danger}
 
 \setbeamertemplate{background}{%
   \begin{tikzpicture}[remember picture,overlay]
     \path[fill=softbg] (current page.south west) rectangle (current page.north east);
-    \path[fill=accent!12!white] ($(current page.north west)+(0,-0.3)$)
-      .. controls +(10,-1) and +(-8,6) .. ($(current page.north)+(0,-2.5)$)
-      .. controls +(8,-6) and +(-6,1) .. ($(current page.north west)+(0,-4.2)$);
-    \path[fill=mint!12!white] ($(current page.south east)+(0,2.4)$)
-      .. controls +(-10,1.5) and +(6,-5) .. ($(current page.center)+(0,-4)$)
-      .. controls +(-4,5) and +(6,-1.5) .. ($(current page.south east)+(0,2.4)$);
   \end{tikzpicture}%
 }
 
@@ -60,6 +55,7 @@
 \newcommand{\callout}[2]{\textbf{\textcolor{accent}{#1}}\,\,\textcolor{royal}{#2}}
 
 \newcommand{\leftlogo}{./logos/observatory_400x332.jpg}
+\newcommand{\midlogo}{./logos/silso-logo.png}
 \newcommand{\rightlogo}{./logos/BELSPO_1867x1563.jpg}
 
 \setbeamertemplate{section page}{%
@@ -68,7 +64,7 @@
     {\color{royal}\Large\bfseries \insertsection}\par
     \rule{0.3\linewidth}{1pt}\par
     \vspace{0.4em}
-    {\color{accent}\small FARSuN Project}
+    {\color{accent}\small Sunspot Number Next-Gen}
     \vfill
   \end{centering}}
 
@@ -76,13 +72,13 @@
   \sectionpage
 }
 
-\title{Refining the Sunspot Number Series to ISN~V3}
-\subtitle{Challenges and Benefits for the Space Climate Community}
+\title{\textcolor{royal}{Refining the Sunspot Number Series to SN~V3}}
+\subtitle{\textcolor{royal}{Reconstructing a Provenance-Rich Solar Activity Record}}
 \author[FarSuN Team]{Kalugodu Chandrashekhar$^{1}$ \and Laure Lef\`evre$^{1}$ \and Benjamin Mampaey$^{1}$ \\
 Senthamizh Pavai Valliappan$^{1}$ \and Hisashi Hayakawa$^{2}$ \and Christian Ritter$^{3}$}
 \institute[ROB / SILSO]{\scriptsize $^{1}$ Royal Observatory of Belgium (ROB) / SILSO\quad $^{2}$ Nagoya University\quad $^{3}$ Universit\'e Catholique de Louvain, ISBA, LIDAM}
 \date{ESWW 2025}
-\titlegraphic{\includegraphics[height=1.1cm]{\leftlogo}\hfill\includegraphics[height=1.1cm]{\rightlogo}}
+\titlegraphic{\vspace{6.8cm}\includegraphics[height=1.0cm]{\leftlogo}\hfill\includegraphics[height=1.0cm]{\midlogo}\hfill\includegraphics[height=1.1cm]{\rightlogo}}
 
 \begin{document}
 
@@ -91,11 +87,32 @@ Senthamizh Pavai Valliappan$^{1}$ \and Hisashi Hayakawa$^{2}$ \and Christian Rit
   \titlepage
 \end{frame}
 
+\begin{frame}[t]{Session Overview}
+\begin{columns}[T,onlytextwidth]
+\column{0.52\linewidth}
+\textbf{We will cover}
+\begin{itemize}
+  \item Why the Sunspot Number needs a ground-up reconstruction.
+  \item FARSuN's four-axis workflow and quality gates.
+  \item Highlights from key historical datasets driving SN~V3.
+  \item Expected benefits, community roadmap, and ways to engage.
+\end{itemize}
+
+\column{0.44\linewidth}
+\textbf{Reference material}
+\begin{itemize}
+  \item FARSuN interactive report (webpage.html).
+  \item ESWW25 posters: FARSuN Reconstruction \& SN Next-Gen.
+  \item Dataset dossiers (QMD files) for Zürich, Mittheilungen, Adams, Gruithuisen, Stark.
+\end{itemize}
+\end{columns}
+\end{frame}
+
 \section[Mission]{Mission Brief}
 
 \begin{frame}[t]{Why FARSuN?}
 \small
-The International Sunspot Number (ISN) underpins space climate diagnostics, yet two major recalibrations still leave observer-dependent jumps (e.g. the 1947 "Waldmeier break").\linebreak[1]
+The Sunspot Number (SN, formerly the International Sunspot Number) underpins space climate diagnostics, yet two major recalibrations still leave observer-dependent jumps (e.g. the 1947 "Waldmeier break").\linebreak[1]
 
 \medskip
 FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebuilding the index from primary sources (1607--1980) with traceable metadata, uncertainties, and open delivery.
@@ -106,7 +123,7 @@ FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebu
 \callout{Mission}{Recover and standardise dispersed sunspot archives (drawings, tables, weather notes).}
 
 \column{0.5\linewidth}
-\callout{Outcome}{Deliver ISN~V3 with hemispheric indices, provenance, and FAIR-compliant access.}
+\callout{Outcome}{Deliver SN~V3 with hemispheric indices, provenance, and FAIR-compliant access.}
 \end{columns}
 \end{frame}
 
@@ -130,7 +147,7 @@ FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebu
 \end{columns}
 
 \vspace{0.6em}
-\scriptsize Source: FARSuN interactive report (`_site/webpage_1.html`) and dataset QMD dossiers.
+\scriptsize Source: FARSuN interactive report and dataset dossiers (Zürich, Mittheilungen, Adams, Gruithuisen, Stark).
 \end{frame}
 
 \section[Motivation]{Why Reconstruction}
@@ -164,7 +181,7 @@ FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebu
 \end{itemize}
 
 \column{0.48\linewidth}
-\textbf{FARSuN reconstruction (ISN~V3)}
+\textbf{FARSuN reconstruction (SN~V3)}
 \begin{itemize}
   \item Revisits original artefacts (drawings, logbooks, weather notes).
   \item Builds calibration curves per observer using raw counts.
@@ -173,7 +190,29 @@ FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebu
 \end{columns}
 
 \vspace{1em}
-\scriptsize Narrative adapted from the "Problem" and "Solution" sections in `_site/webpage_1.html`.
+\scriptsize Narrative adapted from the FARSuN interactive report (webpage.html).
+\end{frame}
+
+\begin{frame}[t]{Coordinating with the SN Next-Gen Programme}
+\begin{columns}[T,onlytextwidth]
+\column{0.54\linewidth}
+\begin{itemize}
+  \item The SN Next-Gen (SNGN) roadmap aligns international partners on governance, release cadence, and downstream services for the rebuilt record.
+  \item FARSuN supplies the data backbone: curated sources, calibration curves, and uncertainty models feeding SN~V3.
+  \item Joint milestones for ESWW25:
+    \begin{itemize}
+      \item Harmonised metadata schema (observer registry, instrument vocabularies).
+      \item Shared validation dashboards comparing historical reconstructions and modern proxies.
+      \item Communication kit for agencies and citizen-science contributors.
+    \end{itemize}
+\end{itemize}
+
+\column{0.42\linewidth}
+\begin{figure}
+  \includegraphics[width=\linewidth]{docs/SNGN_Poster_LLefevre_ESWW25_v1_web.jpg}
+  \caption{\scriptsize Excerpt from the SN Next-Gen ESWW25 poster summarising governance pillars.}
+\end{figure}
+\end{columns}
 \end{frame}
 
 \section[Workflow]{Methodology}
@@ -211,7 +250,7 @@ FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebu
 \end{columns}
 \end{frame}
 
-\begin{frame}[t]{Data Pipeline to ISN~V3}
+\begin{frame}[t]{Data Pipeline to SN~V3}
 \begin{enumerate}
   \item Curate daily group/spot counts with provenance-rich metadata.
   \item Solve observer response curves to harmonise scales over centuries.
@@ -226,35 +265,118 @@ FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebu
 
 \section[Data]{Historical Assets}
 
-\begin{frame}[t]{Key Historical Collections}
+\begin{frame}[t]{Zürich Tables — Summary}
 \small
-\begin{columns}[T,onlytextwidth]
-\column{0.55\linewidth}
 \begin{itemize}
-  \item \textbf{Zürich Tables (1945--1979):} 95\% digitised; metadata for late-1970s observers underway.
-  \item \textbf{Wolf's \emph{Mittheilungen} (1610--1918):} fully integrated with observer statistics over 400+ years.
-  \item \textbf{Gruithuisen Manuscripts (1817--1849):} 25\% transcribed; bespoke renaming + QC scripts for Kurrent entries.
-  \item \textbf{C. H. Adams Drawings (1819--1823):} 338 sketches extracted, 1\,056 entries including spotless-day tags.
+  \item Daily ledgers from the Eidgenössische Sternwarte Zürich (1945–1979) capturing raw G/S counts, k-factors, and observing notes.
+  \item Core digitisation complete; rich metadata encoded through 1959 with templates handling layout shifts across decades.
+  \item QC reconciles observer aliases, cross-checks rubrics versus scans, and flags anomalies around the 1947 discontinuity.
+  \item Next steps: finish 1951–1979 metadata, ingest 1980 bridging material, publish observer authority file, and expose VO/EPN-TAP products.
 \end{itemize}
 
-\column{0.45\linewidth}
-\begin{itemize}
-  \item \textbf{Augustin Stark Ledgers (1813--1835):} harmonising tables + weather annotations.
-  \item \textbf{Rost Journals (18th--19th c.):} metadata vocabulary build prior to digitisation ingest.
-  \item \textbf{Supporting collections:} Gruithuisen weather logs, Adams correspondence, Zürich observer notes.
-\end{itemize}
+\vspace{0.6em}
+\scriptsize Source: zurich\_tables.qmd.
+\end{frame}
+
+\begin{frame}[t]{Zürich Tables — Ledger Excerpt}
+\centering
+\includegraphics[width=0.8\linewidth]{zurich_tables.png}
 
 \vspace{0.4em}
+\scriptsize Sample Waldmeier-era ledger page showing per-observer counts and k-factor selections.
+\end{frame}
+
+\begin{frame}[t]{Mittheilungen — Summary}
+\small
+\begin{itemize}
+  \item Rudolf Wolf’s printed annual reports (1610–1918) aggregate daily GN/NS tallies, observer IDs, and annotations across Europe.
+  \item Fully digitised and mapped to observers/rubrics; provenance fields capture volume and page for reproducibility.
+  \item QC pipelines flag GN/S anomalies, reconcile aliases, and cross-compare against Adams extractions to catch residual errors.
+  \item Upcoming focus: calibrate Wolf–Wolfer overlaps, enrich observing-condition metadata, and publish VO/EPN-TAP services.
+\end{itemize}
+
+\vspace{0.6em}
+\scriptsize Source: mittheilungen\_data-1800.qmd.
+\end{frame}
+
+\begin{frame}[t]{Mittheilungen — Printed Tables}
 \centering
-\includegraphics[width=0.7\linewidth]{./figures/dataset_progress.png}
-\end{columns}
+\includegraphics[width=0.75\linewidth]{mittheilungen_sample.png}
+
+\vspace{0.4em}
+\scriptsize Mid-19th-century \emph{Mittheilungen} page showing multi-observer entries and Wolf number columns.
+\end{frame}
+
+\begin{frame}[t]{C. H. Adams Drawings — Summary}
+\small
+\begin{itemize}
+  \item Dense run of full-disk drawings (1819–1823) with NG/NS counts, spotless flags, and direct vs reflection viewing modes.
+  \item 338 folios produce 1,056 dated entries, adding ~650 spotless statements beyond Zürich compilations.
+  \item Processing pipeline dewarps sketches, harmonises notation, and links provenance for integration into the FARSuN database.
+  \item Near-term work: finalise coverage calendar, publish comparison logs, and release v1 dataset with uncertainty annotations.
+\end{itemize}
+
+\vspace{0.6em}
+\scriptsize Source: adams.qmd.
+\end{frame}
+
+\begin{frame}[t]{C. H. Adams Drawings — Example Folio}
+\centering
+\includegraphics[width=0.8\linewidth]{adams_example.png}
+
+\vspace{0.4em}
+\scriptsize Annotated drawing highlighting group layout, spotless notes, and viewing method for SN V3 calibration.
+\end{frame}
+
+\begin{frame}[t]{Gruithuisen Manuscripts — Summary}
+\small
+\begin{itemize}
+  \item Munich-based notebooks (1817–1849) combining textual weather notes and sketches written in Kurrent script.
+  \item All scans prepared; Transkribus workflow plus dual QC validates transcription accuracy and counts.
+  \item Supplies Dalton-Minimum coverage, spotless/active flags, and environmental context for bias analysis.
+  \item Pending tasks: finish survey pass, produce provisional NG/NS with uncertainties, and publish VO-ready tables.
+\end{itemize}
+
+\vspace{0.6em}
+\scriptsize Source: gruithuisen.qmd.
+\end{frame}
+
+\begin{frame}[t]{Gruithuisen Manuscripts — Sample Page}
+\centering
+\includegraphics[width=0.8\linewidth]{Gruithuisen_Sample2.jpg}
+
+\vspace{0.4em}
+\scriptsize Manuscript excerpt coupling weather commentary with sunspot sketches; dual QC mitigates transcription ambiguity.
+\end{frame}
+
+\begin{frame}[t]{Augustin Stark Ledgers — Summary}
+\small
+\begin{itemize}
+  \item Printed narratives (~1813–1835) capturing morphology, limb distances, and counts during the Dalton/post-Dalton era.
+  \item OCR plus prompt-guided extraction converts Fraktur prose into structured NG/NS data with provenance metadata.
+  \item Offers spotless-day coverage and qualitative QC cues to support SN V3.1/V4 calibration chains.
+  \item Next steps: finalise bibliography/page mappings, publish extraction taxonomy, and integrate derived scaling priors.
+\end{itemize}
+
+\vspace{0.6em}
+\scriptsize Source: stark.qmd.
+\end{frame}
+
+\begin{frame}[t]{Augustin Stark Ledgers — Page Extract}
+\centering
+\includegraphics[width=0.78\linewidth]{Stark_Sample1.png}
+
+\vspace{0.4em}
+\scriptsize Example Stark entry with narrative descriptors and counts prepared for OCR-driven ingestion.
 \end{frame}
 
 \begin{frame}[t]{Observer Coverage}
-\centering
-\includegraphics[width=0.85\linewidth]{./figures/observers_bubble.png}
-
-\scriptsize Bubble size = total observations; colour encodes observing years (source: `_site/webpage_1.html`).
+\begin{figure}
+  \centering
+  \includegraphics[width=0.65\linewidth]{observer_bubbles_poster_v2.png}
+  \vspace{0.3em}
+  {\scriptsize Bubble size = total observations; colour encodes observing years (Source: FARSuN observer coverage dashboard).}
+\end{figure}
 \end{frame}
 
 \section[Impact]{Science Impact}
@@ -282,7 +404,7 @@ FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebu
 \begin{frame}[t]{Benefits for the Community}
 \begin{columns}[T,onlytextwidth]
 \column{0.48\linewidth}
-\callout{Forecasting}{Bias-reduced ISN~V3 improves solar cycle prediction skill and operational space weather baselines.}
+\callout{Forecasting}{Bias-reduced SN~V3 improves solar cycle prediction skill and operational space weather baselines.}
 \vspace{1em}
 \callout{Climate}{Validated long-term forcing records refine Earth system and climate models.}
 
@@ -299,7 +421,7 @@ FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebu
 \begin{itemize}
   \item Launch citizen-science transcription pilot with curated training sets.
   \item Finalise Zürich metadata encoding and close remaining digitisation gaps.
-  \item Publish ISN~V3 release notes with full uncertainty budget and API endpoints.
+  \item Publish SN~V3 release notes with full uncertainty budget and API endpoints.
   \item Expand collaborations (ROB, Nagoya, UCLouvain) for cross-validation and joint publications.
 \end{itemize}
 \begin{center}
