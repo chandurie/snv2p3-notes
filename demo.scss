@@ -1,0 +1,144 @@
+/*-- scss:defaults --*/
+$body-bg: #283b95;
+$body-color: #f5fbff;
+$link-color: #ffb892;
+$code-block-bg: rgba(0, 0, 0, 0.25);
+$code-block-border-color: rgba(255, 255, 255, 0.18);
+$code-block-color: $body-color;
+$presentation-heading-color: #ffffff;
+$presentation-slide-text-align: left;
+
+/*-- scss:rules --*/
+.reveal {
+  background: linear-gradient(to bottom, #283b95, #17b2c3);
+  color: $body-color;
+}
+
+.reveal .slides section {
+  background: transparent;
+}
+
+.reveal strong {
+  color: $link-color;
+}
+
+.reveal a {
+  color: $link-color;
+}
+
+.reveal .slide-number {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.reveal .progress span {
+  background: #f26430;
+}
+
+.callout {
+  border-left: 6px solid rgba(255, 255, 255, 0.45);
+  background: rgba(15, 76, 92, 0.25);
+  color: $body-color;
+}
+
+.callout p,
+.callout li {
+  color: inherit;
+}
+
+.columns .column {
+  border-left: 3px solid rgba(255, 255, 255, 0.25);
+  padding-left: 1rem;
+}
+
+.columns .column:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.title-slide-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 4rem 8vw;
+  color: $body-color;
+}
+
+.title-slide-custom .title-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.title-slide-custom .title-text .sup-title {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.title-slide-custom .title-text h1 {
+  font-size: clamp(2.2rem, 3.4vw, 3.6rem);
+  margin: 0.3rem 0 0.6rem;
+}
+
+.title-slide-custom .title-text .subtitle {
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  margin: 0 0 1.4rem;
+  color: rgba(245, 251, 255, 0.82);
+}
+
+.title-slide-custom .title-meta {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(245, 251, 255, 0.82);
+}
+
+.title-slide-custom .title-meta .authors {
+  margin: 0 0 0.4rem;
+}
+
+.title-slide-custom .title-meta .affiliations {
+  margin: 0 0 1rem;
+}
+
+.title-slide-custom .title-meta .event {
+  font-weight: 600;
+  color: #ffb892;
+  margin: 0;
+}
+
+.title-slide-custom .title-logos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.title-slide-custom .title-logos img {
+  max-height: 90px;
+  max-width: 200px;
+  width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+}
+
+@media (max-width: 900px) {
+  .title-slide-custom .title-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .title-slide-custom .title-logos {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .title-slide-custom .title-text .sup-title {
+    letter-spacing: 0.2rem;
+  }
+}

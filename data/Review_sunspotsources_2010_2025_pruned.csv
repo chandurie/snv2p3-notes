@@ -1,0 +1,62 @@
+Review_sunspotsources_2010_2025_pruned;;;;;;;;;;;;
+Observer / Source;Period of observation;Link (DOI or note);Positions;Areas;# Spots;# Groups;ColumnsProvided;Verification;Source;YearStart;YearEnd;Target author(s)
+Hacki (unreleased records);1671;10.1016/j.asr.2025.05.037;Unclear;Unclear;Unclear;Unclear;;"Pending   article indicates unreleased notes; columns not described in abstract.";Other;1671;1671;Carrasco/Vaquero
+Christoph Scheiner (revisit early telescopic era);1611-1632;10.48550/arXiv.2501.10903;Unclear;Unclear;Unclear;Unclear;;"Preprint; columns TBD from PDF.";Other;1611;1632;Carrasco/Vaquero
+Diego de Torres Villarroel (note);1744;10.3847/2515-5172/ad71c2;Unclear;Unclear;Unclear;Unclear;;"Research Note; likely commentary.";Other;1744;1744;Carrasco/Vaquero
+Katsue Misawa;1921 1934;10.1093/mnras/stad2791;Unclear;Unclear;Unclear;Unclear;;"Historical analysis; dataset columns TBD.";Hayakawa [3];1921;1934;Hayakawa
+Kepler drawings (1607);1607;10.3847/2041-8213/ad57c9;Possibly (drawings);Unclear;Unclear;Unclear;;"Drawings analysis; numeric columns unlikely.";Hayakawa [3];1607;1607;Hayakawa
+Lorenzo Hervás y Panduro (note);1791;10.3847/2515-5172/ad5960;Unclear;Unclear;Unclear;Unclear;;"Research Note; likely narrative.";Other;1791;1791;Carrasco/Vaquero
+Rost & Alischer;1716-1727;10.3847/1538-4357/ad3fb9;Unclear;Unclear;Unclear;Unclear;;"Historical sunspot records; columns TBD.";Other;1716;1727;Carrasco/Vaquero
+Early Maunder Minimum overview;1645 1659;10.1093/mnras/stad3922;Unclear;Unclear;Unclear;Unclear;;"Overview paper; not a catalog.";Other;1645;1659;Hayakawa
+Angelo Secchi (digitized);1853 1878;10.3847/1538-4365/ad0886;Yes;Yes;Yes;Yes;date, group ID, (x,y) position/lat lon, area, counts;Verified (paper states digitization of documents and GN analysis).;Other;1853;1878;Carrasco/Vaquero
+ROA Spanish Navy (scattered records);1789 1790;10.3847/2515-5172/ad08c9;Unclear;Unclear;Unclear;Unclear;;"Short note; likely descriptive.";Vaquero/Carrasco [2];1789;1790;Carrasco/Vaquero
+Karl von Lindener;1800 1827;10.1051/swsc/2023023;Yes;Unclear;Likely;Likely;"date, group info, positions; areas not explicit";Verified (paper describes long-term dataset with positions).;Other;1800;1827;Hayakawa
+Flaugergues (Dalton Minimum);1782-1830;10.1093/mnras/stad1489;Yes;Unclear;Likely;Likely;"date, positions; areas TBD";Verified (title/abstract indicate positions).;Arlt [1];;;Arlt
+Valencia Observatory (hemi SSN);1940 1956;10.1007/s11207-023-02143-4;No;No;— (SSN derived);Yes (hemi);date, hemispheric SSN (GN/SSN components);Verified (hemispheric SSN product).;Vaquero/Carrasco [2];1940;1956;Carrasco/Vaquero
+Madrid AO prominences (context);1906 1957;10.1051/swsc/2023003;—;—;—;—;;"Prominence catalog; out of scope for sunspot columns.";Vaquero/Carrasco [2];1906;1957;Carrasco/Vaquero
+Kawaguchi Museum (1972 2013);1972 2013;10.1002/gdj3.158;Unclear;Unclear;Possibly;Possibly;;"Data journal; likely counts; positions not guaranteed.";Other;1972;2013;Hayakawa
+1727 1748 overview;1727 1748;10.3847/1538-4357/ac6671;Unclear;Unclear;Unclear;Unclear;;"Overview; dataset columns TBD.";Other;1727;1748;Hayakawa
+Coimbra catalog (faculae/prom/filaments);1929 1944;10.3847/1538-4365/ac85dd;—;—;—;—;faculae/prom/filament parameters;"Not sunspot catalog; different features.";Vaquero/Carrasco [2];1929;1944;Carrasco/Vaquero
+Zurich catalogs (reconstruction);1900-1944;10.1007/s11207-022-02015-3;Unclear;Unclear;Unclear;Unclear;;"Reconstruction from Zurich catalogs; columns TBD.";Other;1900;1944;Arlt
+Madrid AO sunspots 1931 1933;1931 1933;10.1007/s11207-022-01992-9;Yes;Yes;Yes;Yes;date, position, area, counts, groups;Verified (catalog paper).;Vaquero/Carrasco [2];1931;1933;Carrasco/Vaquero
+Madrid HSN 1935 1986;1935 1986;10.3847/1538-4357/ac5dc6;No;No;— (SSN derived);Yes (hemi);date, hemispheric SSN values;Verified (hemispheric SSN product).;Vaquero/Carrasco [2];1935;1986;Carrasco/Vaquero
+Scheiner (early 17th c.);1611 1631;10.1051/0004-6361/201629000;Yes;Yes;Likely;Yes;date, positions (lat/lon), area, tilt angles, groups;Verified (A&A 595 A104).;Other;1611;1631;Arlt
+Stonyhurst (catalog + areas series);"1921 1935; 1886 1940";10.3847/1538-4365/ac24a7;Yes;Yes;Yes;Yes;date, group/spot counts, positions, areas;Verified (ApJS catalog and area series).;Other;;;Carrasco/Vaquero
+Tarde & Smogulecki;1615 1625;10.1007/s11207-021-01905-2;Unclear;Unclear;Likely;Likely;;"Analysis paper; columns TBD.";Other;1615;1625;Carrasco/Vaquero
+Tevel (1816 1836);1816 1836;10.3847/1538-4357/ac24a5;Unclear;Unclear;Yes;Yes;date, group and spot counts;"Verified (counts series; positions not specified).";Other;1816;1836;Carrasco/Vaquero
+Müller (1719 1720);1719 1720;10.1007/s11207-021-01880-8;Unclear;Unclear;Likely;Likely;;"Analysis paper; columns TBD.";Other;1719;1720;Hayakawa
+Fogelius & Siverus (MM);1661-1690;10.1093/mnras/staa2965;Unclear;Unclear;Likely;Likely;;"Analysis; columns TBD.";Other;1645;1715;Hayakawa
+Secchi (note);1871 1875;10.1051/swsc/2021033;Unclear;Unclear;Likely;Likely;;"Note; likely mentions counts.";Other;1871;1875;Carrasco/Vaquero
+Prantner (Dalton Minimum);1804-1844;10.3847/1538-4357/abee1b;Unclear;Unclear;Likely;Likely;;"Analysis; columns TBD.";Hayakawa [3];;;Hayakawa
+Maunder Minimum (low activity);1645 1715;10.1093/mnras/stab1155;—;—;—;—;;"Synthesis; not a primary catalog.";Other;1645;1715;Carrasco/Vaquero
+Jean Charles Gallet (1677);1677;10.1093/pasj/psab035;Unclear;Unclear;Likely;Likely;;"Note; columns TBD.";Other;1677;1677;Carrasco/Vaquero
+Gassendi (pre-MM);1633-1638;10.1007/s11207-021-01809-1;Unclear;Unclear;Likely;Likely;;"Reanalysis; columns TBD.";Vaquero/Carrasco [2];1633;1638;Carrasco/Vaquero
+Thomas Harriot (1611 1613);1611 1613;10.1007/s11207-020-01752-7;Yes;Yes;Likely;Likely;date, positions, areas;Verified (positions & areas).;Arlt [1];1611;1613;Arlt
+NSO Sacramento Peak drawings;1947 2004;10.1007/s11207-020-01746-5;Likely;Yes;Likely;Likely;drawings + derived metadata (areas, counts);"Collection description; tables exist for areas.";Other;1947;2004;Carrasco/Vaquero
+Hevelius (onset MM);1642-1645;10.3847/1538-4357/ab4ade;Unclear;Unclear;Likely;Likely;;Analysis paper.;Other;1600;1699;Carrasco/Vaquero
+W.C. Bond (Cycle 9);1847 1849;10.1007/s11207-020-01696-y;Unclear;Unclear;Likely;Likely;;Historical analysis.;Other;1847;1849;Carrasco/Vaquero
+Antonio Colla (post-Dalton);1830-1843;10.1007/s11207-020-01678-0;Unclear;Unclear;Likely;Likely;;Historical analysis.;Other;1830;1843;Carrasco/Vaquero
+Galileo Scheiner controversy (groups);1610 1631;10.1093/mnras/staa1633;Unclear;Unclear;Likely;Yes;;Group counts focus.;Vaquero/Carrasco [2];1600;1699;Carrasco/Vaquero
+Barnaba Oriani (1778 1779);1778 1779;10.1007/s11207-020-01638-8;Likely;Likely;Likely;Likely;positions and areas derived from observations;Verified by abstract/figures.;Arlt [1];1778;1779;Carrasco/Vaquero
+Harriot (positions & areas 1611 1614);1611 1614;10.1007/s11207-020-01604-4;Yes;Yes;Likely;Likely;date, positions, areas;Verified (VizieR catalog).;Arlt [1];1611;1614;Arlt
+Hisako Koyama (1945 1996);1945 1996;10.1093/mnras/stz3345;Unclear;Unclear;Yes;Yes;daily group & spot counts;"Verified (paper title; counts).";Hayakawa [3];1945;1996;Hayakawa
+Thaddäus Derfflinger (1802 1824);1802 1824;10.3847/1538-4357/ab65c9;Likely;Likely;Likely;Likely;positions & areas likely extracted;Verified (dataset description).;Hayakawa [3];1802;1824;Hayakawa
+Hevelius (Machina Coelestis);1653   1675;10.1007/s11207-015-0767-z;Unclear;Unclear;Likely;Likely;;"Historical extraction; counts likely.";Other;1653;1675;Carrasco/Vaquero
+Weidler (1728 1729);1728 1729;https://articles.adsabs.harvard.edu/full/2015Obs...135..257C;Unclear;Unclear;Likely;Likely;;"Observatory note; no DOI.";Other;1728;1729;Carrasco/Vaquero
+Peter Becker (Rostock);1708 1710;10.1002/asna.201512203;Unclear;Unclear;Likely;Likely;;Historical extraction.;Arlt [1];1708;1710;Arlt
+Carrington/Peters/de la Rue (QC+MR);1853 1870;10.1007/s11207-015-0756-2;Yes;Yes;Likely;Likely;machine-readable positions & areas;Verified (QC + MR paper).;Other;1853;1870;Carrasco/Vaquero
+Rheita (1642);1642;10.48550/arXiv.1502.06772;Unclear;Unclear;Likely;Likely;;Historical reinterpretation.;Other;1642;1642;Carrasco/Vaquero
+Spoerer drawings (digitization);1861 1894;10.1002/asna.201412138;Yes;Likely;Likely;Likely;"positions; areas derived";Verified (digitization paper).;Arlt [1];1861;1894;Arlt
+Valencia Observatory (1920 1928);1920 1928;10.1007/s11207-014-0578-7;Likely;Likely;Yes;Yes;catalog with positions and areas;Verified (catalog paper).;Vaquero/Carrasco [2];1920;1928;Carrasco/Vaquero
+Madrid AO (1876 1986);1876 1986;10.1007/s11207-014-0567-x;Likely;Likely;Yes;Yes;catalog with positions and areas;Verified (catalog paper).;Vaquero/Carrasco [2];1876;1986;Carrasco/Vaquero
+Spanish Navy meridian obs.;1833 1840;10.1016/j.asr.2014.01.015;Unclear;Unclear;Likely;Likely;;"Meridian observations; sunspots reported.";Vaquero/Carrasco [2];1833;1840;Carrasco/Vaquero
+Revised GN values (1640,1652,1741);17th 18th c.;10.1007/s11207-013-0360-2;No;No;—;Yes;group numbers only;Verified (revised GN values).;Other;1600;1799;Carrasco/Vaquero
+Casas+ (QC & MR of catalogs);1853 1870;10.1007/s11207-013-0342-4;Yes;Yes;Likely;Likely;machine-readable catalogs;Verified (QC+MR).;Other;1853;1870;Carrasco/Vaquero
+Hadden (1890 1931);1890 1931;10.1016/j.newast.2013.05.002;Unclear;Unclear;Likely;Likely;;"Long-term observer; counts likely.";Other;1890;1931;Carrasco/Vaquero
+Schwabe (positions & sizes);1825 1867;10.1093/mnras/stt961;Yes;Yes;Likely;Likely;"positions and areas; counts derivable";Verified (MNRAS + arXiv).;Arlt [1];1825;1867;Arlt
+Spoerer digitization (conf.);;10.1017/S1743921313002214;Likely;Likely;Likely;Likely;;"Conference; digitization described.";Arlt [1];;;Arlt
+Casas+ VizieR (sunspot catalogues);1853 1870;VizieR VI/138;Yes;Yes;Likely;Likely;VizieR fields include positions & areas;Verified (VizieR entry).;Other;1853;1870;Carrasco/Vaquero
+Lisbon drawings (late 19th);Late 19th c.;;Unclear;Unclear;Likely;Likely;;"Observational paper; no DOI in list.";Vaquero/Carrasco [2];1880;1899;Carrasco/Vaquero
+Humphry Marshall;18th c.;https://articles.adsabs.harvard.edu/pdf/2012Obs...132..267V;Unclear;Unclear;Likely;Likely;;"Observational paper; no DOI.";Other;;;Carrasco/Vaquero
+Schwabe (summary);1825 1867;10.1002/asna.201111601;Yes;Likely;Likely;Likely;overview of Schwabe data;Verified (AN summary).;Arlt [1];1825;1867;Arlt
+Schwabe butterfly (first);1825 1867;10.1017/S1743921311015390;Yes;Unclear;Likely;Likely;butterfly positions;Verified (IAU Symp.).;Arlt [1];1825;1867;Arlt

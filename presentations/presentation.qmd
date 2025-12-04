@@ -1,0 +1,323 @@
+---
+title: "Refining the Sunspot Number Series to SN V3"
+subtitle: "Reconstructing a Provenance-Rich Solar Activity Record"
+author:
+  - "Kalugodu Chandrashekhar¹"
+  - "Laure Lefèvre¹"
+  - "Benjamin Mampaey¹"
+  - "Senthamizh Pavai Valliappan¹"
+  - "Hisashi Hayakawa²"
+  - "Christian Ritter³"
+institute:
+  - "¹ Royal Observatory of Belgium (ROB) / SILSO"
+  - "² Nagoya University"
+  - "³ Université Catholique de Louvain (UCLouvain), ISBA/LIDAM"
+format:
+  revealjs:
+    theme: white
+    transition: fade
+    slide-number: true
+    center: true
+    width: 1400
+    height: 900
+    fontsize: 32px
+    code-font-size: 0.9em
+    footer: "ESWW 2025"
+---
+
+## Sunspot Number Next-Gen
+
+### **Refining the Sunspot Number Series to SN V3**
+#### Reconstructing a Provenance-Rich Solar Activity Record
+
+**Kalugodu Chandrashekhar¹ · Laure Lefèvre¹ · Benjamin Mampaey¹ ·  
+Senthamizh Pavai Valliappan¹ · Hisashi Hayakawa² · Christian Ritter³**
+
+¹ Royal Observatory of Belgium (ROB) / SILSO  
+² Nagoya University  
+³ Université Catholique de Louvain (UCLouvain), ISBA/LIDAM
+
+<br>
+
+<img src="logos/observatory_transp.svg" height="80">  
+<img src="logos/silso-logo.png" height="80">  
+<img src="logos/farsun_wordmark.svg" height="80">
+
+
+
+## Session Overview
+
+::: {.columns}
+::: {.column width="52%"}
+**We will cover**
+
+- Why the Sunspot Number needs a ground-up reconstruction.
+- FARSuN's four-axis workflow and quality gates.
+- Highlights from key historical datasets driving SN V3.
+- Expected benefits, community roadmap, and ways to engage.
+:::
+::: {.column width="44%"}
+**Reference material**
+
+- FARSuN interactive report (`webpage.html`).
+- ESWW25 posters: FARSuN Reconstruction & SN Next-Gen.
+- Dataset dossiers (QMD files) for Zürich, Mittheilungen, Adams, Gruithuisen, Stark.
+:::
+:::
+
+# Mission Brief
+
+## Why FARSuN?
+
+The Sunspot Number (SN, formerly the International Sunspot Number) underpins space climate diagnostics, yet two major recalibrations still leave observer-dependent jumps (e.g., the 1947 "Waldmeier break").
+
+FARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebuilding the index from primary sources (1607-1980) with traceable metadata, uncertainties, and open delivery.
+
+::: {.columns}
+::: {.column width="50%"}
+- **Mission:** Recover and standardise dispersed sunspot archives (drawings, tables, weather notes).
+:::
+::: {.column width="50%"}
+- **Outcome:** Deliver SN V3 with hemispheric indices, provenance, and FAIR-compliant access.
+:::
+:::
+
+## Project Pulse (Early 2025) {.smaller}
+
+::: {.columns}
+::: {.column width="33%"}
+- **1607-1980**  
+  Temporal coverage of curated sources
+- **95% of 2,000+**  
+  Zürich observation tables digitised (Transkribus + manual QC)
+:::
+::: {.column width="33%"}
+- **1,056**  
+  Entries from C. H. Adams notebooks with spotless-day tagging
+- **100%**  
+  Mittheilungen volumes integrated into database
+:::
+::: {.column width="33%"}
+- **400+**  
+  Unique historical observers linked to standard IDs
+- **Ready for pilot**  
+  Citizen-science portal blueprint and QA workflow
+:::
+:::
+
+*Source: FARSuN interactive report and dataset dossiers (Zürich, Mittheilungen, Adams, Gruithuisen, Stark).*
+
+# Why Reconstruction
+
+## Limitations of Legacy Recalibration {.smaller}
+
+::: {.callout-note}
+## Symptoms
+
+- Residual scale jumps ("Waldmeier jump", late-19th-century transitions) in SN V2 derived records.
+- Missing metadata: observer aliases, instrument notes, weather context drop out of composite series.
+- Uncertainties opaque; difficult to quantify spotless-day reliability or observer drift.
+:::
+
+::: {.callout-warning}
+## Why tweaking coefficients is not enough
+
+- Linear rescaling keeps biases embedded in the stitched index.
+- Downstream models inherit hidden assumptions, limiting predictive skill.
+- Science questions (hemispheric asymmetry, climate forcing) demand provenance-rich data.
+:::
+
+## Reconstruction Advantages {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+**Legacy recalibration (SN V2)**
+
+- Adjusts existing composite, no new metadata.
+- Biases from observer transitions persist.
+- Limited uncertainty audit trail.
+:::
+::: {.column width="48%"}
+**FARSuN reconstruction (SN V3)**
+
+- Revisits original artefacts (drawings, logbooks, weather notes).
+- Builds calibration curves per observer using raw counts.
+- Publishes machine-readable products with explicit uncertainties and provenance.
+:::
+:::
+
+*Narrative adapted from the FARSuN interactive report (`webpage.html`).*
+
+## Coordinating with the SN Next-Gen Programme {.smaller}
+
+- The SN Next-Gen (SNGN) roadmap aligns international partners on governance, release cadence, and downstream services for the rebuilt record.
+- FARSuN supplies the data backbone: curated sources, calibration curves, and uncertainty models feeding SN V3.
+- Joint milestones for ESWW25:
+  - Harmonised metadata schema (observer registry, instrument vocabularies).
+  - Shared validation dashboards comparing historical reconstructions and modern proxies.
+  - Communication kit for agencies and citizen-science contributors.
+
+![Excerpt from the SN Next-Gen ESWW25 poster summarising governance pillars.](docs/SNGN_Poster_LLefevre_ESWW25_v1_web.jpg){width="60%"}
+
+# Methodology
+
+## Four-Axis Workflow {.smaller}
+
+1. **Gather:** Locate and digitise dispersed historical sources (Wolf's *Mittheilungen*, Zürich tables, Gruithuisen ledgers, Adams drawings).
+2. **Process:** Blend handwriting/OCR engines (Transkribus) with manual keying for fragile tables and drawings.
+3. **Validate:** Reconcile observer IDs, calendars, and counting conventions; propagate spotless-day confidence levels.
+4. **Disseminate:** Release FAIR-ready datasets, APIs, and VO-compliant services with versioned uncertainties.
+
+![FAIR principles radar chart illustrating workflow emphasis.](figures/fair_radar.png){width="50%"}
+
+## Quality Gates and Tooling {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**Verification**
+
+- Dual review of Adams and Gruithuisen counts before ingest.
+- Cross-matching against Wolf and SILSO indices to flag drifts.
+- Automated scripts check metadata completeness and naming standards.
+:::
+::: {.column width="50%"}
+**Toolchain**
+
+- Transkribus handwriting models + manual correction interface.
+- Python pipelines (Git-tracked) orchestrating OCR, QC, and format exports.
+- Planned citizen-science portal with training sets for Kurrent transcription.
+:::
+:::
+
+## Data Pipeline to SN V3 {.smaller}
+
+1. Curate daily group/spot counts with provenance-rich metadata.
+2. Solve observer response curves to harmonise scales over centuries.
+3. Aggregate to monthly, yearly, and hemispheric indices with propagated uncertainties.
+4. Benchmark against SN V2, satellite-era proxies, and reconstructions to validate corrections.
+
+![Comparison panel for SN indices.](figures/comparison_panel.png){width="70%"}
+
+# Historical Assets
+
+## Zürich Tables - Summary {.smaller}
+
+- Daily ledgers from the Eidgenössische Sternwarte Zürich (1945-1979) capturing raw G/S counts, k-factors, and observing notes.
+- Core digitisation complete; rich metadata encoded through 1959 with templates handling layout shifts across decades.
+- QC reconciles observer aliases, cross-checks rubrics versus scans, and flags anomalies around the 1947 discontinuity.
+- Next steps: finish 1951-1979 metadata, ingest 1980 bridging material, publish observer authority file, and expose VO/EPN-TAP products.
+
+*Source: `zurich_tables.qmd`.*
+
+## Zürich Tables - Ledger Excerpt
+
+![Sample Waldmeier-era ledger page showing per-observer counts and k-factor selections.](figures/zurich_tables.png){width="80%"}
+
+## Mittheilungen - Summary {.smaller}
+
+- Rudolf Wolf's printed annual reports (1610-1918) aggregate daily GN/NS tallies, observer IDs, and annotations across Europe.
+- Fully digitised and mapped to observers/rubrics; provenance fields capture volume and page for reproducibility.
+- QC pipelines flag GN/S anomalies, reconcile aliases, and cross-compare against Adams extractions to catch residual errors.
+- Upcoming focus: calibrate Wolf-Wolfer overlaps, enrich observing-condition metadata, and publish VO/EPN-TAP services.
+
+*Source: `mittheilungen_data-1800.qmd`.*
+
+## Mittheilungen - Printed Tables
+
+![Mid-19th-century *Mittheilungen* page showing multi-observer entries and Wolf number columns.](figures/mittheilungen_sample.png){width="75%"}
+
+## C. H. Adams Drawings - Summary {.smaller}
+
+- Dense run of full-disk drawings (1819-1823) with NG/NS counts, spotless flags, and direct vs reflection viewing modes.
+- 338 folios produce 1,056 dated entries, adding ~650 spotless statements beyond Zürich compilations.
+- Processing pipeline dewarps sketches, harmonises notation, and links provenance for integration into the FARSuN database.
+- Near-term work: finalise coverage calendar, publish comparison logs, and release v1 dataset with uncertainty annotations.
+
+*Source: `adams.qmd`.*
+
+## C. H. Adams Drawings - Example Folio
+
+![Annotated drawing highlighting group layout, spotless notes, and viewing method for SN V3 calibration.](figures/adams_example.png){width="80%"}
+
+## Gruithuisen Manuscripts - Summary {.smaller}
+
+- Munich-based notebooks (1817-1849) combining textual weather notes and sketches written in Kurrent script.
+- All scans prepared; Transkribus workflow plus dual QC validates transcription accuracy and counts.
+- Supplies Dalton-Minimum coverage, spotless/active flags, and environmental context for bias analysis.
+- Pending tasks: finish survey pass, produce provisional NG/NS with uncertainties, and publish VO-ready tables.
+
+*Source: `gruithuisen.qmd`.*
+
+## Gruithuisen Manuscripts - Sample Page
+
+![Manuscript excerpt coupling weather commentary with sunspot sketches; dual QC mitigates transcription ambiguity.](figures/Gruithuisen_Sample2.jpg){width="80%"}
+
+## Augustin Stark Ledgers - Summary {.smaller}
+
+- Printed narratives (~1813-1835) capturing morphology, limb distances, and counts during the Dalton/post-Dalton era.
+- OCR plus prompt-guided extraction converts Fraktur prose into structured NG/NS data with provenance metadata.
+- Offers spotless-day coverage and qualitative QC cues to support SN V3.1/V4 calibration chains.
+- Next steps: finalise bibliography/page mappings, publish extraction taxonomy, and integrate derived scaling priors.
+
+*Source: `stark.qmd`.*
+
+## Augustin Stark Ledgers - Page Extract
+
+![Example Stark entry with narrative descriptors and counts prepared for OCR-driven ingestion.](figures/Stark_Sample1.png){width="78%"}
+
+## Observer Coverage
+
+![Bubble size = total observations; colour encodes observing years (Source: FARSuN observer coverage dashboard).](figures/observer_bubbles_poster_v2.png){width="65%"}
+
+# Science Impact
+
+## Addressing Core Challenges {.smaller}
+
+::: {.columns}
+::: {.column width="50%"}
+**Data hurdles**
+
+- Deciphering 19th-century *Kurrent* handwriting and marginalia.
+- Normalising heterogeneous formats (drawings, tables, narrative notes).
+- Tracking provenance from scanned folio to released dataset.
+:::
+::: {.column width="50%"}
+**Mitigations**
+
+- Specialist training, handwriting models, and dual QC.
+- Schema mapping + metadata vocabularies across archives.
+- Git-backed pipelines with audit trails and uncertainty flags.
+:::
+:::
+
+## Benefits for the Community {.smaller}
+
+::: {.columns}
+::: {.column width="48%"}
+- **Forecasting:** Bias-reduced SN V3 improves solar cycle prediction skill and operational space weather baselines.
+- **Climate:** Validated long-term forcing records refine Earth system and climate models.
+:::
+::: {.column width="48%"}
+- **Citizen science:** Public transcription portal accelerates data recovery and outreach.
+- **Open science:** FAIR datasets, APIs, and reproducible notebooks catalyse external research.
+:::
+:::
+
+# Path Ahead
+
+## 2025 Roadmap {.smaller}
+
+- Launch citizen-science transcription pilot with curated training sets.
+- Finalise Zürich metadata encoding and close remaining digitisation gaps.
+- Publish SN V3 release notes with full uncertainty budget and API endpoints.
+- Expand collaborations (ROB, Nagoya, UCLouvain) for cross-validation and joint publications.
+
+![Acknowledgement graphic for FARSuN collaborators.](figures/ack_.png){width="45%"}
+
+## Q&A
+
+::: {.center}
+### Questions?
+
+[silso.info@observatory.be](mailto:silso.info@observatory.be) | <https://www.sidc.be/silso/>
+:::

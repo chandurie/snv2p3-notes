@@ -1,0 +1,62 @@
+#;Study / Publication (Year);Recovered Dataset / Observer;Temporal Coverage;Obs. Days / Records;Data Availability / Link;RecoveredDataset
+1;Hayakawa et al. (2021);Eimmart Observatory (G.C. & M.C. Eimmart);1681–1718;~129 days;DOI https://doi.org/10.3847/1538-4357/abd949;Eimmart Observatory
+2;Hayakawa et al. (2021);Daniel Mögling (Manuscripts);1626–1629;134 days;DOI https://doi.org/10.3847/1538-4357/abdd34;Daniel Mögling
+3;Carrasco et al. (2022);Christoph Scheiner (Rosa Ursina);1611–1631;928 days;DOI https://doi.org/10.3847/1538-4357/ac52ee;Christoph Scheiner
+4;Carrasco et al. (2021);Jean Tarde (Canon of Sarlat);1615–1617;~30 days;DOI https://doi.org/10.1007/s11207-021-01905-2;Jean Tarde
+5;Carrasco et al. (2021);Jan Smogulecki;1621–1625;~34 days;DOI https://doi.org/10.1007/s11207-021-01905-2;Jan Smogulecki
+6;Hayakawa et al. (2024);Johannes Kepler (pre-telescopic drawings);1607;3 drawings;DOI https://doi.org/10.3847/2041-8213/ad57c9;Johannes Kepler
+7;Neuhäuser et al. (2018);Gottfried Kirch (Correspondence);1680–1709;35 groups;DOI https://doi.org/10.1002/asna.201813481;Gottfried Kirch
+8;Neuhäuser et al. (2015);Peter Becker (Rostock);1708–1710;Spotless days;DOI https://doi.org/10.1002/asna.201512203;Peter Becker
+9;Carrasco et al. (2019);Charles Malapert (Austriaca Sidera);1618–1626;>200 days;DOI https://doi.org/10.1007/s11207-019-1418-3;Charles Malapert
+10;Carrasco et al. (2015);Johannes Hevelius (Machina Coelestis);1642–1679;~200 days;DOI https://doi.org/10.1007/s11207-015-0797-y;Johannes Hevelius
+11;Carrasco et al. (2016);John Flamsteed;1676–1700;59 days;DOI https://doi.org/10.1007/s11207-015-0697-1;John Flamsteed
+12;Arlt et al. (2013);J.C. Staudacher (Drawings);1749–1796;>1000 drawings;DOI https://doi.org/10.1093/mnras/stt1366;J.C. Staudacher
+13;Hayakawa et al. (2019);Christian Horrebow;1761–1777;Daily logs;DOI https://doi.org/10.1007/s11207-019-1404-9;Christian Horrebow
+14;Pfitzner et al. (2020);Georg Tevel;1816–1836;2400+ days;DOI https://doi.org/10.1093/mnras/staa2698;Georg Tevel
+15;Hayakawa et al. (2021);Stephan Prantner;1804–1844;3000+ days;DOI https://doi.org/10.3847/1538-4357/ac0889;Stephan Prantner
+16;Hayakawa et al. (2020);Thaddäus Derfflinger;1802–1824;Daily counts;DOI https://doi.org/10.3847/1538-4357/ab65c4;Thaddäus Derfflinger
+17;Hayakawa et al. (2023);Karl von Lindener;1800–1827;547 days;DOI https://doi.org/10.1051/swsc/2023040;Karl von Lindener
+18;Bhattacharya et al. (2021);Richard Carrington (Redux);1853–1861;>5000 records;DOI https://doi.org/10.1007/s11207-021-01864-8;Richard Carrington
+19;Carrasco et al. (2016);William Derham;1703–1715;~30 days;DOI https://doi.org/10.1007/s11207-016-1011-1;William Derham
+20;Vaquero et al. (2011);Thomas Harriot (First Drawings);1610–1613;199 days;DOI https://doi.org/10.1051/0004-6361/201117565;Thomas Harriot
+21;Hayakawa et al. (2017);P. Saxonius;1616;24 days;DOI https://doi.org/10.3847/1538-4357/aa80e4;P. Saxonius
+22;Carrasco et al. (2018);Zucconi (Venice);1754–1760;Hundreds;DOI https://doi.org/10.1007/s11207-018-1258-6;Zucconi
+23;Carrasco et al. (2018);Staudt (Rottenburg);1760–1762;Daily tables;DOI https://doi.org/10.1007/s11207-018-1356-5;Staudt
+24;Hayakawa et al. (2018);Fushimi & Edo (Japan);1749–1750 and 1793;16 days;DOI https://doi.org/10.1093/pasj/psx147;Fushimi & Edo
+25;Carrasco et al. (2019);Pierre Gassendi;1631–1632;45 days;DOI https://doi.org/10.1007/s11207-019-1418-3;Pierre Gassendi
+26;Vaquero et al. (2015);Picard & La Hire (Latitudes);1660–1719;277 records;DOI https://doi.org/10.1016/j.asr.2015.01.006;Picard & La Hire
+27;Carrasco et al. (2015);Schwarzenberg (Bohemia);1825–1830;~800 days;DOI https://doi.org/10.1007/s11207-015-0761-7;Schwarzenberg
+28;Diercke et al. (2015);Gustav Spörer;1861–1894;445 rotations;DOI https://doi.org/10.1002/asna.201412148;Gustav Spörer
+29;Carrasco et al. (2019);J.W. Pastorff;1819–1833;1500+ drawings;DOI https://doi.org/10.1007/s11207-019-1499-z;J.W. Pastorff
+30;Hayakawa et al. (2020);Hisako Koyama;1945–1996;10000+ sketches;DOI https://doi.org/10.3847/1538-4357/ab63ca;Hisako Koyama
+31;Carrasco et al. (2021);Stonyhurst Observatory;1921–1935;Daily catalog;DOI https://doi.org/10.3847/1538-4365/ac10ca;Stonyhurst Observatory
+32;Lefèvre et al. (2016);Miguel Aguilar;1914–1920;1500+ days;DOI https://doi.org/10.1007/s11207-016-0905-2;Miguel Aguilar
+33;Carrasco et al. (2014);Valencia Observatory;1920–1928;74 percent coverage;DOI https://doi.org/10.1007/s11207-014-0570-7;Valencia Observatory
+34;Aparicio et al. (2014);Madrid Observatory;1931–1986;Daily catalog;DOI https://doi.org/10.1007/s11207-014-0545-0;Madrid Observatory
+35;Vaquero et al. (2012);Joaquin Gallo (Mexico);1910s–1950s;Daily counts;DOI https://doi.org/10.1016/j.asr.2012.03.021;Joaquin Gallo
+36;Carrasco et al. (2020);San Fernando Observatory;1876–1896;Daily positions;DOI https://doi.org/10.1007/s11207-020-01740-x;San Fernando Observatory
+37;Domínguez-Castro et al. (2017);Eclipse Observers (Anonymous);1777;Eclipse sketches;DOI https://doi.org/10.1051/swsc/2017014;Eclipse Observers
+38;Iju et al. (2021);Kunitomo Ikkansai (Japan);1835–1836;15 sketches;DOI https://doi.org/10.1093/pasj/psab016;Kunitomo Ikkansai
+39;Carrasco et al. (2021);Joseph-Antoine Gallet;1776–1778;~200 days;DOI https://doi.org/10.1007/s11207-021-01851-z;Joseph-Antoine Gallet
+40;Arlt et al. (2016);Scheiner (Positional Data);1611–1631;Positions and tilts;DOI https://doi.org/10.1051/0004-6361/201629288;Scheiner
+41;Carrasco et al. (2013);D.E. Hadden (USA);1890–1931;2964 days;DOI https://doi.org/10.1016/j.newast.2013.05.003;D.E. Hadden
+42;Hayakawa et al. (2020);Ames & Ferrer (Eclipse);1806;Eclipse drawings;DOI https://doi.org/10.3847/1538-4357/abae5d;Ames & Ferrer
+43;Carrasco et al. (2023);Heinrich Schwabe;1825–1867;New counts;DOI https://doi.org/10.1093/mnras/stad179;Heinrich Schwabe
+44;Willamo et al. (2017);Rudolf Wolf (Original Source);1849–1893;Source vs revised;DOI https://doi.org/10.1007/s11207-017-1114-3;Rudolf Wolf
+45;Hayakawa et al. (2019);Staudacher (Colors and Drawings);1749–1796;Re-analysis;DOI https://doi.org/10.3847/1538-4357/ab0f32;Staudacher
+46;Carrasco et al. (2020);Naval Observatory (Spain);1850s–1890s;Meridian transits;DOI https://doi.org/10.1007/s11207-020-01740-x;Naval Observatory
+47;Pezzuti et al. (2022);Angelo Secchi (Rome);1853–1878;4000+ drawings;DOI https://doi.org/10.1051/swsc/2021042;Angelo Secchi
+48;Vaquero et al. (2016);Group Number Backbone;1610–2010;Composite;DOI https://doi.org/10.1007/s11207-016-0982-2;Group Number Backbone
+49;Clette et al. (2014);International Sunspot Number;1700–2014;Revised index;DOI https://doi.org/10.1002/2014SW001087;International Sunspot Number
+50;Usoskin et al. (2015);Maunder Minimum Composite;1645–1715;Bayesian analysis;DOI https://doi.org/10.1051/0004-6361/201526652;Maunder Minimum Composite
+51;Vokhmyanin et al. (2020);Thomas Harriot drawings;1610–1613;~200 days;DOI 10.1007/s11207-020-01604-4;Thomas Harriot drawings
+52;Vokhmyanin & Zolotova (2018);Galileo Galilei sunspot letters;1612-05-03 to 1612-08-21;49 days;DOI 10.1007/s11207-018-1245-1;Galileo Galilei sunspot letters
+53;Vokhmyanin, Arlt & Zolotova (2021);Composite dataset (Cigoli, Galileo, Cologna, Scheiner, Colonna);1612–1614;Dozens of days;DOI 10.1007/s11207-021-01796-6;Composite dataset (Cigoli
+54;Vokhmyanin & Zolotova (2018);Pierre Gassendi drawings;1632–1634;Multiple drawings;DOI 10.1007/s11207-018-1372-8;Pierre Gassendi drawings
+55;Arlt et al. (2016);Christoph Scheiner drawings (Rosa Ursina);1611–1631;8167 spots;DOI 10.1051/0004-6361/201629000;Christoph Scheiner drawings
+56;Carrasco et al. (2015);Johannes Hevelius (Machina Coelestis);1653–1675;Intermittent;DOI 10.1007/s11207-015-0767-z;Johannes Hevelius
+57;Neuhäuser, Arlt & Richter (2018);Gottfried Kirch correspondence;1680–1709;35 groups;DOI 10.1002/asna.201813481;Gottfried Kirch correspondence
+58;Carrasco & Vaquero (2016);John Flamsteed correspondence;1672–1703;Dozens of mentions;DOI 10.1007/s11207-015-0839-0;John Flamsteed correspondence
+59;Carrasco, Vaquero & Gallego (2021);Jean Charles Gallet;1677;7 + 6 days;DOI 10.1093/pasj/psab035;Jean Charles Gallet
+60;Carrasco et al. (2025);Hacki–Hevelius letters;1671;Multiple letters;DOI 10.1016/j.asr.2025.05.037;Hacki–Hevelius letters
+61;Carrasco et al. (2021);Tarde & Smogulecki combined;1615–1625;12 Tarde + 52 Smogulecki;DOI 10.1007/s11207-021-01905-2;Tarde & Smogulecki combined

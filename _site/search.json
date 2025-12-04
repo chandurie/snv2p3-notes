@@ -36,51 +36,315 @@
     ]
   },
   {
-    "objectID": "source_book_data.html",
-    "href": "source_book_data.html",
-    "title": "Source Book Data",
+    "objectID": "stark.html",
+    "href": "stark.html",
+    "title": "Augstin Stark",
     "section": "",
-    "text": "Source book : Along with Mittheilungen, the source books of Wolf were found in loose, unbound form in 2015. Before his discoveries were printed in the Mittheilungen, Wolf first documentd them in these source tables. Source books offer a lot of supplemetary material.\n==================================================\nOBSERVER STATISTICS (WOLF SOURCE BOOK) SUMMARY\n==================================================\nTotal unique observers: 35\nObservation period: 1849-09-30 00:00:00 to 1877-08-31 00:00:00\nTotal observation span: 27.9 years",
+    "text": "Early‑19th‑century printed sunspot records associated with Augustin Stark (and occasional contemporaries). Primarily narrative descriptions with day‑level sunspot activity.",
     "crumbs": [
       "Home",
       "Other pages",
-      "Source Book Data"
+      "Augstin Stark"
     ]
   },
   {
-    "objectID": "source_book_data.html#timeline-of-the-observers",
-    "href": "source_book_data.html#timeline-of-the-observers",
-    "title": "Source Book Data",
-    "section": "Timeline of the observers",
-    "text": "Timeline of the observers\nFigure 1 is a timeline showing the start and end date of observations of the observers in the source book. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Observer timeline of the observers (Source Book)",
+    "objectID": "stark.html#path-to-sn-v3",
+    "href": "stark.html#path-to-sn-v3",
+    "title": "Augstin Stark",
+    "section": "Path to SN V3",
+    "text": "Path to SN V3\n\nIntegrate daily NG/NS + uncertainties as an informative node in calibration chains.\n\nUse Stark as a procedural rehearsal for V3 (expanded uncertainty & provenance).\n\nRelease notes to include cadence limits, textual ambiguities, and multi‑observer considerations.\n\nStark (1813–1835) is a high‑value, printed dataset that can be reliably normalized with OCR+rules+dual‑QC to support SN V3.",
     "crumbs": [
       "Home",
       "Other pages",
-      "Source Book Data"
+      "Augstin Stark"
     ]
   },
   {
-    "objectID": "source_book_data.html#bubble-plot-of-the-observers",
-    "href": "source_book_data.html#bubble-plot-of-the-observers",
-    "title": "Source Book Data",
-    "section": "Bubble plot of the observers",
-    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in the source book. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot of the observers (Source Book)\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "objectID": "presentation.html#session-overview",
+    "href": "presentation.html#session-overview",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Session Overview",
+    "text": "Session Overview\n\n\nWe will cover\n\nWhy the Sunspot Number needs a ground-up reconstruction.\nFARSuN’s four-axis workflow and quality gates.\nHighlights from key historical datasets driving SN V3.\nExpected benefits, community roadmap, and ways to engage.\n\n\nReference material\n\nFARSuN interactive report (webpage.html).\nESWW25 posters: FARSuN Reconstruction & SN Next-Gen.\nDataset dossiers (QMD files) for Zürich, Mittheilungen, Adams, Gruithuisen, Stark.",
     "crumbs": [
       "Home",
       "Other pages",
-      "Source Book Data"
+      "Refining the Sunspot Number Series to SN V3"
     ]
   },
   {
-    "objectID": "source_book_data.html#animated-bubble-plot-of-the-observers",
-    "href": "source_book_data.html#animated-bubble-plot-of-the-observers",
-    "title": "Source Book Data",
-    "section": "Animated bubble plot of the observers",
-    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in the source book.",
+    "objectID": "presentation.html#why-farsun",
+    "href": "presentation.html#why-farsun",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Why FARSuN?",
+    "text": "Why FARSuN?\nThe Sunspot Number (SN, formerly the International Sunspot Number) underpins space climate diagnostics, yet two major recalibrations still leave observer-dependent jumps (e.g., the 1947 “Waldmeier break”).\nFARSuN (Findability and Accessibility of historical Raw Sunspot Numbers) is rebuilding the index from primary sources (1607-1980) with traceable metadata, uncertainties, and open delivery.\n\n\n\nMission: Recover and standardise dispersed sunspot archives (drawings, tables, weather notes).\n\n\n\nOutcome: Deliver SN V3 with hemispheric indices, provenance, and FAIR-compliant access.",
     "crumbs": [
       "Home",
       "Other pages",
-      "Source Book Data"
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#project-pulse-early-2025",
+    "href": "presentation.html#project-pulse-early-2025",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Project Pulse (Early 2025)",
+    "text": "Project Pulse (Early 2025)\n\n\n\n1607-1980\nTemporal coverage of curated sources\n95% of 2,000+\nZürich observation tables digitised (Transkribus + manual QC)\n\n\n\n1,056\nEntries from C. H. Adams notebooks with spotless-day tagging\n100%\nMittheilungen volumes integrated into database\n\n\n\n400+\nUnique historical observers linked to standard IDs\nReady for pilot\nCitizen-science portal blueprint and QA workflow\n\n\nSource: FARSuN interactive report and dataset dossiers (Zürich, Mittheilungen, Adams, Gruithuisen, Stark).",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#limitations-of-legacy-recalibration",
+    "href": "presentation.html#limitations-of-legacy-recalibration",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Limitations of Legacy Recalibration",
+    "text": "Limitations of Legacy Recalibration\n\n\n\n\n\n\nSymptoms\n\n\n\nResidual scale jumps (“Waldmeier jump”, late-19th-century transitions) in SN V2 derived records.\nMissing metadata: observer aliases, instrument notes, weather context drop out of composite series.\nUncertainties opaque; difficult to quantify spotless-day reliability or observer drift.\n\n\n\n\n\n\n\n\n\n\nWhy tweaking coefficients is not enough\n\n\n\nLinear rescaling keeps biases embedded in the stitched index.\nDownstream models inherit hidden assumptions, limiting predictive skill.\nScience questions (hemispheric asymmetry, climate forcing) demand provenance-rich data.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#reconstruction-advantages",
+    "href": "presentation.html#reconstruction-advantages",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Reconstruction Advantages",
+    "text": "Reconstruction Advantages\n\n\nLegacy recalibration (SN V2)\n\nAdjusts existing composite, no new metadata.\nBiases from observer transitions persist.\nLimited uncertainty audit trail.\n\n\nFARSuN reconstruction (SN V3)\n\nRevisits original artefacts (drawings, logbooks, weather notes).\nBuilds calibration curves per observer using raw counts.\nPublishes machine-readable products with explicit uncertainties and provenance.\n\n\nNarrative adapted from the FARSuN interactive report (webpage.html).",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#coordinating-with-the-sn-next-gen-programme",
+    "href": "presentation.html#coordinating-with-the-sn-next-gen-programme",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Coordinating with the SN Next-Gen Programme",
+    "text": "Coordinating with the SN Next-Gen Programme\n\nThe SN Next-Gen (SNGN) roadmap aligns international partners on governance, release cadence, and downstream services for the rebuilt record.\nFARSuN supplies the data backbone: curated sources, calibration curves, and uncertainty models feeding SN V3.\nJoint milestones for ESWW25:\n\nHarmonised metadata schema (observer registry, instrument vocabularies).\nShared validation dashboards comparing historical reconstructions and modern proxies.\nCommunication kit for agencies and citizen-science contributors.\n\n\n\nExcerpt from the SN Next-Gen ESWW25 poster summarising governance pillars.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#four-axis-workflow",
+    "href": "presentation.html#four-axis-workflow",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Four-Axis Workflow",
+    "text": "Four-Axis Workflow\n\nGather: Locate and digitise dispersed historical sources (Wolf’s Mittheilungen, Zürich tables, Gruithuisen ledgers, Adams drawings).\nProcess: Blend handwriting/OCR engines (Transkribus) with manual keying for fragile tables and drawings.\nValidate: Reconcile observer IDs, calendars, and counting conventions; propagate spotless-day confidence levels.\nDisseminate: Release FAIR-ready datasets, APIs, and VO-compliant services with versioned uncertainties.\n\n\nFAIR principles radar chart illustrating workflow emphasis.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#quality-gates-and-tooling",
+    "href": "presentation.html#quality-gates-and-tooling",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Quality Gates and Tooling",
+    "text": "Quality Gates and Tooling\n\n\nVerification\n\nDual review of Adams and Gruithuisen counts before ingest.\nCross-matching against Wolf and SILSO indices to flag drifts.\nAutomated scripts check metadata completeness and naming standards.\n\n\nToolchain\n\nTranskribus handwriting models + manual correction interface.\nPython pipelines (Git-tracked) orchestrating OCR, QC, and format exports.\nPlanned citizen-science portal with training sets for Kurrent transcription.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#data-pipeline-to-sn-v3",
+    "href": "presentation.html#data-pipeline-to-sn-v3",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Data Pipeline to SN V3",
+    "text": "Data Pipeline to SN V3\n\nCurate daily group/spot counts with provenance-rich metadata.\nSolve observer response curves to harmonise scales over centuries.\nAggregate to monthly, yearly, and hemispheric indices with propagated uncertainties.\nBenchmark against SN V2, satellite-era proxies, and reconstructions to validate corrections.\n\n\nComparison panel for SN indices.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#zürich-tables---summary",
+    "href": "presentation.html#zürich-tables---summary",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Zürich Tables - Summary",
+    "text": "Zürich Tables - Summary\n\nDaily ledgers from the Eidgenössische Sternwarte Zürich (1945-1979) capturing raw G/S counts, k-factors, and observing notes.\nCore digitisation complete; rich metadata encoded through 1959 with templates handling layout shifts across decades.\nQC reconciles observer aliases, cross-checks rubrics versus scans, and flags anomalies around the 1947 discontinuity.\nNext steps: finish 1951-1979 metadata, ingest 1980 bridging material, publish observer authority file, and expose VO/EPN-TAP products.\n\nSource: zurich_tables.qmd.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#zürich-tables---ledger-excerpt",
+    "href": "presentation.html#zürich-tables---ledger-excerpt",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Zürich Tables - Ledger Excerpt",
+    "text": "Zürich Tables - Ledger Excerpt\n\nSample Waldmeier-era ledger page showing per-observer counts and k-factor selections.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#mittheilungen---summary",
+    "href": "presentation.html#mittheilungen---summary",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Mittheilungen - Summary",
+    "text": "Mittheilungen - Summary\n\nRudolf Wolf’s printed annual reports (1610-1918) aggregate daily GN/NS tallies, observer IDs, and annotations across Europe.\nFully digitised and mapped to observers/rubrics; provenance fields capture volume and page for reproducibility.\nQC pipelines flag GN/S anomalies, reconcile aliases, and cross-compare against Adams extractions to catch residual errors.\nUpcoming focus: calibrate Wolf-Wolfer overlaps, enrich observing-condition metadata, and publish VO/EPN-TAP services.\n\nSource: mittheilungen_data-1800.qmd.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#mittheilungen---printed-tables",
+    "href": "presentation.html#mittheilungen---printed-tables",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Mittheilungen - Printed Tables",
+    "text": "Mittheilungen - Printed Tables\n\nMid-19th-century Mittheilungen page showing multi-observer entries and Wolf number columns.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#c.-h.-adams-drawings---summary",
+    "href": "presentation.html#c.-h.-adams-drawings---summary",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "C. H. Adams Drawings - Summary",
+    "text": "C. H. Adams Drawings - Summary\n\nDense run of full-disk drawings (1819-1823) with NG/NS counts, spotless flags, and direct vs reflection viewing modes.\n338 folios produce 1,056 dated entries, adding ~650 spotless statements beyond Zürich compilations.\nProcessing pipeline dewarps sketches, harmonises notation, and links provenance for integration into the FARSuN database.\nNear-term work: finalise coverage calendar, publish comparison logs, and release v1 dataset with uncertainty annotations.\n\nSource: adams.qmd.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#c.-h.-adams-drawings---example-folio",
+    "href": "presentation.html#c.-h.-adams-drawings---example-folio",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "C. H. Adams Drawings - Example Folio",
+    "text": "C. H. Adams Drawings - Example Folio\n\nAnnotated drawing highlighting group layout, spotless notes, and viewing method for SN V3 calibration.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#gruithuisen-manuscripts---summary",
+    "href": "presentation.html#gruithuisen-manuscripts---summary",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Gruithuisen Manuscripts - Summary",
+    "text": "Gruithuisen Manuscripts - Summary\n\nMunich-based notebooks (1817-1849) combining textual weather notes and sketches written in Kurrent script.\nAll scans prepared; Transkribus workflow plus dual QC validates transcription accuracy and counts.\nSupplies Dalton-Minimum coverage, spotless/active flags, and environmental context for bias analysis.\nPending tasks: finish survey pass, produce provisional NG/NS with uncertainties, and publish VO-ready tables.\n\nSource: gruithuisen.qmd.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#gruithuisen-manuscripts---sample-page",
+    "href": "presentation.html#gruithuisen-manuscripts---sample-page",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Gruithuisen Manuscripts - Sample Page",
+    "text": "Gruithuisen Manuscripts - Sample Page\n\nManuscript excerpt coupling weather commentary with sunspot sketches; dual QC mitigates transcription ambiguity.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#augustin-stark-ledgers---summary",
+    "href": "presentation.html#augustin-stark-ledgers---summary",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Augustin Stark Ledgers - Summary",
+    "text": "Augustin Stark Ledgers - Summary\n\nPrinted narratives (~1813-1835) capturing morphology, limb distances, and counts during the Dalton/post-Dalton era.\nOCR plus prompt-guided extraction converts Fraktur prose into structured NG/NS data with provenance metadata.\nOffers spotless-day coverage and qualitative QC cues to support SN V3.1/V4 calibration chains.\nNext steps: finalise bibliography/page mappings, publish extraction taxonomy, and integrate derived scaling priors.\n\nSource: stark.qmd.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#augustin-stark-ledgers---page-extract",
+    "href": "presentation.html#augustin-stark-ledgers---page-extract",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Augustin Stark Ledgers - Page Extract",
+    "text": "Augustin Stark Ledgers - Page Extract\n\nExample Stark entry with narrative descriptors and counts prepared for OCR-driven ingestion.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#observer-coverage",
+    "href": "presentation.html#observer-coverage",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Observer Coverage",
+    "text": "Observer Coverage\n\nBubble size = total observations; colour encodes observing years (Source: FARSuN observer coverage dashboard).",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#addressing-core-challenges",
+    "href": "presentation.html#addressing-core-challenges",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Addressing Core Challenges",
+    "text": "Addressing Core Challenges\n\n\nData hurdles\n\nDeciphering 19th-century Kurrent handwriting and marginalia.\nNormalising heterogeneous formats (drawings, tables, narrative notes).\nTracking provenance from scanned folio to released dataset.\n\n\nMitigations\n\nSpecialist training, handwriting models, and dual QC.\nSchema mapping + metadata vocabularies across archives.\nGit-backed pipelines with audit trails and uncertainty flags.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#benefits-for-the-community",
+    "href": "presentation.html#benefits-for-the-community",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Benefits for the Community",
+    "text": "Benefits for the Community\n\n\n\nForecasting: Bias-reduced SN V3 improves solar cycle prediction skill and operational space weather baselines.\nClimate: Validated long-term forcing records refine Earth system and climate models.\n\n\n\nCitizen science: Public transcription portal accelerates data recovery and outreach.\nOpen science: FAIR datasets, APIs, and reproducible notebooks catalyse external research.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#roadmap",
+    "href": "presentation.html#roadmap",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "2025 Roadmap",
+    "text": "2025 Roadmap\n\nLaunch citizen-science transcription pilot with curated training sets.\nFinalise Zürich metadata encoding and close remaining digitisation gaps.\nPublish SN V3 release notes with full uncertainty budget and API endpoints.\nExpand collaborations (ROB, Nagoya, UCLouvain) for cross-validation and joint publications.\n\n\nAcknowledgement graphic for FARSuN collaborators.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
+    ]
+  },
+  {
+    "objectID": "presentation.html#qa",
+    "href": "presentation.html#qa",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Q&A",
+    "text": "Q&A\n\nQuestions?\nsilso.info@observatory.be | https://www.sidc.be/silso/",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
     ]
   },
   {
@@ -398,27 +662,75 @@
     ]
   },
   {
-    "objectID": "stark.html",
-    "href": "stark.html",
-    "title": "Augstin Stark",
+    "objectID": "source_book_data.html",
+    "href": "source_book_data.html",
+    "title": "Source Book Data",
     "section": "",
-    "text": "Early‑19th‑century printed sunspot records associated with Augustin Stark (and occasional contemporaries). Primarily narrative descriptions with day‑level sunspot activity.",
+    "text": "Source book : Along with Mittheilungen, the source books of Wolf were found in loose, unbound form in 2015. Before his discoveries were printed in the Mittheilungen, Wolf first documentd them in these source tables. Source books offer a lot of supplemetary material.\n==================================================\nOBSERVER STATISTICS (WOLF SOURCE BOOK) SUMMARY\n==================================================\nTotal unique observers: 35\nObservation period: 1849-09-30 00:00:00 to 1877-08-31 00:00:00\nTotal observation span: 27.9 years",
     "crumbs": [
       "Home",
       "Other pages",
-      "Augstin Stark"
+      "Source Book Data"
     ]
   },
   {
-    "objectID": "stark.html#path-to-sn-v3",
-    "href": "stark.html#path-to-sn-v3",
-    "title": "Augstin Stark",
-    "section": "Path to SN V3",
-    "text": "Path to SN V3\n\nIntegrate daily NG/NS + uncertainties as an informative node in calibration chains.\n\nUse Stark as a procedural rehearsal for V3 (expanded uncertainty & provenance).\n\nRelease notes to include cadence limits, textual ambiguities, and multi‑observer considerations.\n\nStark (1813–1835) is a high‑value, printed dataset that can be reliably normalized with OCR+rules+dual‑QC to support SN V3.",
+    "objectID": "source_book_data.html#timeline-of-the-observers",
+    "href": "source_book_data.html#timeline-of-the-observers",
+    "title": "Source Book Data",
+    "section": "Timeline of the observers",
+    "text": "Timeline of the observers\nFigure 1 is a timeline showing the start and end date of observations of the observers in the source book. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.\n\n\n\n\n\n\n\n\nFigure 1: Observer timeline of the observers (Source Book)",
     "crumbs": [
       "Home",
       "Other pages",
-      "Augstin Stark"
+      "Source Book Data"
+    ]
+  },
+  {
+    "objectID": "source_book_data.html#bubble-plot-of-the-observers",
+    "href": "source_book_data.html#bubble-plot-of-the-observers",
+    "title": "Source Book Data",
+    "section": "Bubble plot of the observers",
+    "text": "Bubble plot of the observers\nFigure 2 is a bubble plot showing all observers in the source book. X-axis is start date, Y-axis is end date, size of the bubble is the number of observations, color is the number of observation years, hover name is the alias, and text is the alias.\n\n\n\n\n\n\n\n        \n        \n        \n\n\n(a) Bubble plot of the observers (Source Book)\n\n\n\n\n\n\n                            \n                                            \n\n\n(b)\n\n\n\n\n\nFigure 2",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Source Book Data"
+    ]
+  },
+  {
+    "objectID": "source_book_data.html#animated-bubble-plot-of-the-observers",
+    "href": "source_book_data.html#animated-bubble-plot-of-the-observers",
+    "title": "Source Book Data",
+    "section": "Animated bubble plot of the observers",
+    "text": "Animated bubble plot of the observers\nFigure 3 is similar to Figure 2 but with animation over the start year.\n\n\n\n\n                            \n                                            \n\n\nFigure 3: Animated bubble plot showing all observers in the source book.",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Source Book Data"
+    ]
+  },
+  {
+    "objectID": "title-slide.html",
+    "href": "title-slide.html",
+    "title": "SNV3 Reconstruction",
+    "section": "",
+    "text": "&lt;p class=\"sup-title\"&gt;Sunspot Number Next-Gen&lt;/p&gt;\n&lt;h1&gt;Refining the Sunspot Number Series to SN V3&lt;/h1&gt;\n&lt;p class=\"subtitle\"&gt;Reconstructing a Provenance-Rich Solar Activity Record&lt;/p&gt;\n&lt;div class=\"title-meta\"&gt;\n  &lt;p class=\"authors\"&gt;\n    Kalugodu Chandrashekhar¹ · Laure Lefèvre¹ · Benjamin Mampaey¹ ·&lt;br&gt;\n    Senthamizh Pavai Valliappan¹ · Hisashi Hayakawa² · Christian Ritter³\n  &lt;/p&gt;\n  &lt;p class=\"affiliations\"&gt;\n    ¹ Royal Observatory of Belgium (ROB) / SILSO · ² Nagoya University · ³ Université Catholique de Louvain, ISBA, LIDAM\n  &lt;/p&gt;\n  &lt;p class=\"event\"&gt;ESWW 2025&lt;/p&gt;\n&lt;/div&gt;\n\n\n&lt;img src=\"logos/observatory_transp.svg\" alt=\"Royal Observatory of Belgium logo\" /&gt;\n&lt;img src=\"logos/silso-logo.png\" alt=\"SILSO logo\" /&gt;\n&lt;img src=\"logos/farsun_wordmark.svg\" alt=\"FARSuN logo\" /&gt;",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Title Slide"
+    ]
+  },
+  {
+    "objectID": "presentation.html#sunspot-number-next-gen",
+    "href": "presentation.html#sunspot-number-next-gen",
+    "title": "Refining the Sunspot Number Series to SN V3",
+    "section": "Sunspot Number Next-Gen",
+    "text": "Sunspot Number Next-Gen\nRefining the Sunspot Number Series to SN V3\nReconstructing a Provenance-Rich Solar Activity Record\nKalugodu Chandrashekhar¹ · Laure Lefèvre¹ · Benjamin Mampaey¹ ·\nSenthamizh Pavai Valliappan¹ · Hisashi Hayakawa² · Christian Ritter³\n¹ Royal Observatory of Belgium (ROB) / SILSO\n² Nagoya University\n³ Université Catholique de Louvain (UCLouvain), ISBA/LIDAM",
+    "crumbs": [
+      "Home",
+      "Other pages",
+      "Refining the Sunspot Number Series to SN V3"
     ]
   }
 ]
