@@ -1,8 +1,6 @@
 Observer / Source;Period of observation;Link (DOI or note);Positions;Areas;# Spots;# Groups;ColumnsProvided;Verification;Source;YearStart;YearEnd;Target author(s)
 Zürich Mittheilungen;1610-1944;;;;;;;;SILSO;1610;1944;SILSO
-Galileo Scheiner controversy (groups);1610 1631;10.1093/mnras/staa1633;Unclear;Unclear;Likely;Yes;;Group counts focus.;Vaquero/Carrasco [2];1600.0;1699.0;Carrasco/Vaquero
 Hevelius (onset MM);1642-1645;10.3847/1538-4357/ab4ade;Unclear;Unclear;Likely;Likely;;Analysis paper.;Other;1600.0;1699.0;Carrasco/Vaquero
-Revised GN values (1640,1652,1741);17th 18th c.;10.1007/s11207-013-0360-2;No;No;—;Yes;group numbers only;Verified (revised GN values).;Other;1600.0;1799.0;Carrasco/Vaquero
 Kepler drawings (1607);1607;10.3847/2041-8213/ad57c9;Possibly (drawings);Unclear;Unclear;Unclear;;"Drawings analysis; numeric columns unlikely.";Hayakawa [3];1607.0;1607.0;Hayakawa
 Thomas Harriot;1610-12-01–1613-01-31;https://geo.phys.spbu.ru/~ned/Publications.files/Vokhmyanin_Arlt_Zolotova_Sol_Ph_2020.pdf;Yes;Yes;Unclear;Yes;positions,areas,groups;Derived from Zolotova/Vokhmyanin reconstruction;Zolotova & Vokhmyanin;1610.0;1613.0;Zolotova, Vokhmyanin
 Scheiner (early 17th c.);1611 1631;10.1051/0004-6361/201629000;Yes;Yes;Likely;Yes;date, positions (lat/lon), area, tilt angles, groups;Verified (A&A 595 A104).;Other;1611.0;1631.0;Arlt

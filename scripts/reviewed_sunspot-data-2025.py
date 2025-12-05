@@ -12,7 +12,6 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Optional
 
-import matplotlib as mpl
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
@@ -126,7 +125,7 @@ def save_reviewed_bubble_plot(
     cmap_name: str = "viridis",
     alpha: float = 0.9,
     label_top_n: Optional[int] = None,
-    dpi_png: int = 400,
+    dpi_png: int = 1200,
     font_scale: float = 1.15,
     background_color: str = "#f8f8f8",
 ):
@@ -248,10 +247,10 @@ def save_reviewed_timeline_plot(
     width_in: float = 22,
     row_spacing: float = 1.1,
     row_height_in: float = 0.2,
-    cmap_name: str = "plasma",
+    bar_color: str = "#1f77b4",
     line_width: float = 6.0,
     tick_year_step: int = 25,
-    dpi_png: int = 400,
+    dpi_png: int = 1200,
     font_scale: float = 1.1,
     background_color: str = "#f8f8f8",
 ):
@@ -274,22 +273,17 @@ def save_reviewed_timeline_plot(
     fig.patch.set_facecolor(background_color)
     ax.set_facecolor("white")
 
-    durations = df["coverage_years"].astype(float)
-    norm = mpl.colors.Normalize(vmin=durations.min(), vmax=durations.max())
-    cmap = colormaps.get_cmap(cmap_name)
-
     label_offset_days = 365 * 0.4
     start_nums = mdates.date2num(df["start_date"].values)
     end_nums = mdates.date2num(df["end_date"].values)
 
     for idx, row in enumerate(df.itertuples()):
         y = idx * row_spacing
-        color = cmap(norm(row.coverage_years))
         ax.plot(
             [start_nums[idx], end_nums[idx]],
             [y, y],
             linewidth=line_width,
-            color=color,
+            color=bar_color,
             solid_capstyle="round",
             alpha=0.95,
         )
@@ -337,15 +331,6 @@ def save_reviewed_timeline_plot(
     )
     for label in ax.get_xticklabels(which="both"):
         label.set_fontweight("bold")
-
-    cbar = plt.colorbar(
-        mpl.cm.ScalarMappable(norm=norm, cmap=cmap),
-        ax=ax,
-        fraction=0.025,
-        pad=0.01,
-    )
-    cbar.set_label("Coverage (years)", fontsize=11 * font_scale, fontweight="bold")
-    cbar.ax.tick_params(labelsize=9 * font_scale)
 
     for spine in ["top", "right", "left"]:
         ax.spines[spine].set_visible(False)
