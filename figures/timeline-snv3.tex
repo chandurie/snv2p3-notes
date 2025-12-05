@@ -7,6 +7,8 @@
 \renewcommand{\familydefault}{\sfdefault}
 
 \usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{relsize}
 \usepackage{tikz}
 \usetikzlibrary{positioning,shadows.blur}
 
@@ -23,6 +25,8 @@
 % ---- Text helpers ----
 \newcommand{\CardTitle}[1]{{\bfseries\LARGE #1}}
 \newcommand{\CardText}[1]{{\bfseries\large #1}}
+\newcommand{\SN}{\ensuremath{\mathlarger{\boldsymbol{S}_{\!N}}}}
+\newcommand{\GN}{\ensuremath{\mathlarger{\boldsymbol{G}_{\!N}}}}
 
 % ---- Styles ----
 \tikzset{
@@ -131,7 +135,7 @@
 
 \node[cardC={greenShadeA}{16.0cm}, anchor=north west]
   (C26a) at ($(T26a)+(\xoff,\yoff)$)  {\CardTitle{2026 (Q2)} \\[4pt]
-  \CardText{\textit{Definitive} FARSuN database delivered to the Sunspot Workshop team. Online community meeting on methods harmonization \& versioning policy (SN \& GN).}};
+  \CardText{\textit{Definitive} FARSuN database delivered to the Sunspot Workshop team. Online community meeting on methods harmonization \& versioning policy (\SN{} \& \GN{}).}};
 
 \node[cardC={greenShadeB}{16.0cm}, anchor=north west]
   (C26b) at ($(T26b)+(\xoff,\yoff)$)  {\CardTitle{2026 (Q3) }\\[4pt]
@@ -143,8 +147,8 @@
 
 \node[cardC={silso}{16.4cm}, anchor=north west]
   (C27)  at ($(T27)+(\xoff,\yoff)$)   {\CardTitle{2027}\\[4pt]
-  \CardText{WDC--SILSO commissions new production pipeline for daily SN \& GN (auditable processing, automated QA).}\\[3pt]
-  \CardText{Major versioned releases of SN \& GN with complete provenance, method docs, and DOIs.}};
+  \CardText{WDC--SILSO commissions new production pipeline for daily \SN{} \& \GN{} (auditable processing, automated QA).}\\[3pt]
+  \CardText{Major versioned releases of \SN{} \& \GN{} with complete provenance, method docs, and DOIs.}};
 
 \end{tikzpicture}
 \end{document}
