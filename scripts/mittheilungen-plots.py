@@ -143,6 +143,12 @@ def _bubble_sizes(span_years: np.ndarray, size_min: float = 80.0, size_max: floa
     return np.interp(spans, (s_min, s_max), (size_min, size_max))
 
 
+def _year_ticks(x_min: float, x_max: float, interval: int) -> np.ndarray:
+    start = int(np.floor(x_min / interval) * interval)
+    end = int(np.ceil(x_max / interval) * interval)
+    return np.arange(start, end + 1, interval)
+
+
 def save_bubble_plot(
     data: pd.DataFrame,
     out_path: Path,
@@ -151,6 +157,7 @@ def save_bubble_plot(
     end_year: int | None = None,
     label_top_n: int = 50,
     label_all: bool = False,
+    tick_interval: int | None = None,
 ):
     """Scatter showing start vs end with bubble size = span and color = active years."""
     # Poster scaling factors
@@ -230,6 +237,10 @@ def save_bubble_plot(
         )
     ax.set_xlim(x_min, x_max)
     ax.set_ylim(x_min, x_max)
+    if tick_interval:
+        ticks = _year_ticks(x_min, x_max, tick_interval)
+        ax.set_xticks(ticks)
+        ax.set_yticks(ticks)
     ax.set_xlabel("Start Year", fontsize=14 * POSTER_SCALE, fontweight="bold")
     ax.set_ylabel("End Year", fontsize=14 * POSTER_SCALE, fontweight="bold")
     ax.tick_params(axis="both", labelsize=10 * POSTER_SCALE)
@@ -269,6 +280,7 @@ def save_timeline_plot(
     cmap_name: str,
     start_year: int | None = None,
     end_year: int | None = None,
+    tick_interval: int | None = None,
 ):
     """Horizontal bar timeline with bar length = span and color = active years."""
     plot_df = data.sort_values(["start_year", "end_year", "name"]).reset_index(drop=True)
@@ -314,6 +326,8 @@ def save_timeline_plot(
 
     ax.set_ylim(-0.8, len(plot_df) - 0.2)
     ax.set_xlim(x_min, x_max)
+    if tick_interval:
+        ax.set_xticks(_year_ticks(x_min, x_max, tick_interval))
     ax.set_yticks([])
     ax.set_xlabel("Year", fontsize=12, fontweight="bold")
     ax.set_title(
@@ -381,6 +395,7 @@ def main():
         end_year=args.end_year,
         label_top_n=args.label_top_n,
         label_all=args.label_all,
+        tick_interval=None,
     )
     save_timeline_plot(
         data,
@@ -388,7 +403,36 @@ def main():
         cmap_name=args.cmap,
         start_year=args.start_year,
         end_year=args.end_year,
+        tick_interval=None,
     )
+
+    # --- Zoomed plots for 1850–1945 ---
+    zoom_start, zoom_end = 1850, 1945
+    zoom_mask = (data["start_year"] >= zoom_start) & (data["start_year"] <= zoom_end)
+    zoom_data = data.loc[zoom_mask].copy()
+
+    if not zoom_data.empty:
+        bubble_zoom_path = args.outdir / f"mitt_observer_bubble_{zoom_start}_{zoom_end}"
+        timeline_zoom_path = args.outdir / f"mitt_observer_timeline_{zoom_start}_{zoom_end}"
+
+        save_bubble_plot(
+            zoom_data,
+            bubble_zoom_path,
+            cmap_name=args.cmap,
+            start_year=zoom_start,
+            end_year=zoom_end,
+            label_top_n=args.label_top_n,
+            label_all=args.label_all,
+            tick_interval=10,
+        )
+        save_timeline_plot(
+            zoom_data,
+            timeline_zoom_path,
+            cmap_name=args.cmap,
+            start_year=zoom_start,
+            end_year=zoom_end,
+            tick_interval=10,
+        )
 
 
 if __name__ == "__main__":
