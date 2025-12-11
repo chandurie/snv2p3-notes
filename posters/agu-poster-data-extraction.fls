@@ -2,7 +2,7 @@ PWD /Users/kalugoduc/projects/report-farsun/posters
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/kalugoduc/projects/report-farsun/posters/agu-poster-data-extraction.tex
+INPUT agu-poster-data-extraction.tex
 OUTPUT agu-poster-data-extraction.log
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls

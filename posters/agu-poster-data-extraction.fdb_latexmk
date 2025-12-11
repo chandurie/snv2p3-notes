@@ -1,14 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1764767728.1206 "/Users/kalugoduc/projects/report-farsun/posters/agu-poster-data-extraction.tex" "agu-poster-data-extraction.pdf" "agu-poster-data-extraction" 1764767731.31925 0
+["pdflatex"] 1765208927.32309 "agu-poster-data-extraction.tex" "agu-poster-data-extraction.pdf" "agu-poster-data-extraction" 1765208930.63218 0
   "../docs/figures/qrcode_farsun-poster.png" 1760964791.88837 5985 a8c45ac55def29f6a3f96d4f0b14a9dd ""
   "../figures/Gruithuisen_Sample1.png" 1760696117.51642 13415671 140aa8157839fbb847bb0a35c94bda68 ""
   "../figures/Gruithuisen_Sample2.jpg" 1757588019.72791 1728829 b82d7462846ef23aa25c95825c9e1213 ""
   "../figures/ack_.png" 1758390026 5742048 0c526c6329d06325591a8203c4ebb682 ""
-  "../figures/mitt_observer_bubble.pdf" 1764243876.73666 60590 35a7bffbed2e268665de35ea8adf6b39 ""
-  "../figures/reviewed_sources_timeline_merged.pdf" 1764686736.4333 41334 b20c63c8e237656f2dbbc1f837de7c3c ""
+  "../figures/mitt_observer_bubble.pdf" 1765206906.56597 60549 d11912f1f868d00fb9ce6d20eb810802 ""
+  "../figures/reviewed_sources_timeline_merged.pdf" 1764932204 34185 20f0b49a63cd4f8a0ec9afc759d9139f ""
   "../logos/observatory_400x332.jpg" 1704467458 10415 f767dc46d5d58b3ea78c30d67acd0d2c ""
   "../logos/silso-logo.png" 1760774513.02039 9863 97e5bd5e7b90e6c83911a1245b70019f ""
-  "/Users/kalugoduc/projects/report-farsun/posters/agu-poster-data-extraction.tex" 1764767727.8257 32180 fb29775e219b9faf0a29ef34543edb39 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -284,10 +283,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1754983844 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1754983758 3345740 a2fb414cea95cef414897043f147512e ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "agu-poster-data-extraction.aux" 1764767731.25374 807 f975f006c2ee645a8fa274067e408750 "pdflatex"
-  "agu-poster-data-extraction.nav" 1764767731.25425 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
-  "agu-poster-data-extraction.out" 1764767728.83648 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "agu-poster-data-extraction.tex" 1764767727.8257 32180 fb29775e219b9faf0a29ef34543edb39 ""
+  "agu-poster-data-extraction.aux" 1765208930.55767 807 e0a4de219da9ed231fb2f8826bbfc41e "pdflatex"
+  "agu-poster-data-extraction.nav" 1765208930.55814 307 9e520c26371a1250ff9fc1fe87f9c655 "pdflatex"
+  "agu-poster-data-extraction.out" 1765208928.03242 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "agu-poster-data-extraction.tex" 1765208556.35726 32264 6d99e7ff73fcf072cbbfbbe9c897bb40 ""
   (generated)
   "agu-poster-data-extraction.aux"
   "agu-poster-data-extraction.log"
