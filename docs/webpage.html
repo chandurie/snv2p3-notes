@@ -106,7 +106,7 @@
                 </a>
             </div>
             <div class="hidden md:flex space-x-8">
-                <a href="#problem" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">The Problem</a>
+                <a href="#problem" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">Motivation</a>
                 <a href="#solution" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">The Solution</a>
                 <a href="#progress" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">Progress</a>
                 <a href="#impact" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">Impact</a>
@@ -119,13 +119,18 @@
         <section id="hero" class="text-center mb-20">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">Rebuilding Our View of the Sun</h1>
             <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
-                The historical sunspot record is our longest window into solar activity, but it's flawed. The FARSuN project is undertaking a fundamental reconstruction, going back to the original raw data to build a new, more accurate foundation for space climate science.
+                <!-- The historical sunspot record is our longest window into solar activity, but it's flawed. The FARSuN project is undertaking a fundamental reconstruction, going back to the original raw data to build a new, more accurate foundation for space climate science. -->
             </p>
         </section>
 
         <section id="problem" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-2">The Problem with the Past</h2>
-            <p class="text-center max-w-2xl mx-auto text-gray-600 mb-10">The Sunspot Number (SN, formerly known as the International Sunspot Number) suffers from historical inconsistencies, like the "Waldmeier jump" around 1947. Previous attempts to fix this were limited to <em>recalibration</em>. FARSuN's approach, a full <strong>reconstruction</strong>, is fundamentally different and more robust.</p>
+            <!-- <h2 class="text-3xl font-bold text-center mb-2">Motivation</h2> -->
+            <div class="max-w-3xl mx-auto text-gray-600 space-y-4 leading-relaxed mb-10">
+                <p>The long historical record of sunspot observations is one of the most valuable datasets in solar–terrestrial science, but it is built from thousands of heterogeneous manuscripts, drawings, and tables created by different observers over four centuries. For decades, only a subset of these raw sources was available in structured form. As a result, earlier versions of the Sunspot Number—despite major improvements such as S<sub>N</sub> V2.0—could rely only on the material that was digitized and understood at the time.</p>
+                <p>Over the last decade, however, the situation has changed dramatically. A large body of original observations has been rediscovered, digitized, or newly analysed, expanding far beyond what the recalibration of S<sub>N</sub> V2.0 had access to. These include the complete Zürich Mittheilungen (1610–1944), the Zürich observation tables (1945–1979), and numerous early telescopic records recovered by the community since 2010 (e.g., Scheiner, Harriot, Eimmart, Tarde, Smogulecki, Kepler, many 18th–19th-century archives). With this vastly richer observational base, it is now possible to reconstruct the series directly from the raw data rather than adjust an inherited composite.</p>
+                <p>At the same time, new scientific insights have emerged. Several discontinuities—including the 1849 Schwabe–Wolf scale transfer and later observer handovers—were only fully understood after S<sub>N</sub> V2.0 was released, thanks to detailed studies of original documents and observer behaviour (e.g., Bhattacharya et al. 2023–2024). These findings show that some scale changes cannot be robustly addressed solely through statistical recalibration; they require re-examining the underlying observations themselves.</p>
+                <p>Together, these advances create an opportunity: for the first time, the entire historical chain of observations—from 1610 to the present—can be replayed from scratch, with transparent provenance, dataset-specific uncertainty estimates, and physically motivated calibration curves. This is the core motivation for a full reconstruction (S<sub>N</sub> V3.0). The goal is not to "fix" S<sub>N</sub> V2.0, but to build upon it using data and methods that simply did not exist a decade ago, ensuring that the International Sunspot Number rests on a fully traceable, FAIR-compliant foundation for the future of space-climate research.</p>
+            </div>
             
             <div class="text-center mb-8">
                 <button id="recal-btn" class="method-btn px-6 py-2 rounded-l-lg border border-gray-300 bg-white transition">Recalibration</button>
@@ -173,7 +178,7 @@
         </section>
         
         <section id="progress" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-10">Project Progress (As of Early 2025)</h2>
+            <h2 class="text-3xl font-bold text-center mb-10">Project Progress</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-1 bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-xl font-bold mb-2">Zürich Tables (1945–1979)</h3>
@@ -244,7 +249,7 @@
 
         <section id="impact" class="text-center">
             <h2 class="text-3xl font-bold mb-4">A New Standard for Space Climate Research</h2>
-            <p class="text-lg max-w-3xl mx-auto text-gray-600 mb-10">The ultimate goal of FARSuN is the scientific valorization of its output, culminating in a new, consolidated Sunspot Number (SN V3). This will provide a more accurate and reliable standard for the entire space climate community.</p>
+            <p class="text-lg max-w-3xl mx-auto text-gray-600 mb-10">The ultimate goal of FARSuN is the scientific valorization of its output, culminating in a new, consolidated Sunspot Number (S<sub>N</sub> V3). This will provide a more accurate and reliable standard for the entire space climate community.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="text-4xl mb-3">🤝</div>
@@ -254,7 +259,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="text-4xl mb-3">📈</div>
                     <h3 class="text-xl font-bold mb-2">Improved Predictions</h3>
-                    <p class="text-gray-600">The new SN V3 will provide a more accurate basis for solar cycle predictions and Earth Radiation Budget studies.</p>
+                    <p class="text-gray-600">The new S<sub>N</sub> V3 will provide a more accurate basis for solar cycle predictions and Earth Radiation Budget studies.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <div class="text-4xl mb-3">🌍</div>
@@ -287,7 +292,7 @@
               <div class="flex flex-col gap-4">
                 <div class="space-y-1">
                   <h4 class="text-xl font-semibold text-[#0F4C5C]">FARSuN Reconstruction Poster</h4>
-                  <p class="text-sm text-[#4b5d6b]">Deep dive into the FARSuN pipeline powering the SN V3 reconstruction.</p>
+                  <p class="text-sm text-[#4b5d6b]">Deep dive into the FARSuN pipeline powering the S<sub>N</sub> V3 reconstruction.</p>
                 </div>
                 <div class="poster-preview">
                   <img src="poster_v1_web.jpg" alt="FARSuN poster preview thumbnail" loading="lazy">
@@ -305,7 +310,7 @@
               <div class="flex flex-col gap-4">
                 <div class="space-y-1">
                   <h4 class="text-xl font-semibold text-[#0F4C5C]">Sunspot Number Next-Gen Poster</h4>
-                  <p class="text-sm text-[#4b5d6b]">Broader SN GN strategy and community roadmap presented at ESWW25.</p>
+                  <p class="text-sm text-[#4b5d6b]">Broader S<sub>N</sub> G<sub>N</sub> strategy and community roadmap presented at ESWW25.</p>
                 </div>
                 <div class="poster-preview">
                   <img src="SNGN_Poster_LLefevre_ESWW25_v1_web.jpg" alt="Sunspot Number Next-Gen poster preview thumbnail" loading="lazy">
@@ -337,7 +342,7 @@
               <div class="flex flex-col gap-4">
                 <div class="space-y-1">
                   <h4 class="text-xl font-semibold text-[#0F4C5C]">Data Extraction &amp; Provenance</h4>
-                  <p class="text-sm text-[#4b5d6b]">Workflow overview for rebuilding the SN record from original documents.</p>
+                  <p class="text-sm text-[#4b5d6b]">Workflow overview for rebuilding the S<sub>N</sub> record from original documents.</p>
                 </div>
                 <div class="poster-preview">
                   <img src="agu-poster-data-extraction_web.jpg" alt="AGU25 Data Extraction poster preview" loading="lazy">
@@ -355,7 +360,7 @@
               <div class="flex flex-col gap-4">
                 <div class="space-y-1">
                   <h4 class="text-xl font-semibold text-[#0F4C5C]">FARSuN Reconstruction Highlights</h4>
-                  <p class="text-sm text-[#4b5d6b]">Top-level poster outlining progress and milestones for SN V3.</p>
+                  <p class="text-sm text-[#4b5d6b]">Top-level poster outlining progress and milestones for S<sub>N</sub> V3.</p>
                 </div>
                 <div class="poster-preview">
                   <img src="FARSUN_Poster_LL_web.jpg" alt="AGU25 FARSuN poster preview" loading="lazy">
@@ -372,11 +377,11 @@
               </div>
               <div class="flex flex-col gap-4">
                 <div class="space-y-1">
-                  <h4 class="text-xl font-semibold text-[#0F4C5C]">SN Reconstruction Roadmap</h4>
-                  <p class="text-sm text-[#4b5d6b]">Detailed SN reconstruction pathway presented for AGU engagement.</p>
+                  <h4 class="text-xl font-semibold text-[#0F4C5C]">S<sub>N</sub> Reconstruction Roadmap</h4>
+                  <p class="text-sm text-[#4b5d6b]">Detailed S<sub>N</sub> reconstruction pathway presented for AGU engagement.</p>
                 </div>
                 <div class="poster-preview">
-                  <img src="SNReconstruction_AGU_Fall_2025_V4_web.jpg" alt="AGU25 SN Reconstruction poster preview" loading="lazy">
+                  <img src="SNReconstruction_AGU_Fall_2025_V4_web.jpg" alt="AGU25 Sunspot Number Reconstruction poster preview" loading="lazy">
                 </div>
                 <div>
                   <a class="inline-flex items-center gap-2 rounded-full bg-[#0F4C5C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0d4050] transition"
@@ -408,7 +413,7 @@
           </a>
           <a class="px-3 py-1 rounded-full bg-[#FFE9D6] text-sm text-[#8C4A1C] hover:bg-[#FFDCC1] transition"
             href="SNGN_Poster_LLefevre_ESWW25_v1.pdf" target="_blank" rel="noopener">
-            SN Next-Gen Poster (PDF)
+            S<sub>N</sub> Next-Gen Poster (PDF)
           </a>
           <a class="px-3 py-1 rounded-full bg-[#E0F2FB] text-sm text-[#0F4C5C] hover:bg-[#d4eaf6] transition"
             href="agu-poster-data-extraction.pdf" target="_blank" rel="noopener">
@@ -420,7 +425,7 @@
           </a>
           <a class="px-3 py-1 rounded-full bg-[#E0F2FB] text-sm text-[#0F4C5C] hover:bg-[#d4eaf6] transition"
             href="SNReconstruction_AGU_Fall_2025_V4.pdf" target="_blank" rel="noopener">
-            AGU25 SN Reconstruction (PDF)
+            AGU25 S<sub>N</sub> Reconstruction (PDF)
           </a>
         </div>
 
@@ -492,7 +497,7 @@
                 </svg>
               </span>
             </div>
-            <p class="mt-2 text-sm text-[#3C4A57]">Interactive overview of the harmonised FARSuN database, processing pipelines, and release roadmap underpinning the SN V3 build.</p>
+            <p class="mt-2 text-sm text-[#3C4A57]">Interactive overview of the harmonised FARSuN database, processing pipelines, and release roadmap underpinning the S<sub>N</sub> V3 build.</p>
           </a>
 
           <!-- Gruithuisen -->
@@ -586,7 +591,7 @@
                     points: [
                         '<strong>Methodology:</strong> Ground-up build from original raw data.',
                         '<strong>Data Source:</strong> Historical journals, manuscripts, and tables.',
-                        '<strong>Goal:</strong> A new, fully transparent, and homogeneous sunspot record (SN V3).'
+                        '<strong>Goal:</strong> A new, fully transparent, and homogeneous sunspot record (S<sub>N</sub> V3).'
                     ]
                 }
             };
