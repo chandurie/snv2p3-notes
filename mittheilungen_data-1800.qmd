@@ -24,9 +24,9 @@ warning: false
 
 ---
 
-“Mittheilungen” are the printed yearly reports led by Rudolf Wolf at the Zürich Observatory that compiled daily sunspot observations from many European observers. They include dates, observer IDs, number of sunspot groups (GN), spots (S), the Wolf number (W = 10×GN + S), brief notes, and references to volume/page. Mittheilungen is the cornerstone dataset for historical sunspot counts. FARSuN has digitized, cleaned, and structured it; next steps finalize calibration and FAIR publication so it can power a robust SN V3.
+“Mittheilungen” are the printed yearly reports led by Rudolf Wolf at the Zürich Observatory that compiled daily sunspot observations from many European observers. They include dates, observer IDs, number of sunspot groups (G<sub>N</sub>), spots (S), the Wolf number (W = 10×G<sub>N</sub> + S), brief notes, and references to volume/page. Mittheilungen is the cornerstone dataset for historical sunspot counts. FARSuN has digitized, cleaned, and structured it; next steps finalize calibration and FAIR publication so it can power a robust S<sub>N</sub> V3.
 
-This is the main historical backbone for the Sunspot Number (SN). It gives long, overlapping records from many observers, which FARSuN uses to check consistency, compute calibration factors between observers, and build a clean, FAIR, queryable foundation for SN V3. Core printed tables run ~1848–1945 (Wolf→Wolfer→Brunner/Waldmeier). Earlier observations (back to 1610) are also compiled inside the series as historical reconstructions.
+This is the main historical backbone for the Sunspot Number (S<sub>N</sub>). It gives long, overlapping records from many observers, which FARSuN uses to check consistency, compute calibration factors between observers, and build a clean, FAIR, queryable foundation for S<sub>N</sub> V3. Core printed tables run ~1848–1945 (Wolf→Wolfer→Brunner/Waldmeier). Earlier observations (back to 1610) are also compiled inside the series as historical reconstructions.
 
 Mittheilungen Data:
 - Provides the densest, most standardized pre-modern daily record.
@@ -40,13 +40,13 @@ Mittheilungen Data:
 - Mapping table created to reconcile legacy IDs with the new consolidated database.
 
 #### Quality controls:
-- Automated checks for date/observer mismatches, duplicates, and odd GN/S ratios.
+- Automated checks for date/observer mismatches, duplicates, and odd G<sub>N</sub>/S ratios.
 - Manual clean-up of uncertain values (e.g., entries with “?”).
 - Cross-comparisons versus external extractions (e.g., Adams) to spot discrepancies.
 - Ongoing k-factor/overlap analysis to harmonize observers.
 
 #### Digitization status:
-- OCR + manual verification of printed tables; standardized to ISO dates, GN, S, W, notes.
+- OCR + manual verification of printed tables; standardized to ISO dates, G<sub>N</sub>, S, W, notes.
 - Backfilled or verified using ETH archival materials where pages were missing or unclear.
 
 #### Metadata work:
@@ -60,7 +60,7 @@ Mittheilungen Data:
 
 ### Future Plans
 
-#### Inclusion in SN V3:
+#### Inclusion in S<sub>N</sub> V3:
 - Final consistency pass against ETH “source books.”
 - Calibrate overlaps (especially Wolf↔Wolfer) with modern methods; attach uncertainties.
 - Merge into the unified historical store and publish via VO-TAP for community use.

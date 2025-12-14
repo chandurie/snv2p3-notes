@@ -30,7 +30,7 @@ warning: false
 
 ## Modifications in Mittheilungen Data
 
-0. Merged dataset with SNV1 data (before grouping).
+0. Merged dataset with S<sub>N</sub>V1 data (before grouping).
 1. Filter observer 36(Carrington) by FK_RUBRICS =43 (Explore).
 2. Process observer 30 (Airy) and create observer 310 (Main from Airy): The code creates a new observer (ID 310, alias "Main") from a subset of Airy's (ID 30) observations between 1850 and 1853. It then modifies the original Airy data to retain only observations between 1858 and 1861 and updates the alias to "Airy (various observers)".  This process effectively splits the original Airy data into two separate observer entries in the `observer_groups` dictionary, reflecting different periods and potentially different contributors to the observations.
 3. Truncate observer 177 data (before="1925-01-01", after="1946-01-01")

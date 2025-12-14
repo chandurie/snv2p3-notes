@@ -31,7 +31,7 @@ Early‑19th‑century **printed** sunspot records associated with **Augustin St
 
 ### Why it matters (FARSuN)
 - Strengthens daily constraints in the **Dalton/post‑Dalton** era before dense Schwabe records.  
-- Adds **NG/NS** (and spotless days) for calibration chains used in **SN V3.1/V4**.  
+- Adds **NG/NS** (and spotless days) for calibration chains used in **S<sub>N</sub> V3.1/V4**.  
 - Limb‑distance and morphology cues support **hemispheric hints** and qualitative QC even without precise positions.  
 - Being **printed**, it is amenable to **OCR + prompt‑guided extraction** (faster than HTR).
 
@@ -61,9 +61,9 @@ Early‑19th‑century **printed** sunspot records associated with **Augustin St
 2. Publish a **prompt playbook** + error taxonomy; standardize extraction flags.  
 3. Align with contemporaries; estimate **ΔNG/ΔNS** and scaling priors.  
 
-## Path to SN V3
+## Path to S<sub>N</sub> V3
 - Integrate daily **NG/NS + uncertainties** as an **informative node** in calibration chains.  
 - Use Stark as a **procedural rehearsal** for V3 (expanded uncertainty & provenance).  
 - Release notes to include cadence limits, textual ambiguities, and multi‑observer considerations.
 
-Stark (1813–1835) is a high‑value, printed dataset that can be reliably normalized with OCR+rules+dual‑QC to support SN V3.
+Stark (1813–1835) is a high‑value, printed dataset that can be reliably normalized with OCR+rules+dual‑QC to support S<sub>N</sub> V3.
