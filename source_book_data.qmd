@@ -90,7 +90,7 @@ print(f"Total observation span: {((df['Date'].max() - df['Date'].min()).days / 3
 
 ```
 
-## Timeline of the observers
+# Timeline of the observers
 
 @fig-plot_observer_timeline_wolf_source_book is a timeline showing the start and
 end date of observations of the observers in the source book. X-axis is time in
@@ -105,7 +105,7 @@ plot_observer_timeline_wolf_source_book(df, observer_stats_source_book)
 
 ```
 
-## Bubble plot of the observers 
+# Bubble plot of the observers 
 
 @fig-plot_observer_bubble_wolf_source_book is a bubble plot showing all
 observers in the source book. X-axis is start date, Y-axis is end date, size of
@@ -144,7 +144,7 @@ fig.show()
 
 ```
 
-## Animated bubble plot of the observers
+# Animated bubble plot of the observers
 
 @fig-plot_observer_bubble_wolf_source_book_animated is similar to
 @fig-plot_observer_bubble_wolf_source_book but with animation over the start
@@ -307,4 +307,3 @@ fig.update_layout(sliders=sliders)
 
 fig.show()
 ```
-

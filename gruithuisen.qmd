@@ -23,45 +23,45 @@ echo: false
 warning: false
 
 ---
-### Gruithuisen Data
+# Gruithuisen Data
 - Historical manuscripts by Franz von Paula Gruithuisen (Munich Observatory, early 19th century) containing daily notes on weather, sky conditions, and sunspot observations, written in Kurrent (old German script).
 - The notebooks combine textual remarks (“Flecken”, “Öffnungen”) with drawings — both small in-text sketches and large full-disk solar diagrams.
 - Working data product: daily entries with date, time, presence/absence of spots, NG/NS counts (if visible), drawing type/quality flag, weather/seeing notes, and page references.
 
-#### Importance (for FARSuN & S<sub>N</sub> V3)
+## Importance (for FARSuN & S<sub>N</sub> V3)
 - Provides dense coverage during the late Dalton Minimum (~1817 – mid-1840s), filling a critical gap in early-19th-century solar records.
 - Includes both spotless and active days — essential for long-term continuity and low-activity baselines in the Sunspot Number (S<sub>N</sub> V3).
 - Weather and seeing information enrich the FARSuN condition table, supporting observer-bias and visibility studies.
 - Enables cross-calibration with contemporary observers (Adams, Stark, Pastorff) to refine k-factors and reliability estimates.
 
-#### Time Span (working range)
+## Time Span (working range)
 - Observations extend roughly 1817 – 1849 (core dense years 1824–1826 pending verification).
 - Task under way to finalize start/end years and compile a full volume + page inventory.
 
-#### What is being extracted
+## What is being extracted
 - Core daily parameters: date, time, spotless/active flag, NG, NS, comments, and provenance (text vs drawing).
 - Drawing flags: schema / full-disk (indicator of counting fidelity).
 - Contextual data: sky condition, barometer, hygrometer, temperature, method remarks.
 - Metadata links: book / volume / page numbers, normalized image IDs, checksums.
 
-### Current Status (Oct 2025)
+## Current Status (Oct 2025)
 - Data retrieval: All image scans and text snippets collected; preliminary CSV/XLSX files prepared.
 - Digitization: Page crops and snippet images completed; Transkribus/Cloude App workflow/pipeline is prepared for Kurrent script.
 - Counting: Double-counting verification procedure definition in progress.
 - Quality control: Two-pass QC (survey → counting) in progress; 
 - Metadata: Observer/site/instrument registry being merged with database; VO/EPN-TAP export planned after QC completion.
 
-#### Quality Control & Normalization
+### Quality Control & Normalization
 - Enforce standardized filenames, date/time formats, and provenance flags.
 - Maintain audit trail linking every image to its extracted record.
 - Ambiguous or illegible Kurrent passages flagged for expert review; define acceptance thresholds for HTR accuracy.
 
-#### Open Items
+### Open Items
 • Formalize counting policy for small in-text sketches (presence-only vs countable).
 • Benchmark Transkribus/App HTR results; set minimum human-review rate.
 • Identify overlaps with coeval observers for calibration validation.
 
-### Next Steps (toward S<sub>N</sub> V3 integration)
+## Next Steps (toward S<sub>N</sub> V3 integration)
 - Complete survey pass → definitive daily presence/absence + drawing availability/type.
 - Generate provisional daily NG/NS with uncertainty and provenance flags.
 - Apply QC (dual counts, normalization, conflict resolution, metadata registry).

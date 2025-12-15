@@ -33,51 +33,51 @@ Mittheilungen Data:
 - Enables scale transfers (e.g., Wolf↔Wolfer) and uncertainty estimates.
 - Supplies metadata (who/where/how) needed for FAIR publication and reuse.
 
-### Project’s Progress
-#### Data retrieval:
+# Project’s Progress
+## Data retrieval:
 - Full digitization completed at ROB/SILSO (2017–2019).
 - Loaded into a relational schema linking Data ↔ Observers ↔ Rubrics.
 - Mapping table created to reconcile legacy IDs with the new consolidated database.
 
-#### Quality controls:
+## Quality controls:
 - Automated checks for date/observer mismatches, duplicates, and odd G<sub>N</sub>/S ratios.
 - Manual clean-up of uncertain values (e.g., entries with “?”).
 - Cross-comparisons versus external extractions (e.g., Adams) to spot discrepancies.
 - Ongoing k-factor/overlap analysis to harmonize observers.
 
-#### Digitization status:
+## Digitization status:
 - OCR + manual verification of printed tables; standardized to ISO dates, G<sub>N</sub>, S, W, notes.
 - Backfilled or verified using ETH archival materials where pages were missing or unclear.
 
-#### Metadata work:
+## Metadata work:
 - Observer identity, site, instrument/method, time coverage, and source references encoded.
 - Provenance fields and quality flags added for traceability.
 - Aligning fields to EPN-Core/VO-TAP for FAIR access.
 
-#### Accessibility:
+## Accessibility:
 - Data integrated in the ROB historical database and internal web interface.
 - Planned exposure via EPN-TAP/VO so users can query by date, observer, instrument, etc.
 
-### Future Plans
+# Future Plans
 
-#### Inclusion in S<sub>N</sub> V3:
+## Inclusion in S<sub>N</sub> V3:
 - Final consistency pass against ETH “source books.”
 - Calibrate overlaps (especially Wolf↔Wolfer) with modern methods; attach uncertainties.
 - Merge into the unified historical store and publish via VO-TAP for community use.
 - Use Mittheilungen as the core anchor (1849–1945) and tie in earlier observers to extend back to 1610.
 
-#### Other to-dos:
+## Other to-dos:
 - Resolve remaining ID-mapping gaps; finish filling missing rubric/observer links.
 - Add a “conditions” table (weather, method, telescope) and standard vocabularies.
 - Build dashboards for QC metrics; document a data dictionary and README.
 
-#### Notes & Follow-ups:
+## Notes & Follow-ups:
 - End-of-series nuance: Printed observational tables effectively end in 1945 (later years are mainly archival handling).
 - Metadata completeness: Instruments/methods vary in detail; continue enrichment from ETH archives.
 - Identifier cleanup: A few observer ID mismatches remain and are being reconciled.
 
 
-## Analysis of Observers in Mittheilungen Data:
+# Analysis of Observers in Mittheilungen Data:
 
 Importing functions from scripts file. All the data used is in the folder `data`
 

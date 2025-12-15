@@ -24,11 +24,11 @@ warning: false
 
 ---
 
-## Introduction
+# Introduction
 
 [Mittheilugen Data](mittheilungen_data-1800.qmd) is the primary source of sunspot data. There are 122 observers in Mittheilungen data (Brunner has multiple FK_OBSERVERS IDs). Some of the observers data has been recounted with availablity of new data sources (From [Source Book Data](source_book_data.qmd) as well from other sources by different authors (refere table 1 from shreya2023 paper)), also new data of sunspot observations have been discovered. To make combined data of sunspot observations, new data sets are added and some modifications are done, based on the source book data to the Mittheilugen data.
 
-## Modifications in Mittheilungen Data
+# Modifications in Mittheilungen Data
 
 0. Merged dataset with S<sub>N</sub>V1 data (before grouping).
 1. Filter observer 36(Carrington) by FK_RUBRICS =43 (Explore).
@@ -91,7 +91,7 @@ df_all_combined = df_all_combined.sort_values("Date").reset_index(drop=True)
 
 ```
 
-## All Combined Data
+# All Combined Data
 
 ```{python}
 

@@ -24,44 +24,44 @@ warning: false
 
 ---
 
-## Overview
+# Overview
 - Observer & Site: C. H. Adams, UK (likely near London).
 - Period Covered: August 1819 – May 1823.
 - Content: Nearly daily full-disk sunspot drawings with accompanying tabular counts of sunspot groups and individual spots.
 - Observation Method: Used an asterisk notation distinguishing direct view (“*”) from reflection view (no asterisk); observation times frequently noted.
 - Significance: Provides dense daily coverage—including many spotless days—during an under-documented period, improving the calibration and low-activity baseline of S<sub>N</sub> V3.
 
-### Structure & Content
+## Structure & Content
 - Tabular layer: Per-day entries of number of groups (NG), number of spots (NS), spotless indicator, observation time, method flag, and comments. Wolf numbers W = 10·NG + NS can be derived.
 - Image layer: 338 scanned manuscript drawings requiring orientation and dewarping.
 - Metadata layer: Observer, site, instrument, method, provenance (Mittheilungen vol./page, folio IDs), and database foreign-key links (observer/rubric).
 
-### Coverage & Volume
+## Coverage & Volume
 - Drawings: 338
 - Total dated entries: 1,056 → 308 spot-days + 748 spotless days
 - Comparison: Zürich Mittheilungen (402 entries) cover only 94 spotless days; Adams adds ~650 new spotless statements—critical for establishing quiet-Sun baselines.
 
-### Scientific Importance
+## Scientific Importance
 - Completeness: Captures numerous explicit zero-spot (spotless) days often absent elsewhere.
 - Method sensitivity: Direct vs reflection views allow analysis of observational bias and variance.
 - Future use: Once oriented, drawings will provide positional and areal data for hemispheric sunspot numbers and dynamo studies.
 - Historical value: Offers a rare, continuous dataset bridging early 19th-century solar cycles for long-term variability research.
 
-### FARSuN Progress
+## FARSuN Progress
 - Retrieval: Led by Pavai with Lefèvre & Ritter; extracted tables (sunspot_metadata-ADAMS_…) aligned with Mittheilungen references.
 - Quality Control: Removed ambiguities in NG/NS; planned dispersion checks between Adams/Mittheilungen/Pavai sets; validated with Gruithuisen overlap (Aug–Sep 1819).
 - Digitization: Orientation and dewarping (e.g., folio 15) via ScanTailor Advanced; limb registration standardized; reflection ↔ direct transformations tested (R. Arlt).
 - Metadata encoding: Observer, site, method, time, spotless flag, provenance linked to the historical database.
 - Accessibility (planned): Release through EPN-TAP/VO-TAP at ROB with QC flags, versioning, and query fields (method, spotless, provenance).
 
-### Integration into S<sub>N</sub> V3 — Near-Term Steps
+## Integration into S<sub>N</sub> V3 — Near-Term Steps
 - Finalize coverage calendar and authoritative day list.
 - Publish day-level comparison log (Adams vs Mittheilungen/Pavai).
 - Model observational biases and uncertainties by method.
 - Test inclusion of Adams as an independent node in S<sub>N</sub> V3 stitching to assess baseline impact.
 - Release v1 (NG/NS + spotless + method/time + provenance); v2 to include positional/areal data.
 
-## Gaps & Follow-ups
+# Gaps & Follow-ups
 - Check for material beyond 1819–1823.
 - Verify completeness of direct/reflection flags.
 - Report orientation accuracy metrics before releasing coordinates.
