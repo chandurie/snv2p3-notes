@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 420 120">
-  <rect width="420" height="120" fill="none" />
-  <g font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="700" letter-spacing="4">
-    <text x="12" y="80" fill="#0F4C5C">FAR</text>
-    <text x="190" y="80" fill="#F26430">Su</text>
-    <text x="286" y="80" fill="#5FB7B7">N</text>
-  </g>
-  <rect x="12" y="92" width="360" height="6" rx="3" fill="#F26430" opacity="0.25" />
-</svg>

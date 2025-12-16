@@ -180,10 +180,33 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./title-slide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Title Slide</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./zurich_tables.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Zürich Tables</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./presentations/presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Refining the Sunspot Number Series to SN V3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -196,12 +219,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#projects-progress" id="toc-projects-progress" class="nav-link active" data-scroll-target="#projects-progress">Project’s Progress</a></li>
-  <li><a href="#future-plans" id="toc-future-plans" class="nav-link" data-scroll-target="#future-plans">Future Plans</a></li>
-  <li><a href="#analysis-of-observers-in-mittheilungen-data" id="toc-analysis-of-observers-in-mittheilungen-data" class="nav-link" data-scroll-target="#analysis-of-observers-in-mittheilungen-data">Analysis of Observers in Mittheilungen Data:</a></li>
+  <li><a href="#projects-progress" id="toc-projects-progress" class="nav-link active" data-scroll-target="#projects-progress">Project’s Progress</a>
+  <ul class="collapse">
+  <li><a href="#data-retrieval" id="toc-data-retrieval" class="nav-link" data-scroll-target="#data-retrieval">Data retrieval:</a></li>
+  <li><a href="#quality-controls" id="toc-quality-controls" class="nav-link" data-scroll-target="#quality-controls">Quality controls:</a></li>
+  <li><a href="#digitization-status" id="toc-digitization-status" class="nav-link" data-scroll-target="#digitization-status">Digitization status:</a></li>
+  <li><a href="#metadata-work" id="toc-metadata-work" class="nav-link" data-scroll-target="#metadata-work">Metadata work:</a></li>
+  <li><a href="#accessibility" id="toc-accessibility" class="nav-link" data-scroll-target="#accessibility">Accessibility:</a></li>
+  </ul></li>
+  <li><a href="#future-plans" id="toc-future-plans" class="nav-link" data-scroll-target="#future-plans">Future Plans</a>
+  <ul class="collapse">
+  <li><a href="#inclusion-in-sn-v3" id="toc-inclusion-in-sn-v3" class="nav-link" data-scroll-target="#inclusion-in-sn-v3">Inclusion in S<sub>N</sub> V3:</a></li>
+  <li><a href="#other-to-dos" id="toc-other-to-dos" class="nav-link" data-scroll-target="#other-to-dos">Other to-dos:</a></li>
+  <li><a href="#notes-follow-ups" id="toc-notes-follow-ups" class="nav-link" data-scroll-target="#notes-follow-ups">Notes &amp; Follow-ups:</a></li>
+  </ul></li>
+  <li><a href="#analysis-of-observers-in-mittheilungen-data" id="toc-analysis-of-observers-in-mittheilungen-data" class="nav-link" data-scroll-target="#analysis-of-observers-in-mittheilungen-data">Analysis of Observers in Mittheilungen Data:</a>
+  <ul class="collapse">
   <li><a href="#timeline-of-the-observers" id="toc-timeline-of-the-observers" class="nav-link" data-scroll-target="#timeline-of-the-observers">Timeline of the observers</a></li>
   <li><a href="#bubble-plot-of-the-observers" id="toc-bubble-plot-of-the-observers" class="nav-link" data-scroll-target="#bubble-plot-of-the-observers">Bubble plot of the observers</a></li>
   <li><a href="#animated-bubble-plot-of-the-observers" id="toc-animated-bubble-plot-of-the-observers" class="nav-link" data-scroll-target="#animated-bubble-plot-of-the-observers">Animated bubble plot of the observers</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="mittheilungen_data-1800.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="mittheilungen_data-1800.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
@@ -227,55 +264,55 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>“Mittheilungen” are the printed yearly reports led by Rudolf Wolf at the Zürich Observatory that compiled daily sunspot observations from many European observers. They include dates, observer IDs, number of sunspot groups (GN), spots (S), the Wolf number (W = 10×GN + S), brief notes, and references to volume/page. Mittheilungen is the cornerstone dataset for historical sunspot counts. FARSuN has digitized, cleaned, and structured it; next steps finalize calibration and FAIR publication so it can power a robust SN V3.</p>
-<p>This is the main historical backbone for the Sunspot Number (SN). It gives long, overlapping records from many observers, which FARSuN uses to check consistency, compute calibration factors between observers, and build a clean, FAIR, queryable foundation for SN V3. Core printed tables run ~1848–1945 (Wolf→Wolfer→Brunner/Waldmeier). Earlier observations (back to 1610) are also compiled inside the series as historical reconstructions.</p>
+<p>“Mittheilungen” are the printed yearly reports led by Rudolf Wolf at the Zürich Observatory that compiled daily sunspot observations from many European observers. They include dates, observer IDs, number of sunspot groups (G<sub>N</sub>), spots (S), the Wolf number (W = 10×G<sub>N</sub> + S), brief notes, and references to volume/page. Mittheilungen is the cornerstone dataset for historical sunspot counts. FARSuN has digitized, cleaned, and structured it; next steps finalize calibration and FAIR publication so it can power a robust S<sub>N</sub> V3.</p>
+<p>This is the main historical backbone for the Sunspot Number (S<sub>N</sub>). It gives long, overlapping records from many observers, which FARSuN uses to check consistency, compute calibration factors between observers, and build a clean, FAIR, queryable foundation for S<sub>N</sub> V3. Core printed tables run ~1848–1945 (Wolf→Wolfer→Brunner/Waldmeier). Earlier observations (back to 1610) are also compiled inside the series as historical reconstructions.</p>
 <p>Mittheilungen Data: - Provides the densest, most standardized pre-modern daily record. - Enables scale transfers (e.g., Wolf↔︎Wolfer) and uncertainty estimates. - Supplies metadata (who/where/how) needed for FAIR publication and reuse.</p>
-<section id="projects-progress" class="level3">
-<h3 class="anchored" data-anchor-id="projects-progress">Project’s Progress</h3>
-<section id="data-retrieval" class="level4">
-<h4 class="anchored" data-anchor-id="data-retrieval">Data retrieval:</h4>
+<section id="projects-progress" class="level1">
+<h1>Project’s Progress</h1>
+<section id="data-retrieval" class="level2">
+<h2 class="anchored" data-anchor-id="data-retrieval">Data retrieval:</h2>
 <ul>
 <li>Full digitization completed at ROB/SILSO (2017–2019).</li>
 <li>Loaded into a relational schema linking Data ↔︎ Observers ↔︎ Rubrics.</li>
 <li>Mapping table created to reconcile legacy IDs with the new consolidated database.</li>
 </ul>
 </section>
-<section id="quality-controls" class="level4">
-<h4 class="anchored" data-anchor-id="quality-controls">Quality controls:</h4>
+<section id="quality-controls" class="level2">
+<h2 class="anchored" data-anchor-id="quality-controls">Quality controls:</h2>
 <ul>
-<li>Automated checks for date/observer mismatches, duplicates, and odd GN/S ratios.</li>
+<li>Automated checks for date/observer mismatches, duplicates, and odd G<sub>N</sub>/S ratios.</li>
 <li>Manual clean-up of uncertain values (e.g., entries with “?”).</li>
 <li>Cross-comparisons versus external extractions (e.g., Adams) to spot discrepancies.</li>
 <li>Ongoing k-factor/overlap analysis to harmonize observers.</li>
 </ul>
 </section>
-<section id="digitization-status" class="level4">
-<h4 class="anchored" data-anchor-id="digitization-status">Digitization status:</h4>
+<section id="digitization-status" class="level2">
+<h2 class="anchored" data-anchor-id="digitization-status">Digitization status:</h2>
 <ul>
-<li>OCR + manual verification of printed tables; standardized to ISO dates, GN, S, W, notes.</li>
+<li>OCR + manual verification of printed tables; standardized to ISO dates, G<sub>N</sub>, S, W, notes.</li>
 <li>Backfilled or verified using ETH archival materials where pages were missing or unclear.</li>
 </ul>
 </section>
-<section id="metadata-work" class="level4">
-<h4 class="anchored" data-anchor-id="metadata-work">Metadata work:</h4>
+<section id="metadata-work" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-work">Metadata work:</h2>
 <ul>
 <li>Observer identity, site, instrument/method, time coverage, and source references encoded.</li>
 <li>Provenance fields and quality flags added for traceability.</li>
 <li>Aligning fields to EPN-Core/VO-TAP for FAIR access.</li>
 </ul>
 </section>
-<section id="accessibility" class="level4">
-<h4 class="anchored" data-anchor-id="accessibility">Accessibility:</h4>
+<section id="accessibility" class="level2">
+<h2 class="anchored" data-anchor-id="accessibility">Accessibility:</h2>
 <ul>
 <li>Data integrated in the ROB historical database and internal web interface.</li>
 <li>Planned exposure via EPN-TAP/VO so users can query by date, observer, instrument, etc.</li>
 </ul>
 </section>
 </section>
-<section id="future-plans" class="level3">
-<h3 class="anchored" data-anchor-id="future-plans">Future Plans</h3>
-<section id="inclusion-in-sn-v3" class="level4">
-<h4 class="anchored" data-anchor-id="inclusion-in-sn-v3">Inclusion in SN V3:</h4>
+<section id="future-plans" class="level1">
+<h1>Future Plans</h1>
+<section id="inclusion-in-sn-v3" class="level2">
+<h2 class="anchored" data-anchor-id="inclusion-in-sn-v3">Inclusion in S<sub>N</sub> V3:</h2>
 <ul>
 <li>Final consistency pass against ETH “source books.”</li>
 <li>Calibrate overlaps (especially Wolf↔︎Wolfer) with modern methods; attach uncertainties.</li>
@@ -283,16 +320,16 @@ ul.task-list li input[type="checkbox"] {
 <li>Use Mittheilungen as the core anchor (1849–1945) and tie in earlier observers to extend back to 1610.</li>
 </ul>
 </section>
-<section id="other-to-dos" class="level4">
-<h4 class="anchored" data-anchor-id="other-to-dos">Other to-dos:</h4>
+<section id="other-to-dos" class="level2">
+<h2 class="anchored" data-anchor-id="other-to-dos">Other to-dos:</h2>
 <ul>
 <li>Resolve remaining ID-mapping gaps; finish filling missing rubric/observer links.</li>
 <li>Add a “conditions” table (weather, method, telescope) and standard vocabularies.</li>
 <li>Build dashboards for QC metrics; document a data dictionary and README.</li>
 </ul>
 </section>
-<section id="notes-follow-ups" class="level4">
-<h4 class="anchored" data-anchor-id="notes-follow-ups">Notes &amp; Follow-ups:</h4>
+<section id="notes-follow-ups" class="level2">
+<h2 class="anchored" data-anchor-id="notes-follow-ups">Notes &amp; Follow-ups:</h2>
 <ul>
 <li>End-of-series nuance: Printed observational tables effectively end in 1945 (later years are mainly archival handling).</li>
 <li>Metadata completeness: Instruments/methods vary in detail; continue enrichment from ETH archives.</li>
@@ -300,8 +337,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="analysis-of-observers-in-mittheilungen-data" class="level2">
-<h2 class="anchored" data-anchor-id="analysis-of-observers-in-mittheilungen-data">Analysis of Observers in Mittheilungen Data:</h2>
+<section id="analysis-of-observers-in-mittheilungen-data" class="level1">
+<h1>Analysis of Observers in Mittheilungen Data:</h1>
 <p>Importing functions from scripts file. All the data used is in the folder <code>data</code></p>
 <p>Observers are grouped by FK_OBSERVERS.</p>
 <div id="d51b152a" class="cell" data-execution_count="3">
@@ -330,7 +367,6 @@ Observation period: 1800-01-09 00:00:00 to 1944-12-31 00:00:00
 Total observation span: 145.0 years</code></pre>
 </div>
 </div>
-</section>
 <section id="timeline-of-the-observers" class="level2">
 <h2 class="anchored" data-anchor-id="timeline-of-the-observers">Timeline of the observers</h2>
 <p><strong>TODO: Plot only top 10 to 20 observers</strong></p>
@@ -465,6 +501,7 @@ Figure&nbsp;3: Animated bubble plot showing all observers in Mittheilungen data.
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

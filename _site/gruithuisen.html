@@ -165,12 +165,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Refining the Sunspot Number Series to SN V3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./source_book_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Source Book Data</span></a>
   </div>
@@ -193,6 +187,23 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Zürich Tables</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./presentations/presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Refining the Sunspot Number Series to SN V3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -205,9 +216,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gruithuisen-data" id="toc-gruithuisen-data" class="nav-link active" data-scroll-target="#gruithuisen-data">Gruithuisen Data</a></li>
-  <li><a href="#current-status-oct-2025" id="toc-current-status-oct-2025" class="nav-link" data-scroll-target="#current-status-oct-2025">Current Status (Oct 2025)</a></li>
-  <li><a href="#next-steps-toward-sn-v3-integration" id="toc-next-steps-toward-sn-v3-integration" class="nav-link" data-scroll-target="#next-steps-toward-sn-v3-integration">Next Steps (toward SN V3 integration)</a></li>
+  <li><a href="#gruithuisen-data" id="toc-gruithuisen-data" class="nav-link active" data-scroll-target="#gruithuisen-data">Gruithuisen Data</a>
+  <ul class="collapse">
+  <li><a href="#importance-for-farsun-sn-v3" id="toc-importance-for-farsun-sn-v3" class="nav-link" data-scroll-target="#importance-for-farsun-sn-v3">Importance (for FARSuN &amp; S<sub>N</sub> V3)</a></li>
+  <li><a href="#time-span-working-range" id="toc-time-span-working-range" class="nav-link" data-scroll-target="#time-span-working-range">Time Span (working range)</a></li>
+  <li><a href="#what-is-being-extracted" id="toc-what-is-being-extracted" class="nav-link" data-scroll-target="#what-is-being-extracted">What is being extracted</a></li>
+  <li><a href="#current-status-oct-2025" id="toc-current-status-oct-2025" class="nav-link" data-scroll-target="#current-status-oct-2025">Current Status (Oct 2025)</a>
+  <ul class="collapse">
+  <li><a href="#quality-control-normalization" id="toc-quality-control-normalization" class="nav-link" data-scroll-target="#quality-control-normalization">Quality Control &amp; Normalization</a></li>
+  <li><a href="#open-items" id="toc-open-items" class="nav-link" data-scroll-target="#open-items">Open Items</a></li>
+  </ul></li>
+  <li><a href="#next-steps-toward-sn-v3-integration" id="toc-next-steps-toward-sn-v3-integration" class="nav-link" data-scroll-target="#next-steps-toward-sn-v3-integration">Next Steps (toward S<sub>N</sub> V3 integration)</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="gruithuisen.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="gruithuisen.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
@@ -233,31 +253,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="gruithuisen-data" class="level3">
-<h3 class="anchored" data-anchor-id="gruithuisen-data">Gruithuisen Data</h3>
+<section id="gruithuisen-data" class="level1">
+<h1>Gruithuisen Data</h1>
 <ul>
 <li>Historical manuscripts by Franz von Paula Gruithuisen (Munich Observatory, early 19th century) containing daily notes on weather, sky conditions, and sunspot observations, written in Kurrent (old German script).</li>
 <li>The notebooks combine textual remarks (“Flecken”, “Öffnungen”) with drawings — both small in-text sketches and large full-disk solar diagrams.</li>
 <li>Working data product: daily entries with date, time, presence/absence of spots, NG/NS counts (if visible), drawing type/quality flag, weather/seeing notes, and page references.</li>
 </ul>
-<section id="importance-for-farsun-sn-v3" class="level4">
-<h4 class="anchored" data-anchor-id="importance-for-farsun-sn-v3">Importance (for FARSuN &amp; SN V3)</h4>
+<section id="importance-for-farsun-sn-v3" class="level2">
+<h2 class="anchored" data-anchor-id="importance-for-farsun-sn-v3">Importance (for FARSuN &amp; S<sub>N</sub> V3)</h2>
 <ul>
 <li>Provides dense coverage during the late Dalton Minimum (~1817 – mid-1840s), filling a critical gap in early-19th-century solar records.</li>
-<li>Includes both spotless and active days — essential for long-term continuity and low-activity baselines in the Sunspot Number (SN V3).</li>
+<li>Includes both spotless and active days — essential for long-term continuity and low-activity baselines in the Sunspot Number (S<sub>N</sub> V3).</li>
 <li>Weather and seeing information enrich the FARSuN condition table, supporting observer-bias and visibility studies.</li>
 <li>Enables cross-calibration with contemporary observers (Adams, Stark, Pastorff) to refine k-factors and reliability estimates.</li>
 </ul>
 </section>
-<section id="time-span-working-range" class="level4">
-<h4 class="anchored" data-anchor-id="time-span-working-range">Time Span (working range)</h4>
+<section id="time-span-working-range" class="level2">
+<h2 class="anchored" data-anchor-id="time-span-working-range">Time Span (working range)</h2>
 <ul>
 <li>Observations extend roughly 1817 – 1849 (core dense years 1824–1826 pending verification).</li>
 <li>Task under way to finalize start/end years and compile a full volume + page inventory.</li>
 </ul>
 </section>
-<section id="what-is-being-extracted" class="level4">
-<h4 class="anchored" data-anchor-id="what-is-being-extracted">What is being extracted</h4>
+<section id="what-is-being-extracted" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-being-extracted">What is being extracted</h2>
 <ul>
 <li>Core daily parameters: date, time, spotless/active flag, NG, NS, comments, and provenance (text vs drawing).</li>
 <li>Drawing flags: schema / full-disk (indicator of counting fidelity).</li>
@@ -265,9 +285,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Metadata links: book / volume / page numbers, normalized image IDs, checksums.</li>
 </ul>
 </section>
-</section>
-<section id="current-status-oct-2025" class="level3">
-<h3 class="anchored" data-anchor-id="current-status-oct-2025">Current Status (Oct 2025)</h3>
+<section id="current-status-oct-2025" class="level2">
+<h2 class="anchored" data-anchor-id="current-status-oct-2025">Current Status (Oct 2025)</h2>
 <ul>
 <li>Data retrieval: All image scans and text snippets collected; preliminary CSV/XLSX files prepared.</li>
 <li>Digitization: Page crops and snippet images completed; Transkribus/Cloude App workflow/pipeline is prepared for Kurrent script.</li>
@@ -275,21 +294,21 @@ ul.task-list li input[type="checkbox"] {
 <li>Quality control: Two-pass QC (survey → counting) in progress;</li>
 <li>Metadata: Observer/site/instrument registry being merged with database; VO/EPN-TAP export planned after QC completion.</li>
 </ul>
-<section id="quality-control-normalization" class="level4">
-<h4 class="anchored" data-anchor-id="quality-control-normalization">Quality Control &amp; Normalization</h4>
+<section id="quality-control-normalization" class="level3">
+<h3 class="anchored" data-anchor-id="quality-control-normalization">Quality Control &amp; Normalization</h3>
 <ul>
 <li>Enforce standardized filenames, date/time formats, and provenance flags.</li>
 <li>Maintain audit trail linking every image to its extracted record.</li>
 <li>Ambiguous or illegible Kurrent passages flagged for expert review; define acceptance thresholds for HTR accuracy.</li>
 </ul>
 </section>
-<section id="open-items" class="level4">
-<h4 class="anchored" data-anchor-id="open-items">Open Items</h4>
+<section id="open-items" class="level3">
+<h3 class="anchored" data-anchor-id="open-items">Open Items</h3>
 <p>• Formalize counting policy for small in-text sketches (presence-only vs countable). • Benchmark Transkribus/App HTR results; set minimum human-review rate. • Identify overlaps with coeval observers for calibration validation.</p>
 </section>
 </section>
-<section id="next-steps-toward-sn-v3-integration" class="level3">
-<h3 class="anchored" data-anchor-id="next-steps-toward-sn-v3-integration">Next Steps (toward SN V3 integration)</h3>
+<section id="next-steps-toward-sn-v3-integration" class="level2">
+<h2 class="anchored" data-anchor-id="next-steps-toward-sn-v3-integration">Next Steps (toward S<sub>N</sub> V3 integration)</h2>
 <ul>
 <li>Complete survey pass → definitive daily presence/absence + drawing availability/type.</li>
 <li>Generate provisional daily NG/NS with uncertainty and provenance flags.</li>
@@ -297,9 +316,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Perform inter-observer calibration and bias checks.</li>
 <li>Publish FAIR, VO-ready tables (daily counts + condition data + image catalog) via ROB/SILSO.</li>
 </ul>
-<p>Gruithuisen’s manuscripts offer a long, context-rich, early-19th-century record of solar and meteorological activity. With extraction, QC nearly complete, this dataset is poised to become a cornerstone for SN V3 calibration and uncertainty modeling within the FARSuN project.</p>
+<p>Gruithuisen’s manuscripts offer a long, context-rich, early-19th-century record of solar and meteorological activity. With extraction, QC nearly complete, this dataset is poised to become a cornerstone for S<sub>N</sub> V3 calibration and uncertainty modeling within the FARSuN project.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

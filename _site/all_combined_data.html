@@ -168,12 +168,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Refining the Sunspot Number Series to SN V3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./source_book_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Source Book Data</span></a>
   </div>
@@ -196,6 +190,23 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Zürich Tables</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./presentations/presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Refining the Sunspot Number Series to SN V3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -210,10 +221,12 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#modifications-in-mittheilungen-data" id="toc-modifications-in-mittheilungen-data" class="nav-link" data-scroll-target="#modifications-in-mittheilungen-data">Modifications in Mittheilungen Data</a></li>
-  <li><a href="#all-combined-data" id="toc-all-combined-data" class="nav-link" data-scroll-target="#all-combined-data">All Combined Data</a></li>
+  <li><a href="#all-combined-data" id="toc-all-combined-data" class="nav-link" data-scroll-target="#all-combined-data">All Combined Data</a>
+  <ul class="collapse">
   <li><a href="#timeline-of-the-observers" id="toc-timeline-of-the-observers" class="nav-link" data-scroll-target="#timeline-of-the-observers">Timeline of the observers</a></li>
   <li><a href="#bubble-plot-of-the-observers" id="toc-bubble-plot-of-the-observers" class="nav-link" data-scroll-target="#bubble-plot-of-the-observers">Bubble plot of the observers</a></li>
   <li><a href="#animated-bubble-plot-of-the-observers" id="toc-animated-bubble-plot-of-the-observers" class="nav-link" data-scroll-target="#animated-bubble-plot-of-the-observers">Animated bubble plot of the observers</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="all_combined_data.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="all_combined_data.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
@@ -239,14 +252,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
 <p><a href="./mittheilungen_data-1800.html">Mittheilugen Data</a> is the primary source of sunspot data. There are 122 observers in Mittheilungen data (Brunner has multiple FK_OBSERVERS IDs). Some of the observers data has been recounted with availablity of new data sources (From <a href="./source_book_data.html">Source Book Data</a> as well from other sources by different authors (refere table 1 from shreya2023 paper)), also new data of sunspot observations have been discovered. To make combined data of sunspot observations, new data sets are added and some modifications are done, based on the source book data to the Mittheilugen data.</p>
 </section>
-<section id="modifications-in-mittheilungen-data" class="level2">
-<h2 class="anchored" data-anchor-id="modifications-in-mittheilungen-data">Modifications in Mittheilungen Data</h2>
+<section id="modifications-in-mittheilungen-data" class="level1">
+<h1>Modifications in Mittheilungen Data</h1>
 <ol start="0" type="1">
-<li>Merged dataset with SNV1 data (before grouping).</li>
+<li>Merged dataset with S<sub>N</sub>V1 data (before grouping).</li>
 <li>Filter observer 36(Carrington) by FK_RUBRICS =43 (Explore).</li>
 <li>Process observer 30 (Airy) and create observer 310 (Main from Airy): The code creates a new observer (ID 310, alias “Main”) from a subset of Airy’s (ID 30) observations between 1850 and 1853. It then modifies the original Airy data to retain only observations between 1858 and 1861 and updates the alias to “Airy (various observers)”. This process effectively splits the original Airy data into two separate observer entries in the <code>observer_groups</code> dictionary, reflecting different periods and potentially different contributors to the observations.</li>
 <li>Truncate observer 177 data (before=“1925-01-01”, after=“1946-01-01”)</li>
@@ -337,8 +350,8 @@ Table&nbsp;2: Specialized Data
 </figure>
 </div>
 </section>
-<section id="all-combined-data" class="level2">
-<h2 class="anchored" data-anchor-id="all-combined-data">All Combined Data</h2>
+<section id="all-combined-data" class="level1">
+<h1>All Combined Data</h1>
 <div id="1dc670b4" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -357,7 +370,6 @@ Total observation span: 128.7 years</code></pre>
 Number of observers by ALIAS: 125</code></pre>
 </div>
 </div>
-</section>
 <section id="timeline-of-the-observers" class="level2">
 <h2 class="anchored" data-anchor-id="timeline-of-the-observers">Timeline of the observers</h2>
 <p><a href="#fig-plot_observer_timeline_all_combined" class="quarto-xref">Figure&nbsp;1</a> is a timeline showing the start and end date of observations of the observers in the combined data. X-axis is time in years, and in Y-axis we have observers sorted by start date, and number of observations for each observer is shown in the parantheses.</p>
@@ -489,6 +501,7 @@ Figure&nbsp;3: Animated bubble plot showing all observers in all combined data.
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

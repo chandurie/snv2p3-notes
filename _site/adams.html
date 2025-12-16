@@ -165,12 +165,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./presentation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Refining the Sunspot Number Series to SN V3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./source_book_data.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Source Book Data</span></a>
   </div>
@@ -193,6 +187,23 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Zürich Tables</span></a>
   </div>
 </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Presentations</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./presentations/presentation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Refining the Sunspot Number Series to SN V3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
       </ul>
   </li>
     </ul>
@@ -211,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#coverage-volume" id="toc-coverage-volume" class="nav-link" data-scroll-target="#coverage-volume">Coverage &amp; Volume</a></li>
   <li><a href="#scientific-importance" id="toc-scientific-importance" class="nav-link" data-scroll-target="#scientific-importance">Scientific Importance</a></li>
   <li><a href="#farsun-progress" id="toc-farsun-progress" class="nav-link" data-scroll-target="#farsun-progress">FARSuN Progress</a></li>
-  <li><a href="#integration-into-sn-v3-near-term-steps" id="toc-integration-into-sn-v3-near-term-steps" class="nav-link" data-scroll-target="#integration-into-sn-v3-near-term-steps">Integration into SN V3 — Near-Term Steps</a></li>
+  <li><a href="#integration-into-sn-v3-near-term-steps" id="toc-integration-into-sn-v3-near-term-steps" class="nav-link" data-scroll-target="#integration-into-sn-v3-near-term-steps">Integration into S<sub>N</sub> V3 — Near-Term Steps</a></li>
   </ul></li>
   <li><a href="#gaps-follow-ups" id="toc-gaps-follow-ups" class="nav-link" data-scroll-target="#gaps-follow-ups">Gaps &amp; Follow-ups</a></li>
   </ul>
@@ -239,33 +250,33 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<section id="overview" class="level1">
+<h1>Overview</h1>
 <ul>
 <li>Observer &amp; Site: C. H. Adams, UK (likely near London).</li>
 <li>Period Covered: August 1819 – May 1823.</li>
 <li>Content: Nearly daily full-disk sunspot drawings with accompanying tabular counts of sunspot groups and individual spots.</li>
 <li>Observation Method: Used an asterisk notation distinguishing direct view (“*”) from reflection view (no asterisk); observation times frequently noted.</li>
-<li>Significance: Provides dense daily coverage—including many spotless days—during an under-documented period, improving the calibration and low-activity baseline of SN V3.</li>
+<li>Significance: Provides dense daily coverage—including many spotless days—during an under-documented period, improving the calibration and low-activity baseline of S<sub>N</sub> V3.</li>
 </ul>
-<section id="structure-content" class="level3">
-<h3 class="anchored" data-anchor-id="structure-content">Structure &amp; Content</h3>
+<section id="structure-content" class="level2">
+<h2 class="anchored" data-anchor-id="structure-content">Structure &amp; Content</h2>
 <ul>
 <li>Tabular layer: Per-day entries of number of groups (NG), number of spots (NS), spotless indicator, observation time, method flag, and comments. Wolf numbers W = 10·NG + NS can be derived.</li>
 <li>Image layer: 338 scanned manuscript drawings requiring orientation and dewarping.</li>
 <li>Metadata layer: Observer, site, instrument, method, provenance (Mittheilungen vol./page, folio IDs), and database foreign-key links (observer/rubric).</li>
 </ul>
 </section>
-<section id="coverage-volume" class="level3">
-<h3 class="anchored" data-anchor-id="coverage-volume">Coverage &amp; Volume</h3>
+<section id="coverage-volume" class="level2">
+<h2 class="anchored" data-anchor-id="coverage-volume">Coverage &amp; Volume</h2>
 <ul>
 <li>Drawings: 338</li>
 <li>Total dated entries: 1,056 → 308 spot-days + 748 spotless days</li>
 <li>Comparison: Zürich Mittheilungen (402 entries) cover only 94 spotless days; Adams adds ~650 new spotless statements—critical for establishing quiet-Sun baselines.</li>
 </ul>
 </section>
-<section id="scientific-importance" class="level3">
-<h3 class="anchored" data-anchor-id="scientific-importance">Scientific Importance</h3>
+<section id="scientific-importance" class="level2">
+<h2 class="anchored" data-anchor-id="scientific-importance">Scientific Importance</h2>
 <ul>
 <li>Completeness: Captures numerous explicit zero-spot (spotless) days often absent elsewhere.</li>
 <li>Method sensitivity: Direct vs reflection views allow analysis of observational bias and variance.</li>
@@ -273,8 +284,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Historical value: Offers a rare, continuous dataset bridging early 19th-century solar cycles for long-term variability research.</li>
 </ul>
 </section>
-<section id="farsun-progress" class="level3">
-<h3 class="anchored" data-anchor-id="farsun-progress">FARSuN Progress</h3>
+<section id="farsun-progress" class="level2">
+<h2 class="anchored" data-anchor-id="farsun-progress">FARSuN Progress</h2>
 <ul>
 <li>Retrieval: Led by Pavai with Lefèvre &amp; Ritter; extracted tables (sunspot_metadata-ADAMS_…) aligned with Mittheilungen references.</li>
 <li>Quality Control: Removed ambiguities in NG/NS; planned dispersion checks between Adams/Mittheilungen/Pavai sets; validated with Gruithuisen overlap (Aug–Sep 1819).</li>
@@ -283,19 +294,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Accessibility (planned): Release through EPN-TAP/VO-TAP at ROB with QC flags, versioning, and query fields (method, spotless, provenance).</li>
 </ul>
 </section>
-<section id="integration-into-sn-v3-near-term-steps" class="level3">
-<h3 class="anchored" data-anchor-id="integration-into-sn-v3-near-term-steps">Integration into SN V3 — Near-Term Steps</h3>
+<section id="integration-into-sn-v3-near-term-steps" class="level2">
+<h2 class="anchored" data-anchor-id="integration-into-sn-v3-near-term-steps">Integration into S<sub>N</sub> V3 — Near-Term Steps</h2>
 <ul>
 <li>Finalize coverage calendar and authoritative day list.</li>
 <li>Publish day-level comparison log (Adams vs Mittheilungen/Pavai).</li>
 <li>Model observational biases and uncertainties by method.</li>
-<li>Test inclusion of Adams as an independent node in SN V3 stitching to assess baseline impact.</li>
+<li>Test inclusion of Adams as an independent node in S<sub>N</sub> V3 stitching to assess baseline impact.</li>
 <li>Release v1 (NG/NS + spotless + method/time + provenance); v2 to include positional/areal data.</li>
 </ul>
 </section>
 </section>
-<section id="gaps-follow-ups" class="level2">
-<h2 class="anchored" data-anchor-id="gaps-follow-ups">Gaps &amp; Follow-ups</h2>
+<section id="gaps-follow-ups" class="level1">
+<h1>Gaps &amp; Follow-ups</h1>
 <ul>
 <li>Check for material beyond 1819–1823.</li>
 <li>Verify completeness of direct/reflection flags.</li>
