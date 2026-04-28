@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESWW22 Poster Gallery | FARSuN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #F8F7F4;
+      color: #2C3E50;
+    }
+    .poster-preview {
+      background-color: #FFFFFF;
+      border: 1px solid rgba(15, 76, 92, 0.14);
+      border-radius: 1rem;
+      padding: 1rem;
+      box-shadow: 0 16px 30px -24px rgba(15, 76, 92, 0.45);
+    }
+    .poster-preview img {
+      width: 100%;
+      height: auto;
+      max-height: 700px;
+      object-fit: contain;
+      border-radius: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="max-w-6xl mx-auto px-6 py-10 space-y-8">
+    <a href="webpage.html#resources"
+      class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0F4C5C] shadow hover:bg-[#f3fbff] transition">
+      Back to Data sources &amp; deep dives
+    </a>
+
+    <header class="space-y-3">
+      <h1 class="text-4xl font-bold text-[#2C3E50]">ESWW22 Poster Gallery</h1>
+      <p class="text-[#4b5d6b] max-w-3xl">
+        Standalone gallery for FARSuN and S<sub>N</sub> Next-Gen poster materials.
+      </p>
+    </header>
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <article class="bg-white rounded-2xl shadow-lg p-6 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold text-[#0F4C5C]">FARSuN Reconstruction Poster</h2>
+          <p class="text-sm text-[#4b5d6b]">Deep dive into the FARSuN pipeline powering the S<sub>N</sub> V3 reconstruction.</p>
+        </div>
+        <div class="poster-preview">
+          <img src="poster_v1_web.jpg" alt="FARSuN poster preview" loading="lazy">
+        </div>
+        <a class="inline-flex items-center gap-2 rounded-full bg-[#0F4C5C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0d4050] transition"
+          href="poster_v1.pdf" target="_blank" rel="noopener">
+          Open full poster (PDF)
+        </a>
+      </article>
+
+      <article class="bg-white rounded-2xl shadow-lg p-6 space-y-4">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-semibold text-[#0F4C5C]">Sunspot Number Next-Gen Poster</h2>
+          <p class="text-sm text-[#4b5d6b]">Broader S<sub>N</sub> G<sub>N</sub> strategy and community roadmap materials.</p>
+        </div>
+        <div class="poster-preview">
+          <img src="SNGN_Poster_LLefevre_ESWW25_v1_web.jpg" alt="Sunspot Number Next-Gen poster preview" loading="lazy">
+        </div>
+        <a class="inline-flex items-center gap-2 rounded-full bg-[#0F4C5C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0d4050] transition"
+          href="SNGN_Poster_LLefevre_ESWW25_v1.pdf" target="_blank" rel="noopener">
+          Open full poster (PDF)
+        </a>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

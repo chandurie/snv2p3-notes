@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FARSuN Project: Interactive Report</title>
     <!-- Chosen Palette: Scholarly Neutrals -->
     <!-- Application Structure Plan: The SPA is designed as a top-to-bottom thematic narrative to guide users logically through the complex topic. It starts with a clear problem statement (Why this project is needed), presents the solution (FARSuN's methodology), shows tangible results (Progress Dashboard), and concludes with the future impact. This linear, story-driven flow is more intuitive for a general audience than a non-linear dashboard, ensuring key concepts like "reconstruction vs. recalibration" are understood before presenting data. A sticky navigation bar aids exploration for users who want to jump between these logical sections. -->
@@ -16,719 +16,1097 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          // Find the existing nav links container (as in your current header)
-          const navContainers = document.querySelectorAll('#header nav .hidden.md\\:flex, header nav .hidden.md\\:flex');
-          const target = navContainers[0];
-          if (!target) return;
+      document.addEventListener("DOMContentLoaded", () => {
+        // Find the existing nav links container (as in your current header)
+        const navContainers = document.querySelectorAll(
+          "#header nav .hidden.md\\:flex, header nav .hidden.md\\:flex",
+        );
+        const target = navContainers[0];
+        if (!target) return;
 
-          // Prevent duplicates if reloaded
-          if ([...target.querySelectorAll('a')].some(a => a.getAttribute('href') === '#resources')) return;
+        // Prevent duplicates if reloaded
+        if (
+          [...target.querySelectorAll("a")].some(
+            (a) => a.getAttribute("href") === "#resources",
+          )
+        )
+          return;
 
-          // Create the new link using your existing nav styles
-          const link = document.createElement('a');
-          link.href = '#resources';
-          link.textContent = 'Data Sources';
-          link.className = 'nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1';
-          target.appendChild(link);
-    });
+        // Create the new link using your existing nav styles
+        const link = document.createElement("a");
+        link.href = "#resources";
+        link.textContent = "Data Sources";
+        link.className =
+          "nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1";
+        target.appendChild(link);
+      });
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F7F4;
-            color: #2C3E50;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8f7f4;
+        color: #2c3e50;
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        max-height: 350px;
+      }
+      @media (min-width: 768px) {
         .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 350px;
+          height: 350px;
+          max-height: 400px;
         }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-                max-height: 400px;
-            }
-        }
-        .nav-link {
-            transition: color 0.3s, border-color 0.3s;
-        }
-        .active-link {
-            color: #0F4C5C !important;
-            border-bottom-color: #0F4C5C !important;
-        }
-        .method-btn.active {
-            background-color: #0F4C5C;
-            color: white;
-        }
-        .poster-preview {
-            background-color: #F8F7F4;
-            border: 1px solid rgba(15, 76, 92, 0.12);
-            border-radius: 1rem;
-            padding: 1rem;
-            box-shadow: 0 18px 36px -28px rgba(15, 76, 92, 0.55);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 0;
-        }
-        .poster-preview img {
-            width: 100%;
-            height: auto;
-            max-height: 540px;
-            border-radius: 0.75rem;
-            box-shadow: 0 12px 24px -18px rgba(15, 76, 92, 0.55);
-            object-fit: contain;
-        }
+      }
+      .nav-link {
+        transition:
+          color 0.3s,
+          border-color 0.3s;
+      }
+      .active-link {
+        color: #0f4c5c !important;
+        border-bottom-color: #0f4c5c !important;
+      }
+      .method-btn.active {
+        background-color: #0f4c5c;
+        color: white;
+      }
+      .poster-preview {
+        background-color: #f8f7f4;
+        border: 1px solid rgba(15, 76, 92, 0.12);
+        border-radius: 1rem;
+        padding: 1rem;
+        box-shadow: 0 18px 36px -28px rgba(15, 76, 92, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 0;
+      }
+      .poster-preview img {
+        width: 100%;
+        height: auto;
+        max-height: 540px;
+        border-radius: 0.75rem;
+        box-shadow: 0 12px 24px -18px rgba(15, 76, 92, 0.55);
+        object-fit: contain;
+      }
     </style>
-</head>
-<body>
-
-    <header id="header" class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <a href="https://www.sidc.be/silso" target="_blank" rel="noopener">
-                    <img src="figures/silso-logo.png" alt="SILSO logo" class="h-10 w-auto drop-shadow" loading="lazy">
-                </a>
-                <a href="https://www.astro.oma.be/en/" target="_blank" rel="noopener">
-                    <img src="figures/observatory_400x332.jpg" alt="Royal Observatory of Belgium logo" class="h-10 w-auto rounded drop-shadow" loading="lazy">
-                </a>
-                <a href="https://www.sidc.be/FARSuN" target="_blank" rel="noopener" class="text-xl font-bold text-[#2C3E50]">
-                    FAR<span class="text-[#F15152]">Su</span>N Project
-                </a>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#problem" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">Motivation</a>
-                <a href="#solution" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">The Solution</a>
-                <a href="#progress" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">Progress</a>
-                <a href="#impact" class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1">Impact</a>
-            </div>
-        </nav>
+  </head>
+  <body>
+    <header
+      id="header"
+      class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm"
+    >
+      <nav
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-3">
+          <a href="https://www.sidc.be/silso" target="_blank" rel="noopener">
+            <img
+              src="figures/silso-logo.png"
+              alt="SILSO logo"
+              class="h-10 w-auto drop-shadow"
+              loading="lazy"
+            />
+          </a>
+          <a href="https://www.astro.oma.be/en/" target="_blank" rel="noopener">
+            <img
+              src="figures/observatory_400x332.jpg"
+              alt="Royal Observatory of Belgium logo"
+              class="h-10 w-auto rounded drop-shadow"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://www.sidc.be/FARSuN"
+            target="_blank"
+            rel="noopener"
+            class="text-xl font-bold text-[#2C3E50]"
+          >
+            FAR<span class="text-[#F15152]">Su</span>N Project
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#problem"
+            class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1"
+            >Motivation</a
+          >
+          <a
+            href="#solution"
+            class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1"
+            >The Solution</a
+          >
+          <a
+            href="#progress"
+            class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1"
+            >Progress</a
+          >
+          <a
+            href="#impact"
+            class="nav-link text-gray-600 hover:text-[#0F4C5C] border-b-2 border-transparent pb-1"
+            >Impact</a
+          >
+        </div>
+      </nav>
     </header>
 
     <main class="container mx-auto px-6 py-12">
+      <section id="hero" class="text-center mb-20">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Rebuilding Our View of the Sun
+        </h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
+          <!-- The historical sunspot record is our longest window into solar activity, but it's flawed. The FARSuN project is undertaking a fundamental reconstruction, going back to the original raw data to build a new, more accurate foundation for space climate science. -->
+        </p>
+      </section>
 
-        <section id="hero" class="text-center mb-20">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">Rebuilding Our View of the Sun</h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-600">
-                <!-- The historical sunspot record is our longest window into solar activity, but it's flawed. The FARSuN project is undertaking a fundamental reconstruction, going back to the original raw data to build a new, more accurate foundation for space climate science. -->
-            </p>
-        </section>
-
-        <section id="problem" class="mb-20">
-            <!-- <h2 class="text-3xl font-bold text-center mb-2">Motivation</h2> -->
-            <div class="max-w-3xl mx-auto text-gray-600 space-y-4 leading-relaxed mb-10">
-                <p>The long historical record of sunspot observations is one of the most valuable datasets in solar–terrestrial science, but it is built from thousands of heterogeneous manuscripts, drawings, and tables created by different observers over four centuries. For decades, only a subset of these raw sources was available in structured form. As a result, earlier versions of the Sunspot Number—despite major improvements such as S<sub>N</sub> V2.0—could rely only on the material that was digitized and understood at the time.</p>
-                <p>Over the last decade, however, the situation has changed dramatically. A large body of original observations has been rediscovered, digitized, or newly analysed, expanding far beyond what the recalibration of S<sub>N</sub> V2.0 had access to. These include the complete Zürich Mittheilungen (1610–1944), the Zürich observation tables (1945–1979), and numerous early telescopic records recovered by the community since 2010 (e.g., Scheiner, Harriot, Eimmart, Tarde, Smogulecki, Kepler, many 18th–19th-century archives). With this vastly richer observational base, it is now possible to reconstruct the series directly from the raw data rather than adjust an inherited composite.</p>
-                <p>At the same time, new scientific insights have emerged. Several discontinuities—including the 1849 Schwabe–Wolf scale transfer and later observer handovers—were only fully understood after S<sub>N</sub> V2.0 was released, thanks to detailed studies of original documents and observer behaviour (e.g., Bhattacharya et al. 2023–2024). These findings show that some scale changes cannot be robustly addressed solely through statistical recalibration; they require re-examining the underlying observations themselves.</p>
-                <p>Together, these advances create an opportunity: for the first time, the entire historical chain of observations—from 1610 to the present—can be replayed from scratch, with transparent provenance, dataset-specific uncertainty estimates, and physically motivated calibration curves. This is the core motivation for a full reconstruction (S<sub>N</sub> V3.0). The goal is not to "fix" S<sub>N</sub> V2.0, but to build upon it using data and methods that simply did not exist a decade ago, ensuring that the International Sunspot Number rests on a fully traceable, FAIR-compliant foundation for the future of space-climate research.</p>
-            </div>
-            
-            <div class="text-center mb-8">
-                <button id="recal-btn" class="method-btn px-6 py-2 rounded-l-lg border border-gray-300 bg-white transition">Recalibration</button>
-                <button id="recon-btn" class="method-btn px-6 py-2 rounded-r-lg border border-gray-300 bg-white transition active">Reconstruction</button>
-            </div>
-
-            <div id="method-display" class="bg-white p-8 rounded-lg shadow-lg transition-all duration-500">
-                <!-- Content is dynamically inserted by JS -->
-            </div>
-        </section>
-
-        <section id="solution" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-10">A New Paradigm for Data Recovery</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-bold mb-4">The Four-Axis Methodology</h3>
-                    <p class="text-gray-600 mb-6">FARSuN replays the entire observing chain from archive to release. Each axis keeps the reconstruction transparent and traceable.</p>
-                    <div class="space-y-4">
-                        <div class="flex items-start p-4 bg-white rounded-lg shadow">
-                            <div class="text-2xl mr-4">🗃️</div>
-                            <div><strong class="text-[#F15152]">1. Gather Sources:</strong> Track dispersed observing logs—Wolf's <em>Mittheilungen</em>, Zürich tables, Gruithuisen manuscripts, Adams drawings—and capture provenance at ingest.</div>
-                        </div>
-                        <div class="flex items-start p-4 bg-white rounded-lg shadow">
-                            <div class="text-2xl mr-4">🖥️</div>
-                            <div><strong class="text-[#F15152]">2. Process Data:</strong> Combine handwriting/OCR engines (Transkribus models, custom scripts) with manual double-keying for fragile entries.</div>
-                        </div>
-                        <div class="flex items-start p-4 bg-white rounded-lg shadow">
-                            <div class="text-2xl mr-4">✔️</div>
-                            <div><strong class="text-[#F15152]">3. Validate &amp; Standardize:</strong> Reconcile aliases, observer IDs, and calendars; model group/spot counting behaviour to derive calibration curves.</div>
-                        </div>
-                        <div class="flex items-start p-4 bg-white rounded-lg shadow">
-                            <div class="text-2xl mr-4">🌐</div>
-                            <div><strong class="text-[#F15152]">4. Disseminate:</strong> Publish machine-readable products, APIs, and VO-ready services with versioned uncertainty bundles.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <h3 class="text-2xl font-bold mb-4 text-center">Commitment to FAIR Principles</h3>
-                    <p class="text-gray-600 mb-6 text-center">The project ensures long-term data value by adhering to the FAIR principles, making the final dataset robust and accessible for future science.</p>
-                    <div class="chart-container bg-white p-4 rounded-lg shadow-lg">
-                        <canvas id="fairChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="progress" class="mb-20">
-            <h2 class="text-3xl font-bold text-center mb-10">Project Progress</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="lg:col-span-1 bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-2">Zürich Tables (1945–1979)</h3>
-                    <p class="text-gray-600 mb-4">Fully digitized daily tables with metadata finished for 1945–1959. Observer harmonisation and QC dashboards are underway before the series is exposed through VO/EPN-TAP.</p>
-                    <div class="chart-container h-64">
-                        <canvas id="zurichProgressChart"></canvas>
-                    </div>
-                </div>
-                <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-4">Status of Key Historical Datasets</h3>
-                    <p class="text-gray-600 mb-6">Each corpus below mirrors the poster: present status, current focus, and immediate next steps.
-                    </p>
-                    <div class="space-y-5">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-semibold text-[#2C3E50]">Mittheilungen Dataset</span>
-                                <span class="text-sm font-medium text-gray-500">Integrated</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-[#2CB978] h-4 rounded-full" style="width: 100%"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Legacy sources integrated; automated checks flag NG&gt;NS mismatches and missing metadata while harmonisation of observers and instruments continues.</p>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-semibold text-[#2C3E50]">Zürich Tables</span>
-                                <span class="text-sm font-medium text-gray-500">Digitized &amp; QC ongoing</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-[#0F8BCE] h-4 rounded-full" style="width: 95%"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Observer scaling (k-factors) and confirmation of late 1970s holdings continue alongside cross-comparisons with Mittheilungen.</p>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-semibold text-[#2C3E50]">C. H. Adams Drawings (1819–1823)</span>
-                                <span class="text-sm font-medium text-gray-500">1,056 entries recovered</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-[#6C4AB6] h-4 rounded-full" style="width: 80%"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">338 full-disk drawings (308 spot days, 748 spotless) undergo direct vs. reflection calibration, orientation, and dewarping for positional extraction.</p>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-semibold text-[#2C3E50]">Gruithuisen Manuscripts (1817–1849)</span>
-                                <span class="text-sm font-medium text-gray-500">Images &amp; snippets collected</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-[#F9A620] h-4 rounded-full" style="width: 65%"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Two-pass QC (survey then counting) and Transkribus + citizen-science workflows prepare Kurrent handwriting for daily NG/NS tables.</p>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="font-semibold text-[#2C3E50]">Augustin Stark Ledgers (1813–1835)</span>
-                                <span class="text-sm font-medium text-gray-500">Normalization in progress</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-4">
-                                <div class="bg-[#F15152] h-4 rounded-full" style="width: 40%"></div>
-                            </div>
-                            <p class="text-xs text-gray-500 mt-1">Printed German descriptions are being OCR’d and aligned so weather notes can tie cleanly to group counts.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="impact" class="text-center">
-            <h2 class="text-3xl font-bold mb-4">A New Standard for Space Climate Research</h2>
-            <p class="text-lg max-w-3xl mx-auto text-gray-600 mb-10">The ultimate goal of FARSuN is the scientific valorization of its output, culminating in a new, consolidated Sunspot Number (S<sub>N</sub> V3). This will provide a more accurate and reliable standard for the entire space climate community.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-4xl mb-3">🤝</div>
-                    <h3 class="text-xl font-bold mb-2">Citizen Science</h3>
-                    <p class="text-gray-600">A forthcoming web platform will engage the public to help transcribe challenging historical texts, accelerating data processing.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-4xl mb-3">📈</div>
-                    <h3 class="text-xl font-bold mb-2">Improved Predictions</h3>
-                    <p class="text-gray-600">The new S<sub>N</sub> V3 will provide a more accurate basis for solar cycle predictions and Earth Radiation Budget studies.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <div class="text-4xl mb-3">🌍</div>
-                    <h3 class="text-xl font-bold mb-2">Deeper Understanding</h3>
-                    <p class="text-gray-600">The validated record will enhance climate models and advance our fundamental understanding of the Sun-Earth connection.</p>
-                </div>
-            </div>
-        </section>
-
-    <!-- ===================== -->
-    <!-- Data Sources & Deep Dives -->
-    <!-- ===================== -->
-    <section id="resources" class="py-16 px-6 md:px-10 lg:px-16 bg-white/80">
-      <div class="max-w-6xl mx-auto">
-        <header class="mb-8">
-          <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">Data sources & deep dives</h2>
-          <p class="mt-3 text-lg text-[#4b5d6b]">
-            Explore the standalone HTML reports produced during the FARSuN workflow — observer timelines, combined datasets,
-            and focused analyses. Each opens in a new tab for smooth presenting.
+      <section id="problem" class="mb-20">
+        <!-- <h2 class="text-3xl font-bold text-center mb-2">Motivation</h2> -->
+        <div
+          class="max-w-3xl mx-auto text-gray-600 space-y-4 leading-relaxed mb-10"
+        >
+          <p>
+            The long historical record of sunspot observations is one of the
+            most valuable datasets in solar–terrestrial science, but it is built
+            from thousands of heterogeneous manuscripts, drawings, and tables
+            created by different observers over four centuries. For decades,
+            only a subset of these raw sources was available in structured form.
+            As a result, earlier versions of the Sunspot Number—despite major
+            improvements such as S<sub>N</sub> V2.0—could rely only on the
+            material that was digitized and understood at the time.
           </p>
-        </header>
+          <p>
+            Over the last decade, however, the situation has changed
+            dramatically. A large body of original observations has been
+            rediscovered, digitized, or newly analysed, expanding far beyond
+            what the recalibration of S<sub>N</sub> V2.0 had access to. These
+            include the complete Zürich Mittheilungen (1610–1944), the Zürich
+            observation tables (1945–1979), and numerous early telescopic
+            records recovered by the community since 2010 (e.g., Scheiner,
+            Harriot, Eimmart, Tarde, Smogulecki, Kepler, many 18th–19th-century
+            archives). With this vastly richer observational base, it is now
+            possible to reconstruct the series directly from the raw data rather
+            than adjust an inherited composite.
+          </p>
+          <p>
+            At the same time, new scientific insights have emerged. Several
+            discontinuities—including the 1849 Schwabe–Wolf scale transfer and
+            later observer handovers—were only fully understood after S<sub
+              >N</sub
+            >
+            V2.0 was released, thanks to detailed studies of original documents
+            and observer behaviour (e.g., Bhattacharya et al. 2023–2024). These
+            findings show that some scale changes cannot be robustly addressed
+            solely through statistical recalibration; they require re-examining
+            the underlying observations themselves.
+          </p>
+          <p>
+            Together, these advances create an opportunity: for the first time,
+            the entire historical chain of observations—from 1610 to the
+            present—can be replayed from scratch, with transparent provenance,
+            dataset-specific uncertainty estimates, and physically motivated
+            calibration curves. This is the core motivation for a full
+            reconstruction (S<sub>N</sub> V3.0). The goal is not to "fix" S<sub
+              >N</sub
+            >
+            V2.0, but to build upon it using data and methods that simply did
+            not exist a decade ago, ensuring that the International Sunspot
+            Number rests on a fully traceable, FAIR-compliant foundation for the
+            future of space-climate research.
+          </p>
+        </div>
 
-        <div class="bg-white rounded-2xl shadow-lg p-6 mb-10">
-          <div class="space-y-6">
-            <div class="text-center space-y-2">
-              <h3 class="text-2xl font-semibold text-[#0F4C5C]">ESWW25 Poster Gallery</h3>
-              <p class="text-sm text-[#4b5d6b]">Browse the complementary posters outlining the Sunspot Number roadmap and the FARSuN reconstruction workflow.</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div class="flex flex-col gap-4">
-                <div class="space-y-1">
-                  <h4 class="text-xl font-semibold text-[#0F4C5C]">FARSuN Reconstruction Poster</h4>
-                  <p class="text-sm text-[#4b5d6b]">Deep dive into the FARSuN pipeline powering the S<sub>N</sub> V3 reconstruction.</p>
-                </div>
-                <div class="poster-preview">
-                  <img src="poster_v1_web.jpg" alt="FARSuN poster preview thumbnail" loading="lazy">
-                </div>
+        <div class="text-center mb-8">
+          <button
+            id="recal-btn"
+            class="method-btn px-6 py-2 rounded-l-lg border border-gray-300 bg-white transition"
+          >
+            Recalibration
+          </button>
+          <button
+            id="recon-btn"
+            class="method-btn px-6 py-2 rounded-r-lg border border-gray-300 bg-white transition active"
+          >
+            Reconstruction
+          </button>
+        </div>
+
+        <div
+          id="method-display"
+          class="bg-white p-8 rounded-lg shadow-lg transition-all duration-500"
+        >
+          <!-- Content is dynamically inserted by JS -->
+        </div>
+      </section>
+
+      <section id="solution" class="mb-20">
+        <h2 class="text-3xl font-bold text-center mb-10">
+          A New Paradigm for Data Recovery
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl font-bold mb-4">The Four-Axis Methodology</h3>
+            <p class="text-gray-600 mb-6">
+              FARSuN replays the entire observing chain from archive to release.
+              Each axis keeps the reconstruction transparent and traceable.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-start p-4 bg-white rounded-lg shadow">
+                <div class="text-2xl mr-4">🗃️</div>
                 <div>
-                  <a class="inline-flex items-center gap-2 rounded-full bg-[#0F4C5C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0d4050] transition"
-                    href="poster_v1.pdf" target="_blank" rel="noopener">
-                    <span>Open full poster</span>
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 5h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                  </a>
+                  <strong class="text-[#F15152]">1. Gather Sources:</strong>
+                  Track dispersed observing logs—Wolf's <em>Mittheilungen</em>,
+                  Zürich tables, Gruithuisen manuscripts, Adams drawings—and
+                  capture provenance at ingest.
                 </div>
               </div>
-              <div class="flex flex-col gap-4">
-                <div class="space-y-1">
-                  <h4 class="text-xl font-semibold text-[#0F4C5C]">Sunspot Number Next-Gen Poster</h4>
-                  <p class="text-sm text-[#4b5d6b]">Broader S<sub>N</sub> G<sub>N</sub> strategy and community roadmap presented at ESWW25.</p>
-                </div>
-                <div class="poster-preview">
-                  <img src="SNGN_Poster_LLefevre_ESWW25_v1_web.jpg" alt="Sunspot Number Next-Gen poster preview thumbnail" loading="lazy">
-                </div>
+              <div class="flex items-start p-4 bg-white rounded-lg shadow">
+                <div class="text-2xl mr-4">🖥️</div>
                 <div>
-                  <a class="inline-flex items-center gap-2 rounded-full bg-[#0F4C5C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0d4050] transition"
-                    href="SNGN_Poster_LLefevre_ESWW25_v1.pdf" target="_blank" rel="noopener">
-                    <span>Open full poster</span>
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 5h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                  </a>
+                  <strong class="text-[#F15152]">2. Process Data:</strong>
+                  Combine handwriting/OCR engines (Transkribus models, custom
+                  scripts) with manual double-keying for fragile entries.
+                </div>
+              </div>
+              <div class="flex items-start p-4 bg-white rounded-lg shadow">
+                <div class="text-2xl mr-4">✔️</div>
+                <div>
+                  <strong class="text-[#F15152]"
+                    >3. Validate &amp; Standardize:</strong
+                  >
+                  Reconcile aliases, observer IDs, and calendars; model
+                  group/spot counting behaviour to derive calibration curves.
+                </div>
+              </div>
+              <div class="flex items-start p-4 bg-white rounded-lg shadow">
+                <div class="text-2xl mr-4">🌐</div>
+                <div>
+                  <strong class="text-[#F15152]">4. Disseminate:</strong>
+                  Publish machine-readable products, APIs, and VO-ready services
+                  with versioned uncertainty bundles.
                 </div>
               </div>
             </div>
           </div>
+          <div class="order-1 md:order-2">
+            <h3 class="text-2xl font-bold mb-4 text-center">
+              Commitment to FAIR Principles
+            </h3>
+            <p class="text-gray-600 mb-6 text-center">
+              The project ensures long-term data value by adhering to the FAIR
+              principles, making the final dataset robust and accessible for
+              future science.
+            </p>
+            <div class="chart-container bg-white p-4 rounded-lg shadow-lg">
+              <canvas id="fairChart"></canvas>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="bg-white rounded-2xl shadow-lg p-6 mb-10">
-          <div class="space-y-6">
-            <div class="text-center space-y-2">
-              <h3 class="text-2xl font-semibold text-[#0F4C5C]">AGU25 Poster Gallery</h3>
-              <p class="text-sm text-[#4b5d6b]">
-                Latest FARSuN updates prepared for the <a class="text-[#0F4C5C] font-semibold hover:underline" href="https://www.agu.org/annual-meeting" target="_blank" rel="noopener">AGU 2025 Annual Meeting</a>,
-                highlighting data extraction, reconstruction, and long-term roadmap work.
+      <section id="progress" class="mb-20">
+        <h2 class="text-3xl font-bold text-center mb-10">Project Progress</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-1 bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-2">Zürich Tables (1945–1979)</h3>
+            <p class="text-gray-600 mb-4">
+              Fully digitized daily tables with metadata finished for 1945–1959.
+              Observer harmonisation and QC dashboards are underway before the
+              series is exposed through VO/EPN-TAP.
+            </p>
+            <div class="chart-container h-64">
+              <canvas id="zurichProgressChart"></canvas>
+            </div>
+          </div>
+          <div class="lg:col-span-2 bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-bold mb-4">
+              Status of Key Historical Datasets
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Each corpus below mirrors the poster: present status, current
+              focus, and immediate next steps.
+            </p>
+            <div class="space-y-5">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold text-[#2C3E50]"
+                    >Mittheilungen Dataset</span
+                  >
+                  <span class="text-sm font-medium text-gray-500"
+                    >Integrated</span
+                  >
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                  <div
+                    class="bg-[#2CB978] h-4 rounded-full"
+                    style="width: 100%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">
+                  Legacy sources integrated; automated checks flag NG&gt;NS
+                  mismatches and missing metadata while harmonisation of
+                  observers and instruments continues.
+                </p>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold text-[#2C3E50]"
+                    >Zürich Tables</span
+                  >
+                  <span class="text-sm font-medium text-gray-500"
+                    >Digitized &amp; QC ongoing</span
+                  >
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                  <div
+                    class="bg-[#0F8BCE] h-4 rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">
+                  Observer scaling (k-factors) and confirmation of late 1970s
+                  holdings continue alongside cross-comparisons with
+                  Mittheilungen.
+                </p>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold text-[#2C3E50]"
+                    >C. H. Adams Drawings (1819–1823)</span
+                  >
+                  <span class="text-sm font-medium text-gray-500"
+                    >1,056 entries recovered</span
+                  >
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                  <div
+                    class="bg-[#6C4AB6] h-4 rounded-full"
+                    style="width: 80%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">
+                  338 full-disk drawings (308 spot days, 748 spotless) undergo
+                  direct vs. reflection calibration, orientation, and dewarping
+                  for positional extraction.
+                </p>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold text-[#2C3E50]"
+                    >Gruithuisen Manuscripts (1817–1849)</span
+                  >
+                  <span class="text-sm font-medium text-gray-500"
+                    >Images &amp; snippets collected</span
+                  >
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                  <div
+                    class="bg-[#F9A620] h-4 rounded-full"
+                    style="width: 65%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">
+                  Two-pass QC (survey then counting) and Transkribus +
+                  citizen-science workflows prepare Kurrent handwriting for
+                  daily NG/NS tables.
+                </p>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="font-semibold text-[#2C3E50]"
+                    >Augustin Stark Ledgers (1813–1835)</span
+                  >
+                  <span class="text-sm font-medium text-gray-500"
+                    >Normalization in progress</span
+                  >
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-4">
+                  <div
+                    class="bg-[#F15152] h-4 rounded-full"
+                    style="width: 40%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500 mt-1">
+                  Printed German descriptions are being OCR’d and aligned so
+                  weather notes can tie cleanly to group counts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="impact" class="text-center">
+        <h2 class="text-3xl font-bold mb-4">
+          A New Standard for Space Climate Research
+        </h2>
+        <p class="text-lg max-w-3xl mx-auto text-gray-600 mb-10">
+          The ultimate goal of FARSuN is the scientific valorization of its
+          output, culminating in a new, consolidated Sunspot Number (S<sub
+            >N</sub
+          >
+          V3). This will provide a more accurate and reliable standard for the
+          entire space climate community.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-3">🤝</div>
+            <h3 class="text-xl font-bold mb-2">Citizen Science</h3>
+            <p class="text-gray-600">
+              A forthcoming web platform will engage the public to help
+              transcribe challenging historical texts, accelerating data
+              processing.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-3">📈</div>
+            <h3 class="text-xl font-bold mb-2">Improved Predictions</h3>
+            <p class="text-gray-600">
+              The new S<sub>N</sub> V3 will provide a more accurate basis for
+              solar cycle predictions and Earth Radiation Budget studies.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="text-4xl mb-3">🌍</div>
+            <h3 class="text-xl font-bold mb-2">Deeper Understanding</h3>
+            <p class="text-gray-600">
+              The validated record will enhance climate models and advance our
+              fundamental understanding of the Sun-Earth connection.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== -->
+      <!-- Data Sources & Deep Dives -->
+      <!-- ===================== -->
+      <section id="resources" class="py-16 px-6 md:px-10 lg:px-16 bg-white/80">
+        <div class="max-w-6xl mx-auto">
+          <header class="mb-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#2C3E50]">
+              Data sources & deep dives
+            </h2>
+            <p class="mt-3 text-lg text-[#4b5d6b]">
+              Explore the standalone HTML reports produced during the FARSuN
+              workflow — observer timelines, combined datasets, and focused
+              analyses. Each opens in a new tab for smooth presenting.
+            </p>
+          </header>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <a
+              href="egu-data-gathering.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#F2EFE8] p-6 hover:shadow-lg transition"
+            >
+              <h3 class="text-2xl font-semibold text-[#6f4c1f]">
+                EGU-2026 Data Gathering Poster
+              </h3>
+              <p class="mt-2 text-sm text-[#6b5a40]">
+                Latest on Data Extraction & Provenance status: Poster presented
+                at EGU-2026.
               </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div class="flex flex-col gap-4">
-                <div class="space-y-1">
-                  <h4 class="text-xl font-semibold text-[#0F4C5C]">Data Extraction &amp; Provenance</h4>
-                  <p class="text-sm text-[#4b5d6b]">Workflow overview for rebuilding the S<sub>N</sub> record from original documents.</p>
-                </div>
-                <div class="poster-preview">
-                  <img src="agu-poster-data-extraction_web.jpg" alt="AGU25 Data Extraction poster preview" loading="lazy">
-                </div>
-                <div>
-                  <a class="inline-flex items-center gap-2 rounded-full bg-[#0F4C5C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0d4050] transition"
-                    href="agu-poster-data-extraction.pdf" target="_blank" rel="noopener">
-                    <span>Open full poster</span>
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 5h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="flex flex-col gap-4">
-                <div class="space-y-1">
-                  <h4 class="text-xl font-semibold text-[#0F4C5C]">FARSuN Reconstruction Highlights</h4>
-                  <p class="text-sm text-[#4b5d6b]">Top-level poster outlining progress and milestones for S<sub>N</sub> V3.</p>
-                </div>
-                <div class="poster-preview">
-                  <img src="FARSUN_Poster_LL_web.jpg" alt="AGU25 FARSuN poster preview" loading="lazy">
-                </div>
-                <div>
-                  <a class="inline-flex items-center gap-2 rounded-full bg-[#0F4C5C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0d4050] transition"
-                    href="FARSUN_Poster_LL.pdf" target="_blank" rel="noopener">
-                    <span>Open full poster</span>
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 5h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-              <div class="flex flex-col gap-4">
-                <div class="space-y-1">
-                  <h4 class="text-xl font-semibold text-[#0F4C5C]">S<sub>N</sub> Reconstruction Roadmap</h4>
-                  <p class="text-sm text-[#4b5d6b]">Detailed S<sub>N</sub> reconstruction pathway presented for AGU engagement.</p>
-                </div>
-                <div class="poster-preview">
-                  <img src="SNReconstruction_AGU_Fall_2025_V4_web.jpg" alt="AGU25 Sunspot Number Reconstruction poster preview" loading="lazy">
-                </div>
-                <div>
-                  <a class="inline-flex items-center gap-2 rounded-full bg-[#0F4C5C] px-4 py-2 text-sm font-semibold text-white hover:bg-[#0d4050] transition"
-                    href="SNReconstruction_AGU_Fall_2025_V4.pdf" target="_blank" rel="noopener">
-                    <span>Open full poster</span>
-                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 5h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
+              <p class="mt-4 text-sm font-semibold text-[#6f4c1f]">
+                Open poster page
+              </p>
+            </a>
+
+            <a
+              href="sn-stability-presentation.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#F6EBFA] p-6 hover:shadow-lg transition"
+            >
+              <h3 class="text-2xl font-semibold text-[#5A3170]">
+                EGU-2026 S<sub>N</sub> Stability Presentation
+              </h3>
+              <p class="mt-2 text-sm text-[#4c3a5d]">
+                Presentation Slides on "A Long-term Multi-Proxy Stability
+                Analysis" presented at EGU-2026.
+              </p>
+              <p class="mt-4 text-sm font-semibold text-[#5A3170]">
+                Open presentation page
+              </p>
+            </a>
+            <a
+              href="agu25-poster-gallery.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#E0F2FB] p-6 hover:shadow-lg transition"
+            >
+              <h3 class="text-2xl font-semibold text-[#0F4C5C]">
+                AGU-2025 Poster Gallery
+              </h3>
+              <p class="mt-2 text-sm text-[#1f3b47]">
+                Dedicated page containing the three AGU25 posters: extraction,
+                reconstruction highlights, and roadmap.
+              </p>
+              <p class="mt-4 text-sm font-semibold text-[#0F4C5C]">
+                Open gallery page
+              </p>
+            </a>
+
+            <a
+              href="esww22-poster-gallery.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#E9F4F7] p-6 hover:shadow-lg transition"
+            >
+              <h3 class="text-2xl font-semibold text-[#0F4C5C]">
+                ESWW-2025 Poster Gallery
+              </h3>
+              <p class="mt-2 text-sm text-[#3b5564]">
+                Dedicated page with FARSuN and S<sub>N</sub> Next-Gen poster
+                previews and full-size PDFs.
+              </p>
+              <p class="mt-4 text-sm font-semibold text-[#0F4C5C]">
+                Open gallery page
+              </p>
+            </a>
           </div>
+
+          <!-- Quick jump chips -->
+          <div class="flex flex-wrap gap-2 mb-6">
+            <a
+              class="px-3 py-1 rounded-full bg-[#E6F7EF] text-sm text-[#1f5138] hover:bg-[#D6F0E4] transition"
+              href="mittheilungen_data-1800.html#timeline-of-the-observers"
+              target="_blank"
+              rel="noopener"
+            >
+              Timeline (Mittheilungen)
+            </a>
+            <a
+              class="px-3 py-1 rounded-full bg-[#E6F7EF] text-sm text-[#1f5138] hover:bg-[#D6F0E4] transition"
+              href="mittheilungen_data-1800.html#bubble-plot-of-the-observers"
+              target="_blank"
+              rel="noopener"
+            >
+              Bubble plot (Mittheilungen)
+            </a>
+            <a
+              class="px-3 py-1 rounded-full bg-[#FFE9D6] text-sm text-[#8C4A1C] hover:bg-[#FFDCC1] transition"
+              href="esww22-poster-gallery.html"
+              target="_blank"
+              rel="noopener"
+            >
+              ESWW22 Gallery
+            </a>
+            <a
+              class="px-3 py-1 rounded-full bg-[#FFE9D6] text-sm text-[#8C4A1C] hover:bg-[#FFDCC1] transition"
+              href="agu25-poster-gallery.html"
+              target="_blank"
+              rel="noopener"
+            >
+              AGU25 Gallery
+            </a>
+            <a
+              class="px-3 py-1 rounded-full bg-[#E0F2FB] text-sm text-[#0F4C5C] hover:bg-[#d4eaf6] transition"
+              href="egu-data-gathering.html"
+              target="_blank"
+              rel="noopener"
+            >
+              EGU Data Gathering
+            </a>
+            <a
+              class="px-3 py-1 rounded-full bg-[#E0F2FB] text-sm text-[#0F4C5C] hover:bg-[#d4eaf6] transition"
+              href="sn-stability-presentation.html"
+              target="_blank"
+              rel="noopener"
+            >
+              S<sub>N</sub> Stability Presentation
+            </a>
+          </div>
+
+          <!-- Cards grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+            <!-- Zürich Tables -->
+            <a
+              href="zurich_tables.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#E0F2FB] p-5 hover:shadow-lg transition"
+            >
+              <div class="flex items-start justify-between">
+                <h3 class="text-xl font-semibold text-[#0F4C5C]">
+                  Zürich Tables
+                </h3>
+                <span class="inline-flex items-center text-[#0F4C5C] text-sm">
+                  Open
+                  <svg
+                    class="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 5h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <p class="mt-2 text-sm text-[#1f3b47]">
+                Complete daily counts for 1945–1979 digitised with metadata
+                finished for 1945–1959; current work focuses on observer
+                scaling, QC dashboards, and VO/EPN‑TAP publication.
+              </p>
+            </a>
+
+            <!-- Mittheilungen -->
+            <a
+              href="mittheilungen_data-1800.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#E6F7EF] p-5 hover:shadow-lg transition"
+            >
+              <div class="flex items-start justify-between">
+                <h3 class="text-xl font-semibold text-[#1f5138]">
+                  Mittheilungen Dataset
+                </h3>
+                <span class="inline-flex items-center text-[#1f5138] text-sm">
+                  Open
+                  <svg
+                    class="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 5h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <p class="mt-2 text-sm text-[#2a6043]">
+                Wolf’s harmonised journals (1610–1918) anchor the early record;
+                automated checks watch NG &gt; NS, duplicates, and metadata gaps
+                while observer vocabularies are reconciled.
+              </p>
+            </a>
+
+            <!-- C. H. Adams -->
+            <a
+              href="adams.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#E9E4FB] p-5 hover:shadow-lg transition"
+            >
+              <div class="flex items-start justify-between">
+                <h3 class="text-xl font-semibold text-[#433478]">
+                  C. H. Adams Drawings
+                </h3>
+                <span class="inline-flex items-center text-[#433478] text-sm">
+                  Open
+                  <svg
+                    class="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 5h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <p class="mt-2 text-sm text-[#433478]">
+                338 full-disk drawings (1 056 entries) now calibrated for direct
+                vs. reflection methods; orientation and positional extraction
+                feed spotless-day baselines.
+              </p>
+              <!-- <p class="mt-3 text-xs text-[#56478a]">Standalone report. :contentReference[oaicite:3]{index=3}</p> -->
+            </a>
+
+            <!-- Database Overview -->
+            <a
+              href="Database.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#F0F5F7] p-5 hover:shadow-lg transition"
+            >
+              <div class="flex items-start justify-between">
+                <h3 class="text-xl font-semibold text-[#2C3E50]">
+                  Database &amp; Pipelines
+                </h3>
+                <span class="inline-flex items-center text-[#2C3E50] text-sm">
+                  Open
+                  <svg
+                    class="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 5h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <p class="mt-2 text-sm text-[#3C4A57]">
+                Interactive overview of the harmonised FARSuN database,
+                processing pipelines, and release roadmap underpinning the S<sub
+                  >N</sub
+                >
+                V3 build.
+              </p>
+            </a>
+
+            <!-- Gruithuisen -->
+            <a
+              href="gruithuisen.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#FFF2DE] p-5 hover:shadow-lg transition"
+            >
+              <div class="flex items-start justify-between">
+                <h3 class="text-xl font-semibold text-[#8B5215]">
+                  Gruithuisen Data
+                </h3>
+                <span class="inline-flex items-center text-[#8B5215] text-sm">
+                  Open
+                  <svg
+                    class="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 5h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <p class="mt-2 text-sm text-[#8B5215]">
+                Images and snippets (1817–1849) collected; two-pass QC with
+                Transkribus plus citizen-science workflows prepare daily NG/NS
+                tables from Kurrent manuscripts.
+              </p>
+            </a>
+
+            <!-- Augustin Stark -->
+            <a
+              href="stark.html"
+              target="_blank"
+              rel="noopener"
+              class="group block rounded-2xl border border-transparent bg-[#FFE6E6] p-5 hover:shadow-lg transition"
+            >
+              <div class="flex items-start justify-between">
+                <h3 class="text-xl font-semibold text-[#7C1D1D]">
+                  Augustin Stark Ledgers
+                </h3>
+                <span class="inline-flex items-center text-[#7C1D1D] text-sm">
+                  Open
+                  <svg
+                    class="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13 5h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <p class="mt-2 text-sm text-[#7C1D1D]">
+                Printed descriptions (1813–1835) are being OCR’d and normalised
+                so weather notes align with group counts inside the FARSuN
+                schema.
+              </p>
+              <!-- <p class="mt-3 text-xs text-[#8E2A2A]">Standalone report. :contentReference[oaicite:5]{index=5}</p> -->
+            </a>
+          </div>
+
+          <!-- Small note -->
+          <!-- <p class="mt-8 text-sm text-[#6b7c89]"> -->
+          <!--   This page intentionally keeps the original layout and interactivity. The links above open in separate tabs so your -->
+          <!--   poster flow stays uncluttered while still giving instant access to full details. (Interactive overview retained. :contentReference[oaicite:6]{index=6}) -->
+          <!-- </p> -->
         </div>
-
-        <!-- Quick jump chips -->
-        <div class="flex flex-wrap gap-2 mb-6">
-          <a class="px-3 py-1 rounded-full bg-[#E6F7EF] text-sm text-[#1f5138] hover:bg-[#D6F0E4] transition"
-            href="mittheilungen_data-1800.html#timeline-of-the-observers" target="_blank" rel="noopener">
-            Timeline (Mittheilungen)
-          </a>
-          <a class="px-3 py-1 rounded-full bg-[#E6F7EF] text-sm text-[#1f5138] hover:bg-[#D6F0E4] transition"
-            href="mittheilungen_data-1800.html#bubble-plot-of-the-observers" target="_blank" rel="noopener">
-            Bubble plot (Mittheilungen)
-          </a>
-          <a class="px-3 py-1 rounded-full bg-[#FFE9D6] text-sm text-[#8C4A1C] hover:bg-[#FFDCC1] transition"
-            href="poster_v1.pdf" target="_blank" rel="noopener">
-            FARSuN Poster (PDF)
-          </a>
-          <a class="px-3 py-1 rounded-full bg-[#FFE9D6] text-sm text-[#8C4A1C] hover:bg-[#FFDCC1] transition"
-            href="SNGN_Poster_LLefevre_ESWW25_v1.pdf" target="_blank" rel="noopener">
-            S<sub>N</sub> Next-Gen Poster (PDF)
-          </a>
-          <a class="px-3 py-1 rounded-full bg-[#E0F2FB] text-sm text-[#0F4C5C] hover:bg-[#d4eaf6] transition"
-            href="agu-poster-data-extraction.pdf" target="_blank" rel="noopener">
-            AGU25 Data Extraction (PDF)
-          </a>
-          <a class="px-3 py-1 rounded-full bg-[#E0F2FB] text-sm text-[#0F4C5C] hover:bg-[#d4eaf6] transition"
-            href="FARSUN_Poster_LL.pdf" target="_blank" rel="noopener">
-            AGU25 FARSuN Poster (PDF)
-          </a>
-          <a class="px-3 py-1 rounded-full bg-[#E0F2FB] text-sm text-[#0F4C5C] hover:bg-[#d4eaf6] transition"
-            href="SNReconstruction_AGU_Fall_2025_V4.pdf" target="_blank" rel="noopener">
-            AGU25 S<sub>N</sub> Reconstruction (PDF)
-          </a>
-        </div>
-
-        <!-- Cards grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          <!-- Zürich Tables -->
-          <a href="zurich_tables.html" target="_blank" rel="noopener"
-            class="group block rounded-2xl border border-transparent bg-[#E0F2FB] p-5 hover:shadow-lg transition">
-            <div class="flex items-start justify-between">
-              <h3 class="text-xl font-semibold text-[#0F4C5C]">Zürich Tables</h3>
-              <span class="inline-flex items-center text-[#0F4C5C] text-sm">
-                Open
-                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M13 5h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </span>
-            </div>
-            <p class="mt-2 text-sm text-[#1f3b47]">Complete daily counts for 1945–1979 digitised with metadata finished for 1945–1959; current work focuses on observer scaling, QC dashboards, and VO/EPN‑TAP publication.</p>
-          </a>
-
-          <!-- Mittheilungen -->
-          <a href="mittheilungen_data-1800.html" target="_blank" rel="noopener"
-            class="group block rounded-2xl border border-transparent bg-[#E6F7EF] p-5 hover:shadow-lg transition">
-            <div class="flex items-start justify-between">
-              <h3 class="text-xl font-semibold text-[#1f5138]">Mittheilungen Dataset</h3>
-              <span class="inline-flex items-center text-[#1f5138] text-sm">
-                Open
-                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M13 5h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </span>
-            </div>
-            <p class="mt-2 text-sm text-[#2a6043]">Wolf’s harmonised journals (1610–1918) anchor the early record; automated checks watch NG &gt; NS, duplicates, and metadata gaps while observer vocabularies are reconciled.</p>
-          </a>
-
-          <!-- C. H. Adams -->
-          <a href="adams.html" target="_blank" rel="noopener"
-            class="group block rounded-2xl border border-transparent bg-[#E9E4FB] p-5 hover:shadow-lg transition">
-            <div class="flex items-start justify-between">
-              <h3 class="text-xl font-semibold text-[#433478]">C. H. Adams Drawings</h3>
-              <span class="inline-flex items-center text-[#433478] text-sm">
-                Open
-                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M13 5h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </span>
-            </div>
-            <p class="mt-2 text-sm text-[#433478]">338 full-disk drawings (1 056 entries) now calibrated for direct vs. reflection methods; orientation and positional extraction feed spotless-day baselines.</p>
-            <!-- <p class="mt-3 text-xs text-[#56478a]">Standalone report. :contentReference[oaicite:3]{index=3}</p> -->
-          </a>
-
-          <!-- Database Overview -->
-          <a href="Database.html" target="_blank" rel="noopener"
-            class="group block rounded-2xl border border-transparent bg-[#F0F5F7] p-5 hover:shadow-lg transition">
-            <div class="flex items-start justify-between">
-              <h3 class="text-xl font-semibold text-[#2C3E50]">Database &amp; Pipelines</h3>
-              <span class="inline-flex items-center text-[#2C3E50] text-sm">
-                Open
-                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M13 5h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </span>
-            </div>
-            <p class="mt-2 text-sm text-[#3C4A57]">Interactive overview of the harmonised FARSuN database, processing pipelines, and release roadmap underpinning the S<sub>N</sub> V3 build.</p>
-          </a>
-
-          <!-- Gruithuisen -->
-          <a href="gruithuisen.html" target="_blank" rel="noopener"
-            class="group block rounded-2xl border border-transparent bg-[#FFF2DE] p-5 hover:shadow-lg transition">
-            <div class="flex items-start justify-between">
-              <h3 class="text-xl font-semibold text-[#8B5215]">Gruithuisen Data</h3>
-              <span class="inline-flex items-center text-[#8B5215] text-sm">
-                Open
-                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M13 5h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </span>
-            </div>
-            <p class="mt-2 text-sm text-[#8B5215]">Images and snippets (1817–1849) collected; two-pass QC with Transkribus plus citizen-science workflows prepare daily NG/NS tables from Kurrent manuscripts.</p>
-          </a>
-
-          <!-- Augustin Stark -->
-          <a href="stark.html" target="_blank" rel="noopener"
-            class="group block rounded-2xl border border-transparent bg-[#FFE6E6] p-5 hover:shadow-lg transition">
-            <div class="flex items-start justify-between">
-              <h3 class="text-xl font-semibold text-[#7C1D1D]">Augustin Stark Ledgers</h3>
-              <span class="inline-flex items-center text-[#7C1D1D] text-sm">
-                Open
-                <svg class="ml-1 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2"
-                    viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M13 5h6m0 0v6m0-6L10 14"/>
-                </svg>
-              </span>
-            </div>
-            <p class="mt-2 text-sm text-[#7C1D1D]">Printed descriptions (1813–1835) are being OCR’d and normalised so weather notes align with group counts inside the FARSuN schema.</p>
-            <!-- <p class="mt-3 text-xs text-[#8E2A2A]">Standalone report. :contentReference[oaicite:5]{index=5}</p> -->
-          </a>
-        </div>
-
-        <!-- Small note -->
-        <!-- <p class="mt-8 text-sm text-[#6b7c89]"> -->
-        <!--   This page intentionally keeps the original layout and interactivity. The links above open in separate tabs so your -->
-        <!--   poster flow stays uncluttered while still giving instant access to full details. (Interactive overview retained. :contentReference[oaicite:6]{index=6}) -->
-        <!-- </p> -->
-      </div>
-    </section>
+      </section>
     </main>
 
     <footer class="bg-white mt-20 border-t">
-        <div class="container mx-auto px-6 py-8 text-center text-gray-500 space-y-4">
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-                <a href="https://www.sidc.be/silso" target="_blank" rel="noopener" class="inline-flex items-center gap-3">
-                    <img src="figures/silso-logo.png" alt="SILSO" class="h-12 w-auto" loading="lazy">
-                    <span class="text-sm text-[#2C3E50]">World Data Center SILSO</span>
-                </a>
-                <a href="https://www.astro.oma.be/en/" target="_blank" rel="noopener" class="inline-flex items-center gap-3">
-                    <img src="figures/observatory_400x332.jpg" alt="Royal Observatory of Belgium" class="h-12 w-auto rounded" loading="lazy">
-                    <span class="text-sm text-[#2C3E50]">Royal Observatory of Belgium</span>
-                </a>
-                <a href="https://www.sidc.be/FARSuN" target="_blank" rel="noopener" class="inline-flex items-center gap-3">
-                    <span class="text-sm font-semibold text-[#0F4C5C]">Visit the FARSuN portal</span>
-                    <svg class="h-5 w-5 text-[#0F4C5C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 5h6m0 0v6m0-6L10 14" />
-                    </svg>
-                </a>
-            </div>
-            <p>This interactive application visualizes the report "Refining the Sunspot Number Series: A Comprehensive Reconstruction and Analysis".</p>
-            <p class="text-sm">The FARSuN project is funded by the BELSPO BRAIN 2.0 program and led by the World Data Center SILSO at the Royal Observatory of Belgium.</p>
+      <div
+        class="container mx-auto px-6 py-8 text-center text-gray-500 space-y-4"
+      >
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-6"
+        >
+          <a
+            href="https://www.sidc.be/silso"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-3"
+          >
+            <img
+              src="figures/silso-logo.png"
+              alt="SILSO"
+              class="h-12 w-auto"
+              loading="lazy"
+            />
+            <span class="text-sm text-[#2C3E50]">World Data Center SILSO</span>
+          </a>
+          <a
+            href="https://www.astro.oma.be/en/"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-3"
+          >
+            <img
+              src="figures/observatory_400x332.jpg"
+              alt="Royal Observatory of Belgium"
+              class="h-12 w-auto rounded"
+              loading="lazy"
+            />
+            <span class="text-sm text-[#2C3E50]"
+              >Royal Observatory of Belgium</span
+            >
+          </a>
+          <a
+            href="https://www.sidc.be/FARSuN"
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center gap-3"
+          >
+            <span class="text-sm font-semibold text-[#0F4C5C]"
+              >Visit the FARSuN portal</span
+            >
+            <svg
+              class="h-5 w-5 text-[#0F4C5C]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 5h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </a>
         </div>
+        <p>
+          This interactive application visualizes the report "Refining the
+          Sunspot Number Series: A Comprehensive Reconstruction and Analysis".
+        </p>
+        <p class="text-sm">
+          The FARSuN project is funded by the BELSPO BRAIN 2.0 program and led
+          by the World Data Center SILSO at the Royal Observatory of Belgium.
+        </p>
+      </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // --- Interactive Method Comparison ---
-            const recalBtn = document.getElementById('recal-btn');
-            const reconBtn = document.getElementById('recon-btn');
-            const display = document.getElementById('method-display');
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Interactive Method Comparison ---
+        const recalBtn = document.getElementById("recal-btn");
+        const reconBtn = document.getElementById("recon-btn");
+        const display = document.getElementById("method-display");
 
-            const methods = {
-                recalibration: {
-                    title: 'Recalibration: Adjusting the Past',
-                    desc: 'This approach applies corrections to an *existing* composite series. It\'s faster but inherits and can propagate errors from the original data, leading to unresolved uncertainties.',
-                    points: [
-                        '<strong>Methodology:</strong> Adjustments to an existing series.',
-                        '<strong>Data Source:</strong> Composite indices and models.',
-                        '<strong>Limitation:</strong> "Daisy-chain" methods can accumulate errors over time.'
-                    ]
-                },
-                reconstruction: {
-                    title: 'Reconstruction: Rebuilding from Scratch',
-                    desc: 'FARSuN\'s approach. It returns to the original, raw historical sources (journals, drawings) to build an entirely new series. It is labor-intensive but directly addresses the root causes of errors.',
-                    points: [
-                        '<strong>Methodology:</strong> Ground-up build from original raw data.',
-                        '<strong>Data Source:</strong> Historical journals, manuscripts, and tables.',
-                        '<strong>Goal:</strong> A new, fully transparent, and homogeneous sunspot record (S<sub>N</sub> V3).'
-                    ]
-                }
-            };
+        const methods = {
+          recalibration: {
+            title: "Recalibration: Adjusting the Past",
+            desc: "This approach applies corrections to an *existing* composite series. It's faster but inherits and can propagate errors from the original data, leading to unresolved uncertainties.",
+            points: [
+              "<strong>Methodology:</strong> Adjustments to an existing series.",
+              "<strong>Data Source:</strong> Composite indices and models.",
+              '<strong>Limitation:</strong> "Daisy-chain" methods can accumulate errors over time.',
+            ],
+          },
+          reconstruction: {
+            title: "Reconstruction: Rebuilding from Scratch",
+            desc: "FARSuN's approach. It returns to the original, raw historical sources (journals, drawings) to build an entirely new series. It is labor-intensive but directly addresses the root causes of errors.",
+            points: [
+              "<strong>Methodology:</strong> Ground-up build from original raw data.",
+              "<strong>Data Source:</strong> Historical journals, manuscripts, and tables.",
+              "<strong>Goal:</strong> A new, fully transparent, and homogeneous sunspot record (S<sub>N</sub> V3).",
+            ],
+          },
+        };
 
-            function updateDisplay(method) {
-                const data = methods[method];
-                display.innerHTML = `
+        function updateDisplay(method) {
+          const data = methods[method];
+          display.innerHTML = `
                     <h3 class="text-2xl font-bold text-center mb-4 text-[#0F4C5C]">${data.title}</h3>
                     <p class="text-center text-gray-600 max-w-xl mx-auto mb-6">${data.desc}</p>
                     <ul class="space-y-3 text-left max-w-md mx-auto list-disc list-inside">
-                        ${data.points.map(p => `<li class="text-gray-700">${p}</li>`).join('')}
+                        ${data.points.map((p) => `<li class="text-gray-700">${p}</li>`).join("")}
                     </ul>
                 `;
-            }
+        }
 
-            recalBtn.addEventListener('click', () => {
-                updateDisplay('recalibration');
-                recalBtn.classList.add('active');
-                reconBtn.classList.remove('active');
-            });
-
-            reconBtn.addEventListener('click', () => {
-                updateDisplay('reconstruction');
-                reconBtn.classList.add('active');
-                recalBtn.classList.remove('active');
-            });
-
-            updateDisplay('reconstruction');
-
-            // --- Navigation Active State ---
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.5
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('active-link');
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('active-link');
-                            }
-                        });
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-
-            // --- Chart.js Instances ---
-            const tooltipTitleCallback = (tooltipItems) => {
-                const item = tooltipItems[0];
-                let label = item.chart.data.labels[item.dataIndex];
-                return Array.isArray(label) ? label.join(' ') : label;
-            };
-
-            const defaultChartOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: { color: '#2C3E50' }
-                    },
-                    tooltip: {
-                        callbacks: { title: tooltipTitleCallback }
-                    }
-                }
-            };
-
-            // FAIR Principles Radar Chart
-            new Chart(document.getElementById('fairChart'), {
-                type: 'radar',
-                data: {
-                    labels: ['Findability', 'Accessibility', 'Interoperability', 'Reusability'],
-                    datasets: [{
-                        label: 'FARSuN Implementation Level',
-                        data: [90, 95, 85, 100],
-                        fill: true,
-                        backgroundColor: 'rgba(15, 76, 92, 0.18)',
-                        borderColor: '#0F4C5C',
-                        pointBackgroundColor: '#0F4C5C',
-                        pointBorderColor: '#fff',
-                    }]
-                },
-                options: {
-                    ...defaultChartOptions,
-                    scales: {
-                        r: {
-                            angleLines: { color: 'rgba(44, 62, 80, 0.2)' },
-                            grid: { color: 'rgba(44, 62, 80, 0.2)' },
-                            pointLabels: { font: { size: 14 }, color: '#2C3E50' },
-                            ticks: {
-                                backdropColor: '#F8F7F4',
-                                color: '#2C3E50'
-                            }
-                        }
-                    }
-                }
-            });
-
-            // Zurich Progress Donut Chart
-            new Chart(document.getElementById('zurichProgressChart'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Digitization Complete', 'Metadata & QC Remaining'],
-                    datasets: [{
-                        data: [95, 5],
-                        backgroundColor: ['#0F4C5C', '#F15152'],
-                        borderColor: '#FFFFFF',
-                        borderWidth: 4,
-                        hoverOffset: 4
-                    }]
-                },
-                options: {
-                    ...defaultChartOptions,
-                    cutout: '70%',
-                    plugins: {
-                        ...defaultChartOptions.plugins,
-                        title: {
-                            display: true,
-                            text: '95% Digitized',
-                            position: 'bottom',
-                            color: '#2C3E50',
-                            font: { size: 16, weight: 'bold' }
-                        }
-                    }
-                }
-            });
+        recalBtn.addEventListener("click", () => {
+          updateDisplay("recalibration");
+          recalBtn.classList.add("active");
+          reconBtn.classList.remove("active");
         });
+
+        reconBtn.addEventListener("click", () => {
+          updateDisplay("reconstruction");
+          reconBtn.classList.add("active");
+          recalBtn.classList.remove("active");
+        });
+
+        updateDisplay("reconstruction");
+
+        // --- Navigation Active State ---
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.5,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => {
+                link.classList.remove("active-link");
+                if (
+                  link.getAttribute("href").substring(1) === entry.target.id
+                ) {
+                  link.classList.add("active-link");
+                }
+              });
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+
+        // --- Chart.js Instances ---
+        const tooltipTitleCallback = (tooltipItems) => {
+          const item = tooltipItems[0];
+          let label = item.chart.data.labels[item.dataIndex];
+          return Array.isArray(label) ? label.join(" ") : label;
+        };
+
+        const defaultChartOptions = {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: { color: "#2C3E50" },
+            },
+            tooltip: {
+              callbacks: { title: tooltipTitleCallback },
+            },
+          },
+        };
+
+        // FAIR Principles Radar Chart
+        new Chart(document.getElementById("fairChart"), {
+          type: "radar",
+          data: {
+            labels: [
+              "Findability",
+              "Accessibility",
+              "Interoperability",
+              "Reusability",
+            ],
+            datasets: [
+              {
+                label: "FARSuN Implementation Level",
+                data: [90, 95, 85, 100],
+                fill: true,
+                backgroundColor: "rgba(15, 76, 92, 0.18)",
+                borderColor: "#0F4C5C",
+                pointBackgroundColor: "#0F4C5C",
+                pointBorderColor: "#fff",
+              },
+            ],
+          },
+          options: {
+            ...defaultChartOptions,
+            scales: {
+              r: {
+                angleLines: { color: "rgba(44, 62, 80, 0.2)" },
+                grid: { color: "rgba(44, 62, 80, 0.2)" },
+                pointLabels: { font: { size: 14 }, color: "#2C3E50" },
+                ticks: {
+                  backdropColor: "#F8F7F4",
+                  color: "#2C3E50",
+                },
+              },
+            },
+          },
+        });
+
+        // Zurich Progress Donut Chart
+        new Chart(document.getElementById("zurichProgressChart"), {
+          type: "doughnut",
+          data: {
+            labels: ["Digitization Complete", "Metadata & QC Remaining"],
+            datasets: [
+              {
+                data: [95, 5],
+                backgroundColor: ["#0F4C5C", "#F15152"],
+                borderColor: "#FFFFFF",
+                borderWidth: 4,
+                hoverOffset: 4,
+              },
+            ],
+          },
+          options: {
+            ...defaultChartOptions,
+            cutout: "70%",
+            plugins: {
+              ...defaultChartOptions.plugins,
+              title: {
+                display: true,
+                text: "95% Digitized",
+                position: "bottom",
+                color: "#2C3E50",
+                font: { size: 16, weight: "bold" },
+              },
+            },
+          },
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
