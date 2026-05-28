@@ -6,5 +6,7 @@ __pycache__/
 .DS_Store
 .jupyter_cache/
 _freeze/
+presentations/
+figures/
 
 /.quarto/
